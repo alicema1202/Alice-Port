@@ -244,14 +244,14 @@ a {
     padding-top: 20px;;
 }
 .heading {
-    font-size: 1.7rem;
+    font-size: 2.5ch;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
 }
 .body {
-    width: 50vw;
+    width: 45vw;
     text-align: center;
-    line-height: 1.5rem;
+    line-height: 3ch;
     font-family: roboto, arial;
     font-weight: 400;
     margin-bottom: 2rem;
