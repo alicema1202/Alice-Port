@@ -25,7 +25,8 @@ body {
     padding-bottom: 30px;
     position:fixed;
     border-bottom: solid rgba(0, 0, 0, 0.277) 1px;
-    backdrop-filter: blur(100px)
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
 
 }
 .left-section {
@@ -258,8 +259,128 @@ a {
     letter-spacing: 0.05ch;
 }
 
+.body-left {
+    width: 45vw;
+    text-align: left;
+    line-height: 3ch;
+    font-family: roboto, arial;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05ch;
+}
+
 .heading {
     text-transform: uppercase;
+    color: #881f20;
+    font-weight: 700;
+}
+
+.persona {
+    background-image: url("zhaopersona.png");
+    width: 60vw;
+    height: 40vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.paper-drawing {
+    width: 50vw;
+}
+.paper-lofi {
+    width: 60vw;
+}
+
+ .view-prototype {
+    opacity: 1;
+    padding: 1em 2em 1em 2em;
+    margin: 1em;
+    margin-bottom: 2em;
+    right: 0px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    cursor: pointer;
+    font-family: roboto , arial;
+}
+.view-prototype:hover {
+    color: white;
+    background-color:#ab3a3b;
+    border-color: #ab3a3b;
+    transition:0.2s;
+    box-shadow: none;
+}
+.view-prototype {
+    transition:0.2s;
+}
+
+li {
+    text-align: center;
+}
+.bullets {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+.mockup {
+    width: 15vw;
+}
+.arrow {
+    font-size: 3vw;
+}
+.changes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2vw
+}
+.change-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5em;
+}
+.change-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5em;
+}
+.body-change {
+    width: 25vw;
+    text-align: center;
+    line-height: 3ch;
+    font-family: roboto, arial;
+    font-weight: 400;
+    letter-spacing: 0.05ch;
+    margin-right: 5em;
+    margin-left: 5em; 
+}
+.change-2 .changes {
+    order: 1;
+}
+
+.change-2 .body-change {
+    order: 2;
+}
+.design-system {
+    width: 50vw;
+}
+.final-mockups {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mockup-pic {
+    width: 15vw;
+    margin: 0.5em;
 }
 @media (max-width: 700px) {
     .cover-photo {
@@ -270,9 +391,54 @@ a {
         top: 35vh;
     } 
     
-.body {
+    .body {
+        width: 70vw;
+        font-weight: 400;
+        font-family: roboto, arial;
+        }
+    .persona {
+        width: 80vw;
+        height: 60vw;
+    }
+
+    .paper-drawing {
+        width: 70vw;
+    }
+
+    .paper-lofi {
+        width: 80vw;
+    }
+      
+.design-system {
     width: 70vw;
-    font-weight: 400;
-    font-family: roboto, arial;
+}
+}
+@media (max-width:600px) {
+      
+    .body-change {
+        width: 65vw;
+        text-align: center;
+        line-height: 3ch;
+        font-family: roboto, arial;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        letter-spacing: 0.05ch;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .arrow {
+        opacity: 0;
+    }
+    .change-1, .change-2 {
+        display: block;
+    }
+    .changes {
+        display: flex;
+        flex-direction: column;
+    }
+    .mockup {
+        width: 60vw;
+        margin-bottom: 2rem;
     }
 }
