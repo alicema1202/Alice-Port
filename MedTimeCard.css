@@ -1,0 +1,170 @@
+.project-card-container {
+    font-family: Josefin Sans, Arial;
+    font-size: 23px;
+    background-color: #111111;
+    display:flex;
+}
+.container-medtime {
+    position: relative;
+    width: 50%;
+    display: flex;
+}
+.mockup {
+    z-index: 100;
+    position: absolute;
+    top: 20px;
+}
+.container-medtime .left {
+    position: relative;
+    left: 50px;
+    transform: rotate(-20deg);
+    width: 209px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime:hover .left {
+    transform: rotate(0deg);
+    left: 30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime .right {
+    position: relative;
+    top: 80px;
+    right: 50px;
+    transform: rotate(20deg);
+    width: 209px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime:hover .right {
+    transform: rotate(0deg);
+    top: 0px;
+    right: 30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime {
+    position: relative;
+    width: 465px;
+    display: flex;
+}
+.container-medtime .card-medtime {
+    position: relative;
+    background-color: #358DA1;
+    overflow: hidden;
+    height: 618px;
+    border-radius: 24px;
+}
+.card-medtime {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, 0.332);
+    
+}
+.logo-container-medtime {
+    position: absolute;
+    bottom: 80px;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 20px;
+}
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.background-text {
+    padding: 60px 0px 0px 0px;
+    position: relative;
+}
+
+.background-text .background-text-2 {
+    position: absolute;
+    top: 240px;
+    left: -400px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.background-text .background-text-1 {
+    position: relative;
+    left: -30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime:hover .background-text-2 {
+    left: -150px;
+    top: 200px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-medtime .background-text-2 {
+    left: -400px;
+    top: 240px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime:hover .background-text-1 {
+    left: -350px;
+    top: -30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime .background-text-1 {
+    left: -30px;
+    top: 10px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-medtime:hover .logo-container-medtime {
+    bottom: 150px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-medtime .logo-container-medtime {
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-medtime .view-case-study {
+    opacity: 1;
+    position: relative;
+    bottom: -240px;
+    width: 240px;
+    height: 60px;
+    left: 112.5px;
+    right: 0px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.15);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    cursor: pointer;
+    font-family: josefin sans , arial;
+}
+.container-medtime:hover .view-case-study {
+    bottom: -100px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.view-case-study:hover {
+    color: white;
+    background-color:#ab3a3b;
+    border-color: #ab3a3b;
+    transition:none;
+    box-shadow: none;
+}
+.view-case-study {
+    transition: none;
+}
+
+.placeholder {
+    opacity: 0;
+}

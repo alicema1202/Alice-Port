@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alice Ma Design</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="header.css" rel="stylesheet"> 
+        <link href="underlines.css" rel="stylesheet"> 
+        <link href="buttonstyles.css" rel="stylesheet"> 
+        <link href="view-works.css" rel="stylesheet">
+        <link href="hamburger-mobile.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="MedTimeCard.css">
+        <link rel="stylesheet" href="CineMaCard.css">
+        <link rel="stylesheet" href="UniOCard.css">
+        <link rel="stylesheet" href="mobile.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+        </head>
+    <body>
+        
+        <div class="header-bar">
+            <div class="left-section">
+                <div class="logo-container">
+                    ALICE MA
+                </div>
+            </div>
+            <div class="right-section">
+                <ul>
+                    <li>
+                        <a class="hover-underline-animation" href="#0">WORKS</a>
+                    </li>
+
+                    <li>
+                      <a class="hover-underline-animation" href="#0">ABOUT ME</a>
+                    </li>
+
+                    <li>
+                        <a class="hover-underline-animation" target="_blank" href="https://drive.google.com/file/d/16AdJ-ySeTdpeROn8e2Yxe4EEwjAsgqNN/view?usp=sharing">RESUME</a>
+                    </li>
+                      
+                    <li>
+                        <a class="hover-underline-animation" href="#0">CONTACT</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="topnav">
+                <div id="myLinks" class="nav-mobile">
+                    <div class="mobile">WORKS</div>
+                    <div class="mobile">ABOUT ME</div>
+                    <div class="mobile">RESUME</div>
+                    <div class="mobile">CONTACT</div>
+              </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <img id="button-icon" class="hamburger-icon" src="Hamburger-button.svg">
+              </a>
+              </div>
+              <!-- End smartphone / tablet look -->
+              </div>
+        </div>
+        
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "flex") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "flex";
+              }
+              if (x.style.display === "flex") {
+                document.getElementById("button-icon").src = "Hamburger-X.svg";
+              } else {
+                document.getElementById("button-icon").src = "Hamburger-button.svg";
+              }
+              
+            }
+            </script>
+       
+        
+        <div class="blob-background">
+            <div class="hero-text">
+                <div class="greeting">HI, NICE TO MEET YOU!</div>
+                <div class="intro">I'm Alice, a UX Designer aiming to create an accessible and user-centered experience. I am currently studying Cognitive Science @ UCSD.</div>
+                
+            </div>
+            <div class="blob-overlay"></div>
+            <video class="blob" playsinline autoplay loop muted>
+                <source src="blob-video.mp4">
+            </video>
+        </div>
+        
+        <div class="projects">
+            <div class="h1">
+                VIEW MY WORKS
+            </div>
+            <div class="project-grid">
+                <div class="MedTime">
+                    <div class="container-medtime">
+                        <div class="card-medtime">
+                            <div class="images">
+                                <div class="mockup">
+                                    <img class="left" src="images\left.png">
+                                    <img class="right" src="images\right.png">
+                                </div>
+                                <div class="logo-container-medtime">
+                                    <img class="logo-text" src="images\Group 1679.svg">    
+                                </div>            
+                            </div>
+                            <div class="background-text">
+                                <img class="background-text-1" src="images\medtime-bg-text.svg">
+                                <img class="background-text-2" src="images\medtime-bg-text.svg">
+                                <img class="placeholder" src="images\medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="anotherpage.html" class="view-case-study">
+                                    VIEW CASE STUDY                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="CineMa">
+                    <div class="container-cinema">
+                        <div class="card-cinema">
+                            <div class="images-cinema">
+                                <div class="mockup-cinema">
+                                    <img class="left" src="images\CineMa-Left.svg">
+                                    <img class="right" src="images\CineMa-Right.svg">
+                                </div>
+                                <div class="logo-container-cinema">
+                                    <img class="logo-text" src="images\cinema-logo.svg">    
+                                </div>            
+                            </div>
+                            <div class="background-text-cinema">
+                                <img class="background-text-1" src="images\cinema-bg-text.svg">
+                                <img class="background-text-2" src="images\cinema-bg-text.svg">
+                                <img class="placeholder" src="images\medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="anotherpage.html" class="cinema-view-study">
+                                    VIEW CASE STUDY
+                                </button>
+                            </form>
+                        </div>
+                    
+                    </div>
+                </div>
+        
+                <div class="UniO">
+                    <div class="container-unio">
+                        <div class="card-unio">
+                            <div class="images-unio">
+                                <div class="mockup-unio">
+                                    <img class="laptop" src="images\uniO laptop.svg">
+                                    <img class="left" src="images\uniO left.svg">
+                                    <img class="right" src="images\uniO right.svg">
+        
+                                </div>
+                                <div class="logo-container-unio">
+                                    <img class="logo-text" src="images\uniologo.svg">    
+                                </div>            
+                            </div>
+                            <div class="background-text-unio">
+                                <img class="background-text-1" src="images\unio-bg-text.svg">
+                                <img class="background-text-2" src="images\unio-bg-text.svg">
+                                <img class="placeholder" src="images\medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="anotherpage.html" class="unio-view-study">
+                                    VIEW CASE STUDY                                </button>
+                            </form>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

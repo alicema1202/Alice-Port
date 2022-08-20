@@ -1,0 +1,163 @@
+.container-cinema {
+    position: relative;
+    width: 50%;
+}
+.mockup-cinema {
+    z-index: 100;
+    position: absolute;
+    top: 20px;
+}
+.container-cinema .left {
+    position: relative;
+    left: 15px;
+    top: 130px;
+    width: 300px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema:hover .left {
+    left: -70px;
+    top: 0px;
+    width: 300px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema .right {
+    position: relative;
+    right: -150px;
+    top: -300px;
+    width: 300px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-cinema:hover .right {
+    right: -250px;
+    top: -210px;
+    width: 300px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema {
+    position: relative;
+    width: 465px;
+}
+.container-cinema .card-cinema {
+    position: relative;
+    background-color: #9C2C2C;
+    overflow: hidden;
+    height: 618px;
+    border-radius: 24px;
+}
+.card-cinema {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, 0.332);
+    
+}
+.logo-container-cinema {
+    position: absolute;
+    bottom: 80px;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-cinema {
+    margin-right: 20px;
+}
+.images-cinema {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.background-text-cinema {
+    padding: 60px 0px 0px 0px;
+    position: relative;
+}
+
+.background-text-cinema .background-text-2 {
+    position: absolute;
+    top: 240px;
+    left: -400px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.background-text-cinema .background-text-1 {
+    position: relative;
+    left: -30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema:hover .background-text-2 {
+    left: -40px;
+    top: 200px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-cinema .background-text-2 {
+    left: -200px;
+    top: 240px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema:hover .background-text-1 {
+    left: -220px;
+    top: -30px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema .background-text-1 {
+    left: -30px;
+    top: 10px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+
+}
+.container-cinema:hover .logo-container-cinema {
+    bottom: 155px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-cinema .logo-container-cinema {
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.container-cinema .cinema-view-study {
+    opacity: 1;
+    position: relative;
+    bottom: -240px;
+    width: 240px;
+    height: 60px;
+    left: 112.5px;
+    right: 0px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.15);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    cursor: pointer;
+    font-family: josefin sans , arial;
+    z-index: 100;
+}
+.container-cinema:hover .cinema-view-study {
+    bottom: -100px;
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+.cinema-view-study:hover {
+    color: white;
+    background-color:#1B1D2B;
+    border-color: #1B1D2B;
+    transition:none;
+    box-shadow: none;
+    cursor:pointer;
+}
+.cinema-view-study {
+    transition: none;
+}
+
+.placeholder {
+    opacity: 0;
+}

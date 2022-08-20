@@ -1,0 +1,39 @@
+.topnav {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+@media (max-width: 400px) {
+    .topnav {
+        opacity: 1;
+    }
+    .topnav #myLinks {
+        background: rgb(0, 0, 0); 
+        width:      100%;
+        height:     100%; 
+        z-index:    0;
+        top:        0; 
+        left:       0; 
+        position:   fixed;
+        pointer-events: none;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    cursor: pointer;
+    }
+
+    .hamburger-icon {
+        top:0;
+        right: 0;
+    }
+}
