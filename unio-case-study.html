@@ -3,7 +3,7 @@
     <head>
         <title> UniO: Learning Made Easy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="medtime-case-study.css" rel="stylesheet"> 
+        <link href="unio-case-study.css" rel="stylesheet"> 
         <link href="mobileburger-case-study.css" rel="stylesheet">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +23,11 @@
             <div class="right-section">
                 <ul>
                     <li>
-                        <a class="hover-underline-animation" href="#0">WORKS</a>
+                        <a class="hover-underline-animation" href="index.html">WORKS</a>
                     </li>
 
                     <li>
-                      <a class="hover-underline-animation" href="#0">ABOUT ME</a>
+                      <a class="hover-underline-animation" href="about.html">ABOUT ME</a>
                     </li>
 
                     <li>
@@ -35,7 +35,7 @@
                     </li>
                       
                     <li>
-                        <a class="hover-underline-animation" href="#0">CONTACT</a>
+                        <a class="hover-underline-animation" href="contact.html">CONTACT</a>
                     </li>
                     
                 </ul>
@@ -78,26 +78,24 @@
                 <div class="cover-photo">
             </div>
             <div class="brief-desc">
-                <div class="desc">PROJECT: MedTime Medicine Tracking</div>
+                <div class="desc">PROJECT: UniO, University Notetaking</div>
                 <div class="desc">ROLE: UX Designer + Researcher</div>
-                <div class="desc">TIMELINE: July 2022</div>
+                <div class="desc">TIMELINE: June - July 2022</div>
             </div>
         </div>
         <div class="case-study-content">
             <div class="heading">
-                Project Overview
+                Problem + The Goal
             </div>
             <div class="body">
-                Many people who have to take medicine end up forgetting to take it because they do not have a system set up to remind them. This could lead to serious consequences. MedTime is an app that reminds people to take their medication on time. This app will be helpful to those who suffer from forgetting to take their medicine. 
-
+                Most note taking applications on the market make it difficult to do cross-platform editing, like the tablet applications for handwritten notes that are often not transferrable to other devices. For this case study, I am working towards the goal of creating a notetaking flow within an online university’s website. I hope to create a convenient method for well-organized, cross-platform notetaking for the university’s students.
             </div>
             <div class="heading">
                 Understanding Users
             </div>
             
             <div class="body">
-                To work towards understanding the users I am designing for, I did research by formulating personas and conducted competitive audits as part of my ideation process. I decided that there would be two main user groups: those who would access the app on their mobile devices and those who would use website versions.
-
+                The users for this project can be categorized into two main groups: students who use their keyboard to take notes, and students who prefer to write down their notes. To understand the users, I went through the process of drafting personas and journey maps, and conducting user testing.
             </div>
             <div class="heading">
                 Crafting Personas
@@ -111,18 +109,20 @@
             </div>
             <div class="paper-wireframes">
                 <div class="body">
-                    I sketched multiple iterations of paper wireframes for multiple screens to get started with the design. I put stars next to any features I might consider keeping in the next iteration of the designs.
+                    To begin designing, I transferred the ideas from my ideation and research process onto paper wireframes for my desktop website.
+
 
                 </div>
-                <img class="paper-drawing" src="medtime-paper.jpg">
+                <img class="paper-drawing" src="wireframesAdobe.jpg">
             </div>
             
             <div class="body" style="margin-top: 20px; margin-bottom: 5px;">
-                After creating these wireframes, I digitized them with Figma and turned wireframes into working mid-fidelity prototypes.
+                After drawing these paper wireframes, I moved on and created more refined versions on Adobe XD for all the pages in the app. After that, I connected the screens and made it into an interactive mid-fi prototype. 
+
             </div>
-            <img class="paper-lofi" src="medtime-lofi.png">
-            <form>
-                <button formaction="medtime-case-study.html" class="view-prototype">
+            <img class="paper-lofi" src="lofi-adobe.png">
+            <form action="https://xd.adobe.com/view/ae95c262-8aa1-4395-b184-80e0586108f5-fbc6/?fullscreen" target="_blank" >
+                <button class="view-prototype">
                     VIEW LO-FI PROTOTYPE                                </button>
             </form>
             
@@ -130,18 +130,19 @@
                 User Testing
             </div>
             <div class="body">
-                After building the mid-fidelity prototype, I used it to conduct a usability study, and from it, I gained many new findings about how to improve my designs:
+                Through conducting user testing on the mid-fi prototypes, I noticed some themes and converted these themes into new findings for my design:
+
 
                 <div class="bullets">
-                    <li>The two add buttons on the home screen caused confusing navigation for most users
+                    <li>Small font size caused difficulty for users when finding notes section
 
                     </li>
 
-                    <li>The lack of a mark all as done button creates inconvenience for users
+                    <li>Current grayed out background color did not provide enough contrast
 
                     </li>
                     
-                    <li>Although the primary add button is large, it is not the most visible because it lacks contrast
+                    <li>Overcomplicated animations led to lag for all users in the study
 
                     </li>
                     
@@ -152,46 +153,40 @@
             </div>
             
             <div class="body">
-                After conducting both usability studies, I made some changes to my high-fidelity prototype!
+                After conducting user research and testing, I made some changes to my high-fidelity prototype!
             </div>
             <div class="change-1">
                 <div class="body-change">
-                    <strong>1. Navigation and User Flow
+                    <strong>1. Dark Mode Website
                     </strong>
     
-                    <p>I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.
+                    <p>I went from the original light background idea and converted to a dark mode design to provide minimum strain on their eyes while taking notes.
                     </p>
                 </div>
                 <div class="changes">
-                    <img class="mockup" src="medtime-home-lo.png">
+                    <img class="mockup" src="unio-homepage-lofi.png">
                     <div class="arrow">&#8594</div>
-                    <img class="mockup" src="medtime-home-hi.png">
+                    <img class="mockup" src="unio-homepage.png">
                 </div>
             </div>
             <div class="change-2">
                 <div class="body-change">
-                    <strong>2. Customization Options
+                    <strong>2. Enlarged Header
 
                     </strong> 
 
-                    <p>Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.
-
+                    <p>Previously, users found the text on the header to be small, so I used a bigger and slightly thicker font to increase visibility of the words on the header bar.
                     </p>      
                 </div>
                 <div class="changes">
-                    <img class="mockup" src="medtime-search-lo.png">
+                    <img class="mockup" src="notes lofi.png">
                     <div class="arrow">&#8594</div>
-                    <img class="mockup" src="customize.png">
+                    <img class="mockup-notes" src="notes hifi.png">
                 </div>
                 
             </div>
             
-            <div class="heading">
-                The Design System
-            </div>
-            <div class="design-sys">
-                <img class="design-system" src="medtime-design-system.png">
-            </div>
+            
             <div class="body">
                 
             </div>
@@ -199,13 +194,10 @@
                 Final Product
             </div>
             <div class="final-mockups">
-                <img class="mockup-pic" src="medtime-home-hi.png">
-                <img class="mockup-pic" src="search.png">
-                <img class="mockup-pic" src="options.png">
-                <img class="mockup-pic" src="selection.png">
+                <img class="mockup-pic" src="unio-final.png">
             </div>
-            <form>
-                <button formaction="medtime-case-study.html" class="view-prototype">
+            <form action="https://xd.adobe.com/view/5ccd1867-761f-4996-ac91-8c057060ce35-099e/screen/7e70dcea-0ad1-4d4e-8ea9-a49b66d7b996/?fullscreen" target="_blank" >
+                <button class="view-prototype">
                     VIEW HI-FI PROTOTYPE                                </button>
             </form>
             
@@ -213,29 +205,31 @@
                 
             </div>
             <div class="heading">
-                And a website too!
+                Responsive Design
             </div>
             <div class="body">
-                Now that I have created a dedicated mobile app for MedTime. It would be good to have a web version of it as well. The web version is a responsive web design that adapts to different screen sizes, making on-the-go reminders even easier to achieve.
+                To make the design responsive, I created a mobile version of the web design with changes to the layout to fit the smaller screen size.
             </div>
             <div class="web-mockups">
-                <img class="mockup-pic-2" src="ipad-medtime.png">
-                <img class="mockup-pic-2" src="laptop-medtime.png">
+                <img class="mockup-pic-2" src="unio-responsive-1.png">
+                <img class="mockup-pic-2" src="unio-responsive-2.png">
             </div>
-            <form>
-                <button formaction="medtime-case-study.html" class="view-prototype">
-                    VIEW WEB PROTOTYPE                                </button>
-            </form>
+            <div class="heading">
+                The Design System
+            </div>
+            <div class="design-sys">
+                <img class="design-system" src="unio-design-system.png">
+            </div>
             <div class="heading">
                 Accessibility
             </div>
             
             <div class="body">
-               <strong>1. High Contrast Colors            </strong> 
-<p>In my design, I included high contrast colors and bolded fonts for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.
+               <strong>1. Hierarchy</strong> 
+<p>For my design, I tried my best to keep the layout and user flow of my pages organized. I also made sure the text had proper hierarchy, which places emphasis on key information.
 </p>
-<strong>2. Navigation</strong>
-<p>I placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks without navigation issues.
+<strong>2. Color Contrast</strong>
+<p>I used a deep dark blue color as the background and white as the text, which provides almost as much contrast and black and white do. This creates an easier to read experience for not only those with visual impairments, but also for all other users as well.
 </p>
 </div>
             <div class="heading">
@@ -246,10 +240,11 @@
                <strong>What I Learned:</strong> 
 
 <p>
-    I learned that designing for laptop and tablet are quite similar experiences because of their similar proportions. However, I thought that mobile apps and mobile sites would basically be the same, but there were many different considerations I had to make to transform the app into a mobile website design.
-
+    From this experience, I learned that designing for desktop sites is a very different experience compared to mobile designing because of the scaling. I often found myself making elements way too small or too large for web because I’m used to mobile designing. Of course, in terms of responsive web design, I learned that I have much room for improvement.
 </p>            </div>
         </div>
-        
+        <div class="footer">
+            ©2022 Alice Ma. All Rights Reserved.
+        </div>
     </body>
 </html>

@@ -503,3 +503,12 @@ li {
     width: 40vw;
 }
 }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #09677C;
+    color:white;
+    line-height: 10rem;
+    margin-top: 4rem;
+}

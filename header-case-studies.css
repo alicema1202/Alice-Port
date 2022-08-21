@@ -390,7 +390,15 @@ li {
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.34);
 }
-
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #881f21;
+    color:white;
+    line-height: 10rem;
+    margin-top: 4rem;
+}
 
 @media (max-width: 700px) {
     .cover-photo {

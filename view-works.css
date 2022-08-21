@@ -40,7 +40,7 @@
     .project-grid {
         grid-template-columns: 1fr 1fr;
         transform: scale(70%);
-    }   
+    } 
 }
 @media (max-width:800px) {
     .project-grid {

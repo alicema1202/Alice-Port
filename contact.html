@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MedTime: Get Medicine Reminders</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="medtime-case-study.css" rel="stylesheet"> 
+        <link href="mobileburger-case-study.css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="x-icon" href="Left.png">
+        <style>
+        
+            .footer {
+                width: 100vw;
+                position: absolute;
+                background-color: black;
+                left: 0;
+            }
+            .catch-line {
+                color: black;
+                font-size: 2rem;
+            }
+            .paragraph {
+                font-family: roboto, arial;
+                font-weight: 400;
+                line-height: 3ch;
+            }
+            .about-me {
+                display: flex;
+                width: 70vw;
+                margin-left: 15vw;
+                margin-right: 15vw;
+                align-items: center;
+                justify-content: center;
+                margin-top: 100px;
+            }
+            .pic {
+                width: 35vw;
+                border-radius: 2vw;
+            }
+            .intro-about-me {
+                margin-right: 10vw;
+            }
+            @media (max-width: 700px) {
+                .about-me {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .contact {
+                    margin-top: 0;
+                }
+                .intro-about-me {
+                    width: 50vw;
+                    margin-bottom: 0;
+                }
+                .intro-about-me {
+                    margin-right: 0vw;
+                }
+                .view-prototype {
+                    opacity: 1;
+                    padding: 1em 2em 1em 2em;
+                    margin: 1em;
+                    margin-bottom: 2em;
+                    right: 0px;
+                    font-weight: bold;
+                    font-size: 17px;
+                    background-color: white;
+                    color: black;
+                    border-color: rgb(0, 0, 0);
+                    border-style: solid;
+                    border-width: 2px;
+                    border-radius: 30px;
+                    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+                    cursor: pointer;
+                    font-family: roboto , arial;
+                    margin-top: 30px;
+                }
+                .view-prototype:hover {
+                    color: white;
+                    background-color:#3e3190;
+                    border-color: #3e3190;
+                    transition:0.2s;
+                    box-shadow: none;
+                }
+                .view-prototype {
+                    transition:0.2s;
+                }
+            
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header-bar">
+            <div class="left-section">
+                <a href="index.html" class="logo-container">
+                    ALICE MA
+                </a>
+            </div>
+            <div class="right-section">
+                <ul>
+                    <li>
+                        <a class="hover-underline-animation" href="index.html">WORKS</a>
+                    </li>
+
+                    <li>
+                      <a class="hover-underline-animation" href="about.html">ABOUT ME</a>
+                    </li>
+
+                    <li>
+                        <a class="hover-underline-animation" target="_blank" href="https://drive.google.com/file/d/16AdJ-ySeTdpeROn8e2Yxe4EEwjAsgqNN/view?usp=sharing">RESUME</a>
+                    </li>
+                      
+                    <li>
+                        <a class="hover-underline-animation" href="contact.html">CONTACT</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="topnav">
+                <div id="myLinks" class="nav-mobile">
+                    <div class="mobile">WORKS</div>
+                    <div class="mobile">ABOUT ME</div>
+                    <div class="mobile">RESUME</div>
+                    <div class="mobile">CONTACT</div>
+              </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <img id="button-icon" class="hamburger-icon" src="Hamburger-button.svg">
+              </a>
+              </div>
+              <!-- End smartphone / tablet look -->
+              </div>
+        </div>
+        
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "flex") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "flex";
+              }
+              if (x.style.display === "flex") {
+                document.getElementById("button-icon").src = "Hamburger-X.svg";
+              } else {
+                document.getElementById("button-icon").src = "Hamburger-button.svg";
+              }
+              
+            }
+            </script>
+       
+        <div style="margin-bottom:93px ;">
+            <div class="about-me">
+                <div class="intro-about-me">
+                    <p class="catch-line">
+                        Contact me here!
+                    </p>
+                    <p class="paragraph">
+                        alicema1202@gmail.com 
+                    </p>
+                    <p class="paragraph">
+                        415.770.2018
+                    </p>
+                    
+                </div>
+                <div class="contact">
+                    <div id="after_submit"></div>
+                    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+                      <div class="row" style="margin-top: 100px;">
+                        <label class="required" for="name">Your name:</label><br />
+                        <input id="name" class="input" name="name" type="text" value="" size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0" /><br />
+                        <span id="name_validation" class="error_message"></span>
+                      </div>
+                      <div class="row" style="margin-top: 15px;">
+                        <label class="required" for="email">Your email:</label><br />
+                        <input id="email" class="input" name="email" type="text" value="" size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0"/><br />
+                        <span id="email_validation" class="error_message"></span>
+                      </div>
+                      <div class="row" style="margin-top: 15px;">
+                        <label class="required" for="message">Your message:</label><br />
+                        <textarea id="message" class="input" name="message" rows="7" cols="30"style="height: 100px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0"></textarea><br />
+                        <span id="message_validation" class="error_message"></span>
+                      </div>
+                        
+                        <input class="view-prototype" type="submit" value="Send email" />
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="footer">
+            ©2022 Alice Ma. All Rights Reserved.
+        </div>
+    </body>
+</html>
