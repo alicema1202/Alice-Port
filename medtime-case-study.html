@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MedTime: Get Medicine Reminders</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="medtime-case-study.css" rel="stylesheet"> 
+        <link href="mobileburger-case-study.css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="x-icon" href="Left.png">
+    </head>
+    <body>
+        <div class="header-bar">
+            <div class="left-section">
+                <a href="index.html" class="logo-container">
+                    ALICE MA
+                </a>
+            </div>
+            <div class="right-section">
+                <ul>
+                    <li>
+                        <a class="hover-underline-animation" href="#0">WORKS</a>
+                    </li>
+
+                    <li>
+                      <a class="hover-underline-animation" href="#0">ABOUT ME</a>
+                    </li>
+
+                    <li>
+                        <a class="hover-underline-animation" target="_blank" href="https://drive.google.com/file/d/16AdJ-ySeTdpeROn8e2Yxe4EEwjAsgqNN/view?usp=sharing">RESUME</a>
+                    </li>
+                      
+                    <li>
+                        <a class="hover-underline-animation" href="#0">CONTACT</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="topnav">
+                <div id="myLinks" class="nav-mobile">
+                    <div class="mobile">WORKS</div>
+                    <div class="mobile">ABOUT ME</div>
+                    <div class="mobile">RESUME</div>
+                    <div class="mobile">CONTACT</div>
+              </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <img id="button-icon" class="hamburger-icon" src="Hamburger-button.svg">
+              </a>
+              </div>
+              <!-- End smartphone / tablet look -->
+              </div>
+        </div>
+        
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "flex") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "flex";
+              }
+              if (x.style.display === "flex") {
+                document.getElementById("button-icon").src = "Hamburger-X.svg";
+              } else {
+                document.getElementById("button-icon").src = "Hamburger-button.svg";
+              }
+              
+            }
+            </script>
+       
+        
+        <div class="cover">
+            <div>
+                <div class="cover-photo">
+            </div>
+            <div class="brief-desc">
+                <div class="desc">PROJECT: MedTime Medicine Tracking</div>
+                <div class="desc">ROLE: UX Designer + Researcher</div>
+                <div class="desc">TIMELINE: July 2022</div>
+            </div>
+        </div>
+        <div class="case-study-content">
+            <div class="heading">
+                Project Overview
+            </div>
+            <div class="body">
+                Many people who have to take medicine end up forgetting to take it because they do not have a system set up to remind them. This could lead to serious consequences. MedTime is an app that reminds people to take their medication on time. This app will be helpful to those who suffer from forgetting to take their medicine. 
+
+            </div>
+            <div class="heading">
+                Understanding Users
+            </div>
+            
+            <div class="body">
+                To work towards understanding the users I am designing for, I did research by formulating personas and conducted competitive audits as part of my ideation process. I decided that there would be two main user groups: those who would access the app on their mobile devices and those who would use website versions.
+
+            </div>
+            <div class="heading">
+                Crafting Personas
+            </div>
+            <div>
+                <div class="persona">
+                </div>
+            </div>
+            <div class="heading">
+                Paper to Digital
+            </div>
+            <div class="paper-wireframes">
+                <div class="body">
+                    I sketched multiple iterations of paper wireframes for multiple screens to get started with the design. I put stars next to any features I might consider keeping in the next iteration of the designs.
+
+                </div>
+                <img class="paper-drawing" src="medtime-paper.jpg">
+            </div>
+            
+            <div class="body" style="margin-top: 20px; margin-bottom: 5px;">
+                After creating these wireframes, I digitized them with Figma and turned wireframes into working mid-fidelity prototypes.
+            </div>
+            <img class="paper-lofi" src="medtime-lofi.png">
+            <form>
+                <button formaction="medtime-case-study.html" class="view-prototype">
+                    VIEW LO-FI PROTOTYPE                                </button>
+            </form>
+            
+            <div class="heading">
+                User Testing
+            </div>
+            <div class="body">
+                After building the mid-fidelity prototype, I used it to conduct a usability study, and from it, I gained many new findings about how to improve my designs:
+
+                <div class="bullets">
+                    <li>The two add buttons on the home screen caused confusing navigation for most users
+
+                    </li>
+
+                    <li>The lack of a mark all as done button creates inconvenience for users
+
+                    </li>
+                    
+                    <li>Although the primary add button is large, it is not the most visible because it lacks contrast
+
+                    </li>
+                    
+                </div>
+            </div>
+            <div class="heading">
+                Making Changes
+            </div>
+            
+            <div class="body">
+                After conducting both usability studies, I made some changes to my high-fidelity prototype!
+            </div>
+            <div class="change-1">
+                <div class="body-change">
+                    <strong>1. Navigation and User Flow
+                    </strong>
+    
+                    <p>I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.
+                    </p>
+                </div>
+                <div class="changes">
+                    <img class="mockup" src="medtime-home-lo.png">
+                    <div class="arrow">&#8594</div>
+                    <img class="mockup" src="medtime-home-hi.png">
+                </div>
+            </div>
+            <div class="change-2">
+                <div class="body-change">
+                    <strong>2. Customization Options
+
+                    </strong> 
+
+                    <p>Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.
+
+                    </p>      
+                </div>
+                <div class="changes">
+                    <img class="mockup" src="medtime-search-lo.png">
+                    <div class="arrow">&#8594</div>
+                    <img class="mockup" src="customize.png">
+                </div>
+                
+            </div>
+            
+            <div class="heading">
+                The Design System
+            </div>
+            <div class="design-sys">
+                <img class="design-system" src="medtime-design-system.png">
+            </div>
+            <div class="body">
+                
+            </div>
+            <div class="heading">
+                Final Product
+            </div>
+            <div class="final-mockups">
+                <img class="mockup-pic" src="medtime-home-hi.png">
+                <img class="mockup-pic" src="search.png">
+                <img class="mockup-pic" src="options.png">
+                <img class="mockup-pic" src="selection.png">
+            </div>
+            <form>
+                <button formaction="medtime-case-study.html" class="view-prototype">
+                    VIEW HI-FI PROTOTYPE                                </button>
+            </form>
+            
+            <div class="body">
+                
+            </div>
+            <div class="heading">
+                And a website too!
+            </div>
+            <div class="body">
+                Now that I have created a dedicated mobile app for MedTime. It would be good to have a web version of it as well. The web version is a responsive web design that adapts to different screen sizes, making on-the-go reminders even easier to achieve.
+            </div>
+            <div class="web-mockups">
+                <img class="mockup-pic-2" src="ipad-medtime.png">
+                <img class="mockup-pic-2" src="laptop-medtime.png">
+            </div>
+            <form>
+                <button formaction="medtime-case-study.html" class="view-prototype">
+                    VIEW WEB PROTOTYPE                                </button>
+            </form>
+            <div class="heading">
+                Accessibility
+            </div>
+            
+            <div class="body">
+               <strong>1. High Contrast Colors            </strong> 
+<p>In my design, I included high contrast colors and bolded fonts for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.
+</p>
+<strong>2. Navigation</strong>
+<p>I placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks without navigation issues.
+</p>
+</div>
+            <div class="heading">
+                Takeaways
+            </div>
+            
+            <div class="body">
+               <strong>What I Learned:</strong> 
+
+<p>
+    I learned that designing for laptop and tablet are quite similar experiences because of their similar proportions. However, I thought that mobile apps and mobile sites would basically be the same, but there were many different considerations I had to make to transform the app into a mobile website design.
+
+</p>            </div>
+        </div>
+        
+    </body>
+</html>

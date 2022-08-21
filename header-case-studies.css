@@ -309,6 +309,7 @@ a {
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
     cursor: pointer;
     font-family: roboto , arial;
+    margin-top: 30px;
 }
 .view-prototype:hover {
     color: white;
@@ -377,11 +378,20 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .mockup-pic {
     width: 15vw;
     margin: 0.5em;
 }
+
+.mockup, .mockup-pic {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.34);
+}
+
+
 @media (max-width: 700px) {
     .cover-photo {
         height: 50vh;
@@ -412,9 +422,16 @@ li {
 .design-system {
     width: 70vw;
 }
+
+.mockup-pic {
+    width: 20vw;
+}
 }
 @media (max-width:600px) {
-      
+            
+.design-system {
+    width: 80vw;
+}
     .body-change {
         width: 65vw;
         text-align: center;
@@ -428,17 +445,22 @@ li {
     }
 
     .arrow {
-        opacity: 0;
+        opacity: 1;
+        font-size: 20px;
     }
     .change-1, .change-2 {
         display: block;
     }
     .changes {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     .mockup {
-        width: 60vw;
-        margin-bottom: 2rem;
+        width: 30vw;
+        display: inline;
     }
+    
+.mockup-pic {
+    width: 40vw;
+}
 }

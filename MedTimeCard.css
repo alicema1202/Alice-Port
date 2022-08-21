@@ -61,7 +61,8 @@
     flex-direction: column;
     border-style: solid;
     border-width: 3px;
-    border-color: rgba(255, 255, 255, 0.332);
+    /*border-color: rgba(255, 255, 255, 0.332);*/
+    border: none;
     
 }
 .logo-container-medtime {
@@ -149,6 +150,7 @@
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
     cursor: pointer;
     font-family: josefin sans , arial;
+    margin-top: 15px;
 }
 .container-medtime:hover .view-case-study {
     bottom: -100px;

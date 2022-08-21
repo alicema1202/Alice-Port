@@ -1,17 +1,19 @@
 .projects {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
+    top: 85vh;
 }
 .h1 {
     z-index: 200;
-    font-size: 30px;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
     color: white;
     font-family: Roboto Mono, Arial;
     position: absolute;
-    top: 85vh;
 }
 
 
@@ -23,8 +25,7 @@
     transform: scale(70%);
     transform-origin:top;
     position: absolute;
-    margin: 0;
-    top: 95vh;
+    margin-top: calc(2rem + 5vh);
 }
 
 @media (min-width:2000px) and (max-width: 7000px) {

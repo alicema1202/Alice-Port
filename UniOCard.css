@@ -10,7 +10,7 @@
 }
 .container-unio .left {
     position: relative;
-    left: -300px;
+    left: -180px;
     top: -200px;
     width: 134px;
     transform: rotate(23deg);
@@ -28,7 +28,7 @@
 
 .container-unio .right {
     position: relative;
-    right: -400px;
+    right: -360px;
     top: -200px;
     width: 134px;
     transform: rotate(-23deg);
@@ -60,7 +60,7 @@
     flex-direction: column;
     border-style: solid;
     border-width: 3px;
-    border-color: rgba(255, 255, 255, 0.332);
+    /*border-color: rgba(255, 255, 255, 0.332);*/
     
 }
 .logo-container-unio {
@@ -89,44 +89,44 @@
     position: absolute;
     top: 240px;
     left: -400px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
 .background-text-unio .background-text-1 {
     position: relative;
     left: -30px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
 .container-unio:hover .background-text-2 {
     left: -40px;
     top: 200px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 }
 .container-unio .background-text-2 {
     left: -200px;
     top: 240px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
 .container-unio:hover .background-text-1 {
     left: -220px;
     top: -30px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
 .container-unio .background-text-1 {
     left: -30px;
     top: 10px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
 .container-unio:hover .logo-container-unio {
     bottom: 165px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 }
 .container-unio .logo-container-unio {
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 }
 .container-unio .unio-view-study {
     opacity: 1;
@@ -149,10 +149,11 @@
     cursor: pointer;
     font-family: josefin sans , arial;
     z-index: 100;
+    margin-top: 15px;
 }
 .container-unio:hover .unio-view-study {
     bottom: -100px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 }
 .unio-view-study:hover {
     color: white;
@@ -179,7 +180,7 @@
 
 }
 .container-unio:hover .laptop {
-    top: -300px;
+    top: -270px;
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
 }

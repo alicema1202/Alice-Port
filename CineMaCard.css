@@ -46,13 +46,15 @@
     overflow: hidden;
     height: 618px;
     border-radius: 24px;
+
 }
 .card-cinema {
     display: flex;
     flex-direction: column;
     border-style: solid;
     border-width: 3px;
-    border-color: rgba(255, 255, 255, 0.332);
+    /*border-color: rgba(255, 255, 255, 0.332);*/
+    border: none;
     
 }
 .logo-container-cinema {
@@ -141,6 +143,7 @@
     cursor: pointer;
     font-family: josefin sans , arial;
     z-index: 100;
+    margin-top: 15px;
 }
 .container-cinema:hover .cinema-view-study {
     bottom: -100px;
