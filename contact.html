@@ -82,6 +82,13 @@
                 form {
                     font-family: roboto, arial;
                 }
+                .row-1 {
+                    margin-top: 100px;
+                }
+                
+                .row {
+                    margin-top: 15px;
+                }
             @media (max-width: 700px) {
                 .about-me {
                     flex-direction: column;
@@ -91,6 +98,7 @@
                 }
                 .contact {
                     margin-top: 0;
+                    background-color: blue;
                 }
                 .intro-about-me {
                     width: 50vw;
@@ -98,12 +106,12 @@
                 }
                 .intro-about-me {
                     margin-right: 0vw;
+                    
                 }
                 .view-prototype {
                     opacity: 1;
-                    padding: 1em 2em 1em 2em;
                     margin-left: 0;
-                    margin: 1em;
+                    line-height: auto;
                     margin-bottom: 2em;
                     right: 0px;
                     font-weight: bold;
@@ -112,12 +120,13 @@
                     color: black;
                     border-color: rgb(0, 0, 0);
                     border-style: solid;
-                    border-width: 2px;
-                    border-radius: 30px;
+                    border-width: 1.5px;
+                    border-radius: 4rem;
                     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
                     cursor: pointer;
                     font-family: roboto , arial;
                     margin-top: 30px;
+                    font-weight: 500;
                 }
                 .view-prototype:hover {
                     color: white;
@@ -129,25 +138,30 @@
                 .view-prototype {
                     transition:0.2s;
                 }
-            
+                .contact-form {
+                    margin-top: 0;
+                }
+                .row-1 {
+                    margin-top: 20px;
+                }
             }
         </style>
     </head>
     <body>
         <div class="header-bar">
             <div class="left-section">
-                <a href="index.html" class="logo-container">
+                <a href="https://alicemadesign.com" class="logo-container">
                     ALICE MA
                 </a>
             </div>
             <div class="right-section">
                 <ul>
                     <li>
-                        <a class="hover-underline-animation" href="index.html">WORKS</a>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com">WORKS</a>
                     </li>
 
                     <li>
-                      <a class="hover-underline-animation" href="about.html">ABOUT ME</a>
+                      <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
                     </li>
 
                     <li>
@@ -155,17 +169,17 @@
                     </li>
                       
                     <li>
-                        <a class="hover-underline-animation" href="contact.html">CONTACT</a>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
                     </li>
                     
                 </ul>
             </div>
             <div class="topnav">
                 <div id="myLinks" class="nav-mobile">
-                    <div class="mobile">WORKS</div>
-                    <div class="mobile">ABOUT ME</div>
-                    <div class="mobile">RESUME</div>
-                    <div class="mobile">CONTACT</div>
+                    <a href="https://alicemadesign.com" class="mobile">WORKS</a>
+                    <a href="https://alicemadesign.com/about" class="mobile">ABOUT ME</a>
+                    <a href="https://drive.google.com/file/d/16AdJ-ySeTdpeROn8e2Yxe4EEwjAsgqNN/view" class="mobile">RESUME</a>
+                    <a href="https://alicemadesign.com/contact" class="mobile">CONTACT</a>
               </div>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                   <img id="button-icon" class="hamburger-icon" src="Hamburger-button.svg">
@@ -206,20 +220,20 @@
                     </p>
                     
                 </div>
-                <form action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
-                    <div class="row" style="margin-top: 100px;">
+                <form class="contact-form" action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
+                    <div class="row-1">
                         <label class="required" for="name">Your name:</label><br />
                         <input type="text" name="name" class="form-control" placeholder="Full Name" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
                       </div>
-                      <div class="row" style="margin-top: 15px;">
+                      <div class="row">
                         <label class="required" for="name">Your email:</label><br />
                         <input type="email" name="email" class="form-control" placeholder="Email Address" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
                       </div>
-                      <div class="row" style="margin-top: 15px;">
+                      <div class="row">
                         <label class="required" for="name">Message:</label><br />
                         <textarea placeholder="Write your message here..." class="form-control" name="message" rows="10" cols="30" required style="border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px; font-family: roboto, arial;"></textarea>
                       </div>
-                        <input class="view-prototype" type="submit" value="Send email" />
+                        <input class="view-prototype" type="submit" value="SEND" />
                         <input type="hidden" name="_next" value="https://alicemadesign.com/thankyou">
                         <input type="hidden" name="_captcha" value="false">
                </form>

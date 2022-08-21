@@ -16,7 +16,6 @@
         top:        0; 
         left:       0; 
         position:   fixed;
-        pointer-events: none;
         display: none;
         flex-direction: column;
         align-items: center;
@@ -32,6 +31,11 @@
     cursor: pointer;
     }
 
+    .topnav .nav-mobile .mobile {
+        color: white;
+        line-height: 0vh;
+        font-size: 1.5em;
+    }
     .hamburger-icon {
         top:0;
         right: 0;
