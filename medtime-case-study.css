@@ -209,14 +209,14 @@ a {
 }
 @media (max-width: 800px) {
     .cover-photo {
-        background-image: url("Medtime-shrink.png");
+        background-image: url("MedTime-shrink.png");
         height: 38vw;        
     }
 }
 
 @media (max-width: 600px) {
     .cover-photo {
-        background-image: url("Medtime-shrink.png");
+        background-image: url("MedTime-shrink.png");
         background-size:cover;
     }
 }
