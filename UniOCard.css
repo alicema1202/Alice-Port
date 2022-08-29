@@ -19,7 +19,7 @@
 }
 .container-unio:hover .left {
     left: 80px;
-    top: -200px;
+    top: -220px;
     width: 134px;
     transform: rotate(0deg);
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
@@ -37,7 +37,7 @@
 }
 .container-unio:hover .right {
     right: -120px;
-    top: -200px;
+    top: -220px;
     width: 134px;
     transform: rotate(0deg);
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
@@ -173,14 +173,14 @@
 
 .container-unio .laptop {
     position: relative;
-    left: 5px;
-    top: 110px;
+    left: 18px;
+    top: 90px;
     width: 450px;
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
 }
 .container-unio:hover .laptop {
-    top: -270px;
+    top: -280px;
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
 }
