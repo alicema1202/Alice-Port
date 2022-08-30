@@ -4,8 +4,17 @@ body {
     background-color: hsl(0, 0%, 100%);
     font-size: 1em;
     overflow-x: hidden;
-   
 }
+  ::-moz-selection { /* Code for Firefox */
+    color: rgb(255, 255, 255);
+    background: #c83235;
+    border: solid;
+  }
+  
+  ::selection {
+    color: rgb(255, 255, 255);
+    background: #c83235;
+  }
 @media (min-width: 2500px) {
     body {
         font-size: 2em;
@@ -28,7 +37,6 @@ body {
     border-bottom: solid rgba(0, 0, 0, 0.277) 1px;
     backdrop-filter: blur(100px);
     -webkit-backdrop-filter: blur(100px);
-
 }
 .left-section {
     display: flex;
