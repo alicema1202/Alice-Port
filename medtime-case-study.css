@@ -4,10 +4,7 @@ body {
     background-color: hsl(0, 0%, 100%);
     font-size: 1em;
     overflow-x: hidden;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+   
 }
 @media (min-width: 2500px) {
     body {
