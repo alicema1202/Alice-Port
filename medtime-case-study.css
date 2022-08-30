@@ -6,7 +6,7 @@ body {
     overflow-x: hidden;
    
 }
-::-moz-selection { /* Code for Firefox */
+  ::-moz-selection { /* Code for Firefox */
     color: rgb(255, 255, 255);
     background: #2295af;
     border: solid;
