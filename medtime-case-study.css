@@ -6,16 +6,16 @@ body {
     overflow-x: hidden;
    
 }
-  ::-moz-selection { /* Code for Firefox */
+::-moz-selection { /* Code for Firefox */
     color: rgb(255, 255, 255);
     background: #2295af;
     border: solid;
-  }
-  
-  ::selection {
+}
+
+::selection {
     color: rgb(255, 255, 255);
     background: #2295af;
-  }
+}
 @media (min-width: 2500px) {
     body {
         font-size: 2em;
@@ -408,7 +408,7 @@ li {
     order: 2;
 }
 .design-system {
-    width: 50vw;
+    width: 40vw;
 }
 .final-mockups {
     display: flex;

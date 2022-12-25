@@ -1,0 +1,15 @@
+
+.hidden {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all 1s;
+}
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
