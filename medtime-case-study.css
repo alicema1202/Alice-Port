@@ -71,18 +71,6 @@ body {
     width: 6vw;
     margin: 3vh;
 }
-@media only screen and (max-width: 400px) {
-    body {
-        font-family: Josefin Sans, Arial;
-        font-weight: 500;
-        padding-bottom: 2000px;
-        font-size: 1em;
-    }
-    
-    .hamburger-menu {
-        opacity: 1;
-    }
-}
 .logo-container {
     padding-top: 3px;
 }
