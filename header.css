@@ -69,9 +69,9 @@ body {
     object-fit:cover;
     width: 100vw;
     height: 80vh;
-    min-width: 100%;
+    min-width: 120%;
     position: relative;
-    filter: blur(13vw);
+    filter: blur(16vw);
 }
 .blob-overlay {
     position: absolute;
@@ -79,7 +79,7 @@ body {
     height: 80vh;
     background-color: rgba(0, 0, 0, 0.273);
     z-index: 1;
-    filter: blur(100px)
+    filter: blur(100px);
 }
 .blob-background {
     position: absolute;
@@ -196,7 +196,7 @@ body {
         font-family: roboto mono, monospace;
     }
     .blob {
-        filter:blur(20vw);
+        filter:blur(25vw);
         transform: scale(150%);
         opacity: 0.9;
     }

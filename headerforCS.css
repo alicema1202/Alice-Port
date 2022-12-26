@@ -33,42 +33,44 @@
         border-radius: 1px;
     }
     .one {
+        position: relative;
         width: 16px;
-        transition: transform 0.3s, display 0.3s;
-        transform: rotate(0deg);
+        transition: transform 0.5s, width 0.5s;
+        transform: rotate(0), translateY(0);
     }
     .two {
         width: 25px;
-        transition: transform 0.3s;
-        transform: rotate(0deg);
+        transition: transform 0.4s, opacity 0.3s;
     }
     .three {
         width: 16px;
         margin-left: 9px;
-        transition: transform 0.3s;
-        transform: rotate(0deg);
+        transition: transform 0.5s, width 0.5s;
+        transform: rotate(0);
     }
     .hamburger.active .two{
-        display: none;
-        margin-left: 0;
-        margin-bottom: 0;
+        /* display: none;*/
+        transition: 0.3s;
+        opacity: 0;
+        transform: translateX(-10px);
     }
     .hamburger.active .one, .hamburger.active .three{
         width: 25px;
-        margin-left: 0;
+        /* margin-left: 0; */
         transition: transform 0.3s;
     }
     .hamburger.active .one {
-        transform: rotate(45deg);
-        transform-origin: top;
+        transform: rotate(45deg) translate(3.4px, 8px);
+        transform-origin: center;
         position: relative;
-        top: 8.8px;
-        transition: transform 0.3s;
+        /* top: 8.8px; */
+        transition: transform 0.5s, width 0.5s;
     }
     .hamburger.active .three {
-        transform: rotate(-45deg);
-        transform-origin: bottom;
-        transition: transform 0.3s;
+        transform: rotate(-45deg) translate(-3.1px, -14.2px);
+        transform-origin: center;
+        position: relative;
+        transition: transform 0.5s, width 0.5s;
     }
     .nav-bar {
         z-index: -1;
