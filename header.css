@@ -46,13 +46,6 @@ body {
 .right-section ul {
     z-index: 1;
 }
-.hamburger-menu {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    margin-right: 10px;
-    opacity: 0;
-}
 .hamburger-icon {
     width: 6vw;
     margin: 3vh;
@@ -66,46 +59,8 @@ body {
         font-size: 1em;
     }
     
-    .hamburger-menu {
-        opacity: 1;
-    }
-}
-@media only screen and (min-width: 3800px) {
-    .header-bar {
-        font-size: 40px;
-        padding: 60px;
-    }
-}
-@media (max-width: 1350px) {
-    .right-section li {
-        margin-left: 0px;
-        margin-right: 3vw;
-    }
-}
-@media (max-width: 1150px) {
-    .right-section li {
-        margin-left: 0px;
-        margin-right: 2vw;
-    }
 }
 
-@media (max-width: 940px) {
-    .right-section ul {
-        opacity: 0;
-    }
-    .left-section {
-        padding-left: 30px;
-    }
-}
-
-@media (max-width: 640px) {
-    .right-section ul {
-        opacity: 0;
-    }
-    .left-section {
-        padding-left: 0px;
-    }
-}
 .logo-container {
     padding-top: 3px;
 }

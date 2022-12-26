@@ -34,20 +34,6 @@ li {
   margin: 0 2rem;
 }
 
-@media (max-width: 850px) {
-    li {
-        margin: 0 1rem;
-      }
-    .header-bar {
-        font-size: 14px;
-    }
-}
-@media (max-width: 640px) {
-    li {
-        margin: 0 0rem;
-      }
-}
-
 
 /* Underline styles */
 a {

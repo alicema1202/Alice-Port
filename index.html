@@ -11,6 +11,7 @@
         <link href="footer.css" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="index-icon.png">
         <link href="animation.css" rel="stylesheet">
+        <link href="responsiveheader.css" rel="stylesheet">
 
         <link rel="stylesheet" href="MedTimeCard.css">
         <link rel="stylesheet" href="CineMaCard.css">
@@ -38,64 +39,48 @@
         </head>
     <body>
         
-        <div class="header-bar">
+        <header class="header-bar">
             <div class="left-section">
-                <a href="https://alicemadesign.com" class="logo-container">
+                <a href="https://alicemadesign.com" class="logo-container logo">
                     ALICE MA
                 </a>
             </div>
-            <div class="right-section">
+            <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div>
+            <nav class="nav-bar">
                 <ul>
                     <li>
                         <a class="hover-underline-animation" href="https://alicemadesign.com">WORKS</a>
                     </li>
-
+    
                     <li>
-                      <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
                     </li>
-
+    
                     <li>
                         <a class="hover-underline-animation" target="_blank" href="ALICE MA UX RESUME.pdf">RESUME</a>
                     </li>
-                      
+                        
                     <li>
                         <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
                     </li>
                     
                 </ul>
-            </div>
-            <div class="topnav">
-                <div id="myLinks" class="nav-mobile">
-                    <a href="https://alicemadesign.com" class="mobile">WORKS</a>
-                    <a href="https://alicemadesign.com/about" class="mobile">ABOUT ME</a>
-                    <a href="ALICE MA UX RESUME.pdf" class="mobile">RESUME</a>
-                    <a href="https://alicemadesign.com/contact" class="mobile">CONTACT</a>
-              </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                  <img id="button-icon" class="hamburger-icon" src="Hamburger-button.svg">
-              </a>
-              </div>
-              <!-- End smartphone / tablet look -->
-              </div>
-        </div>
-        
+            </nav>
+        </header>
         <script>
-            function myFunction() {
-              var x = document.getElementById("myLinks");
-              if (x.style.display === "flex") {
-                x.style.display = "none";
-              } else {
-                x.style.display = "flex";
-              }
-              if (x.style.display === "flex") {
-                document.getElementById("button-icon").src = "Hamburger-X.svg";
-              } else {
-                document.getElementById("button-icon").src = "Hamburger-button.svg";
-              }
-              
+            hamburger = document.querySelector(".hamburger");
+            hamburger.onclick = function() {
+                navBar = document.querySelector(".nav-bar");
+                hamburger = document.querySelector(".hamburger");
+                navBar.classList.toggle("active");
+                navBar.classList.toggle("black");
+                hamburger.classList.toggle("active");
             }
-            </script>
-       
+        </script>
         
         <div class="blob-background">
             <div class="hero-text">

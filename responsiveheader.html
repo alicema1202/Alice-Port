@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="header.css" rel="stylesheet"> 
+    <link href="underlines.css" rel="stylesheet"> 
+    <link href="buttonstyles.css" rel="stylesheet"> 
+    <link href="view-works.css" rel="stylesheet">
+    <link href="hamburger-mobile.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="index-icon.png">
+    <link href="animation.css" rel="stylesheet">
+    <link href="responsiveheader.css" rel="stylesheet">    
+
+    <link rel="stylesheet" href="MedTimeCard.css">
+    <link rel="stylesheet" href="CineMaCard.css">
+    <link rel="stylesheet" href="UniOCard.css">
+    <link rel="stylesheet" href="mobile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+</head>
+<body>
+    <header class="header-bar">
+        <div class="left-section">
+            <a href="https://alicemadesign.com" class="logo-container logo">
+                ALICE MA
+            </a>
+        </div>
+        <div class="hamburger">
+            <div class="line one"></div>
+            <div class="line two"></div>
+            <div class="line three"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a class="active hover-underline-animation" href="https://alicemadesign.com">WORKS</a>
+                </li>
+
+                <li>
+                    <a class="active hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
+                </li>
+
+                <li>
+                    <a class="active hover-underline-animation" target="_blank" href="ALICE MA UX RESUME.pdf">RESUME</a>
+                </li>
+                    
+                <li>
+                    <a class="active hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("black");
+        }
+    </script>
+</body>
+</html>
