@@ -22,42 +22,42 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3rem;
     row-gap: 3rem;
-    transform: scale(70%);
+    transform: scale(0.7);
     transform-origin:top;
     position: absolute;
     margin-top: calc(2rem + 5vh);
 }
 
-@media (min-width:2000px) and (max-width: 7000px) {
+@media (min-width:1900px) and (max-width: 7000px) {
     .h1 {
         font-size: 2vw;
     }   
     .project-grid {
-        transform: scale(170%);
+        transform: scale(1);
     }
 }
 @media (max-width:1200px) {
     .project-grid {
         grid-template-columns: 1fr 1fr;
-        transform: scale(70%);
+        transform: scale(0.7);
     } 
 }
 @media (max-width:800px) {
     .project-grid {
         grid-template-columns: 1fr;
-        transform: scale(80%);
+        transform: scale(0.8);
     }   
 }
 @media only screen and (max-width:600px) {
     .project-grid {
         grid-template-columns: 1fr;
-        transform: scale(70%);
+        transform: scale(0.7);
     }   
 }
 @media (max-width:400px) {
     .project-grid {
         grid-template-columns: 1fr;
-        transform: scale(60%);
+        transform: scale(0.6);
     }
 }
 @media (width: 980px) {

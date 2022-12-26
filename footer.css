@@ -10,6 +10,12 @@
     color: white;
     line-height:10rem;
 }
+@media (min-width: 2000px) and (max-width: 7000px) {
+    .footer {
+        top: calc(75vh + 2rem + 10vh + 800px);
+    }
+}
+
 @media (max-width: 1200px) {
     .footer {
         top: calc(75vh + 2rem + 10vh + 1000px);
