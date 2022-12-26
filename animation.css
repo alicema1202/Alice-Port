@@ -2,7 +2,7 @@
 .hidden {
     opacity: 0;
     transform: translateY(70px);
-    transition: all 1s;
+    transition: ease-in-out 0.6s;
 }
 @media(prefers-reduced-motion) {
     .hidden {
