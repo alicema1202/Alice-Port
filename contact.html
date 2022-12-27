@@ -159,12 +159,99 @@
                 <div class="line two"></div>
                 <div class="line three"></div>
             </div>
+            <style>
+                .dropdown {
+                    transition: height 5s; 
+                    margin-bottom: 0vh;
+                }
+                .left {
+                    text-align: left;
+                }
+                .drop-button {
+                    margin: 0;
+                    margin-bottom: 10px;
+                    z-index: 1;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    font-weight: 300;
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    background-color: rgb(41, 41, 41);
+                    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
+                    border: none;
+                    border-radius: 0.3em;
+                    border-top-left-radius: 0;
+                    z-index: 0;
+                    margin-bottom: 3vh;
+                }
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                    top: calc(30px + 2.4ch);
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    opacity: 1;
+                }
+                .center {
+                    text-align: center;
+                }
+                .list-item {
+                    min-width: 10ch;
+                    padding: 1em 2em ;
+                    color: rgba(252, 252, 252, 0.692);
+                }
+                .list-item:hover {
+                    color: rgb(255, 255, 255);
+                    background-color: rgba(0, 0, 0, 0.595);
+                    transition: 0.2s;
+                }
+                @keyframes fadeIn {
+                    0% {opacity: 0; transform: translateY(-30px);}
+                    100% {opacity: 1; transform: translateY(0px);}
+                }
+                @keyframes fadeOut {
+                    0% {opacity: 1; transform: translateY(0px);}
+                }
+                .margins .dropdown-content {
+                    position: relative;
+                    font-weight: 500;
+                }
+                .margins .dropdown-content .list-item {
+                    color: rgba(0, 0, 0, 0.626);
+                }
+                .margins .dropdown-content .list-item:hover {
+                    color: rgb(0, 0, 0);
+                    background-color: white;
+                }
+                .margins:hover .drop-button{
+                    margin-bottom: 1vh;
+                }
+                .margins:hover .dropdown-content{
+                    box-shadow: none;
+                    top: 0;
+                    margin: 0;
+                    padding: 0;
+                    background-color: white;
+                    margin-bottom: 2vh;
+                }
+                .margins:hover .dropdown-content .list-item {
+                    margin-bottom: 0;
+                }
+                
+            </style>
             <nav class="nav-bar">
                 <ul>
-                    <li>
-                        <a class="hover-underline-animation" href="https://alicemadesign.com/home">WORKS</a>
+                    <li class="dropdown left">
+                        <a class="hover-underline-animation drop-button" href="#">WORKS</a>
+                        <div class="dropdown-content">
+                            <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
+                            <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
+                            <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
+                          </div>
                     </li>
-    
+                
                     <li>
                         <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
                     </li>
@@ -176,7 +263,6 @@
                     <li>
                         <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
                     </li>
-                    
                 </ul>
             </nav>
         </header>
@@ -188,6 +274,10 @@
                 navBar.classList.toggle("active");
                 navBar.classList.toggle("black");
                 hamburger.classList.toggle("active");
+                works = document.querySelector(".dropdown");
+                works.classList.toggle("left");
+                droplist = document.querySelector(".nav-bar ul .dropdown");
+                droplist.classList.toggle("margins");
             }
         </script>
         
