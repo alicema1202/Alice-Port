@@ -3,16 +3,13 @@
     <head>
         <title>Alice Ma Design</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="header.css" rel="stylesheet"> 
+        <link href="headerB.css" rel="stylesheet"> 
         <link href="underlines.css" rel="stylesheet"> 
         <link href="buttonstyles.css" rel="stylesheet"> 
         <link href="view-works.css" rel="stylesheet">
         <link href="footer.css" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="index-icon.png">
         <link href="animation.css" rel="stylesheet">
-        <link href="splash.css" rel="stylesheet">
-
-        <link href="responsiveheader.css" rel="stylesheet">
 
         <link rel="stylesheet" href="MedTimeCard.css">
         <link rel="stylesheet" href="CineMaCard.css">
@@ -39,14 +36,10 @@
         <meta property="og:url" content="https://alicemadesign.com">
         </head>
     <body>
-        <div class="introduction">
-            <h1 class="logo-header">
-                <span class="logoo word1">ALICE MA</span><span class="logoo word2">DESIGN</span>
-            </h1>
-        </div>
+        
         <header class="header-bar">
             <div class="left-section">
-                <a href="https://alicemadesign.com" class="logo-container logo">
+                <a href="https://alicemadesign.com/home" class="logo-container logo">
                     ALICE MA
                 </a>
             </div>
@@ -58,7 +51,7 @@
             <nav class="nav-bar">
                 <ul>
                     <li>
-                        <a class="hover-underline-animation" href="https://alicemadesign.com">WORKS</a>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/home">WORKS</a>
                     </li>
     
                     <li>
@@ -86,11 +79,12 @@
                 hamburger.classList.toggle("active");
             }
         </script>
+        
         <div class="blob-background">
-            
             <div class="hero-text">
                 <div class="greeting">HI, NICE TO MEET YOU!</div>
-                <span class="intro type clip" style="--n:134;">I'm Alice, a UX Designer aiming to create an accessible and user-centered experience. I am currently studying Cognitive Science @ <i>UCSD</i>.</span>                
+                <div class="intro">I'm Alice, a UX Designer aiming to create an accessible and user-centered experience. I am currently studying Cognitive Science @ <i>UCSD</i>.</div>
+                
             </div>
             <div class="blob-overlay"></div>
             <video class="blob" playsinline autoplay loop muted>
@@ -99,7 +93,7 @@
             
         </div>
         
-        <div class="projects" id="project-block">
+        <div class="projects" style="top:85vh;" id="project-block">
             <div class="h1">
                 VIEW MY WORKS
             </div>
@@ -197,5 +191,4 @@
     </div>
     </body>
     <script src="slide.js"></script>
-    <script src="splash.js"></script>
 </html>
