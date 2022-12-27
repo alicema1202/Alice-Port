@@ -28,6 +28,7 @@ body {
     z-index: 1000;
     padding-bottom: 50px;
     position:fixed;
+    animation: slide-in 1.5s 2.5s;
 }
 .left-section {
     display: flex;
@@ -99,7 +100,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
 }
 .intro {
     font-size: 3vw;
@@ -109,6 +109,12 @@ body {
     font-weight: 400;
     text-align: center;
     line-height: 4vw;
+    transform: scale(1);
+    animation: slide-in 1.5s 2.5s; 
+}
+.projects {
+    animation: slide-in 1.5s 2.5s; 
+
 }
 .greeting {
     margin-bottom: 0px;
@@ -116,12 +122,20 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
     width: 14em;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    animation: slide-in 1.5s 2.5s, typing 2s 3s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-size: 1.5em;
     font-family: roboto mono, monospace;
+}
+
+@keyframes slide-in {
+    0% {transform: scale(1.3); filter: blur(10px);}
+    100% { transform: scale(1);}
+}
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: scale(1); }
 }
 @keyframes typing {
     from {
@@ -174,7 +188,8 @@ body {
         font-weight: 500;
         letter-spacing: 1px;
         width: 15em;
-        animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    animation: slide-in 1.5s 2.5s, typing 2s 3s steps(22), blink .5s step-end infinite alternate;
+        animation-delay: 3s;
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid;
@@ -233,7 +248,8 @@ body {
         font-weight: 500;
         letter-spacing: 1px;
         width: 15em;
-        animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    animation: slide-in 1.5s 2.5s, typing 2s 3s steps(22), blink .5s step-end infinite alternate;
+        animation-delay: 3s;
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid;
@@ -242,7 +258,7 @@ body {
     }
     .blob {
         filter:blur(25vw);
-        transform: scale(150%);
+        transform: scale(1.5);
         opacity: 0.9;
     }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+p {
+  margin:5px 0;
+}
+.type {
+  font-weight: 700;
+  font-size:35px;
+  background:linear-gradient(#000 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  background-repeat:no-repeat;
+  animation: t calc(var(--n)*.01s) linear 1 alternate;
+}
+@keyframes t{
+  from {background-size:0 200%}
+}
+.clip {
+  color:#0000;
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+.step {
+  animation-timing-function:steps(var(--n))
+}
+
+
+    </style>
+<span class="type clip" style="--n:134;">I'm Alice, a UX Designer aiming to create an accessible and user-centered experience. I am currently studying Cognitive Science @ <i>UCSD</i>.</span>
+</body>
+</html>

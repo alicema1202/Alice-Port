@@ -28,7 +28,7 @@
 
 .container-unio .right {
     position: relative;
-    right: -360px;
+    right: -380px;
     top: -200px;
     width: 134px;
     transform: rotate(-23deg);
@@ -60,6 +60,7 @@
     flex-direction: column;
     border-style: solid;
     border-width: 3px;
+    border: none!important;
     /*border-color: rgba(255, 255, 255, 0.332);*/
     
 }
