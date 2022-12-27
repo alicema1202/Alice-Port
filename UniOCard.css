@@ -145,6 +145,8 @@
     border-style: solid;
     border-width: 5px;
     border-radius: 30px;
+    padding: 0;
+    padding-top: 3px;
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.15);
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
     cursor: pointer;
