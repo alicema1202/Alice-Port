@@ -76,6 +76,9 @@
                     animation: fadeIn 0.5s 0s 1;
                     opacity: 1;
                 }
+                .dropdown:hover {
+                    text-align: right;
+                }
                 .center {
                     text-align: center;
                 }
@@ -85,7 +88,6 @@
                 }
                 .list-item:hover {
                     color: white;
-                    min-width: 10ch;
                     transition: 0.2s;
                 }
                 @keyframes fadeIn {
@@ -95,9 +97,15 @@
                 @keyframes fadeOut {
                     0% {opacity: 1; transform: translateY(0px);}
                 }
-                .margins:hover .drop-button{
-                    margin-bottom: 2vh;
+                @media (max-width:900px) {
+                    .margins:hover .drop-button{
+                        margin-bottom: 2vh;
+                    }
+                    .dropdown:hover {
+                        text-align: center;
+                    }  
                 }
+                
             </style>
             <nav class="nav-bar">
                 <ul>
