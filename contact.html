@@ -163,6 +163,7 @@
                 .dropdown {
                     transition: height 5s; 
                     margin-bottom: 0vh;
+                    text-align: left;
                 }
                 .left {
                     text-align: left;
@@ -174,9 +175,9 @@
                 }
                 .dropdown-content {
                     display: none;
-                    overflow: hidden;
                     position: absolute;
                     top: 0;
+                    overflow: hidden;
                     font-weight: 400;
                     transition: opacity 0.5s, transform 0.5s;
                     animation: fadeIn 0.5s 0s 1;
@@ -187,6 +188,7 @@
                     border-top-left-radius: 0;
                     z-index: 0;
                     margin-bottom: 3vh;
+                    padding-top: 0vh;
                 }
                 .dropdown:hover .dropdown-content {
                     display: block;
@@ -195,6 +197,7 @@
                     animation: fadeIn 0.5s 0s 1;
                     opacity: 1;
                 }
+                
                 .center {
                     text-align: center;
                 }
@@ -202,6 +205,12 @@
                     min-width: 10ch;
                     padding: 1em 2em;
                     color: rgba(252, 252, 252, 0.692);
+                }
+                @media only screen and (min-width: 900px){
+                    .list-item {
+                        position: relative;
+                        top: -1.1ch;
+                    }
                 }
                 .list-item:hover {
                     color: rgb(255, 255, 255);
@@ -220,13 +229,20 @@
                     margin-right: calc(2rem - 1.88ch);
                 } */
                 @media only screen and (max-width: 900px) {
+                    .dropdown {
+                        margin-bottom: 0;
+                    }
                     .margins:hover {
                         margin-right: 2rem;
                         margin-left: 2rem;
                     }
                     .margins .dropdown-content {
-                    position: relative;
-                    font-weight: 500;
+                        position: relative;
+                        font-weight: 500;
+                        margin-bottom: 1ch;
+                    }
+                    .dropdown:hover .drop-button {
+                        margin-bottom: 0;
                     }
                     .margins .dropdown-content .list-item {
                         color: rgba(0, 0, 0, 0.626);
@@ -237,9 +253,9 @@
                         color: rgb(0, 0, 0);
                         background-color: rgba(255, 255, 255, 0);
                     }
-                    .margins:hover .drop-button{
+                    /* .drop-button:hover {
                         margin-bottom: 1vh;
-                    }
+                    } */
                     .margins:hover .dropdown-content{
                         box-shadow: none;
                         top: 0;
@@ -259,12 +275,13 @@
             <nav class="nav-bar">
                 <ul>
                     <li class="dropdown left">
-                        <a class="hover-underline-animation drop-button" href="#">WORKS</a>
-                        <div class="dropdown-content">
-                            <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
-                            <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
-                            <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
-                          </div>
+                        <a class="hover-underline-animation drop-button" href="#">WORKS
+                            <div class="dropdown-content">
+                                <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
+                                <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
+                                <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
+                            </div>
+                        </a>
                     </li>
                 
                     <li>
