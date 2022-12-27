@@ -6,7 +6,7 @@
     right: -10px;
 }
 .header-bar {
-    padding-bottom: 23px!important;
+    padding-bottom: 30px!important;
 }
 .logo {
     color: black;
@@ -22,7 +22,7 @@
 @media only screen and (max-width: 900px) {
     .header-bar {
         padding: 35px;
-        padding-bottom: 10px;
+        padding-bottom: 15px!important;
     }
     .hamburger {
         display: block;

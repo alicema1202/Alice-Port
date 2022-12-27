@@ -190,14 +190,16 @@
                     margin-bottom: 3vh;
                     padding-top: 0vh;
                 }
-                .dropdown:hover .dropdown-content {
+                .drop-button:hover .dropdown-content {
                     display: block;
                     top: calc(30px + 2.4ch);
                     transition: opacity 0.5s, transform 0.5s;
                     animation: fadeIn 0.5s 0s 1;
                     opacity: 1;
                 }
-                
+                .drop-button:hover .removepad {
+                    top: 2.4ch;
+                }
                 .center {
                     text-align: center;
                 }
@@ -209,7 +211,6 @@
                 @media only screen and (min-width: 900px){
                     .list-item {
                         position: relative;
-                        top: -1.1ch;
                     }
                 }
                 .list-item:hover {
@@ -224,17 +225,27 @@
                 @keyframes fadeOut {
                     0% {opacity: 1; transform: translateY(0px);}
                 }
-                
+                .drop-button {
+                    padding: 0.3em 0;
+                    margin-bottom: 0;
+                }
                 /* .margins:hover {
                     margin-right: calc(2rem - 1.88ch);
                 } */
                 @media only screen and (max-width: 900px) {
+                    .drop-button {
+                        margin-bottom: 6vh;
+                        z-index: 10;
+                    }
                     .dropdown {
                         margin-bottom: 0;
                     }
                     .margins:hover {
                         margin-right: 2rem;
                         margin-left: 2rem;
+                    }
+                    .drop-button {
+                        font-size: 2.5vh;
                     }
                     .margins .dropdown-content {
                         position: relative;
@@ -244,13 +255,16 @@
                     .dropdown:hover .drop-button {
                         margin-bottom: 0;
                     }
+                    .drop-button:hover .dropdown-content {
+                        font-size: large;
+                        background-color: rgba(255, 255, 255, 0);
+                    }
                     .margins .dropdown-content .list-item {
                         color: rgba(0, 0, 0, 0.626);
-                        margin: 0;
+                        margin-top: 0.5ch;
                         padding: 0.5em;
                     }
                     .margins .dropdown-content .list-item:hover {
-                        color: rgb(0, 0, 0);
                         background-color: rgba(255, 255, 255, 0);
                     }
                     /* .drop-button:hover {
@@ -261,7 +275,7 @@
                         top: 0;
                         margin: 0;
                         padding: 0;
-                        background-color: rgba(255, 255, 255, 0);
+                        /* background-color: rgba(255, 255, 255, 0); */
                         margin-bottom: 2vh;
                     }
                     .margins:hover .dropdown-content .list-item {
@@ -275,13 +289,13 @@
             <nav class="nav-bar">
                 <ul>
                     <li class="dropdown left">
-                        <a class="hover-underline-animation drop-button" href="#">WORKS
-                            <div class="dropdown-content">
+                        <p class="hover-underline-animation drop-button" onclick="hover()">WORKS
+                            <b class="dropdown-content removepad">
                                 <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
                                 <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
                                 <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
-                            </div>
-                        </a>
+                            </b>
+                        </p>
                     </li>
                 
                     <li>
@@ -310,6 +324,10 @@
                 works.classList.toggle("left");
                 droplist = document.querySelector(".nav-bar ul .dropdown");
                 droplist.classList.toggle("margins");
+                button = document.querySelector(".drop-button");
+                button.classList.toggle("hover-underline-animation")
+                contents = document.querySelector(".dropdown-content");
+                contents.classList.toggle("removepad");
             }
         </script>
         
