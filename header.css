@@ -81,7 +81,7 @@ body {
     height: 80vh;
     background-color: rgba(0, 0, 0, 0.273);
     z-index: 1;
-    filter: blur(100px);
+    /* filter: blur(100px); */
 }
 .blob-background {
     position: absolute;

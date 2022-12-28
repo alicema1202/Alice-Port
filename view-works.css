@@ -29,7 +29,7 @@
     margin-top: calc(5rem);
 }
 
-@media (min-width:1900px) and (max-width: 7000px) {
+@media (min-width:2300px) and (max-width: 7000px) {
     .h1 {
         font-size: 2vw;
     }   
