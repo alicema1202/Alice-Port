@@ -17,15 +17,6 @@
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
 }
-.container-unio:hover .left {
-    left: 80px;
-    top: -220px;
-    width: 134px;
-    transform: rotate(0deg);
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
-
-}
-
 .container-unio .right {
     position: relative;
     right: -380px;
@@ -35,14 +26,7 @@
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
 }
-.container-unio:hover .right {
-    right: -120px;
-    top: -220px;
-    width: 134px;
-    transform: rotate(0deg);
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
-}
 .container-unio {
     position: relative;
     width: 465px;
@@ -91,28 +75,16 @@
     top: 240px;
     left: -400px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
 }
 .background-text-unio .background-text-1 {
     position: relative;
     left: -30px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
 
-}
-.container-unio:hover .background-text-2 {
-    left: -40px;
-    top: 200px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
 .container-unio .background-text-2 {
     left: -200px;
     top: 240px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
-}
-.container-unio:hover .background-text-1 {
-    left: -220px;
-    top: -30px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
@@ -120,12 +92,54 @@
     left: -30px;
     top: 10px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+}
+@media only screen and (min-width: 500px) {
+    .container-unio:hover .left {
+        left: 80px;
+        top: -220px;
+        width: 134px;
+        transform: rotate(0deg);
+        transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-unio:hover .right {
+        right: -120px;
+        top: -220px;
+        width: 134px;
+        transform: rotate(0deg);
+        transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-unio:hover .background-text-2 {
+        left: -40px;
+        top: 200px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-unio:hover .background-text-1 {
+        left: -220px;
+        top: -30px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-unio:hover .logo-container-unio {
+        bottom: 165px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-unio:hover .unio-view-study {
+        bottom: -100px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .unio-view-study:hover {
+        color: white;
+        background-color:#1C183E;
+        border-color: #1C183E;
+        transition:none;
+        box-shadow: none;
+        cursor:pointer;
+    }
+    .container-unio:hover .laptop {
+        top: -280px;
+        transition: 0.5s cubic-bezier(.1,.53,.66,.96);
+    }
+}
 
-}
-.container-unio:hover .logo-container-unio {
-    bottom: 165px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
 .container-unio .logo-container-unio {
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 }
@@ -154,18 +168,6 @@
     z-index: 100;
     margin-top: 15px;
 }
-.container-unio:hover .unio-view-study {
-    bottom: -100px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
-.unio-view-study:hover {
-    color: white;
-    background-color:#1C183E;
-    border-color: #1C183E;
-    transition:none;
-    box-shadow: none;
-    cursor:pointer;
-}
 .unio-view-study {
     transition: none;
 }
@@ -179,11 +181,6 @@
     left: 18px;
     top: 90px;
     width: 450px;
-    transition: 0.5s cubic-bezier(.1,.53,.66,.96);
-
-}
-.container-unio:hover .laptop {
-    top: -280px;
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
 
 }

@@ -15,26 +15,12 @@
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
-.container-cinema:hover .left {
-    left: -70px;
-    top: 0px;
-    width: 300px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
-}
 .container-cinema .right {
     position: relative;
     right: -150px;
     top: -300px;
     width: 300px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
-.container-cinema:hover .right {
-    right: -250px;
-    top: -210px;
-    width: 300px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
 }
 .container-cinema {
     position: relative;
@@ -92,20 +78,9 @@
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
-.container-cinema:hover .background-text-2 {
-    left: -40px;
-    top: 200px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
 .container-cinema .background-text-2 {
     left: -200px;
     top: 240px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
-}
-.container-cinema:hover .background-text-1 {
-    left: -220px;
-    top: -30px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
@@ -115,13 +90,7 @@
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
 
 }
-.container-cinema:hover .logo-container-cinema {
-    bottom: 155px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
-.container-cinema .logo-container-cinema {
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
+
 .container-cinema .cinema-view-study {
     opacity: 1;
     position: relative;
@@ -147,22 +116,54 @@
     z-index: 100;
     margin-top: 15px;
 }
-.container-cinema:hover .cinema-view-study {
-    bottom: -100px;
-    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-}
-.cinema-view-study:hover {
-    color: white;
-    background-color:#1B1D2B;
-    border-color: #1B1D2B;
-    transition:none;
-    box-shadow: none;
-    cursor:pointer;
-}
 .cinema-view-study {
     transition: none;
 }
 
 .placeholder {
     opacity: 0;
+}
+@media only screen and (min-width: 500px) {
+    .container-cinema:hover .logo-container-cinema {
+        bottom: 155px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-cinema .logo-container-cinema {
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-cinema:hover .cinema-view-study {
+        bottom: -100px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .cinema-view-study:hover {
+        color: white;
+        background-color:#1B1D2B;
+        border-color: #1B1D2B;
+        transition:none;
+        box-shadow: none;
+        cursor:pointer;
+    }
+    .container-cinema:hover .background-text-1 {
+        left: -220px;
+        top: -30px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    
+    }
+    .container-cinema:hover .background-text-2 {
+        left: -40px;
+        top: 200px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-cinema:hover .right {
+        right: -250px;
+        top: -210px;
+        width: 300px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }
+    .container-cinema:hover .left {
+        left: -70px;
+        top: 0px;
+        width: 300px;
+        transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    }  
 }
