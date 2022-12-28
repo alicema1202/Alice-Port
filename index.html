@@ -217,12 +217,25 @@
                 
             </div>
             <div class="blob-overlay"></div>
-            <video class="blob" playsinline autoplay loop muted>
+            <video class="blob" playsinline loop muted autoplay>
                 <source src="blob-video.mp4">
             </video>
             
         </div>
-        
+        <!-- <script>
+            window.onload = () => {
+                let reducedMotion = matchMedia('(prefers-reduced-motion)').matches;
+                let GIFvids = document.querySelectorAll('video[muted][autoplay]');
+
+            if (reducedMotion) {
+                for (let video of GIFvids) {
+                    video.pause();
+                }
+
+            window.rm.textContent = 'enabled';
+            }
+        };
+        </script> -->
         <div class="projects" id="project-block">
             <div class="h1">
                 VIEW MY WORKS
