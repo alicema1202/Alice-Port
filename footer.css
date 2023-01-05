@@ -19,7 +19,7 @@
 
 @media (max-width: 1200px) {
     .footer {
-        top: calc(75vh + 2rem + 10vh + 1000px);
+        top: calc(75vh + 2rem + 10vh + 1050px);
     }
 }
 
