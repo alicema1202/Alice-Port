@@ -29,12 +29,33 @@
     margin-top: calc(5rem);
 }
 
-@media (min-width:2300px) and (max-width: 7000px) {
+@media (min-width:2400px) and (max-width: 7000px) {
     .h1 {
-        font-size: 2vw;
+        font-size: 2em;
+        margin-top: 0.5ch;
     }   
+    .projects {
+        margin-top: 2ch;
+    }
     .project-grid {
-        transform: scale(1);
+        transform: scale(1.5);
+        margin-top: 5em;
+    }
+}
+@media (min-width: 3500px) {
+    .header-bar {
+        font-size: 2em;
+        padding-top: 2em;
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+    .nav-bar a{
+        margin-left: 1.5em;
+    }
+}
+@media (min-width: 2500px) {
+    .projects {
+        margin-top: 2.5vw;
     }
 }
 @media (max-width:1200px) {
