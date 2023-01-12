@@ -295,11 +295,11 @@ a {
     color: white;
     background-color:#3e3190;
     border-color: #3e3190;
-    transition:0.2s;
+    transition: 0.2s;
     box-shadow: none;
 }
 .view-prototype {
-    transition:0.2s;
+    transition: 0.2s;
 }
 
 li {
