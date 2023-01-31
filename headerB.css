@@ -9,11 +9,7 @@ body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
-@media (min-width: 2500px) {
-    body {
-        font-size: 2em;
-    }
-}
+
 .header-bar {
     display: flex;
     background: linear-gradient(180deg, rgba(17, 17, 17, 0.564),#11111100);
@@ -60,7 +56,6 @@ body {
     }
     
 }
-
 .logo-container {
     padding-top: 3px;
 }
@@ -244,5 +239,16 @@ body {
         filter:blur(25vw);
         transform: scale(150%);
         opacity: 0.9;
+    }
+}
+@media (min-width: 2500px) {
+    body {
+        font-size: 1.5em;
+    }
+    .header-bar {
+        padding: 60px;
+    }
+    .nav-bar li {
+        padding-left: 40px;
     }
 }

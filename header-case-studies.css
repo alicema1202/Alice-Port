@@ -15,11 +15,7 @@ body {
     color: rgb(255, 255, 255);
     background: #c83235;
   }
-@media (min-width: 2500px) {
-    body {
-        font-size: 2em;
-    }
-}
+
 .header-bar {
     display: flex;
     background: rgba(255, 255, 255, 0.693);
@@ -58,6 +54,14 @@ body {
 }
 .right-section ul {
     z-index: 1;
+}
+@media (min-width: 2500px) {
+    body {
+        font-size: 1.3em;
+    }
+    .nav-bar li {
+        padding-left: 40px;
+    }
 }
 .hamburger-icon {
     width: 6vw;

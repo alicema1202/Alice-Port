@@ -16,11 +16,7 @@ body {
     color: rgb(255, 255, 255);
     background: #6d5bde;
   }
-@media (min-width: 2500px) {
-    body {
-        font-size: 2em;
-    }
-}
+
 .header-bar {
     display: flex;
     background: rgba(255, 255, 255, 0.715);
@@ -43,6 +39,15 @@ body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 
+}
+
+@media (min-width: 2500px) {
+    body {
+        font-size: 1.3em;
+    }
+    .nav-bar li {
+        padding-left: 40px;
+    }
 }
 .left-section {
     display: flex;
