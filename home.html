@@ -50,6 +50,13 @@
                 <div class="line three"></div>
             </div>
             <style>
+                /* .sticky {
+                    background-color: rgba(18, 18, 18, 0.905);
+                    padding-bottom: 20px;
+                    padding-top: 30px;
+                    backdrop-filter: blur(100px);
+                    transition: 0.2s;
+                } */
                 .dropdown {
                     transition: height 5s; 
                     margin-bottom: 0vh;
@@ -203,6 +210,11 @@
                 contents = document.querySelector(".dropdown-content");
                 contents.classList.toggle("removepad");
             }
+
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY>0)
+            })
         </script>
         
         <div class="blob-background">

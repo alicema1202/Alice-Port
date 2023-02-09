@@ -11,6 +11,7 @@ body {
 }
 
 .header-bar {
+    transition: 0.2s;
     display: flex;
     background: linear-gradient(180deg, rgba(17, 17, 17, 0.564),#11111100);
     padding: 40px;
