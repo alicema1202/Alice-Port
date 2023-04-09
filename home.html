@@ -50,13 +50,6 @@
                 <div class="line three"></div>
             </div>
             <style>
-                /* .sticky {
-                    background-color: rgba(18, 18, 18, 0.905);
-                    padding-bottom: 20px;
-                    padding-top: 30px;
-                    backdrop-filter: blur(100px);
-                    transition: 0.2s;
-                } */
                 .dropdown {
                     transition: height 5s; 
                     margin-bottom: 0vh;
@@ -170,7 +163,7 @@
             <nav class="nav-bar">
                 <ul>
                     <li class="dropdown left">
-                        <p class="drop-button" onclick="">WORKS</i>
+                        <p class="drop-button" onclick="hover()">WORKS
                             <b class="dropdown-content removepad">
                                 <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
                                 <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
@@ -210,11 +203,6 @@
                 contents = document.querySelector(".dropdown-content");
                 contents.classList.toggle("removepad");
             }
-
-            window.addEventListener("scroll", function(){
-                var header = document.querySelector("header");
-                header.classList.toggle("sticky", window.scrollY>0)
-            })
         </script>
         
         <div class="blob-background">
@@ -224,13 +212,26 @@
                 
             </div>
             <div class="blob-overlay"></div>
-            <video class="blob" playsinline autoplay loop muted>
+            <video class="blob" playsinline loop muted autoplay>
                 <source src="blob-video.mp4">
             </video>
             
         </div>
-        
-        <div class="projects" style="top:85vh;" id="project-block">
+        <!-- <script>
+            window.onload = () => {
+                let reducedMotion = matchMedia('(prefers-reduced-motion)').matches;
+                let GIFvids = document.querySelectorAll('video[muted][autoplay]');
+
+            if (reducedMotion) {
+                for (let video of GIFvids) {
+                    video.pause();
+                }
+
+            window.rm.textContent = 'enabled';
+            }
+        };
+        </script> -->
+        <div id="works" class="projects" id="project-block">
             <div class="h1">
                 VIEW MY WORKS
             </div>
@@ -262,34 +263,34 @@
                 </div>
             </a>
 
-                <a href="https://alicemadesign.com/cinema-case-study">
-                    <div class="CineMa hidden">
-                        <div class="container-cinema">
-                            <div class="card-cinema">
-                                <div class="images-cinema">
-                                    <div class="mockup-cinema">
-                                        <img class="left" src="CineMa-Left.svg">
-                                        <img class="right" src="CineMa-Right.svg">
-                                    </div>
-                                    <div class="logo-container-cinema">
-                                        <img class="logo-text" src="cinema-logo.svg">    
-                                    </div>            
+            <a href="https://alicemadesign.com/cinema-case-study">
+                <div class="CineMa hidden">
+                    <div class="container-cinema">
+                        <div class="card-cinema">
+                            <div class="images-cinema">
+                                <div class="mockup-cinema">
+                                    <img class="left" src="CineMa-Left.svg">
+                                    <img class="right" src="CineMa-Right.svg">
                                 </div>
-                                <div class="background-text-cinema">
-                                    <img class="background-text-1" src="cinema-bg-text.svg">
-                                    <img class="background-text-2" src="cinema-bg-text.svg">
-                                    <img class="placeholder" src="medtime-bg-text.svg">
-                                </div>
-                                <form>
-                                    <button formaction="cinema-case-study.html" class="cinema-view-study">
-                                        VIEW CASE STUDY
-                                    </button>
-                                </form>
+                                <div class="logo-container-cinema">
+                                    <img class="logo-text" src="cinema-logo.svg">    
+                                </div>            
                             </div>
-                        
+                            <div class="background-text-cinema">
+                                <img class="background-text-1" src="cinema-bg-text.svg">
+                                <img class="background-text-2" src="cinema-bg-text.svg">
+                                <img class="placeholder" src="medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="cinema-case-study.html" class="cinema-view-study">
+                                    VIEW CASE STUDY
+                                </button>
+                            </form>
                         </div>
+                    
                     </div>
-                </a>
+                </div>
+            </a>
 
                 
                 <a href="https://alicemadesign.com/unio-case-study">
