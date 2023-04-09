@@ -6,6 +6,7 @@
         <link href="medtime-case-study.css" rel="stylesheet"> 
         <link href="animation.css" rel="stylesheet">
         <link href="headerforCS.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,32 @@
         <link rel="shortcut icon" type="x-icon" href="medtime-favicon.png">
     </head>
     <body>
+        <a href="#top" class="back-to-top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            .back-to-top {
+                z-index: 1000;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #2295af;
+                margin: 1rem;
+                height: 4rem;
+                width: 4rem;
+                border-radius: 50%;
+            }
+            .fa-solid {
+                color: white;
+            }
+        </style>
         <header class="header-bar">
             <div class="left-section">
                 <a href="https://alicemadesign.com/home" class="logo-container logo">
