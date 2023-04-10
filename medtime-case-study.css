@@ -166,7 +166,7 @@ a {
 .cover-photo {
     background-image: url("MedTime.png");
     width: 100vw;
-    height: 38vw;
+    height: 35vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -206,9 +206,10 @@ a {
     right: 0;
     padding: 10px;
     position: absolute;
-    top: 28vw;
+    top: 26vw;
     width: 70vw;
     margin-left: 15px;
+    font-weight: 400;
 }
 @media (max-width: 800px) {
     .brief-desc {

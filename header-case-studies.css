@@ -154,7 +154,7 @@ a {
 .cover-photo {
     background-image: url("cinema-banner.png");
     width: 100vw;
-    height: 38vw;
+    height: 35vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -181,7 +181,8 @@ a {
     right: 0;
     padding: 10px;
     position: absolute;
-    top: 30vw;
+    top: 27vw;
+    font-weight: 400;
 }
 .desc {
     margin-left: 10px;
@@ -353,13 +354,13 @@ li {
     margin-top: 4rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .cover-photo {
         height: 50vh;
         width: auto;
     }   
     .brief-desc {
-        top: 35vh;
+        top: 38vh;
     } 
     
     .body {
