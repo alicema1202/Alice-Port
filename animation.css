@@ -12,3 +12,24 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #c9c9c9; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(58, 58, 58);
+    border-radius: 3px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(94, 94, 94); 
+  }
