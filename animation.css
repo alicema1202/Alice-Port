@@ -25,11 +25,13 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(58, 58, 58);
-    border-radius: 3px; 
-  }
+    background: rgb(84, 84, 84);
+    /* border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; */
+
+}
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(94, 94, 94); 
+    background: rgb(56, 56, 56); 
   }
