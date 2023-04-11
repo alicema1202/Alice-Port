@@ -2,12 +2,13 @@
     font-family: Josefin Sans, Arial;
     font-size: 23px;
     background-color: #111111;
-    display:flex;
+    display: flex;
 }
 .container-medtime {
     position: relative;
     width: 50%;
     display: flex;
+    transition: 0.3s;
 }
 .mockup {
     z-index: 100;
@@ -20,7 +21,7 @@
     transform: rotate(-20deg);
     width: 209px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
+    pointer-events: none;
 }
 
 .container-medtime .right {
@@ -30,7 +31,7 @@
     transform: rotate(20deg);
     width: 209px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
+    pointer-events: none;
 }
 
 .container-medtime {
@@ -130,7 +131,11 @@
     margin-top: 15px;
 }
 @media only screen and (min-width: 500px) {
-    .container-medtime:hover .logo-container-medtime {
+    .container-medtime:hover {
+        transform: translateY(-3%);
+        transition: 0.3s;
+    }
+    /* .container-medtime:hover .logo-container-medtime {
         bottom: 150px;
         transition: 0.3s cubic-bezier(.1,.53,.66,.96);
     }
@@ -168,7 +173,7 @@
         border-color: #ab3a3b;
         transition:none;
         box-shadow: none;
-    }
+    } */
 }
 
 .view-case-study {

@@ -1,6 +1,8 @@
 .container-cinema {
     position: relative;
     width: 50%;
+    transform: translateY(-0%);
+    transition: 0.3s;
 }
 .mockup-cinema {
     z-index: 100;
@@ -13,7 +15,7 @@
     top: 130px;
     width: 300px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-
+    pointer-events: none;
 }
 .container-cinema .right {
     position: relative;
@@ -21,6 +23,7 @@
     top: -300px;
     width: 300px;
     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+    pointer-events: none;
 }
 .container-cinema {
     position: relative;
@@ -124,7 +127,11 @@
     opacity: 0;
 }
 @media only screen and (min-width: 500px) {
-    .container-cinema:hover .logo-container-cinema {
+    .container-cinema:hover {
+        transform: translateY(-3%);
+        transition: 0.3s;
+    }
+    /* .container-cinema:hover .logo-container-cinema {
         bottom: 155px;
         transition: 0.3s cubic-bezier(.1,.53,.66,.96);
     }
@@ -165,5 +172,5 @@
         top: 0px;
         width: 300px;
         transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-    }  
+    }   */
 }

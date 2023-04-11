@@ -2,6 +2,7 @@
     position: relative;
     width: 50%;
     display: flex;
+    transition: 0.3s;
 }
 .mockup-unio {
     z-index: 100;
@@ -15,7 +16,7 @@
     width: 134px;
     transform: rotate(23deg);
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
-
+    pointer-events: none;
 }
 .container-unio .right {
     position: relative;
@@ -24,7 +25,7 @@
     width: 134px;
     transform: rotate(-23deg);
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
-
+    pointer-events: none;
 }
 
 .container-unio {
@@ -135,12 +136,16 @@
     top: 90px;
     width: 450px;
     transition: 0.5s cubic-bezier(.1,.53,.66,.96);
-
+    pointer-events: none;
 }
 
 
 @media only screen and (min-width: 500px) {
-    .container-unio:hover .left {
+    .container-unio:hover {
+        transform: translateY(-3%);
+        transition: 0.3s;
+    }
+    /* .container-unio:hover .left {
         left: 80px;
         top: -220px;
         width: 134px;
@@ -183,5 +188,5 @@
     .container-unio:hover .laptop {
         top: -280px;
         transition: 0.5s cubic-bezier(.1,.53,.66,.96);
-    }
+    } */
 }
