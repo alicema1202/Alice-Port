@@ -13,11 +13,6 @@
     transform: translateX(0);
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 8px;
-}
-  
   /* Track */
   ::-webkit-scrollbar-track {
     background: #c9c9c9; 
@@ -30,5 +25,22 @@
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(56, 56, 56); 
+    background: rgb(108, 108, 108); 
   }
+
+  /* ===== Scrollbar CSS ===== */
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e7e7e7;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 3px solid #e7e7e7;
+  }
+
