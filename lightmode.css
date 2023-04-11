@@ -1,7 +1,7 @@
 body {
     font-family: Josefin Sans, Arial;
     font-weight: 500;
-    background-color: rgb(18, 18, 18);
+    background-color: rgb(255, 255, 255);
     font-size: 1em;
     overflow-x: hidden;
     -webkit-user-select: none; /* Safari */        
@@ -9,18 +9,23 @@ body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
-
+.hover-underline-animation {
+    color: rgb(36, 36, 36)!important;
+}
+.h1 {
+    color: rgb(36, 36, 36)!important;
+}
 .header-bar {
     transition: 0.2s;
     display: flex;
-    background: linear-gradient(180deg, rgba(17, 17, 17, 0.564),#11111100);
+    background: linear-gradient(180deg, rgba(253, 253, 253, 0.564),#ffffff00);
     padding: 40px;
     width: 100vw;
     position: absolute;
     top:0;
     left:0;
     right:0;
-    color: white;
+    color: rgb(36, 36, 36)!important;
     letter-spacing: 0.5px;
     z-index: 1000;
     padding-bottom: 50px;
@@ -61,7 +66,6 @@ body {
     padding-top: 3px;
 }
 .blob {
-    mix-blend-mode: screen;
     object-fit:cover;
     width: 100vw;
     height: 80vh;
@@ -73,9 +77,9 @@ body {
     position: absolute;
     width: 100vw;
     height: 80vh;
-    background-color: rgba(0, 0, 0, 0.112);
+    background-color: rgba(255, 255, 255, 0);
     z-index: 1;
-    filter: blur(100px);
+    filter: blur(0);
 }
 .blob-background {
     position: absolute;
@@ -88,7 +92,7 @@ body {
 .hero-text {
     position: absolute;
     z-index: 2;
-    color: white;
+    color: rgb(36, 36, 36);
     width: 100vw;
     height: 80vh;
     display: flex;

@@ -79,7 +79,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 80vh;
-    background-color: rgba(0, 0, 0, 0.273);
+    background-color: rgba(0, 0, 0, 0.112);
     z-index: 1;
     /* filter: blur(100px); */
 }
