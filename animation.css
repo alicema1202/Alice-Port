@@ -32,15 +32,15 @@
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 12px;
+    width: 18px;
   }
 
   *::-webkit-scrollbar-track {
-    background: #e7e7e7;
+    background: #eeeeee;
   }
 
   *::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    border: 3px solid #e7e7e7;
+    border: 4.7px solid #eeeeee;
   }
 
