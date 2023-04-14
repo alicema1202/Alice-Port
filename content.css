@@ -1,0 +1,56 @@
+h1 {
+    font-size: 4.5ch;
+    line-height: 2ch;
+    margin-left: 0;
+    margin-top: 0.8ch;
+    margin-bottom: 0.5ch;
+    position: relative;
+    left: -0.1ch;
+    color: #09677C;  
+}
+
+h2 {
+    font-size: 1.3ch;
+    color: gray;
+    font-weight: 500;
+    letter-spacing: 0.3ch;
+}
+
+.description {
+    line-height: 3ch;
+    font-family: roboto, arial;
+    font-weight: 400;
+    margin-top: 0;
+    letter-spacing: 0.05ch;
+    font-size: 1.8ch;
+}
+
+.content {
+    padding-top: 2.5ch;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 3ch;
+        line-height: 2ch;
+    }
+}
+
+.button {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.persona {
+    background-image: url("bill-persona.png");
+    background-size: contain;
+    background-position: left;
+}

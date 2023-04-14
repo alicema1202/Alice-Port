@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MedTime: Get Medicine Reminders</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="medtime-case-study.css" rel="stylesheet"> 
+        <link href="animation.css" rel="stylesheet">
+        <link href="headerforCS.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+        <link href="content.css" rel="stylesheet"> 
+
+        <meta name="msapplication-TileImage" content="MEDTIME-THUMBNAIL.png">
+        <meta property="og:image" itemprop="image" content="MEDTIME-THUMBNAIL.png">
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/png">
+        
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="201">
+        
+        <meta property="og:url" content="https://alicemadesign.com/medtime-case-study">
+        <meta property="og:description" content="Many people who have to take medicine end up forgetting to take it because they do not have a system set up to remind them. This could lead to serious consequences. MedTime is an app that reminds people to take their medication on time. This app will be helpful to those who suffer from forgetting to take their medicine.">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="x-icon" href="medtime-favicon.png">
+    </head>
+    <body onscroll="appear()">
+        <a href="#top" class="back-to-top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <script>
+            function appear() {
+                document.querySelector(".back-to-top").style.opacity = "1";
+            }
+        </script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            .back-to-top {
+                transition: opacity 0.3s;
+                opacity: 0;
+                z-index: 1000;
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #2295af;
+                margin: 1rem;
+                height: 4rem;
+                width: 4rem;
+                border-radius: 50%;
+            }
+            
+            .fa-solid {
+                color: white;
+            }
+        </style>
+        <header class="header-bar">
+            <div class="left-section">
+                <a href="https://alicemadesign.com/home" class="logo-container logo">
+                    ALICE MA
+                </a>
+            </div>
+            <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div>
+            <style>
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                    background: #2295af;
+                }
+                .dropdown {
+                    transition: height 5s; 
+                    margin-bottom: 0vh;
+                    text-align: left;
+                }
+                .left {
+                    text-align: left;
+                }
+                .drop-button {
+                    margin: 0;
+                    margin-bottom: 10px;
+                    z-index: 1;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    overflow: hidden;
+                    font-weight: 400;
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    background-color: rgb(41, 41, 41);
+                    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
+                    border: none;
+                    border-radius: 0.3em;
+                    border-top-left-radius: 0;
+                    z-index: 10;
+                    margin-bottom: 3vh;
+                    padding-top: 0.6ch;
+                    padding-bottom: 0.6ch;
+                }
+                .drop-button:hover {
+                    cursor: pointer;
+                }
+                .drop-button:hover .dropdown-content {
+                    display: block;
+                    top: calc(30px + 2.4ch);
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    opacity: 1;
+                }
+                .drop-button:hover .removepad {
+                    top: 2.4ch;
+                }
+                .center {
+                    text-align: center;
+                }
+                .list-item {
+                    min-width: 10ch;
+                    padding: 1em 2em;
+                    color: rgba(252, 252, 252, 0.692);
+                }
+                @media only screen and (min-width: 900px){
+                    .list-item {
+                        position: relative;
+                    }
+                }
+                .list-item:hover {
+                    color: rgb(255, 255, 255);
+                    background-color: rgba(0, 0, 0, 0.595);
+                    transition: 0.2s;
+                }
+                @keyframes fadeIn {
+                    0% {opacity: 0; transform: translateY(-30px);}
+                    100% {opacity: 1; transform: translateY(0px);}
+                }
+                @keyframes fadeOut {
+                    0% {opacity: 1; transform: translateY(0px);}
+                }
+                .drop-button {
+                    padding: 0.3em 0;
+                    margin-bottom: 0;
+                }
+                /* .margins:hover {
+                    margin-right: calc(2rem - 1.88ch);
+                } */
+                @media only screen and (max-width: 900px) {
+                    .drop-button {
+                        margin-bottom: 6vh;
+                        z-index: 10;
+                    }
+                    .dropdown {
+                        margin-bottom: 0;
+                    }
+                    .margins:hover {
+                        margin-right: 2rem;
+                        margin-left: 2rem;
+                    }
+                    .drop-button {
+                        font-size: 2.5vh;
+                    }
+                    .margins .dropdown-content {
+                        position: relative;
+                        font-weight: 500;
+                        margin-bottom: 1ch;
+                    }
+                    .dropdown:hover .drop-button {
+                        margin-bottom: 0;
+                    }
+                    .drop-button:hover .dropdown-content {
+                        font-size: large;
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+                    .margins .dropdown-content .list-item {
+                        color: rgba(0, 0, 0, 0.626);
+                        margin-top: 0.5ch;
+                        padding: 0.5em;
+                    }
+                    .margins .dropdown-content .list-item:hover {
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+                    /* .drop-button:hover {
+                        margin-bottom: 1vh;
+                    } */
+                    .margins:hover .dropdown-content{
+                        box-shadow: none;
+                        top: 0;
+                        margin: 0;
+                        padding: 0;
+                        /* background-color: rgba(255, 255, 255, 0); */
+                        margin-bottom: 2vh;
+                    }
+                    .margins:hover .dropdown-content .list-item {
+                        margin-bottom: 0;
+                    }
+                    .dropdown {
+                        text-align: center;
+                    }
+                }
+            </style>
+            <nav class="nav-bar">
+                <ul>
+                    <li class="dropdown left">
+                        <p class="hover-underline-animation drop-button" onclick="hover()">WORKS
+                            <b class="dropdown-content removepad">
+                                <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
+                                <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
+                                <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
+                            </b>
+                        </p>
+                    </li>
+                
+                    <li>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
+                    </li>
+    
+                    <li>
+                        <a class="hover-underline-animation" target="_blank" href="ALICE MA UX RESUME.pdf">RESUME</a>
+                    </li>
+                        
+                    <li>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <script>
+            hamburger = document.querySelector(".hamburger");
+            hamburger.onclick = function() {
+                navBar = document.querySelector(".nav-bar");
+                hamburger = document.querySelector(".hamburger");
+                navBar.classList.toggle("active");
+                navBar.classList.toggle("black");
+                hamburger.classList.toggle("active");
+                works = document.querySelector(".dropdown");
+                works.classList.toggle("left");
+                droplist = document.querySelector(".nav-bar ul .dropdown");
+                droplist.classList.toggle("margins");
+                button = document.querySelector(".drop-button");
+                button.classList.toggle("hover-underline-animation")
+                contents = document.querySelector(".dropdown-content");
+                contents.classList.toggle("removepad");
+            }
+        </script>
+        
+        <div class="cover">
+            <div>
+                <div class="cover-photo">
+            </div>
+            <div class="brief-desc">
+                <div class="desc"><strong>PROJECT:</strong> MedTime Medicine Tracking</div>
+                <div class="desc"><strong>ROLE:</strong> UX Designer + Researcher</div>
+                <div class="desc"><strong>TIMELINE:</strong> July 2022</div>
+            </div>
+        </div>
+       
+        <div class="content">
+            <section id="problem" class="content">
+                <h2 class="hidden">
+                    PROBLEM
+                </h2>
+                <h1 class="hidden">
+                    People forget to take their medicine
+                </h1>
+                <p class="description hidden">
+                    Many people who have to take medicine end up forgetting to take it because they do not have a proper system set up to remind them. Forgetting to take medication on time can lead to a worsening of symptoms and may decrease the effectiveness of the medication. MedTime is an app that <strong>reminds people to take their medication on time</strong>. This app will be helpful to those who suffer from forgetting to take their medicine. 
+                </p>
+            </section>
+
+            <section id="competitive-audit" class="content">
+                <h2 class="hidden">
+                    UNDERSTANDING USERS
+                </h2>
+                <h1 class="hidden">
+                    Conducting a Competitive Audit
+                </h1>
+                <p class="description hidden">
+                    To work towards understanding the users I am designing for, I did research by <strong>formulating personas and conducted competitive audits</strong> as part of my ideation process. I decided that there would be <strong>two main user groups</strong>: those who would access the app on their mobile devices and those who would use website versions.
+                </p>
+                <form action="https://docs.google.com/spreadsheets/d/15Se9cO5jka02QkhRPyZCQM8mw8VcFhb7uzcOniu-8dM/edit?usp=sharing" target="_blank" >
+                    <button class="button view-prototype hidden">
+                        VIEW FULL AUDIT
+                    </button>
+                </form> 
+            </section>
+            <section id="understanding-users" class="content">
+                <h2 class="hidden">
+                    UNDERSTANDING USERS
+                </h2>
+                <h1 class="hidden">
+                    Crafting User Personas
+                </h1>
+                <div class="picture persona hidden">
+                </div>
+            </section>
+        </div>
+        
+        <div class="footer">
+            ©2022 Alice Ma. All Rights Reserved.
+        </div>
+    </body>
+    <script src="slide.js"></script>
+
+</html>
