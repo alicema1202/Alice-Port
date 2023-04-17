@@ -1,56 +1,176 @@
 h1 {
-    font-size: 4.5ch;
+    font-size: 3.8ch;
     line-height: 2ch;
     margin-left: 0;
     margin-top: 0.8ch;
     margin-bottom: 0.5ch;
     position: relative;
     left: -0.1ch;
-    color: #09677C;  
+    color: rgb(54, 54, 54);
 }
 
 h2 {
-    font-size: 1.3ch;
-    color: gray;
-    font-weight: 500;
+    font-size: 1.2ch;
+    color: #1789a2;
+    font-weight: 700;
     letter-spacing: 0.3ch;
 }
 
+section {
+    margin-bottom: 5rem;
+}
 .description {
+    padding-left: 0;
+    color: rgb(54, 54, 54);
     line-height: 3ch;
     font-family: roboto, arial;
     font-weight: 400;
     margin-top: 0;
+    margin-bottom: 2rem;
     letter-spacing: 0.05ch;
-    font-size: 1.8ch;
+    font-size: 1.7ch;
 }
 
 .content {
-    padding-top: 2.5ch;
-    padding-left: 8vw;
-    padding-right: 8vw;
-    margin-bottom: 2rem;
-}
-
-@media (max-width: 700px) {
-    h1 {
-        font-size: 3ch;
-        line-height: 2ch;
-    }
+    padding-top: 5ch;
+    padding-left: 18vw;
+    padding-right: 18vw;
 }
 
 .button {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 2rem!important;
     display: flex;
     position: relative;
     margin: auto;
     justify-content: center;
     align-items: center;
+    color: rgb(54, 54, 54);
+    border-color: rgb(54, 54, 54);
 }
 
 .persona {
     background-image: url("bill-persona.png");
     background-size: contain;
     background-position: left;
+    background-position: top;
+    width: 60vw;
+    height: 40vw;
+}
+
+.paper-drawing {
+    width: 65vw;
+    height: auto;
+    margin-bottom: 2rem;
+    
+}
+
+.description {
+    list-style-type: circle;
+    line-height: 3ch;
+    font-family: roboto, arial;
+    font-weight: 400;
+    color: rgb(54, 54, 54);
+    align-items: left!important;
+    justify-content: left!important;
+    text-align: left!important;
+}
+li {
+    align-items: left!important;
+    justify-content: left!important;
+    text-align: left!important;
+}
+
+strong {
+    position: relative;
+    left: 0;
+}
+.body-change {
+    text-align: left!important;
+    margin-left: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+.leftside {
+    margin-left: 0;
+}
+.rightside {
+    margin-right: 0;
+}
+.change {
+    display: flex;
+    align-items: center;
+    column-gap: 4rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+.flip {
+    flex-direction: row-reverse;
+}
+.final-mockups {
+    padding: 0;
+    align-items: left;
+    justify-content: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.mockup-pic {
+    width: 13vw;
+    margin: 2rem;
+    margin-left: 0;
+}
+.footer {
+    margin-top: 0!important;
+}
+.web-mockups {
+    margin-bottom: 4rem;
+}
+@media (max-width: 1000px) {
+    .change {
+        display: block;
+        padding: 0;
+    }
+}
+@media (max-width: 700px) {
+    .final-mockups {
+        grid-template-columns: 1fr 1fr;
+    }
+    h1 {
+        font-size: 3ch;
+        line-height: 2ch;
+    }
+    .mockup-pic {
+        width: 30vw;
+        margin: 1rem;
+        margin-left: 0;
+    }
+    .content {
+        padding-left: 13vw;
+        padding-right: 13vw;
+    }
+    .description {
+        font-size: 1.7ch;
+    }
+    .item {
+        align-items: left!important;
+        justify-content: left!important;
+        text-align: left!important;
+        font-size: 1.7ch;
+    }
+    .persona {
+        width: 72vw!important;
+    }
+    .paper-drawing {
+        width: 75vw!important;
+    }
+    .first, .second {
+        margin-left: 0;
+    }
+    .leftside, .rightside {
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 1.7ch;
+    }
 }
