@@ -93,12 +93,6 @@ strong {
 .bold {
     font-weight: bold;
 }
-.leftside {
-    margin-left: 0;
-}
-.rightside {
-    margin-right: 0;
-}
 .change {
     display: flex;
     align-items: center;
@@ -150,9 +144,6 @@ strong {
         padding-left: 13vw;
         padding-right: 13vw;
     }
-    .description {
-        font-size: 1.7ch;
-    }
     .item {
         align-items: left!important;
         justify-content: left!important;
@@ -171,6 +162,5 @@ strong {
     .leftside, .rightside {
         margin-right: 0;
         margin-left: 0;
-        font-size: 1.7ch;
     }
 }
