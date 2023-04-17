@@ -165,7 +165,7 @@ a {
 .cover-photo {
     background-image: url("UniO-cover.png");
     width: 100vw;
-    height: 35vw;
+    height: 30vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -201,10 +201,10 @@ a {
     z-index: 2;
     color: rgb(255, 255, 255);
     flex-wrap: wrap;
-    right: 4vw;
+    right: 5vw;
     padding: 10px;
     position: absolute;
-    top: 23vw;
+    top: 21vw;
     width: 40vw;
     font-weight: 400;
 }
