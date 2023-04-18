@@ -76,7 +76,7 @@ section {
     justify-content: left!important;
     text-align: left!important;
 }
-li {
+.description li {
     align-items: left!important;
     justify-content: left!important;
     text-align: left!important;
