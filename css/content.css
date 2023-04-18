@@ -8,14 +8,9 @@ h1 {
     left: -0.1ch;
     color: rgb(54, 54, 54);
 }
-
-h2 {
-    font-size: 1.2ch;
-    color: #1789a2;
-    font-weight: 700;
-    letter-spacing: 0.3ch;
+.item {
+    min-width: 60vw;
 }
-
 section {
     margin-bottom: 5rem;
 }
@@ -50,19 +45,25 @@ section {
 }
 
 .persona {
-    background-image: url("bill-persona.png");
     background-size: contain;
     background-position: left;
     background-position: top;
     width: 60vw;
     height: 40vw;
+    margin-top: 3rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .paper-drawing {
-    width: 65vw;
+    /* width: 65vw; */
+    width: 62vw;
     height: auto;
     margin-bottom: 2rem;
-    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
 }
 
 .description {
@@ -103,17 +104,26 @@ strong {
 .flip {
     flex-direction: row-reverse;
 }
+.design-system {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    height: 50vw;
+    width: auto;
+}
 .final-mockups {
-    padding: 0;
-    align-items: left;
-    justify-content: left;
     display: grid;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .mockup-pic {
     width: 13vw;
-    margin: 2rem;
-    margin-left: 0;
+    margin: 1rem;
+    /* margin-left: 0; */
 }
 .footer {
     margin-top: 0!important;
@@ -128,8 +138,12 @@ strong {
     }
 }
 @media (max-width: 700px) {
+    .design-system {
+        width: 60vw;
+        height: auto;
+    }
     .final-mockups {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;  
     }
     h1 {
         font-size: 3ch;
@@ -138,7 +152,6 @@ strong {
     .mockup-pic {
         width: 30vw;
         margin: 1rem;
-        margin-left: 0;
     }
     .content {
         padding-left: 13vw;
@@ -148,7 +161,6 @@ strong {
         align-items: left!important;
         justify-content: left!important;
         text-align: left!important;
-        font-size: 1.7ch;
     }
     .persona {
         width: 72vw!important;

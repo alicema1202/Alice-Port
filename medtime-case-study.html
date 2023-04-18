@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MedTime: Get Medicine Reminders</title>
+        <title>Medtime: Get Medicine Reminders — Alice Ma</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="medtime-case-study.css" rel="stylesheet"> 
-        <link href="animation.css" rel="stylesheet">
-        <link href="headerforCS.css" rel="stylesheet">
+        <link href="css/medtime-case-study.css" rel="stylesheet"> 
+        <link href="css/animation.css" rel="stylesheet">
+        <link href="css/headerforCS.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
-        
-        <meta name="msapplication-TileImage" content="MEDTIME-THUMBNAIL.png">
-        <meta property="og:image" itemprop="image" content="MEDTIME-THUMBNAIL.png">
+        <link href="css/content.css" rel="stylesheet"> 
+
+        <meta name="msapplication-TileImage" content="images/MEDTIME-THUMBNAIL.png">
+        <meta property="og:image" itemprop="image" content="images/MEDTIME-THUMBNAIL.png">
         
         <meta property="og:type" content="website" />
         <meta property="og:image:type" content="image/png">
@@ -26,7 +27,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" type="x-icon" href="medtime-favicon.png">
+        <link rel="shortcut icon" type="x-icon" href="images/medtime-favicon.png">
     </head>
     <body onscroll="appear()">
         <a href="#top" class="back-to-top">
@@ -38,6 +39,12 @@
             }
         </script>
         <style>
+            h2 {
+                font-size: 1.2ch;
+                color: #1789a2;
+                font-weight: 700;
+                letter-spacing: 0.3ch;
+            }
             html {
                 scroll-behavior: smooth;
             }
@@ -265,182 +272,206 @@
             </div>
         </div>
        
-        <div class="case-study-content">
-            <div class="heading hidden">
-                Project Overview
-            </div>
-            <div class="body hidden">
-                Many people who have to take medicine end up forgetting to take it because they do not have a system set up to remind them. This could lead to serious consequences. MedTime is an app that <strong>reminds people to take their medication on time</strong>. This app will be helpful to those who suffer from forgetting to take their medicine. 
-            </div>
-            <div class="heading hidden">
-                Understanding Users
-            </div>
-            
-            <div class="body hidden">
-                To work towards understanding the users I am designing for, I did research by <strong>formulating personas and conducted competitive audits</strong> as part of my ideation process. I decided that there would be <strong>two main user groups</strong>: those who would access the app on their mobile devices and those who would use website versions.
+        <div class="content">
+            <section id="problem">
+                <h2 class="hidden">
+                    PROBLEM
+                </h2>
+                <h1 class="hidden">
+                    People forget to take their medicine
+                </h1>
+                <p class="description hidden">
+                    Many people who have to take medicine end up forgetting to take it because they do not have a proper system set up to remind them. Forgetting to take medication on time can lead to a worsening of symptoms and may decrease the effectiveness of the medication. MedTime is an app that <strong>reminds people to take their medication on time</strong>. This app will be helpful to those who suffer from forgetting to take their medicine. 
+                </p>
+            </section>
+
+            <section id="competitive-audit">
+                <h2 class="hidden">
+                    COMPETITIVE AUDIT
+                </h2>
+                <h1 class="hidden">
+                    The lack of a cross-platform experience
+                </h1>
+                <p class="description hidden">
+                    To work towards understanding the users I am designing for, I did research by conducting<strong> competitive audits</strong> as part of my ideation process. Through the competitive analysis, I realized that <strong>the competition only offered mobile apps</strong>. With that in mind, I used this project as an opportunity to bridge this gap.
+                </p>
                 <form action="https://docs.google.com/spreadsheets/d/15Se9cO5jka02QkhRPyZCQM8mw8VcFhb7uzcOniu-8dM/edit?usp=sharing" target="_blank" >
-                    <button class="view-prototype hidden">
-                        VIEW COMPETITIVE AUDIT                               </button>
-                </form>
-            
-            </div>
-            <div class="heading hidden">
-                Crafting Personas
-            </div>
-            <div>
-                <div class="persona hidden">
+                    <button class="button view-prototype hidden">
+                        VIEW FULL AUDIT
+                    </button>
+                </form> 
+            </section>
+            <section id="persona">
+                <h2 class="hidden">
+                    UNDERSTANDING USERS
+                </h2>
+                <h1 class="hidden">
+                    Looking at the needs of the users
+                </h1>
+                <p class="description hidden">
+                    Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Bill, a 71 year old male:
+                </p>
+                <div class="picture persona hidden">
                 </div>
-            </div>
-            <div class="heading hidden">
-                Paper to Digital
-            </div>
-            <div class="paper-wireframes">
-                <div class="body hidden">
+            </section>
+            <section id="ideation">
+                <h2 class="hidden">
+                    IDEATION
+                </h2>
+                <h1 class="hidden">
+                    From paper to prototype
+                </h1>
+                <p class="description hidden">
                     I sketched multiple iterations of paper wireframes for multiple screens to get started with the design. I put stars next to any features I might consider keeping in the next iteration of the designs.
-
-                </div>
-                <img class="paper-drawing hidden"" src="medtime-paper.jpg">
-            </div>
-            
-            <div class="body hidden" style="margin-top: 20px; margin-bottom: 5px;">
-                After creating these wireframes, I digitized them with Figma and turned wireframes into working mid-fidelity prototypes.
-            </div>
-            <img class="paper-lofi hidden" src="medtime-lofi.png">
-            <form action="https://www.figma.com/proto/MdmV1zIERXIQo6swOwPNIF/Project-3?node-id=2%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=2%3A2" target="_blank" >
-                <button class="view-prototype hidden">
-                    VIEW LO-FI PROTOTYPE                                </button>
-            </form>
-            
-            <div class="heading hidden">
-                User Testing
-            </div>
-            <div class="body hidden">
-                After building the mid-fidelity prototype, I used it to conduct a usability study, and from it, I gained many new findings about how to improve my designs:
-
-                <div class="bullets">
-                    <li>The two add buttons on the home screen caused confusing navigation for most users
-
-                    </li>
-
-                    <li>The lack of a mark all as done button creates inconvenience for users
-
-                    </li>
-                    
-                    <li>Although the primary add button is large, it is not the most visible because it lacks contrast
-
-                    </li>
-                    
-                </div>
-            </div>
-            <div class="heading hidden">
-                Making Changes
-            </div>
-            
-            <div class="body hidden">
-                After conducting both usability studies, I made some changes to my high-fidelity prototype!
-            </div>
-            <div class="change-1 hidden">
-                <div class="body-change ">
-                    <strong>1. Navigation and User Flow
-                    </strong>
+                </p>
+                <img class="paper-drawing hidden" src="images/medtime-paper.jpg">
+                <p class="description hidden">
+                    After creating these wireframes, I digitized them using Figma and turned the paper wireframes into working mid-fidelity digital prototypes.
+                </p>
+                <img class="paper-drawing hidden" src="images/medtime-lofi.png">
+                <form action="https://www.figma.com/proto/MdmV1zIERXIQo6swOwPNIF/Project-3?node-id=2%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=2%3A2" target="_blank" >
+                    <button class="button view-prototype hidden">
+                        VIEW LO-FI PROTOTYPE
+                    </button>
+                </form>
+            </section>
+            <section id="user-testing">
+                <h2 class="hidden">
+                    USER TESTING
+                </h2>
+                <h1 class="hidden">
+                    The problems with my current design
+                </h1>
+                <p class="description hidden">
+                    After building the mid-fidelity prototype, I used it to conduct a usability study, and from it, I gained many new findings about how to improve my designs:
+                    <ul class="description hidden">
+                        <li class="item">The two add buttons on the home screen caused confusing navigation for most users</li>
     
-                    <p>I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.
-                    </p>
-                </div>
-                <div class="changes ">
-                    <img class="mockup " src="medtime-home-lo.png">
-                    <div class="arrow ">&#8594</div>
-                    <img class="mockup " src="medtime-home-hi.png">
-                </div>
-            </div>
-            <div class="change-2 hidden">
-                <div class="body-change ">
-                    <strong>2. Customization Options
-
-                    </strong> 
-
-                    <p>Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.
-
-                    </p>      
-                </div>
-                <div class="changes ">
-                    <img class="mockup " src="medtime-search-lo.png">
-                    <div class="arrow ">&#8594</div>
-                    <img class="mockup " src="customize.png">
-                </div>
-                
-            </div>
-            
-            <div class="heading hidden">
-                The Design System
-            </div>
-            <div class="design-sys hidden">
-                <img class="design-system" src="medtime-design-system.png">
-            </div>
-            <div class="body hidden">
-                
-            </div>
-            <div class="heading hidden">
-                Final Product
-            </div>
-            <div class="final-mockups hidden">
-                <img class="mockup-pic" src="medtime-home-hi.png">
-                <img class="mockup-pic" src="search.png">
-                <img class="mockup-pic" src="options.png">
-                <img class="mockup-pic" src="selection.png">
-            </div>
-            <form action="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank" >
-                <button class="view-prototype hidden">
-                    VIEW HI-FI PROTOTYPE                                </button>
-            </form>
-            
-            <div class="body hidden">
-                
-            </div>
-            <div class="heading hidden">
-                And a website too!
-            </div>
-            <div class="body hidden">
-                Now that I have created a dedicated mobile app for MedTime. It would be good to have a web version of it as well. The web version is a responsive web design that adapts to different screen sizes, making on-the-go reminders even easier to achieve.
-            </div>
-            <div class="web-mockups hidden">
-                <img class="mockup-pic-2" src="ipad-medtime.png">
-                <img class="mockup-pic-2" src="laptop-medtime.png">
-            </div>
-            <form action="https://bit.ly/3Kh26r1" target="_blank" >
-                <button class="view-prototype hidden">
-                    VIEW WEB PROTOTYPE
-                </button>
-            </form>
-            <div class="heading hidden">
-                Accessibility
-            </div>
-            
-            <div class="body hidden">
-                <strong>1. High Contrast Colors</strong> 
-                <p>In my design, I included high contrast colors and bolded fonts for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.
+                        <li class="item">The lack of a mark all as done button creates inconvenience for users</li>
+                        
+                        <li class="item">Although the primary add button is large, it is not the most visible because it lacks contrast</li>
+                    </ul>
                 </p>
-                <strong>2. Navigation</strong>
-                <p>I placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks without navigation issues.
+            </section>
+            <section id="making-changes">
+                <h2 class="hidden">
+                    MAKING CHANGES
+                </h2>
+                <h1 class="hidden">
+                    Making improvements based on study results
+                </h1>
+                <p class="hidden">
+                    <p class="description hidden">After conducting the usability study, I made some changes to my high-fidelity prototype!</p>
+                    <div class="change hidden">
+                        <div class="leftside">
+                            <p class="description bold">1. Navigation and User Flow</p>
+                            <p class="description">I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.</p>
+                        </div>
+                        <div class="changes">
+                            <img class="mockup " src="images/medtime-home-lo.png">
+                            <div class="arrow ">&#8594</div>
+                            <img class="mockup " src="images/medtime-home-hi.png">
+                        </div>
+                    </div>
+                    <div class="change flip hidden">
+                        <div class="rightside">
+                            <p class="bold description">2. Customization Options</p> 
+                            <p class="description">Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.</p>      
+                        </div>
+                        <div class="changes">
+                            <img class="mockup " src="images/medtime-search-lo.png">
+                            <div class="arrow ">&#8594</div>
+                            <img class="mockup " src="images/customize.png">
+                        </div>
+                    </div>
                 </p>
-            </div>
-            <div class="heading hidden">
-                Takeaways
-            </div>
-            
-            <div class="body hidden">
-               <strong>What I Learned:</strong> 
+            </section>
 
-                <p>
+            <section id="finalmockups">
+                <h2 class="hidden">
+                    FINAL PRODUCT
+                </h2>
+                <h1 class="hidden">
+                    The final high fidelity design
+                </h1>
+                <div class="final-mockups hidden">
+                    <img class="mockup-pic" src="images/medtime-home-hi.png">
+                    <img class="mockup-pic" src="images/search.png">
+                    <img class="mockup-pic" src="images/options.png">
+                    <img class="mockup-pic" src="images/selection.png">
+                </div>
+                <form action="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank" >
+                    <button class="button view-prototype hidden">
+                        VIEW HI-FI PROTOTYPE
+                    </button>
+                </form>
+            </section>
+            <section id="cross-platform">
+                <h2 class="hidden">
+                    CROSS-PLATFORM
+                </h2>
+                <h1 class="hidden">
+                    And there's a website too!
+                </h1>
+                <p class="description hidden">
+                    Now that I have created a dedicated mobile app for MedTime. It would be good to have a web version of it as well. The web version is a responsive web design that adapts to different screen sizes, making on-the-go reminders even easier to achieve.
+                </p>
+                <div class="web-mockups hidden">
+                    <img class="mockup-pic-2" src="images/ipad-medtime.png">
+                    <img class="mockup-pic-2" src="images/laptop-medtime.png">
+                </div>
+                <form action="https://bit.ly/3Kh26r1" target="_blank" >
+                    <button class="button view-prototype hidden">
+                        VIEW WEB PROTOTYPE
+                    </button>
+                </form>
+            </section>
+            <section id="style-guide">
+                <h2 class="hidden">
+                    FINAL PRODUCT
+                </h2>
+                <h1 class="hidden">
+                    The Style Guide
+                </h1>
+                <p class="description hidden">
+                    While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
+                </p>
+                <img class="design-system hidden" title="style guide" src="images/medtime-system.png">
+            </section>
+            <section id="accessibility">
+                <h2 class="hidden">
+                    ACCESSIBILITY
+                </h2>
+                <h1 class="hidden">
+                    Taking accessibility into consideration
+                </h1>
+                <div class="description hidden">
+                    <strong>1. High Contrast Color</strong> 
+                    <p class="description">In my design, I included high contrast colors and bolded fonts for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.</p>  
+                </div>
+                <div class="description hidden">
+                    <strong>2. Navigation</strong> 
+                    <p class="description">I placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks without navigation issues.</p>  
+                </div>
+            </section>
+
+            <section id="takeaways">
+                <h2 class="hidden">
+                    TAKEAWAYS
+                </h2>
+                <h1 class="hidden">
+                    What I learned from this
+                </h1>
+                <div class="description hidden">
                     I learned that designing for laptop and tablet are quite similar experiences because of their similar proportions. However, I thought that mobile apps and mobile sites would basically be the same, but there were many different considerations I had to make to transform the app into a mobile website design.
-
-                </p>            
-            </div>
+                </div>
+            </section>
         </div>
+        
         <div class="footer">
             ©2022 Alice Ma. All Rights Reserved.
         </div>
     </body>
-    <script src="slide.js"></script>
+    <script src="js/slide.js"></script>
 
 </html>

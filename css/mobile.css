@@ -1,0 +1,39 @@
+
+.mobile {
+    margin-top: 6vh;
+    font-size: 3vh;
+}
+@media (max-width: 400px) {
+    .nav-mobile {
+        opacity: 1;
+    }
+}
+.hamburger-menu-2 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    margin-right: 10px;
+    opacity: 1;
+    z-index: 100;
+    cursor: pointer;
+}
+.hamburger-menu-2.active{
+    background-color: blue;
+}
+.hamburger-icon {
+    height: 8vw;
+    padding-top: 1vh;
+}
+@media only screen and (max-width: 400px) {
+    body {
+        font-family: Josefin Sans, Arial;
+        font-weight: 500;
+        background-color: #111111;
+        padding-bottom: 2000px;
+        font-size: 1em;
+    }
+    
+    .hamburger-menu-2 {
+        opacity: 0;
+    }
+}

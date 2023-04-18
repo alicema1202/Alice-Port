@@ -164,7 +164,7 @@ a {
 
 
 .cover-photo {
-    background-image: url("MedTime.png");
+    background-image: url("../images/MedTime.png");
     width: 100vw;
     height: 30vw;
     background-position: center;
@@ -174,14 +174,14 @@ a {
 }
 @media (max-width: 800px) {
     .cover-photo {
-        background-image: url("MedTime-shrink.png");
+        background-image: url("../images/MedTime-shrink.png");
         height: 38vw;        
     }
 }
 
 @media (max-width: 600px) {
     .cover-photo {
-        background-image: url("MedTime-shrink.png");
+        background-image: url("../images/MedTime-shrink.png");
         background-size:cover;
     }
 }
@@ -264,7 +264,7 @@ a {
 }
 
 .persona {
-    background-image: url("billpersona.png");
+    background-image: url("../images/bill-persona.png");
     width: 60vw;
     height: 40vw;
     background-position: center;

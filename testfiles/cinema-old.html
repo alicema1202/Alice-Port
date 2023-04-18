@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CineMa: Mobile Theater Tickets</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="header-case-studies.css" rel="stylesheet"> 
+        <link href="animation.css" rel="stylesheet">
+        <link href="headerforCS.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+
+        <meta name="msapplication-TileImage" content="CINEMA-THUMBNAIL.png">
+        <meta property="og:image" itemprop="image" content="CINEMA-THUMBNAIL.png">
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/png">
+        
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="201">
+        
+        <meta property="og:url" content="https://alicemadesign.com/cinema-case-study">
+        <meta property="og:description" content="CineMa is a mobile ticketing app that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="x-icon" href="cinema-favicon.png">
+    </head>
+    <body onscroll="appear()">
+        <a href="#top" class="back-to-top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <script>
+            function appear() {
+                document.querySelector(".back-to-top").style.opacity = "1";
+            }
+        </script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            .back-to-top {
+                transition: opacity 0.3s;
+                opacity: 0;
+                z-index: 1000;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #c13739;
+                margin: 1rem;
+                height: 4rem;
+                width: 4rem;
+                border-radius: 50%;
+            }
+            .fa-solid {
+                color: white;
+            }
+        </style>
+        <header class="header-bar">
+            <div class="left-section">
+                <a href="https://alicemadesign.com/home" class="logo-container logo">
+                    ALICE MA
+                </a>
+            </div>
+            <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div>
+            <style>
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                    background: #c13739;
+                }
+                .dropdown {
+                    transition: height 5s; 
+                    margin-bottom: 0vh;
+                    text-align: left;
+                }
+                .left {
+                    text-align: left;
+                }
+                .drop-button {
+                    margin: 0;
+                    margin-bottom: 10px;
+                    z-index: 1;
+                    color: black;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    overflow: hidden;
+                    font-weight: 400;
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    background-color: rgb(41, 41, 41);
+                    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
+                    border: none;
+                    border-radius: 0.3em;
+                    border-top-left-radius: 0;
+                    z-index: 10;
+                    margin-bottom: 3vh;
+                    padding-top: 0.6ch;
+                    padding-bottom: 0.6ch;
+                }
+                .drop-button:hover {
+                    cursor: pointer;
+                }
+                .drop-button:hover .dropdown-content {
+                    display: block;
+                    top: calc(30px + 2.4ch);
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    opacity: 1;
+                }
+                .drop-button:hover .removepad {
+                    top: 2.4ch;
+                }
+                .center {
+                    text-align: center;
+                }
+                .list-item {
+                    min-width: 10ch;
+                    padding: 1em 2em;
+                    color: rgba(252, 252, 252, 0.692);
+                }
+                @media only screen and (min-width: 900px){
+                    .list-item {
+                        position: relative;
+                    }
+                }
+                .list-item:hover {
+                    color: rgb(255, 255, 255);
+                    background-color: rgba(0, 0, 0, 0.595);
+                    transition: 0.2s;
+                }
+                @keyframes fadeIn {
+                    0% {opacity: 0; transform: translateY(-30px);}
+                    100% {opacity: 1; transform: translateY(0px);}
+                }
+                @keyframes fadeOut {
+                    0% {opacity: 1; transform: translateY(0px);}
+                }
+                .drop-button {
+                    padding: 0.3em 0;
+                    margin-bottom: 0;
+                }
+                /* .margins:hover {
+                    margin-right: calc(2rem - 1.88ch);
+                } */
+                @media only screen and (max-width: 900px) {
+                    .drop-button {
+                        margin-bottom: 6vh;
+                        z-index: 10;
+                        color: black;
+                    }
+                    .dropdown {
+                        margin-bottom: 0;
+                    }
+                    .margins:hover {
+                        margin-right: 2rem;
+                        margin-left: 2rem;
+                    }
+                    .drop-button {
+                        font-size: 2.5vh;
+                    }
+                    .margins .dropdown-content {
+                        position: relative;
+                        font-weight: 500;
+                        margin-bottom: 1ch;
+                    }
+                    .dropdown:hover .drop-button {
+                        margin-bottom: 0;
+                    }
+                    .drop-button:hover .dropdown-content {
+                        font-size: large;
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+                    .margins .dropdown-content .list-item {
+                        color: rgba(0, 0, 0, 0.626);
+                        margin-top: 0.5ch;
+                        padding: 0.5em;
+                    }
+                    .margins .dropdown-content .list-item:hover {
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+                    /* .drop-button:hover {
+                        margin-bottom: 1vh;
+                    } */
+                    .margins:hover .dropdown-content{
+                        box-shadow: none;
+                        top: 0;
+                        margin: 0;
+                        padding: 0;
+                        /* background-color: rgba(255, 255, 255, 0); */
+                        margin-bottom: 2vh;
+                    }
+                    .margins:hover .dropdown-content .list-item {
+                        margin-bottom: 0;
+                    }
+                    .dropdown {
+                        text-align: center;
+                    }
+                }
+            </style>
+            <nav class="nav-bar">
+                <ul>
+                    <li class="dropdown left">
+                        <p class="hover-underline-animation drop-button" onclick="hover()">WORKS
+                            <b class="dropdown-content removepad">
+                                <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
+                                <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
+                                <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
+                            </b>
+                        </p>
+                    </li>
+                
+                    <li>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
+                    </li>
+    
+                    <li>
+                        <a class="hover-underline-animation" target="_blank" href="ALICE MA UX RESUME.pdf">RESUME</a>
+                    </li>
+                        
+                    <li>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <script>
+            hamburger = document.querySelector(".hamburger");
+            hamburger.onclick = function() {
+                navBar = document.querySelector(".nav-bar");
+                hamburger = document.querySelector(".hamburger");
+                navBar.classList.toggle("active");
+                navBar.classList.toggle("black");
+                hamburger.classList.toggle("active");
+                works = document.querySelector(".dropdown");
+                works.classList.toggle("left");
+                droplist = document.querySelector(".nav-bar ul .dropdown");
+                droplist.classList.toggle("margins");
+                button = document.querySelector(".drop-button");
+                button.classList.toggle("hover-underline-animation")
+                contents = document.querySelector(".dropdown-content");
+                contents.classList.toggle("removepad");
+            }
+        </script>
+        
+        <div class="cover">
+            <div>
+                <div class="cover-photo">
+            </div>
+            <div class="brief-desc">
+                <div class="desc"><strong>PROJECT:</strong> CineMa, a mobile ticketing app</div>
+                <div class="desc"><strong>ROLE:</strong> UX Designer + Researcher</div>
+                <div class="desc"><strong>TIMELINE:</strong> June 2022</div>
+            </div>
+        </div>
+        <div class="case-study-content">
+            <div class="heading hidden">
+                Project Overview
+            </div>
+            <div class="body hidden">
+                CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
+            </div>
+            <div class="heading hidden">
+                Understanding Users
+            </div>
+            
+            <div class="body hidden">
+                I conducted <strong>two unmoderated usability studies</strong> throughout my design process to identify user pain points. Through my research, it became evident that these pain points included: lack of language options and bundled ticket scans.
+            </div>
+            <div class="heading hidden">
+                Crafting Personas
+            </div>
+            <div>
+                <div class="persona hidden">
+                </div>
+            </div>
+            <div class="heading hidden">
+                Paper to Digital
+            </div>
+            <div class="paper-wireframes">
+                <div class="body hidden">
+                    To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms.
+                </div>
+                <img class="paper-drawing hidden" src="images/cinema-paper.jpg">
+            </div>
+            
+            <div class="body hidden">
+                After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
+            </div>
+            <img class="paper-lofi hidden" src="images/cinema-lofi.png">
+            <form action="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank" >
+                <button class="view-prototype hidden">
+                    VIEW LO-FI PROTOTYPE                                </button>
+            </form>
+            
+            <div class="heading hidden">
+                User Testing
+            </div>
+            <div class="body hidden">
+                After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
+                <div class="bullets">
+                    <li>Lacked language options</li>
+
+                    <li>Users need to be able to review their ticket order</li>
+                    
+                    <li>There should be the option of bundle scanning</li>
+                    
+                </div>
+                Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
+                <div class="bullets">
+                    
+                    <li>The user flow was missing a seat selection feature</li>
+                    
+                    <li>Some gesture and touch options were not working</li>
+                    
+                    <li>Movie titles should be includes in the tickets</li>
+                </div>
+
+            </div>
+            <div class="heading hidden">
+                Making Changes
+            </div>
+            
+            <div class="body hidden">
+                After conducting both usability studies, I made some changes to my high-fidelity prototype!
+            </div>
+            <div class="change-1 hidden">
+                <div class="body-change ">
+                    <strong>1. Seat Selection</strong>
+    
+                    <p>
+                        Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
+                    </p>
+                </div>
+                <div class="changes ">
+                    <img class="mockup " src="images/Movie Info.png">
+                    <div class="arrow ">&#8594</div>
+                    <img class="mockup " src="images/cinema-seats.png">
+                </div>
+            </div>
+            <div class="change-2 hidden">
+                <div class="body-change ">
+                    <strong>2. Language Options</strong> 
+
+                    <p>Adding language options is a must to improve accessibility for many users whose preferred language is not English.</p>      </div>
+                <div class="changes ">
+                    <img class="mockup " src="images/homelow.png">
+                    <div class="arrow ">&#8594</div>
+                    <img class="mockup " src="images/Select English (1).png">
+                </div>
+                
+            </div>
+            
+            <div class="heading hidden">
+                The Design System
+            </div>
+            <div class="design-sys hidden">
+                <img class="design-system " src="images/cinema-design-system.png">
+            </div>
+            <div class="body hidden">
+                
+            </div>
+            <div class="heading hidden">
+                Final Product
+            </div>
+            <div class="final-mockups hidden">
+                <img class="mockup-pic" src="images/my-tickets.png">
+                <img class="mockup-pic" src="images/Select English (1).png">
+                <img class="mockup-pic" src="images/heyyy.png">
+                <img class="mockup-pic" src="images/cinema-seats.png">
+            </div>
+            <form action="https://bit.ly/3PJw5sB" target="_blank" >
+                <button class="view-prototype hidden">
+                    VIEW HI-FI PROTOTYPE                                </button>
+            </form>
+            <div class="body hidden">
+                
+            </div>
+            <div class="heading hidden">
+                Accessibility
+            </div>
+            
+            <div class="body hidden">
+               <strong>1. Language Options</strong> 
+<p>The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app’s settings.
+</p>
+<strong>2. Contrasting Colors</strong>
+<p>With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>
+
+<strong>3. Labels</strong>
+<p>I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>            </div>
+            <div class="heading hidden">
+                Takeaways
+            </div>
+            
+            <div class="body hidden">
+               <strong>What I Learned:</strong> 
+
+<p>
+    I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
+
+</p>            </div>
+        </div>
+        
+    <div class="footer">
+        ©2022 Alice Ma. All Rights Reserved.
+    </div>
+    
+</body>
+<script src="slide.js"></script>
+
+</html>

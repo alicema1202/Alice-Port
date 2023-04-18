@@ -4,30 +4,32 @@ body {
     background-color: hsl(0, 0%, 100%);
     font-size: 1em;
     overflow-x: hidden;
+    
 }
-  ::-moz-selection { /* Code for Firefox */
+::-moz-selection { /* Code for Firefox */
     color: rgb(255, 255, 255);
-    background: #c83235;
+    background: #6d5bde;
     border: solid;
   }
   
   ::selection {
     color: rgb(255, 255, 255);
-    background: #c83235;
+    background: #6d5bde;
   }
 
 .header-bar {
     display: flex;
-    background: rgba(255, 255, 255, 0.693);
+    background: rgba(255, 255, 255, 0.715);
     padding: 30px;
     width: 100vw;
     position: absolute;
     top:0;
     left:0;
     right:0;
-    color: white;
+    color: black;
     letter-spacing: 0.5px;
     z-index: 1000;
+    padding-bottom: 30px;
     position:fixed;
     border-bottom: solid rgba(0, 0, 0, 0.277) 1px;
     backdrop-filter: blur(100px);
@@ -36,8 +38,17 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
+
 }
 
+@media (min-width: 2500px) {
+    body {
+        font-size: 1.3em;
+    }
+    .nav-bar li {
+        padding-left: 40px;
+    }
+}
 .left-section {
     display: flex;
     background-color: rgba(173, 216, 230, 0);
@@ -55,18 +66,18 @@ body {
 .right-section ul {
     z-index: 1;
 }
-@media (min-width: 2500px) {
-    body {
-        font-size: 1.3em;
-    }
-    .nav-bar li {
-        padding-left: 40px;
-    }
+.hamburger-menu {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    margin-right: 10px;
+    opacity: 0;
 }
 .hamburger-icon {
     width: 6vw;
     margin: 3vh;
 }
+
 .logo-container {
     padding-top: 3px;
 }
@@ -152,13 +163,26 @@ a {
 
 
 .cover-photo {
-    background-image: url("cinema-banner.png");
+    background-image: url("../images/UniO-cover.png");
     width: 100vw;
     height: 30vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+@media (max-width: 820px) {
+    .cover-photo {
+        background-image: url("../images/UniO-shrink.png");
+        height: 38vw;        
+    }
+}
+
+@media (max-width: 600px) {
+    .cover-photo {
+        background-image: url("../images/UniO-shrink.png");
+        background-size:cover;
+    }
 }
 .cover {
     width: 100vw;
@@ -177,12 +201,20 @@ a {
     z-index: 2;
     color: rgb(255, 255, 255);
     flex-wrap: wrap;
-    left: 0;
-    right: 0;
+    right: 5vw;
     padding: 10px;
     position: absolute;
-    top: 24vw;
+    top: 21vw;
+    width: 40vw;
     font-weight: 400;
+}
+
+@media (max-width: 820px) {
+    .brief-desc {
+        top: 28vw;
+        width: auto;
+        margin-left: auto;
+    }
 }
 .desc {
     margin-left: 10px;
@@ -225,12 +257,12 @@ a {
 
 .heading {
     text-transform: uppercase;
-    color: #881f20;
+    color: #3e3190;
     font-weight: 700;
 }
 
 .persona {
-    background-image: url("zhaopersona.png");
+    background-image: url("../images/jillpersona.png");
     width: 60vw;
     height: 40vw;
     background-position: center;
@@ -243,7 +275,8 @@ a {
     width: 50vw;
 }
 .paper-lofi {
-    width: 60vw;
+    width: 50vw;
+    margin-top: 2rem;
 }
 
  .view-prototype {
@@ -267,13 +300,13 @@ a {
 }
 .view-prototype:hover {
     color: white;
-    background-color:#ab3a3b;
-    border-color: #ab3a3b;
-    transition:0.2s;
+    background-color:#3e3190;
+    border-color: #3e3190;
+    transition: 0.2s;
     box-shadow: none;
 }
 .view-prototype {
-    transition:0.2s;
+    transition: 0.2s;
 }
 
 li {
@@ -286,6 +319,9 @@ li {
 }
 .mockup {
     width: 15vw;
+}
+.mockup-notes {
+    width: 20vw;
 }
 .arrow {
     font-size: 3vw;
@@ -327,6 +363,7 @@ li {
 }
 .design-system {
     width: 50vw;
+    margin: 0;
 }
 .final-mockups {
     display: flex;
@@ -338,29 +375,31 @@ li {
     width: 15vw;
     margin: 0.5em;
 }
-
-.mockup, .mockup-pic {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.34);
-}
-.footer {
+.web-mockups {
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #881f21;
-    color:white;
-    line-height: 10rem;
-    margin-top: 4rem;
+}
+.mockup-pic-2 {
+    height:45vh;
+    margin: 1em;
+    margin-bottom: 4rem;
+}
+.mockup, .mockup-notes {
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.34);
+}
+.mockup-pic {
+    width: 60vw;
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 700px) {
     .cover-photo {
         height: 50vh;
         width: auto;
     }   
     .brief-desc {
-        top: 38vh;
+        top: 35vh;
     } 
     
     .body {
@@ -386,7 +425,21 @@ li {
 }
 
 .mockup-pic {
-    width: 20vw;
+    width: 70vw;
+}
+
+.mockup-notes {
+    width: 25vw;
+}
+.web-mockups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mockup-pic-2 {
+    height:50vh;
+    object-fit: contain;
+    margin: 0.5em;
 }
 }
 @media (max-width:600px) {
@@ -422,7 +475,22 @@ li {
         display: inline;
     }
     
+    
 .mockup-pic {
-    width: 40vw;
+    width: 70vw;
 }
+
+.mockup-notes {
+    width: 35vw;
+}
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e3190;
+    color:white;
+    line-height: 10rem;
+    margin-top: 4rem;
 }

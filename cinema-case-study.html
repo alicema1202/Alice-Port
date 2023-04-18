@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CineMa: Mobile Theater Tickets</title>
+        <title>CineMa: Mobile Theater Tickets — Alice Ma</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="header-case-studies.css" rel="stylesheet"> 
-        <link href="animation.css" rel="stylesheet">
-        <link href="headerforCS.css" rel="stylesheet">
+        <link href="css/header-case-studies.css" rel="stylesheet"> 
+        <link href="css/animation.css" rel="stylesheet">
+        <link href="css/headerforCS.css" rel="stylesheet">
+        <link href="css/content.css" rel="stylesheet">
+
         <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
 
-        <meta name="msapplication-TileImage" content="CINEMA-THUMBNAIL.png">
-        <meta property="og:image" itemprop="image" content="CINEMA-THUMBNAIL.png">
+        <meta name="msapplication-TileImage" content="images/CINEMA-THUMBNAIL.png">
+        <meta property="og:image" itemprop="image" content="images/CINEMA-THUMBNAIL.png">
         
         <meta property="og:type" content="website" />
         <meta property="og:image:type" content="image/png">
@@ -26,7 +28,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" type="x-icon" href="cinema-favicon.png">
+        <link rel="shortcut icon" type="x-icon" href="images/cinema-favicon.png">
     </head>
     <body onscroll="appear()">
         <a href="#top" class="back-to-top">
@@ -38,6 +40,12 @@
             }
         </script>
         <style>
+            h2 {
+                font-size: 1.2ch;
+                color: #9e3435;
+                font-weight: 700;
+                letter-spacing: 0.3ch;
+            }
             html {
                 scroll-behavior: smooth;
             }
@@ -265,158 +273,202 @@
                 <div class="desc"><strong>TIMELINE:</strong> June 2022</div>
             </div>
         </div>
-        <div class="case-study-content">
-            <div class="heading hidden">
-                Project Overview
-            </div>
-            <div class="body hidden">
-                CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
-            </div>
-            <div class="heading hidden">
-                Understanding Users
-            </div>
-            
-            <div class="body hidden">
-                I conducted <strong>two unmoderated usability studies</strong> throughout my design process to identify user pain points. Through my research, it became evident that these pain points included: lack of language options and bundled ticket scans.
-            </div>
-            <div class="heading hidden">
-                Crafting Personas
-            </div>
-            <div>
+       
+        <div class="content">
+            <section id="problem">
+                <h2 class="hidden">
+                    PROJECT OVERVIEW
+                </h2>
+                <h1 class="hidden">
+                    An easier way to purchase and scan movie tickets
+                </h1>
+                <p class="description hidden">
+                    CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
+                </p>
+            </section>
+
+            <section id="competitive-audit">
+                <h2 class="hidden">
+                    USABILITY STUDIES
+                </h2>
+                <h1 class="hidden">
+                    No language options or bundled ticket scanning
+                </h1>
+                <p class="description hidden">
+                    I conducted <strong>two unmoderated usability studies</strong> throughout my design process to identify user pain points. Through my research of patterns from study participants, it became evident that these pain points included: lack of language options and bundled ticket scans.
+                </p>
+            </section>
+            <section id="persona">
+                <h2 class="hidden">
+                    UNDERSTANDING USERS
+                </h2>
+                <h1 class="hidden">
+                    Looking at the needs of the users
+                </h1>
+                <p class="description hidden">
+                    Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
+                </p>
                 <div class="persona hidden">
                 </div>
-            </div>
-            <div class="heading hidden">
-                Paper to Digital
-            </div>
-            <div class="paper-wireframes">
-                <div class="body hidden">
+            </section>
+            <section id="ideation">
+                <h2 class="hidden">
+                    IDEATION
+                </h2>
+                <h1 class="hidden">
+                    From paper to prototype
+                </h1>
+                <p class="description hidden">
                     To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms.
-                </div>
-                <img class="paper-drawing hidden" src="cinema-paper.jpg">
-            </div>
-            
-            <div class="body hidden">
-                After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
-            </div>
-            <img class="paper-lofi hidden" src="cinema-lofi.png">
-            <form action="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank" >
-                <button class="view-prototype hidden">
-                    VIEW LO-FI PROTOTYPE                                </button>
-            </form>
-            
-            <div class="heading hidden">
-                User Testing
-            </div>
-            <div class="body hidden">
-                After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
-                <div class="bullets">
-                    <li>Lacked language options</li>
+                </p>
+                <img class="paper-drawing hidden" src="images/cinema-paper.jpg">
+                <p class="description hidden">
+                    After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
+                </p>
+                <img class="paper-drawing hidden" src="images/cinema-lofi.png">
+                <form action="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank" >
+                    <button class="button view-prototype hidden">
+                        VIEW LO-FI PROTOTYPE
+                    </button>
+                </form>
+            </section>
+            <section id="user-testing">
+                <h2 class="hidden">
+                    USER TESTING
+                </h2>
+                <h1 class="hidden">
+                    The problems with my current design
+                </h1>
+                <p class="description hidden">
+                    After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
+                    <ul class="description hidden">
+                        <li class="item">Lacked language options</li>
 
-                    <li>Users need to be able to review their ticket order</li>
+                        <li class="item">Users need to be able to review their ticket order</li>
                     
-                    <li>There should be the option of bundle scanning</li>
+                        <li class="item">There should be the option of bundle scanning</li>
+                    </ul>
+                </p>
+                <p class="description hidden">
+                    Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
+                </p>
+                <ul class="description hidden">
+                    <li class="item">The user flow was missing a seat selection feature</li>
                     
-                </div>
-                Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
-                <div class="bullets">
+                    <li class="item">Some gesture and touch options were not working</li>
                     
-                    <li>The user flow was missing a seat selection feature</li>
-                    
-                    <li>Some gesture and touch options were not working</li>
-                    
-                    <li>Movie titles should be includes in the tickets</li>
+                    <li class="item">Movie titles should be includes in the tickets</li>
+                </ul>
+            </section>
+            <section id="making-changes">
+                <h2 class="hidden">
+                    MAKING CHANGES
+                </h2>
+                <h1 class="hidden">
+                    Making improvements based on study results
+                </h1>
+                <p class="hidden">
+                    <p class="description hidden">
+                        After conducting both usability studies, I made some changes to my high-fidelity prototype!
+                    </p>
+                    <div class="change hidden">
+                        <div class="leftside">
+                            <p class="description bold">
+                                1. Seat Selection
+                            </p>
+                            <p class="description">
+                                Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
+                            </p>
+                        </div>
+                        <div class="changes">
+                            <img class="mockup " src="images/Movie Info.png">
+                            <div class="arrow ">&#8594</div>
+                            <img class="mockup " src="images/cinema-seats.png">
+                        </div>
+                    </div>
+                    <div class="change flip hidden">
+                        <div class="rightside">
+                            <p class="bold description">2. Language Options</p> 
+                            <p class="description">Adding language options is a must to improve accessibility for many users whose preferred language is not English.</p>      
+                        </div>
+                        <div class="changes">
+                            <img class="mockup " src="images/homelow.png">
+                            <div class="arrow ">&#8594</div>
+                            <img class="mockup " src="images/Select English (1).png">
+                        </div>
+                    </div>
+                </p>
+            </section>
+            <section id="finalmockups">
+                <h2 class="hidden">
+                    FINAL PRODUCT
+                </h2>
+                <h1 class="hidden">
+                    The final high fidelity design
+                </h1>
+                <div class="final-mockups hidden">
+                    <img class="mockup-pic" src="images/my-tickets.png">
+                    <img class="mockup-pic" src="images/Select English (1).png">
+                    <img class="mockup-pic" src="images/heyyy.png">
+                    <img class="mockup-pic" src="images/cinema-seats.png">
                 </div>
-
-            </div>
-            <div class="heading hidden">
-                Making Changes
-            </div>
-            
-            <div class="body hidden">
-                After conducting both usability studies, I made some changes to my high-fidelity prototype!
-            </div>
-            <div class="change-1 hidden">
-                <div class="body-change ">
-                    <strong>1. Seat Selection</strong>
-    
-                    <p>Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.</p>
+                <form action="https://bit.ly/3PJw5sB" target="_blank" >
+                    <button class="button view-prototype hidden">
+                        VIEW HI-FI PROTOTYPE
+                    </button>
+                </form>
+            </section>
+            <section id="style-guide">
+                <h2 class="hidden">
+                    FINAL PRODUCT
+                </h2>
+                <h1 class="hidden">
+                    The Style Guide
+                </h1>
+                <p class="description hidden">
+                    While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
+                </p>
+                <img class="design-system hidden" title="style guide" src="images/cinema-design-system.png">
+            </section>
+            <section id="accessibility">
+                <h2 class="hidden">
+                    ACCESSIBILITY
+                </h2>
+                <h1 class="hidden">
+                    Taking accessibility into consideration
+                </h1>
+                <div class="description hidden">
+                    <strong>1. Language Options</strong> 
+                    <p class="description">The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.</p>  
                 </div>
-                <div class="changes ">
-                    <img class="mockup " src="Movie Info.png">
-                    <div class="arrow ">&#8594</div>
-                    <img class="mockup " src="cinema-seats.png">
+                <div class="description hidden">
+                    <strong>2. Contrasting Colors</strong> 
+                    <p class="description">With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>  
                 </div>
-            </div>
-            <div class="change-2 hidden">
-                <div class="body-change ">
-                    <strong>2. Language Options</strong> 
-
-                    <p>Adding language options is a must to improve accessibility for many users whose preferred language is not English.</p>      </div>
-                <div class="changes ">
-                    <img class="mockup " src="homelow.png">
-                    <div class="arrow ">&#8594</div>
-                    <img class="mockup " src="Select English (1).png">
+                <div class="description hidden">
+                    <strong>3. Labels</strong> 
+                    <p class="description">I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>  
                 </div>
-                
-            </div>
-            
-            <div class="heading hidden">
-                The Design System
-            </div>
-            <div class="design-sys hidden">
-                <img class="design-system " src="cinema-design-system.png">
-            </div>
-            <div class="body hidden">
-                
-            </div>
-            <div class="heading hidden">
-                Final Product
-            </div>
-            <div class="final-mockups hidden">
-                <img class="mockup-pic" src="my-tickets.png">
-                <img class="mockup-pic" src="Select English (1).png">
-                <img class="mockup-pic" src="heyyy.png">
-                <img class="mockup-pic" src="cinema-seats.png">
-            </div>
-            <form action="https://bit.ly/3PJw5sB" target="_blank" >
-                <button class="view-prototype hidden">
-                    VIEW HI-FI PROTOTYPE                                </button>
-            </form>
-            <div class="body hidden">
-                
-            </div>
-            <div class="heading hidden">
-                Accessibility
-            </div>
-            
-            <div class="body hidden">
-               <strong>1. Language Options</strong> 
-<p>The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app’s settings.
-</p>
-<strong>2. Contrasting Colors</strong>
-<p>With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>
+            </section>
 
-<strong>3. Labels</strong>
-<p>I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>            </div>
-            <div class="heading hidden">
-                Takeaways
-            </div>
-            
-            <div class="body hidden">
-               <strong>What I Learned:</strong> 
-
-<p>
-    I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
-
-</p>            </div>
+            <section id="takeaways">
+                <h2 class="hidden">
+                    TAKEAWAYS
+                </h2>
+                <h1 class="hidden">
+                    What I learned from this
+                </h1>
+                <div class="description hidden">
+                    I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
+                </div>
+            </section>
         </div>
         
-    <div class="footer">
-        ©2022 Alice Ma. All Rights Reserved.
-    </div>
+        <div class="footer">
+            ©2022 Alice Ma. All Rights Reserved.
+        </div>
     
 </body>
-<script src="slide.js"></script>
+<script src="js/slide.js"></script>
 
 </html>
