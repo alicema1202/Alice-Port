@@ -26,6 +26,13 @@ body {
     padding-bottom: 50px;
     position:fixed;
 }
+
+header {
+    transition: top ease-in 0.6s;
+}
+.nav-up {
+    top: -180px;
+}
 .left-section {
     display: flex;
     background-color: rgba(173, 216, 230, 0);

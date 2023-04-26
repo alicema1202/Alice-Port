@@ -400,6 +400,7 @@ li {
     }   
     .brief-desc {
         top: 35vh;
+        right: 0vw;
     } 
     
     .body {

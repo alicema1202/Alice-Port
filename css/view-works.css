@@ -9,13 +9,14 @@ html {
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 66vh;
+    top: 80vh;
 }
 .h1 {
     z-index: 200;
     font-size: 2rem;
     padding: 0;
-    padding-top: 19vh;
+    /* padding-top: 19vh; */
+    padding-top: 5vh;
     margin: 0;
     line-height: 2rem;
     min-width: 13ch;
@@ -33,20 +34,18 @@ html {
     transform: scale(0.7);
     transform-origin:top;
     position: absolute;
-    margin-top: calc(24vh + 2rem);
+    margin-top: calc(24vh - 14vh + 2rem);
 }
 
 @media (min-width:2400px) and (max-width: 7000px) {
     .h1 {
         font-size: 2em;
-        margin-top: 0.5ch;
+        /* margin-top: 0.5ch; */
     }
-    .projects {
-        margin-top: 2ch;
-    }
+
     .project-grid {
         transform: scale(1.5);
-        margin-top: calc(24vh + 2em);
+        /* margin-top: calc(24vh + 2em); */
     }
 }
 @media (min-width: 3500px) {

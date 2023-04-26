@@ -8,6 +8,12 @@
 .header-bar {
     padding-bottom: 30px!important;
 }
+header {
+    transition: top ease-in 0.3s;
+}
+.nav-up {
+    top: -100px;
+}
 .logo {
     color: black;
 }
