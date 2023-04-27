@@ -159,6 +159,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    overflow-x: visible;
 }
 .cover {
     width: 100vw;

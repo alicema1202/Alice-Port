@@ -30,8 +30,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="images/cinema-favicon.png">
     </head>
+    <!-- <style>
+        body {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            right: 0;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    </style> -->
     <body onscroll="appear()">
-        <a href="#top" class="back-to-top">
+        <a href="#top" class="back-to-top" >
             <i class="fa-solid fa-chevron-up"></i>
         </a>
         <script>
@@ -83,9 +93,10 @@
             </div>
             <style>
                 /* Handle */
-                ::-webkit-scrollbar-thumb {
+                /* ::-webkit-scrollbar-thumb {
                     background: #c13739;
                 }
+                 */
                 .dropdown {
                     transition: height 5s; 
                     margin-bottom: 0vh;
@@ -439,15 +450,15 @@
                 </h1>
                 <div class="description hidden">
                     <strong>1. Language Options</strong> 
-                    <p class="description">The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.</p>  
+                    <p>The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.</p>  
                 </div>
                 <div class="description hidden">
                     <strong>2. Contrasting Colors</strong> 
-                    <p class="description">With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>  
+                    <p>With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>  
                 </div>
                 <div class="description hidden">
                     <strong>3. Labels</strong> 
-                    <p class="description">I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>  
+                    <p>I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>  
                 </div>
             </section>
 
@@ -472,5 +483,16 @@
 <script src="js/slide.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="js/headerslide.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/simplebar@6.2.5/dist/simplebar.css"
+/>
+<script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
+<!-- or -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
 
 </html>

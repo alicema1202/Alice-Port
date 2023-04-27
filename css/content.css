@@ -3,7 +3,7 @@ h1 {
     line-height: 2ch;
     margin-left: 0;
     margin-top: 0.8ch;
-    margin-bottom: 0.5ch;
+    margin-bottom: 0.6ch;
     position: relative;
     left: -0.1ch;
     color: rgb(54, 54, 54);
@@ -25,7 +25,9 @@ section {
     letter-spacing: 0.05ch;
     font-size: 1.7ch;
 }
-
+#user-testing ul {
+    margin-top: -1rem;
+}
 .content {
     padding-top: 4.5ch;
     padding-left: 18vw;
@@ -176,3 +178,32 @@ strong {
         margin-left: 0;
     }
 }
+html {
+    /* background-color: rgb(232, 10, 10); */
+    margin: 0;
+    height: auto;
+    /* overflow: auto;  */
+    overflow-x: hidden;
+    overflow-y: overlay;
+  }
+
+  body {
+    position:absolute;
+    height: auto;
+    overflow: visible;
+  }
+
+  
+  *::-webkit-scrollbar {
+    width: 15px;
+    overflow-y: overlay;
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(73, 73, 73, 0.781);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(120, 120, 120, 0.773);
+  }

@@ -31,7 +31,8 @@ header {
     transition: top ease-in 0.6s;
 }
 .nav-up {
-    top: -180px;
+    top: -160px;
+    transition: top ease-in 0.6s;
 }
 .left-section {
     display: flex;
@@ -80,7 +81,7 @@ header {
     position: absolute;
     width: 100vw;
     height: 80vh;
-    background-color: rgba(0, 0, 0, 0.112);
+    background-color: rgba(0, 0, 0, 0.329);
     z-index: 1;
     filter: blur(100px);
 }
