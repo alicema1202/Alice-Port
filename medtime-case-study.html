@@ -30,15 +30,23 @@
         <link rel="shortcut icon" type="x-icon" href="images/medtime-favicon.png">
     </head>
     <body onscroll="appear()">
-        <a href="#top" class="back-to-top">
+        <a href="#top" class="back-to-top hide">
             <i class="fa-solid fa-chevron-up"></i>
         </a>
         <script>
             function appear() {
-                document.querySelector(".back-to-top").style.opacity = "1";
+                document.querySelector(".back-to-top").classList.remove('hide');
             }
+            window.addEventListener("scroll", function(){
+                if(window.scrollY==0){
+                    document.querySelector(".back-to-top").classList.add('hide');
+                }
+            });
         </script>
         <style>
+            .hide {
+                opacity: 0;
+            }
             h2 {
                 font-size: 1.2ch;
                 color: #1789a2;
@@ -50,7 +58,7 @@
             }
             .back-to-top {
                 transition: opacity 0.3s;
-                opacity: 0;
+                /* opacity: 0; */
                 z-index: 1000;
                 position: fixed;
                 right: 0;
@@ -60,11 +68,20 @@
                 align-items: center;
                 flex-direction: column;
                 background-color: #2295af;
-                margin: 1rem;
+                margin: 2rem;
                 height: 4rem;
                 width: 4rem;
                 border-radius: 50%;
+                transition: 0.3s;
+                background-color: rgba(169, 169, 169, 0.564);
+                backdrop-filter: blur(20px);
             }
+            .back-to-top:hover {
+                margin-bottom: 2.4rem;
+                background-color: rgba(122, 122, 122, 0.644);
+                transition: 0.3s;
+            }
+            
             
             .fa-solid {
                 color: white;
