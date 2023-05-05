@@ -501,6 +501,18 @@ body {
     font-weight: 400;
     border-top: solid rgba(0, 0, 0, 0.277) 1px;
 }
+.footer p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+@media only screen and (max-width: 550px) {
+    .footer p {
+        width: 45vw;
+        text-align: center;
+        line-height: 2em;
+        padding: 2.5rem 0;
+    }
+}
 /* Handle */
 /* ::-webkit-scrollbar-thumb {
     background: #c13739;
