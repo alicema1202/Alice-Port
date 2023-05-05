@@ -6,36 +6,33 @@
         <link href="css/medtime-case-study.css" rel="stylesheet"> 
         <link href="css/headerforCS.css" rel="stylesheet">
         <link href="css/animation.css" rel="stylesheet">
+        <link href="css/general.css" rel="stylesheet">
+        <link href="css/content.css" rel="stylesheet">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="images/contact-favicon.png">
         <style>
-        
-            .footer {
-                width: 100vw;
-                position: absolute;
-                background-color: black;
-                line-height: 20vh;
-                left: 0;
-                margin-top: 0;
+            .form-control {
+                font-family: lexend, Arial, Helvetica, sans-serif!important;
             }
             .catch-line {
-                color: black;
+                color: rgb(54, 54, 54);
                 font-size: 2rem;
+                font-weight: 700;
             }
             .paragraph {
-                font-family: roboto, arial;
                 font-weight: 400;
                 line-height: 3ch;
             }
             .about-me {
                 display: flex;
                 width: 70vw;
-                height: calc(100vh - 100px);
+                height: calc(100vh - 90px);
                 margin-left: 15vw;
                 margin-right: 15vw;
                 align-items: center;
@@ -67,13 +64,14 @@
                     border-radius: 30px;
                     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
                     cursor: pointer;
-                    font-family: roboto , arial;
+                    font-family: lexend , arial;
                     margin-top: 30px;
+                    font-weight: 500;
                 }
                 .view-prototype:hover {
                     color: white;
-                    background-color:#3e3190;
-                    border-color: #3e3190;
+                    background-color:black;
+                    border-color: black;
                     transition:0.2s;
                     box-shadow: none;
                 }
@@ -81,7 +79,7 @@
                     transition:0.2s;
                 }
                 form {
-                    font-family: roboto, arial;
+                    /* font-family: roboto, arial; */
                 }
                 .row-1 {
                     margin-top: 100px;
@@ -99,7 +97,7 @@
                 }
                 .contact {
                     margin-top: 0;
-                    background-color: blue;
+                    /* background-color: blue; */
                 }
                 .intro-about-me {
                     width: 50vw;
@@ -125,7 +123,7 @@
                     border-radius: 4rem;
                     transition: 0.3s cubic-bezier(.1,.53,.66,.96);
                     cursor: pointer;
-                    font-family: roboto , arial;
+                    /* font-family: roboto , arial; */
                     margin-top: 30px;
                     font-weight: 500;
                 }
@@ -149,7 +147,7 @@
         </style>
     </head>
     <body>
-        <header class="header-bar">
+        <header class="header-bar remove">
             <div class="left-section">
                 <a href="https://alicemadesign.com/home" class="logo-container logo">
                     ALICE MA
@@ -203,7 +201,7 @@
                     opacity: 1;
                 }
                 .drop-button:hover .removepad {
-                    top: 2.4ch;
+                    top: 3ch;
                 }
                 .center {
                     text-align: center;
@@ -352,11 +350,11 @@
                 </div>
                 <form class="contact-form" action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
                     <div class="row-1">
-                        <label class="required" for="name">Your name:</label><br />
-                        <input type="text" name="name" class="form-control" placeholder="Full Name" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
+                        <label class="required" for="name">Your name:</label><br/>
+                        <input type="name" name="name" class="form-control" placeholder="Full Name" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
                       </div>
                       <div class="row">
-                        <label class="required" for="name">Your email:</label><br />
+                        <label class="required" for="email">Your email:</label><br/>
                         <input type="email" name="email" class="form-control" placeholder="Email Address" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
                       </div>
                       <div class="row">
@@ -371,7 +369,7 @@
         </div>
         
         <div class="footer">
-            ©2022 Alice Ma. All Rights Reserved.
+            ©2022 Designed and Coded by Alice Ma.
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

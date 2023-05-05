@@ -14,7 +14,7 @@ body {
   
   ::selection {
     color: rgb(255, 255, 255);
-    background: #6d5bde;
+    background: #4d419b6e;
   }
 
 .header-bar {
@@ -164,6 +164,7 @@ a {
 
 .cover-photo {
     background-image: url("../images/UniO-cover.png");
+    background-image: url("../images/unio-light-banner.png");
     width: 100vw;
     height: 30vw;
     background-position: center;
@@ -174,6 +175,7 @@ a {
 @media (max-width: 820px) {
     .cover-photo {
         background-image: url("../images/UniO-shrink.png");
+        background-image: url("../images/unio-light-shrink.png");
         height: 38vw;        
     }
 }
@@ -181,6 +183,7 @@ a {
 @media (max-width: 600px) {
     .cover-photo {
         background-image: url("../images/UniO-shrink.png");
+        background-image: url("../images/unio-light-shrink.png");
         background-size:cover;
     }
 }
@@ -204,8 +207,9 @@ a {
     right: 5vw;
     padding: 10px;
     position: absolute;
-    top: 21vw;
+    top: 19vw;
     width: 40vw;
+    line-height: 1.1em;
     font-weight: 400;
 }
 
@@ -494,4 +498,10 @@ li {
     color:white;
     line-height: 10rem;
     margin-top: 4rem;
+}
+.footer {
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    border-top: solid rgba(0, 0, 0, 0.277) 1px;
 }

@@ -27,12 +27,16 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="images/unio-icon.png">
     <body onscroll="appear()">
-        <a href="#top" class="back-to-top hide">
+        <a onclick="scrollWin()" class="back-to-top hide">
             <i class="fa-solid fa-chevron-up"></i>
         </a>
         <script>
+            function scrollWin() {
+                window.scrollTo(0, 0);
+            }
             function appear() {
                 document.querySelector(".back-to-top").classList.remove('hide');
             }
@@ -45,7 +49,7 @@
         <style>
             .hide {
                 opacity: 0;
-                cursor:default;
+                cursor: default!important;
             }
             .final-mockups {
                 display: block;
@@ -68,6 +72,7 @@
                 scroll-behavior: smooth;
             }
             .back-to-top {
+                cursor: pointer;
                 transition: opacity 0.3s;
                 /* opacity: 0; */
                 z-index: 1000;
@@ -80,6 +85,7 @@
                 flex-direction: column;
                 background-color: #5a4bb7;
                 margin: 2rem;
+                margin-right: calc(2rem + 10px);
                 height: 4rem;
                 width: 4rem;
                 border-radius: 50%;
@@ -95,6 +101,30 @@
             }
             .fa-solid {
                 color: white;
+            }
+        </style>
+        <style>
+            .header-bar {
+                font-family: lexend, Arial, Helvetica, sans-serif;
+                font-weight: 400;
+            }
+            .button, .brief-desc,.content,.description, .footer {
+                font-family: lexend, Arial, Helvetica, sans-serif;
+            }
+            .brief-desc {
+                font-size: 0.9em;
+            }
+            .button {
+                font-weight: 500;
+            }
+            .description {
+                letter-spacing: normal;
+            }
+            h1 {
+                font-weight: 700;
+            }
+            h2 {
+                font-weight: 600;
             }
         </style>
         <header class="header-bar">
@@ -155,7 +185,7 @@
                     opacity: 1;
                 }
                 .drop-button:hover .removepad {
-                    top: 2.4ch;
+                    top: 3ch;
                 }
                 .center {
                     text-align: center;
@@ -290,7 +320,7 @@
         
         <div class="cover">
             <div>
-                <div class="cover-photo">
+                <div class="cover-photo" title="UniO Banner">
             </div>
             <div class="brief-desc">
                 <div class="desc"><strong>PROJECT:</strong> UniO, University Notetaking</div>
@@ -334,7 +364,7 @@
                 <p class="description hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Jill, a 19 year old female:
                 </p>
-                <div class="persona hidden">
+                <div class="persona hidden" title="Jill's Persona">
                 </div>
             </section>
             <section id="ideation">
@@ -347,14 +377,14 @@
                 <p class="description hidden">
                     To begin designing, I transferred the ideas from my ideation and research process onto paper wireframes for my desktop website.
                 </p>
-                <img class="paper-drawing hidden" src="images/wireframesAdobe.jpg">
+                <img class="paper-drawing hidden" src="images/wireframesAdobe.jpg" title="Paper Wireframes">
                 <p class="description hidden">
                     After drawing these paper wireframes, I moved on and created more refined versions on Adobe XD for all the pages in the app. After that, I connected the screens and made it into an interactive mid-fi prototype. 
                 </p>
-                <img class="paper-drawing hidden" src="images/lofi-adobe.png">
+                <img class="paper-drawing hidden" src="images/lofi-adobe.png" title="Low Fidelity Prototype">
                 <form action="https://xd.adobe.com/view/ae95c262-8aa1-4395-b184-80e0586108f5-fbc6/?fullscreen" target="_blank" >
                     <button class="button view-prototype hidden">
-                        VIEW LO-FI PROTOTYPE
+                        View Lo-fi Prototype
                     </button>
                 </form>
             </section>
@@ -403,9 +433,9 @@
                             </p>
                         </div>
                         <div class="changes">
-                            <img class="mockup " src="images/unio-before-1.png">
+                            <img class="mockup " src="images/unio-before-1.png" title="Before">
                             <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/unio-after-1.png">
+                            <img class="mockup " src="images/unio-after-1.png" title="After">
                         </div>
                     </div>
                     <div class="change flip hidden">
@@ -416,9 +446,9 @@
                             </p>      
                         </div>
                         <div class="changes">
-                            <img class="mockup " src="images/unio-before-2.png">
+                            <img class="mockup " src="images/unio-before-2.png" title="Before">
                             <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/unio-after-2.png">
+                            <img class="mockup " src="images/unio-after-2.png" title="After">
                         </div>
                     </div>
                 </p>
@@ -431,11 +461,11 @@
                     The final high fidelity design
                 </h1>
                 <div class="final-mockups hidden">
-                    <img class="unio-final" src="images/unio-final.png">
+                    <img class="unio-final" src="images/unio-final.png" title="Final Mockup">
                 </div>
                 <form action="https://bit.ly/3PJw5sB" target="_blank" >
                     <button class="button view-prototype hidden">
-                        VIEW HI-FI PROTOTYPE
+                        View Hi-Fi Prototype
                     </button>
                 </form>
             </section>
@@ -450,8 +480,8 @@
                     To make the design responsive, I created a mobile version of the web design with changes to the layout to fit the smaller screen size.
                 </p>
                 <div class="web-mockups hidden">
-                    <img class="mockup-pic-2" src="images/unio-responsive-1.png">
-                    <img class="mockup-pic-2" src="images/unio-responsive-2.png">
+                    <img class="mockup-pic-2" src="images/unio-responsive-1.png" title="Mobile Web Design">
+                    <img class="mockup-pic-2" src="images/unio-responsive-2.png" title="Mobile Web Design">
                 </div>
             </section>
 
@@ -465,7 +495,7 @@
                 <p class="description hidden">
                     While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
                 </p>
-                <img class="design-system hidden" title="style guide" src="images/unio-design-system.png">
+                <img class="design-system hidden" title="Style Guide" src="images/unio-design-system.png">
             </section>
             <section id="accessibility">
                 <h2 class="hidden">
@@ -498,7 +528,7 @@
         </div>
         
         <div class="footer">
-            ©2022 Alice Ma. All Rights Reserved.
+            ©2022 Designed and Coded by Alice Ma.
         </div>
     
 </body>

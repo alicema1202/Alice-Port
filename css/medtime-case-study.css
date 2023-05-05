@@ -8,13 +8,13 @@ body {
 }
 ::-moz-selection { /* Code for Firefox */
     color: rgb(255, 255, 255);
-    background: #2295af;
+    background: #2f798a6f;
     border: solid;
 }
 
 ::selection {
     color: rgb(255, 255, 255);
-    background: #2295af;
+    background: #2f798a6f;
 }
 @media (min-width: 2500px) {
     body {
@@ -165,6 +165,7 @@ a {
 
 .cover-photo {
     background-image: url("../images/MedTime.png");
+    background-image: url("../images/medtime-light-banner.png");
     width: 100vw;
     height: 30vw;
     background-position: center;
@@ -175,6 +176,7 @@ a {
 @media (max-width: 800px) {
     .cover-photo {
         background-image: url("../images/MedTime-shrink.png");
+        background-image: url("../images/medtime-light-shrink.png");
         height: 38vw;        
     }
 }
@@ -182,6 +184,7 @@ a {
 @media (max-width: 600px) {
     .cover-photo {
         background-image: url("../images/MedTime-shrink.png");
+        background-image: url("../images/medtime-light-shrink.png");
         background-size:cover;
     }
 }
@@ -210,6 +213,11 @@ a {
     width: 70vw;
     margin-left: 15px;
     font-weight: 400;
+}
+@media (max-width: 1000px) {
+    .brief-desc {
+        top: 22vw;
+    }
 }
 @media (max-width: 800px) {
     .brief-desc {
@@ -477,4 +485,10 @@ li {
     color:white;
     line-height: 10rem;
     margin-top: 4rem;
+}
+.footer {
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    border-top: solid rgba(0, 0, 0, 0.277) 1px;
 }

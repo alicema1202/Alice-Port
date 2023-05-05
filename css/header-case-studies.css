@@ -7,13 +7,13 @@ body {
 }
   ::-moz-selection { /* Code for Firefox */
     color: rgb(255, 255, 255);
-    background: #c83235;
+    background: #8e292a65;
     border: solid;
   }
   
   ::selection {
     color: rgb(255, 255, 255);
-    background: #c83235;
+    background: #8e292a65;
   }
 
 .header-bar {
@@ -153,6 +153,7 @@ a {
 
 .cover-photo {
     background-image: url("../images/cinema-banner.png");
+    background-image: url("../images/cinema-light-banner.png");
     width: 100vw;
     height: 30vw;
     background-position: center;
@@ -354,14 +355,19 @@ li {
     line-height: 10rem;
     margin-top: 4rem;
 }
-
+.footer {
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    border-top: solid rgba(0, 0, 0, 0.277) 1px;
+}
 @media (max-width: 900px) {
     .cover-photo {
-        height: 50vh;
+        height: 38vh;
         width: auto;
     }   
     .brief-desc {
-        top: 36vh;
+        top: 28vh;
     } 
     
     .body {
@@ -390,11 +396,18 @@ li {
     width: 20vw;
 }
 }
-@media (max-width:600px) {
+@media (max-width:820px) {
             
 .design-system {
     width: 80vw;
 }
+.cover-photo {
+    height: 50vh;
+    width: auto;
+}  
+.brief-desc {
+    top: 35vh;
+} 
     .body-change {
         width: 65vw;
         text-align: center;

@@ -12,7 +12,7 @@ header {
     transition: top ease-in 0.3s;
 }
 .nav-up {
-    top: -100px;
+    top: -200px;
 }
 .logo {
     color: black;

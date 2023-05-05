@@ -28,6 +28,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="images/cinema-favicon.png">
     </head>
     <!-- <style>
@@ -41,10 +42,13 @@
         }
     </style> -->
     <body onscroll="appear()">
-        <a href="#top" class="back-to-top hide" >
+        <a onclick="scrollWin()" class="back-to-top hide" >
             <i class="fa-solid fa-chevron-up"></i>
         </a>
         <script>
+            function scrollWin() {
+                window.scrollTo(0, 0);
+            }
             function appear() {
                 document.querySelector(".back-to-top").classList.remove('hide');
             }
@@ -57,6 +61,7 @@
         <style>
             .hide {
                 opacity: 0;
+                cursor: default!important;
             }
             h2 {
                 font-size: 1.2ch;
@@ -68,6 +73,7 @@
                 scroll-behavior: smooth;
             }
             .back-to-top {
+                cursor: pointer;
                 transition: opacity 0.3s;
                 /* opacity: 0; */
                 z-index: 1000;
@@ -80,6 +86,7 @@
                 flex-direction: column;
                 background-color: #c13739;
                 margin: 2rem;
+                margin-right: calc(2rem + 10px);
                 height: 4rem;
                 width: 4rem;
                 border-radius: 50%;
@@ -157,7 +164,7 @@
                     opacity: 1;
                 }
                 .drop-button:hover .removepad {
-                    top: 2.4ch;
+                    top: 3ch;
                 }
                 .center {
                     text-align: center;
@@ -246,6 +253,30 @@
                     }
                 }
             </style>
+            <style>
+                .header-bar {
+                    font-family: lexend, Arial, Helvetica, sans-serif;
+                    font-weight: 400;
+                }
+                .button, .brief-desc,.content,.description, .footer {
+                    font-family: lexend, Arial, Helvetica, sans-serif;
+                }
+                .brief-desc {
+                    font-size: 0.9em;
+                }
+                .button {
+                    font-weight: 500;
+                }
+                .description {
+                    letter-spacing: normal;
+                }
+                h1 {
+                    font-weight: 700;
+                }
+                h2 {
+                    font-weight: 600;
+                }
+            </style>
             <nav class="nav-bar">
                 <ul>
                     <li class="dropdown left">
@@ -293,7 +324,7 @@
         
         <div class="cover">
             <div>
-                <div class="cover-photo">
+                <div class="cover-photo" title="CineMa Banner">
             </div>
             <div class="brief-desc">
                 <div class="desc"><strong>PROJECT:</strong> CineMa, a mobile ticketing app</div>
@@ -336,7 +367,7 @@
                 <p class="description hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
                 </p>
-                <div class="persona hidden">
+                <div class="persona hidden" title="Zhao's Persona">
                 </div>
             </section>
             <section id="ideation">
@@ -349,14 +380,14 @@
                 <p class="description hidden">
                     To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms.
                 </p>
-                <img class="paper-drawing hidden" src="images/cinema-paper.jpg">
+                <img class="paper-drawing hidden" src="images/cinema-paper.jpg" title="Paper Wireframes">
                 <p class="description hidden">
                     After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
                 </p>
-                <img class="paper-drawing hidden" src="images/cinema-lofi.png">
+                <img class="paper-drawing hidden" src="images/cinema-lofi.png" title="Low Fidelity Prototype">
                 <form action="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank" >
                     <button class="button view-prototype hidden">
-                        VIEW LO-FI PROTOTYPE
+                        View Lo-fi Prototype
                     </button>
                 </form>
             </section>
@@ -409,9 +440,9 @@
                             </p>
                         </div>
                         <div class="changes">
-                            <img class="mockup " src="images/Movie Info.png">
+                            <img class="mockup " src="images/Movie Info.png" title="Before">
                             <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/cinema-seats.png">
+                            <img class="mockup " src="images/cinema-seats.png" title="After">
                         </div>
                     </div>
                     <div class="change flip hidden">
@@ -420,9 +451,9 @@
                             <p class="description">Adding language options is a must to improve accessibility for many users whose preferred language is not English.</p>      
                         </div>
                         <div class="changes">
-                            <img class="mockup " src="images/homelow.png">
+                            <img class="mockup " src="images/homelow.png" title="Before">
                             <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/Select English (1).png">
+                            <img class="mockup " src="images/Select English (1).png" title="After">
                         </div>
                     </div>
                 </p>
@@ -435,14 +466,14 @@
                     The final high fidelity design
                 </h1>
                 <div class="final-mockups hidden">
-                    <img class="mockup-pic" src="images/my-tickets.png">
-                    <img class="mockup-pic" src="images/Select English (1).png">
-                    <img class="mockup-pic" src="images/heyyy.png">
-                    <img class="mockup-pic" src="images/cinema-seats.png">
+                    <img class="mockup-pic" src="images/my-tickets.png" title="Final Mockups">
+                    <img class="mockup-pic" src="images/Select English (1).png" title="Final Mockups">
+                    <img class="mockup-pic" src="images/heyyy.png" title="Final Mockups">
+                    <img class="mockup-pic" src="images/cinema-seats.png" title="Final Mockups">
                 </div>
                 <form action="https://bit.ly/3PJw5sB" target="_blank" >
                     <button class="button view-prototype hidden">
-                        VIEW HI-FI PROTOTYPE
+                        View Hi-fi Prototype
                     </button>
                 </form>
             </section>
@@ -456,7 +487,7 @@
                 <p class="description hidden">
                     While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
                 </p>
-                <img class="design-system hidden" title="style guide" src="images/cinema-design-system.png">
+                <img class="design-system hidden" title="Style Guide" src="images/cinema-design-system.png">
             </section>
             <section id="accessibility">
                 <h2 class="hidden">
@@ -493,7 +524,7 @@
         </div>
         
         <div class="footer">
-            ©2022 Alice Ma. All Rights Reserved.
+            ©2022 Designed and Coded by Alice Ma.
         </div>
     
 </body>

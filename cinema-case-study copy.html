@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Medtime: Get Medicine Reminders — Alice Ma</title>
+        <title>CineMa: Mobile Theater Tickets — Alice Ma</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/medtime-case-study.css" rel="stylesheet"> 
+        <link href="css/header-case-studies.css" rel="stylesheet"> 
         <link href="css/animation.css" rel="stylesheet">
         <link href="css/headerforCS.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
-        <link href="css/content.css" rel="stylesheet"> 
+        <link href="css/content.css" rel="stylesheet">
 
-        <meta name="msapplication-TileImage" content="images/MEDTIME-THUMBNAIL.png">
-        <meta property="og:image" itemprop="image" content="images/MEDTIME-THUMBNAIL.png">
+        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+
+        <meta name="msapplication-TileImage" content="images/CINEMA-THUMBNAIL.png">
+        <meta property="og:image" itemprop="image" content="images/CINEMA-THUMBNAIL.png">
         
         <meta property="og:type" content="website" />
         <meta property="og:image:type" content="image/png">
@@ -18,8 +19,8 @@
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="201">
         
-        <meta property="og:url" content="https://alicemadesign.com/medtime-case-study">
-        <meta property="og:description" content="Many people who have to take medicine end up forgetting to take it because they do not have a system set up to remind them. This could lead to serious consequences. MedTime is an app that reminds people to take their medication on time. This app will be helpful to those who suffer from forgetting to take their medicine.">
+        <meta property="og:url" content="https://alicemadesign.com/cinema-case-study">
+        <meta property="og:description" content="CineMa is a mobile ticketing app that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.">
 
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,16 +29,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" type="x-icon" href="images/medtime-favicon.png">
+        <link rel="shortcut icon" type="x-icon" href="images/cinema-favicon.png">
     </head>
+    <!-- <style>
+        body {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            right: 0;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    </style> -->
     <body onscroll="appear()">
-        <a onclick="scrollWin()" class="back-to-top hide">
+        <a href="#top" class="back-to-top hide" >
             <i class="fa-solid fa-chevron-up"></i>
         </a>
         <script>
-            function scrollWin() {
-                window.scrollTo(0, 0);
-            }
             function appear() {
                 document.querySelector(".back-to-top").classList.remove('hide');
             }
@@ -50,11 +58,10 @@
         <style>
             .hide {
                 opacity: 0;
-                cursor: default!important;
             }
             h2 {
                 font-size: 1.2ch;
-                color: #1789a2;
+                color: #9e3435;
                 font-weight: 700;
                 letter-spacing: 0.3ch;
             }
@@ -62,20 +69,18 @@
                 scroll-behavior: smooth;
             }
             .back-to-top {
-                cursor: pointer;
                 transition: opacity 0.3s;
                 /* opacity: 0; */
                 z-index: 1000;
                 position: fixed;
-                right: 0;
                 bottom: 0;
+                right: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                background-color: #2295af;
+                background-color: #c13739;
                 margin: 2rem;
-                margin-right: calc(2rem + 10px);
                 height: 4rem;
                 width: 4rem;
                 border-radius: 50%;
@@ -89,34 +94,8 @@
                 background-color: rgba(122, 122, 122, 0.644);
                 transition: 0.3s;
             }
-            
-            
             .fa-solid {
                 color: white;
-            }
-        </style>
-        <style>
-            .header-bar {
-                font-family: lexend, Arial, Helvetica, sans-serif;
-                font-weight: 400;
-            }
-            .button, .brief-desc,.content,.description, .footer {
-                font-family: lexend, Arial, Helvetica, sans-serif;
-            }
-            .brief-desc {
-                font-size: 0.9em;
-            }
-            .button {
-                font-weight: 500;
-            }
-            .description {
-                letter-spacing: normal;
-            }
-            h1 {
-                font-weight: 700;
-            }
-            h2 {
-                font-weight: 600;
             }
         </style>
         <header class="header-bar">
@@ -133,8 +112,9 @@
             <style>
                 /* Handle */
                 /* ::-webkit-scrollbar-thumb {
-                    background: #2295af;
-                } */
+                    background: #c13739;
+                }
+                 */
                 .dropdown {
                     transition: height 5s; 
                     margin-bottom: 0vh;
@@ -147,6 +127,7 @@
                     margin: 0;
                     margin-bottom: 10px;
                     z-index: 1;
+                    color: black;
                 }
                 .dropdown-content {
                     display: none;
@@ -177,7 +158,7 @@
                     opacity: 1;
                 }
                 .drop-button:hover .removepad {
-                    top: 3ch;
+                    top: 2.8ch;
                 }
                 .center {
                     text-align: center;
@@ -215,6 +196,7 @@
                     .drop-button {
                         margin-bottom: 6vh;
                         z-index: 10;
+                        color: black;
                     }
                     .dropdown {
                         margin-bottom: 0;
@@ -309,46 +291,64 @@
                 contents.classList.toggle("removepad");
             }
         </script>
-        
+        <style>
+            .header-bar {
+                font-family: lexend, Arial, Helvetica, sans-serif;
+                font-weight: 400;
+            }
+            .button, .brief-desc,.content,.description, .footer {
+                font-family: lexend, Arial, Helvetica, sans-serif;
+            }
+            .brief-desc {
+                font-size: 0.9em;
+            }
+            .button {
+                font-weight: 500;
+            }
+            .description {
+                letter-spacing: normal;
+            }
+            h1 {
+                font-weight: 700;
+            }
+            h2 {
+                font-weight: 600;
+            }
+        </style>
         <div class="cover">
             <div>
-                <div alt ="medtime cover photo" class="cover-photo">
+                <div class="cover-photo">
             </div>
             <div class="brief-desc">
-                <div class="desc"><strong>PROJECT:</strong> MedTime Medicine Tracking</div>
+                <div class="desc"><strong>PROJECT:</strong> CineMa, a mobile ticketing app</div>
                 <div class="desc"><strong>ROLE:</strong> UX Designer + Researcher</div>
-                <div class="desc"><strong>TIMELINE:</strong> July 2022</div>
+                <div class="desc"><strong>TIMELINE:</strong> June 2022</div>
             </div>
         </div>
        
         <div class="content">
             <section id="problem">
                 <h2 class="hidden">
-                    PROBLEM
+                    PROJECT OVERVIEW
                 </h2>
                 <h1 class="hidden">
-                    People forget to take their medicine
+                    An easier way to purchase and scan movie tickets
                 </h1>
                 <p class="description hidden">
-                    Many people who have to take medicine end up forgetting to take it because they do not have a proper system set up to remind them. Forgetting to take medication on time can lead to a worsening of symptoms and may decrease the effectiveness of the medication. MedTime is an app that <strong>reminds people to take their medication on time</strong>. This app will be helpful to those who suffer from forgetting to take their medicine. 
+                    CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
                 </p>
             </section>
 
             <section id="competitive-audit">
                 <h2 class="hidden">
-                    COMPETITIVE AUDIT
+                    USABILITY STUDIES
                 </h2>
                 <h1 class="hidden">
-                    The lack of a cross-platform experience
+                    No language options or bundled ticket scanning
                 </h1>
                 <p class="description hidden">
-                    To work towards understanding the users I am designing for, I did research by conducting<strong> competitive audits</strong> as part of my ideation process. Through the competitive analysis, I realized that <strong>the competition only offered mobile apps</strong>. With that in mind, I used this project as an opportunity to bridge this gap.
+                    I conducted <strong>two unmoderated usability studies</strong> throughout my design process to identify user pain points. Through my research of patterns from study participants, it became evident that these pain points included: lack of language options and bundled ticket scans.
                 </p>
-                <form action="https://docs.google.com/spreadsheets/d/15Se9cO5jka02QkhRPyZCQM8mw8VcFhb7uzcOniu-8dM/edit?usp=sharing" target="_blank" >
-                    <button class="button view-prototype hidden">
-                        View Full Audit
-                    </button>
-                </form> 
             </section>
             <section id="persona">
                 <h2 class="hidden">
@@ -358,9 +358,9 @@
                     Looking at the needs of the users
                 </h1>
                 <p class="description hidden">
-                    Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Bill, a 71 year old male:
+                    Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
                 </p>
-                <div class="picture persona hidden" title="Bill's Persona">
+                <div class="persona hidden">
                 </div>
             </section>
             <section id="ideation">
@@ -371,16 +371,16 @@
                     From paper to prototype
                 </h1>
                 <p class="description hidden">
-                    I sketched multiple iterations of paper wireframes for multiple screens to get started with the design. I put stars next to any features I might consider keeping in the next iteration of the designs.
+                    To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms.
                 </p>
-                <img class="paper-drawing hidden" src="images/medtime-paper.jpg" Title="Paper wireframes">
+                <img class="paper-drawing hidden" src="images/cinema-paper.jpg">
                 <p class="description hidden">
-                    After creating these wireframes, I digitized them using Figma and turned the paper wireframes into working mid-fidelity digital prototypes.
+                    After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
                 </p>
-                <img class="paper-drawing hidden" src="images/medtime-lofi.png" Title="Low Fidelity Prototype">
-                <form action="https://www.figma.com/proto/MdmV1zIERXIQo6swOwPNIF/Project-3?node-id=2%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=2%3A2" target="_blank" >
+                <img class="paper-drawing hidden" src="images/cinema-lofi.png">
+                <form action="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank" >
                     <button class="button view-prototype hidden">
-                        View Lo-fi Prototype
+                        VIEW LO-FI PROTOTYPE
                     </button>
                 </form>
             </section>
@@ -392,15 +392,25 @@
                     The problems with my current design
                 </h1>
                 <p class="description hidden">
-                    After building the mid-fidelity prototype, I used it to conduct a usability study, and from it, I gained many new findings about how to improve my designs:
+                    After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
                     <ul class="description hidden">
-                        <li class="item">The two add buttons on the home screen caused confusing navigation for most users</li>
-    
-                        <li class="item">The lack of a mark all as done button creates inconvenience for users</li>
-                        
-                        <li class="item">Although the primary add button is large, it is not the most visible because it lacks contrast</li>
+                        <li class="item">Lacked language options</li>
+
+                        <li class="item">Users need to be able to review their ticket order</li>
+                    
+                        <li class="item">There should be the option of bundle scanning</li>
                     </ul>
                 </p>
+                <p class="description hidden">
+                    Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
+                </p>
+                <ul class="description hidden">
+                    <li class="item">The user flow was missing a seat selection feature</li>
+                    
+                    <li class="item">Some gesture and touch options were not working</li>
+                    
+                    <li class="item">Movie titles should be includes in the tickets</li>
+                </ul>
             </section>
             <section id="making-changes">
                 <h2 class="hidden">
@@ -410,32 +420,37 @@
                     Making improvements based on study results
                 </h1>
                 <p class="hidden">
-                    <p class="description hidden">After conducting the usability study, I made some changes to my high-fidelity prototype!</p>
+                    <p class="description hidden">
+                        After conducting both usability studies, I made some changes to my high-fidelity prototype!
+                    </p>
                     <div class="change hidden">
                         <div class="leftside">
-                            <p class="description bold">1. Navigation and User Flow</p>
-                            <p class="description">I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.</p>
+                            <p class="description bold">
+                                1. Seat Selection
+                            </p>
+                            <p class="description">
+                                Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
+                            </p>
                         </div>
                         <div class="changes">
-                            <img class="mockup " src="images/medtime-home-lo.png" title="Before Screen">
+                            <img class="mockup " src="images/Movie Info.png">
                             <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/medtime-home-hi.png" title="After Screen">
+                            <img class="mockup " src="images/cinema-seats.png">
                         </div>
                     </div>
                     <div class="change flip hidden">
                         <div class="rightside">
-                            <p class="bold description">2. Customization Options</p> 
-                            <p class="description">Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.</p>      
+                            <p class="bold description">2. Language Options</p> 
+                            <p class="description">Adding language options is a must to improve accessibility for many users whose preferred language is not English.</p>      
                         </div>
                         <div class="changes">
-                            <img class="mockup " src="images/medtime-search-lo.png" title="Before Screen">
+                            <img class="mockup " src="images/homelow.png">
                             <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/customize.png" title="After Screen">
+                            <img class="mockup " src="images/Select English (1).png">
                         </div>
                     </div>
                 </p>
             </section>
-
             <section id="finalmockups">
                 <h2 class="hidden">
                     FINAL PRODUCT
@@ -444,34 +459,14 @@
                     The final high fidelity design
                 </h1>
                 <div class="final-mockups hidden">
-                    <img class="mockup-pic" src="images/medtime-home-hi.png" title="Mockup Screen">
-                    <img class="mockup-pic" src="images/search.png" title="Mockup Screen">
-                    <img class="mockup-pic" src="images/options.png" title="Mockup Screen">
-                    <img class="mockup-pic" src="images/selection.png" title="Mockup Screen">
+                    <img class="mockup-pic" src="images/my-tickets.png">
+                    <img class="mockup-pic" src="images/Select English (1).png">
+                    <img class="mockup-pic" src="images/heyyy.png">
+                    <img class="mockup-pic" src="images/cinema-seats.png">
                 </div>
-                <form action="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank" >
+                <form action="https://bit.ly/3PJw5sB" target="_blank" >
                     <button class="button view-prototype hidden">
-                        View Hi-fi Prototype
-                    </button>
-                </form>
-            </section>
-            <section id="cross-platform">
-                <h2 class="hidden">
-                    CROSS-PLATFORM
-                </h2>
-                <h1 class="hidden">
-                    And there's a website too!
-                </h1>
-                <p class="description hidden">
-                    Now that I have created a dedicated mobile app for MedTime. It would be good to have a web version of it as well. The web version is a responsive web design that adapts to different screen sizes, making on-the-go reminders even easier to achieve.
-                </p>
-                <div class="web-mockups hidden">
-                    <img class="mockup-pic-2" src="images/ipad-medtime.png" title="Mockup on Tablet">
-                    <img class="mockup-pic-2" src="images/laptop-medtime.png" title="Mockup on Laptop">
-                </div>
-                <form action="https://bit.ly/3Kh26r1" target="_blank" >
-                    <button class="button view-prototype hidden">
-                        View Web Prototype
+                        VIEW HI-FI PROTOTYPE
                     </button>
                 </form>
             </section>
@@ -485,7 +480,7 @@
                 <p class="description hidden">
                     While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
                 </p>
-                <img class="design-system hidden" title="Style Guide" src="images/medtime-system.png">
+                <img class="design-system hidden" title="style guide" src="images/cinema-design-system.png">
             </section>
             <section id="accessibility">
                 <h2 class="hidden">
@@ -495,12 +490,16 @@
                     Taking accessibility into consideration
                 </h1>
                 <div class="description hidden">
-                    <strong>1. High Contrast Color</strong> 
-                    <p>In my design, I included high contrast colors and bolded fonts for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.</p>  
+                    <strong>1. Language Options</strong> 
+                    <p>The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.</p>  
                 </div>
                 <div class="description hidden">
-                    <strong>2. Navigation</strong> 
-                    <p>I placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks without navigation issues.</p>  
+                    <strong>2. Contrasting Colors</strong> 
+                    <p>With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>  
+                </div>
+                <div class="description hidden">
+                    <strong>3. Labels</strong> 
+                    <p>I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>  
                 </div>
             </section>
 
@@ -512,16 +511,29 @@
                     What I learned from this
                 </h1>
                 <div class="description hidden">
-                    I learned that designing for laptop and tablet are quite similar experiences because of their similar proportions. However, I thought that mobile apps and mobile sites would basically be the same, but there were many different considerations I had to make to transform the app into a mobile website design.
+                    I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
                 </div>
             </section>
         </div>
         
         <div class="footer">
-            ©2022 Designed and Coded by Alice Ma.
+            ©2022 Alice Ma. All Rights Reserved.
         </div>
-    </body>
-    <script src="js/slide.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/headerslide.js"></script>
+    
+</body>
+<script src="js/slide.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="js/headerslide.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/simplebar@6.2.5/dist/simplebar.css"
+/>
+<script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
+<!-- or -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
+
 </html>
