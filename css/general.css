@@ -395,7 +395,7 @@ body {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .view-works {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     #works {
         margin-bottom: 5vh;
