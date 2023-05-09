@@ -17,6 +17,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="x-icon" href="images/contact-favicon.png">
         <style>
+            @media only screen and (min-width:2000px) {
+                .container {
+                    height: calc(100vh - 10rem);
+                    display: flex;
+                    margin: 0!important;
+                }
+            }
+            .container {
+                /* height: 100vh; */
+                margin-bottom: calc(3rem);
+                margin-top: calc(70px);
+            }
             .form-control {
                 font-family: lexend, Arial, Helvetica, sans-serif!important;
             }
@@ -32,13 +44,13 @@
             .about-me {
                 display: flex;
                 width: 70vw;
-                height: calc(100vh - 90px);
+                /* height: calc(100vh - 90px); */
                 margin-left: 15vw;
                 margin-right: 15vw;
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                top: calc(60px + 1.7em);
+                /* top: calc(60px + 1.7em); */
             }
             .pic {
                 width: 35vw;
@@ -49,51 +61,57 @@
             }
             
             .view-prototype {
-                    opacity: 1;
-                    padding: 1em 2em 1em 2em;
-                    margin-bottom: 2em;
-                    margin-left: 0;
-                    right: 0px;
-                    font-weight: bold;
-                    font-size: 17px;
-                    background-color: white;
-                    color: black;
-                    border-color: rgb(0, 0, 0);
-                    border-style: solid;
-                    border-width: 2px;
-                    border-radius: 30px;
-                    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-                    cursor: pointer;
-                    font-family: lexend , arial;
-                    margin-top: 30px;
-                    font-weight: 500;
-                }
-                .view-prototype:hover {
-                    color: white;
-                    background-color:black;
-                    border-color: black;
-                    transition:0.2s;
-                    box-shadow: none;
-                }
-                .view-prototype {
-                    transition:0.2s;
-                }
-                form {
-                    /* font-family: roboto, arial; */
-                }
-                .row-1 {
-                    margin-top: 100px;
-                }
-                
-                .row {
-                    margin-top: 15px;
-                }
+                opacity: 1;
+                padding: 1em 2em 1em 2em;
+                margin-bottom: 2em;
+                margin-left: 0;
+                right: 0px;
+                font-weight: bold;
+                font-size: 17px;
+                background-color: white;
+                color: black;
+                border-color: rgb(0, 0, 0);
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 30px;
+                transition: 0.3s cubic-bezier(.1,.53,.66,.96);
+                cursor: pointer;
+                font-family: lexend , arial;
+                margin-top: 30px;
+                font-weight: 500;
+            }
+            .view-prototype:hover {
+                color: white;
+                background-color:black;
+                border-color: black;
+                transition:0.2s;
+                box-shadow: none;
+            }
+            .view-prototype {
+                transition:0.2s;
+            }
+            form {
+                /* font-family: roboto, arial; */
+            }
+            .row-1 {
+                margin-top: 100px;
+            }
+            
+            .row {
+                margin-top: 15px;
+            }
             @media (max-width: 700px) {
+                .container {
+                    margin-top: calc(70px + 3rem);
+                    margin-bottom: calc(70px + 3rem);
+                }
                 .about-me {
                     flex-direction: column;
-                    align-items: center;
+                    align-items: flex-start;
                     justify-content: center;
-                    height: auto;
+                    /* height: auto; */
+                    /* margin-top: calc(70px + 3rem);
+                    margin-bottom: calc(70px + 3rem); */
                 }
                 .contact {
                     margin-top: 0;
@@ -342,7 +360,7 @@
             }
         </script>
         
-        <div style="margin-bottom:93px ;">
+        <div class="container">
             <div class="about-me">
                 <div class="intro-about-me">
                     <p class="catch-line">
@@ -377,7 +395,7 @@
         </div>
         
         <div class="footer">
-            ©2023 Designed and Coded by Alice Ma.
+            <p>©2023 Designed and Coded by Alice Ma.</p>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
