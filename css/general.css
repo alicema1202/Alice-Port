@@ -387,25 +387,27 @@ body {
 
 
 @media only screen and (min-width:2000px) {
+    .hero-text {
+        width: 90vw;
+    }
     .card-grid {
         column-gap: 3rem;
-        transform: scale(1.5);
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .view-works {
+        font-size: 3rem;
+    }
+    #works {
         margin-bottom: 5vh;
-        font-size: 4rem;
+        position: relative;
     }
-    .projects {
+    /* .projects {
         margin-bottom: 30vh;
-    }
+    } */
 }
 @media only screen and (min-width:2500px) {
     .card-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    .view-works {
-        font-size: 4rem;
     }
     .projects {
         margin-bottom: 17vh;
