@@ -17,7 +17,12 @@ header {
 .logo {
     color: black;
 }
-
+@media only screen and (min-width: 2000px) {
+    .header-bar {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+}
 @media only screen and (max-width: 600px) {
     .logo {
         max-width: 5ch;

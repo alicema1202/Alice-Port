@@ -446,7 +446,7 @@ body {
     display: flex;
     justify-content: center;
     pointer-events: none;
-    border: 1px solid rgba(0, 0, 0, 0.107);
+    /* border: 1px solid rgba(0, 0, 0, 0.107); */
 }
 .unio {
     background: linear-gradient(214.11deg, #CDC5FF 0%, rgba(115, 101, 203, 0) 172.47%), #7365CB;

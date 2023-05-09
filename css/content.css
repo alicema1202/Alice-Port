@@ -23,7 +23,7 @@ section {
     margin-top: 0;
     margin-bottom: 2rem;
     letter-spacing: 0.05ch;
-    font-size: 1.7ch;
+    font-size: 1.6ch;
 }
 #user-testing ul {
     margin-top: -1rem;
@@ -56,6 +56,7 @@ section {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    /* background-color: blue; */
 }
 
 .paper-drawing {
@@ -132,6 +133,52 @@ strong {
 }
 .web-mockups {
     margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 2000px) {
+    .content {
+        max-width: 1300px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: auto;
+    }
+    h1 {
+        font-size: 4.3ch;
+    }
+    h2 {
+        font-size: 1.4ch!important;
+    }
+    .arrow {
+        font-size: 2vw;
+    }
+    .description {
+        font-size: 2ch;
+    }
+    .persona {
+        max-width: 1300px;
+        max-height: 666px;
+    }
+    .paper-drawing {
+        max-width: 1300px;
+    }
+    .mockup {
+        max-width: 250px;
+    }
+    .unio-final {
+        max-width: 1300px;
+    }
+    .design-system {
+        max-width: 1000px;
+        height: auto;
+    }
+    .mockup-pic {
+        max-width: 250px;
+        margin: 2rem;
+    }
+    .mockup-pic-2 {
+        max-width: 650px;
+        height: auto;
+    }
 }
 @media (max-width: 1000px) {
     .change {
