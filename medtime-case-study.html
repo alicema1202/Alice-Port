@@ -131,7 +131,7 @@
                 <div class="line two"></div>
                 <div class="line three"></div>
             </div>
-            <style>
+            <!-- <style>
                 /* Handle */
                 /* ::-webkit-scrollbar-thumb {
                     background: #2295af;
@@ -150,13 +150,15 @@
                     z-index: 1;
                 }
                 .dropdown-content {
-                    display: none;
+                    display: block;
                     position: absolute;
+                    pointer-events: none;
+                    opacity: 0;
                     top: 0;
                     overflow: hidden;
                     font-weight: 400;
                     transition: opacity 0.5s, transform 0.5s;
-                    animation: fadeIn 0.5s 0s 1;
+                    /* animation: fadeIn 0.5s 0s 1; */
                     background-color: rgb(41, 41, 41);
                     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
                     border: none;
@@ -166,19 +168,23 @@
                     margin-bottom: 3vh;
                     padding-top: 0.6ch;
                     padding-bottom: 0.6ch;
+                    transform: translateY(0);
+                    transition: opacity 0.3s, transform 0.7s;
                 }
                 .drop-button:hover {
                     cursor: pointer;
                 }
                 .drop-button:hover .dropdown-content {
                     display: block;
-                    top: calc(30px + 2.4ch);
-                    transition: opacity 0.5s, transform 0.5s;
-                    animation: fadeIn 0.5s 0s 1;
+                    pointer-events: all;
+                    transform: translateY(3ch);
+                    /* top: calc(30px + 2.4ch); */
+                    transition: opacity 0.7s, transform 0.3s;
+                    /* animation: fadeIn 0.5s 0s 1; */
                     opacity: 1;
                 }
                 .drop-button:hover .removepad {
-                    top: 3ch;
+                    /* top: 3ch; */
                 }
                 .center {
                     text-align: center;
@@ -186,7 +192,7 @@
                 .list-item {
                     min-width: 10ch;
                     padding: 1em 2em;
-                    color: rgba(252, 252, 252, 0.692);
+                    color: rgba(255, 255, 255, 0.692);
                 }
                 @media only screen and (min-width: 900px){
                     .list-item {
@@ -220,6 +226,9 @@
                     .dropdown {
                         margin-bottom: 0;
                     }
+                    .drop-button:hover .removepad {
+                        top: 3ch;
+                    }
                     .margins:hover {
                         margin-right: 2rem;
                         margin-left: 2rem;
@@ -231,13 +240,17 @@
                         position: relative;
                         font-weight: 400;
                         margin-bottom: 1ch;
+                        display: none;
                     }
                     .dropdown:hover .drop-button {
                         margin-bottom: 0;
                     }
                     .drop-button:hover .dropdown-content {
                         font-size: large;
+                        top: 0;
+                        transform: translateY(0);
                         background-color: rgba(255, 255, 255, 0);
+                        /* transform: translateY(calc(30px+2.4ch)); */
                     }
                     .margins .dropdown-content .list-item {
                         color: rgba(0, 0, 0, 0.626);
@@ -265,7 +278,7 @@
                         text-align: center;
                     }
                 }
-            </style>
+            </style> -->
             <nav class="nav-bar">
                 <ul>
                     <li class="dropdown left">

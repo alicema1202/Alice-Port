@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,7 +31,7 @@
         <meta property="og:url" content="https://alicemadesign.com">
         <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
         <body>
-            <header class="header-bar remove">
+            <header class="remove header-bar">
                 <div class="left-section">
                     <a href="https://alicemadesign.com/home" class="logo-container logo">
                         ALICE MA
@@ -41,159 +42,11 @@
                     <div class="line two"></div>
                     <div class="line three"></div>
                 </div>
-                <style>
-                    /* Handle */
-                    /* ::-webkit-scrollbar-thumb {
-                        background: #5a4bb7;
-                    } */
-                    .dropdown {
-                        transition: height 5s; 
-                        margin-bottom: 0vh;
-                        text-align: left;
-                    }
-                    .left {
-                        text-align: left;
-                    }
-                    .drop-button {
-                        margin: 0;
-                        margin-bottom: 10px;
-                        z-index: 1;
-                    }
-                    .dropdown-content {
-                        display: none;
-                        position: absolute;
-                        top: 0;
-                        overflow: hidden;
-                        font-weight: 400;
-                        transition: opacity 0.5s, transform 0.5s;
-                        animation: fadeIn 0.5s 0s 1;
-                        /* RIGHTHERE */
-                        background-color: rgb(41, 41, 41);
-                        /* background-color: rgba(255, 255, 255, 0.512);
-                        backdrop-filter: blur(20rem);
-                        --webkitbackdrop-filter: blur(20rem); */
-                        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
-                        border: none;
-                        border-radius: 0.3em;
-                        border-top-left-radius: 0;
-                        z-index: 10;
-                        margin-bottom: 3vh;
-                        padding-top: 0.6ch;
-                        padding-bottom: 0.6ch;
-                    }
-                    .drop-button:hover {
-                        cursor: pointer;
-                    }
-                    .drop-button:hover .dropdown-content {
-                        display: block;
-                        top: calc(30px + 2.4ch);
-                        transition: opacity 0.5s, transform 0.5s;
-                        animation: fadeIn 0.5s 0s 1;
-                        opacity: 1;
-                    }
-                    .drop-button:hover .removepad {
-                        top: 3ch;
-                    }
-                    .center {
-                        text-align: center;
-                    }
-                    .list-item {
-                        font-weight: 400;
-                        min-width: 10ch;
-                        padding: 1em 2em;
-                        /* RIGHT HERE */
-                        color: rgba(252, 252, 252, 0.692);
-                        /* color: black; */
-                    }
-                    @media only screen and (min-width: 900px){
-                        .list-item {
-                            position: relative;
-                        }
-                    }
-                    .list-item:hover {
-                        color: rgb(255, 255, 255);
-                        /* color: black; */
-                        background-color: rgba(0, 0, 0, 0.595);
-                        /* background-color: rgba(0, 0, 0, 0.236); */
-                        transition: 0.2s;
-                    }
-                    @keyframes fadeIn {
-                        0% {opacity: 0; transform: translateY(-30px);}
-                        100% {opacity: 1; transform: translateY(0px);}
-                    }
-                    @keyframes fadeOut {
-                        0% {opacity: 1; transform: translateY(0px);}
-                    }
-                    .drop-button {
-                        padding: 0.3em 0;
-                        margin-bottom: 0;
-                    }
-                    /* .margins:hover {
-                        margin-right: calc(2rem - 1.88ch);
-                    } */
-                    @media only screen and (max-width: 900px) {
-                        .drop-button {
-                            margin-bottom: 0vh;
-                            z-index: 10;
-                            padding: 0;
-                        }
-                        .dropdown {
-                            margin-bottom: 0;
-                        }
-                        .margins:hover {
-                            margin-right: 2rem;
-                            margin-left: 2rem;
-                        }
-                        .drop-button {
-                            font-size: 2.5vh;
-                        }
-                        .margins .dropdown-content {
-                            position: relative;
-                            font-weight: 500;
-                            margin-bottom: 1ch;
-                        }
-                        .dropdown:hover .scroll-works {
-                            margin-bottom: 0;
-                        }
-                       
-                        .drop-button:hover .dropdown-content {
-                            font-size: large;
-                            background-color: rgba(255, 255, 255, 0);
-                        }
-                        .margins .dropdown-content .list-item {
-                            color: rgba(0, 0, 0, 0.626);
-                            margin-top: 0.5ch;
-                            padding: 0.5em;
-                        }
-                        .margins .dropdown-content .list-item:hover {
-                            background-color: rgba(255, 255, 255, 0);
-                        }
-                        /* .drop-button:hover {
-                            margin-bottom: 1vh;
-                        } */
-                        .margins:hover .dropdown-content{
-                            box-shadow: none;
-                            top: 0;
-                            margin: 0;
-                            padding: 0;
-                            /* background-color: rgba(255, 255, 255, 0); */
-                            margin-bottom: 2vh;
-                        }
-                        .margins:hover .dropdown-content .list-item {
-                            margin-bottom: 0;
-                        }
-                        .dropdown {
-                            text-align: center;
-                        }
-                    }
-                    .nav-bar ul li p {
-                        padding-bottom: 0;
-                    }
-                </style>
+                
                 <nav class="nav-bar">
                     <ul>
                         <li class="dropdown left">
-                            <p class="hover-underline-animation drop-button" onclick='goToWorks("works")'><a class="scroll-works">WORKS</a>
+                            <p class="hover-underline-animation drop-button" onclick="hover()">WORKS
                                 <b class="dropdown-content removepad">
                                     <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
                                     <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
@@ -217,9 +70,6 @@
                 </nav>
             </header>
             <script>
-                function scrollWin(x, y) {
-                    window.scrollTo(0, window.innerHeight);
-                }
                 hamburger = document.querySelector(".hamburger");
                 hamburger.onclick = function() {
                     navBar = document.querySelector(".nav-bar");
@@ -236,16 +86,12 @@
                     contents = document.querySelector(".dropdown-content");
                     contents.classList.toggle("removepad");
                 }
-                function goToWorks(element){   
-                    document.getElementById('works').scrollIntoView();
- 
-                }
             </script>
-            <div class="landing-page remove">
+            <div class="remove landing-page">
                 <div class="hero-text">
                     <div class="greeting">HI, NICE TO MEET YOU!</div>
                     <div class="intro">I'm Alice, a UX Designer with a passion for creating accessible and intuitive user experiences. I am currently studying Cognitive Science @ UCSD.</div>
-                    <a onclick='goToWorks("works")' class="scroll-section">
+                    <a onclick="goToWorks()" id="go-to-works" class="scroll-section">
                         <i class="fa-solid fa-chevron-down scroll"></i>
                         <p class="label">Scroll for more</p>
                     </a>
@@ -255,12 +101,12 @@
                     <source src="images/lightmode-blobs.mp4">
                 </video>
             </div>
-            <div id="works" class="projects remove">
+            <div id="works" class="remove projects">
                 <div class="view-works">
                     View My Works
                 </div>
                 <div class="card-grid">
-                    <a class="card hidden" href="https://www.pega.com/about/careers/interns" target="blank" >
+                    <a title="Pegasystems Internship" class="card hidden" href="https://www.pega.com/about/careers/interns" target="blank" >
                         <div class="poster pega">
                             <img class="phone" src="images/pega-phones.png">
                         </div>
@@ -272,7 +118,7 @@
                             <p class="purpose">Incoming UX Design Intern @ Pega Summer 2023</p>
                         </div>
                     </a>
-                    <a class="card hidden" href="https://alicemadesign.com/medtime-case-study">
+                    <a title="MedTime Case Study" class="card hidden" href="https://alicemadesign.com/medtime-case-study">
                         <div class="poster medtime">
                             <img class="phone" src="images/medtime-phones.png">
                         </div>
@@ -284,7 +130,7 @@
                             <p class="purpose">Designed a medicine reminder app to help people take meds on time</p>
                         </div>
                     </a>
-                    <a class="card hidden" href="https://alicemadesign.com/cinema-case-study">
+                    <a title="CineMa Case Study" class="card hidden" href="https://alicemadesign.com/cinema-case-study">
                         <div class="poster cinema">
                             <img class="phone" src="images/cinema-phones.png">
                         </div>
@@ -297,7 +143,7 @@
                         </div>
                     </a>
             
-                    <a class="card hidden" target="blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRpkD0QZ1wiItlL9utl_3eSvP1Crcj8-deGABEpIgBQ1__tKcpV8QHXHuljONntQQuBm7nMsVIO7884/pub?start=false&loop=false&delayms=3000">
+                    <a title="myChinatown Hackathon" class="card hidden" target="blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRpkD0QZ1wiItlL9utl_3eSvP1Crcj8-deGABEpIgBQ1__tKcpV8QHXHuljONntQQuBm7nMsVIO7884/pub?start=false&loop=false&delayms=3000">
                         <div class="poster mychinatown">
                             <img class="phone" src="images/mychinatown-phones.png">
                         </div>
@@ -309,7 +155,7 @@
                             <p class="purpose">Hackathon project created to help businesses in Chinatown strive</p>
                         </div>
                     </a>
-                    <a class="card hidden" href="https://alicemadesign.com/unio-case-study">
+                    <a title="UniO Case Study" class="card hidden" href="https://alicemadesign.com/unio-case-study">
                         <div class="poster unio">
                             <img class="phone" src="images/unio-laptop.png">
                         </div>
@@ -441,7 +287,8 @@
         // animate3();
       </script> -->
    </body>
-   <script src="js/slide.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/splash.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/headerslide.js"></script>
 </html>
