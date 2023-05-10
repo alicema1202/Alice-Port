@@ -307,7 +307,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 5vh;
+    padding-top: 6vh;
     margin-bottom: 10vh;
     animation-name: enter;
     animation-duration: 1s;
@@ -315,8 +315,8 @@ body {
     transform-origin: top;
 }
 .view-works {
-    margin-bottom: 5vh;
-    font-size: 1.6rem;
+    margin-bottom: 6vh;
+    font-size: 2rem;
 }
 
 .card-grid {
