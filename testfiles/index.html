@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alice Ma</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/header.css" rel="stylesheet"> 
+        <link href="css/underlines.css" rel="stylesheet"> 
+        <link href="css/buttonstyles.css" rel="stylesheet"> 
+        <link href="css/view-works.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
+        <link rel="shortcut icon" type="x-icon" href="images/index-icon.png">
+        <link href="css/animation.css" rel="stylesheet">
+        <link href="css/responsiveheader.css" rel="stylesheet">
+        <link href="css/splash.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/MedTimeCard.css">
+        <link rel="stylesheet" href="css/CineMaCard.css">
+        <link rel="stylesheet" href="css/UniOCard.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+
+        <meta name="msapplication-TileImage" content="images/WEBSITE-THUMBB.png">
+ 
+        <meta property="og:site_name" content="Alice Ma Design">
+        <meta property="og:title" content="Alice Ma, UX Designer">
+        <meta property="og:description" content="I'm Alice, a UX Designer aiming to create an accessible and user-centered experience. I am currently studying Cognitive Science @ UCSD.">
+        
+        <meta property="og:image" itemprop="image" content="images/WEBSITE-THUMBB.png">
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/png">
+        
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        
+        <meta property="og:url" content="https://alicemadesign.com">
+        </head>
+    <body>
+        <div class="introduction">
+            <h1 class="logo-header">
+                <span class="logoo word1">ALICE MA</span><span class="logoo word2">DESIGN</span>
+            </h1>
+        </div>
+        <header class="header-bar">
+            <div class="left-section">
+                <a href="https://alicemadesign.com/home" class="logo-container logo">
+                    ALICE MA
+                </a>
+            </div>
+            <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div>
+            <style>
+                body {
+                    /* background-color: rgb(232, 10, 10); */
+                    margin: 0;
+                    /* height: auto; */ 
+                    /* overflow: auto;  */
+                    overflow-x: hidden;
+                    overflow-y: overlay;
+                }
+                /* *::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    border: 4.7px solid #262626;
+                }
+                *::-webkit-scrollbar-track {
+                    background: #262626;
+                }  */
+                .dropdown {
+                    transition: height 5s; 
+                    margin-bottom: 0vh;
+                }
+                .left {
+                    text-align: left;
+                }
+                .drop-button {
+                    margin: 0;
+                    margin-bottom: 10px;
+                    z-index: 1;
+                    padding: 0.3em 0;
+                }
+                .dropdown-content {
+                    margin-top: 0ch;
+                    display: none;
+                    top: 0;
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    margin-bottom: 3vh;
+                    font-weight: 500;
+                }
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                    top: 0px;
+                    transition: opacity 0.5s, transform 0.5s;
+                    animation: fadeIn 0.5s 0s 1;
+                    opacity: 1;
+                }
+                .dropdown:hover {
+                    text-align: right;
+                }
+                .center {
+                    text-align: center;
+                }
+                .list-item {
+                    margin-bottom: 10px!important;
+                    color: rgba(255, 255, 255, 0.84);
+                    text-shadow: 1px 1px 1.5ch rgba(0, 0, 0, 0.751);
+                }
+                .list-item:hover {
+                    color: white;
+                    transition: 0.2s;
+                }
+                @keyframes fadeIn {
+                    0% {opacity: 0; transform: translateY(-30px);}
+                    100% {opacity: 1; transform: translateY(0px);}
+                }
+                @keyframes fadeOut {
+                    0% {opacity: 1; transform: translateY(0px);}
+                }
+                @media (max-width:900px) {
+                    .drop-button {
+                        margin-bottom: 6vh;
+                        z-index: 10;
+                        color: rgb(255, 255, 255);
+                    }
+                    .dropdown {
+                        margin-bottom: 0;
+                        text-align: center;
+                    }
+                    .margins:hover {
+                        margin-right: 2rem;
+                        margin-left: 2rem;
+                        text-align: center;
+                    }
+                    .drop-button {
+                        font-size: 2.5vh;
+                    }
+                    .margins .dropdown-content {
+                        position: relative;
+                        font-weight: 500;
+                        margin-bottom: 1ch;
+                    }
+                    .dropdown:hover .drop-button {
+                        margin-bottom: 0;
+                    }
+                    .drop-button:hover .dropdown-content {
+                        font-size: large;
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+                    .margins .dropdown-content .list-item {
+                        color: rgba(255, 255, 255, 0.626);
+                        margin-top: 0.5ch;
+                        padding: 0.5em;
+                    }
+                    .margins .dropdown-content .list-item:hover {
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+                    /* .drop-button:hover {
+                        margin-bottom: 1vh;
+                    } */
+                    .margins:hover .dropdown-content{
+                        box-shadow: none;
+                        top: 0;
+                        margin: 0;
+                        margin-top: 0.8ch;
+                        padding: 0;
+                        /* background-color: rgba(255, 255, 255, 0); */
+                        margin-bottom: 2.5vh;
+                    }
+                    .margins:hover .dropdown-content .list-item {
+                        margin-bottom: 0;
+                    }
+                    .dropdown {
+                        text-align: center;
+                    }
+                }
+                
+            </style>
+            <nav class="nav-bar">
+                <ul>
+                    <li class="dropdown left">
+                        <a class="hover-underline-animation drop-button" onclick="hover()" href="#works">WORKS
+                        </a>
+                        <b class="dropdown-content removepad">
+                            <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
+                            <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
+                            <a class="list-item" href="https://alicemadesign.com/unio-case-study">UniO</a>
+                        </b>
+                    </li>
+                
+                    <li>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
+                    </li>
+    
+                    <li>
+                        <a class="hover-underline-animation" target="_blank" href="images/ALICE MA UX RESUME.pdf">RESUME</a>
+                    </li>
+                        
+                    <li>
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <script>
+            
+            hamburger = document.querySelector(".hamburger");
+            hamburger.onclick = function() {
+                navBar = document.querySelector(".nav-bar");
+                hamburger = document.querySelector(".hamburger");
+                navBar.classList.toggle("active");
+                navBar.classList.toggle("black");
+                hamburger.classList.toggle("active");
+                works = document.querySelector(".dropdown");
+                works.classList.toggle("left");
+                droplist = document.querySelector(".nav-bar ul .dropdown");
+                droplist.classList.toggle("margins");
+                contents = document.querySelector(".dropdown-content");
+                contents.classList.toggle("removepad");
+            }
+        </script>
+        
+        <div class="blob-background">
+            <div class="hero-text">
+                <div class="greeting">HI, NICE TO MEET YOU!</div>
+                <div class="intro">I'm Alice, a UX Designer with a passion for creating accessible and intuitive user experiences. I am currently studying Cognitive Science @ UCSD.</div>
+                
+            </div>
+            <div class="blob-overlay"></div>
+            <video class="blob" playsinline loop muted autoplay>
+                <source src="images/blob-video.mp4">
+            </video>
+            
+        </div>
+        <!-- <script>
+            window.onload = () => {
+                let reducedMotion = matchMedia('(prefers-reduced-motion)').matches;
+                let GIFvids = document.querySelectorAll('video[muted][autoplay]');
+
+            if (reducedMotion) {
+                for (let video of GIFvids) {
+                    video.pause();
+                }
+
+            window.rm.textContent = 'enabled';
+            }
+        };
+        </script> -->
+        <div id="works" class="projects" id="project-block">
+            <div class="h1">
+                VIEW MY WORKS
+            </div>
+            <a href="https://alicemadesign.com/medtime-case-study">
+            <div class="project-grid">
+                <div class="MedTime hidden">
+                    <div class="container-medtime">
+                        <div class="card-medtime">
+                            <div class="images">
+                                <div class="mockup">
+                                    <img class="left" src="images/Left.png">
+                                    <img class="right" src="images/Right.png">
+                                </div>
+                                <div class="logo-container-medtime">
+                                    <img class="logo-text" src="images/Group 1679.svg">    
+                                </div>            
+                            </div>
+                            <div class="background-text">
+                                <img class="background-text-1" src="images/medtime-bg-text.svg">
+                                <img class="background-text-2" src="images/medtime-bg-text.svg">
+                                <img class="placeholder" src="images/medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="medtime-case-study.html" class="view-case-study">
+                                    VIEW CASE STUDY                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://alicemadesign.com/cinema-case-study">
+                <div class="CineMa hidden">
+                    <div class="container-cinema">
+                        <div class="card-cinema">
+                            <div class="images-cinema">
+                                <div class="mockup-cinema">
+                                    <img class="left" src="images/CineMa-Left.svg">
+                                    <img class="right" src="images/CineMa-Right.svg">
+                                </div>
+                                <div class="logo-container-cinema">
+                                    <img class="logo-text" src="images/cinema-logo.svg">    
+                                </div>            
+                            </div>
+                            <div class="background-text-cinema">
+                                <img class="background-text-1" src="images/cinema-bg-text.svg">
+                                <img class="background-text-2" src="images/cinema-bg-text.svg">
+                                <img class="placeholder" src="images/medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="cinema-case-study.html" class="cinema-view-study">
+                                    VIEW CASE STUDY
+                                </button>
+                            </form>
+                        </div>
+                    
+                    </div>
+                </div>
+            </a>
+
+                
+                <a href="https://alicemadesign.com/unio-case-study">
+                <div class="UniO hidden">
+                    <div class="container-unio">
+                        <div class="card-unio">
+                            <div class="images-unio">
+                                <div class="mockup-unio">
+                                    <img class="laptop" src="images/uniO laptop.png">
+                                    <img class="left" src="images/unio left.svg">
+                                    <img class="right" src="images/uniO right.svg">
+        
+                                </div>
+                                <div class="logo-container-unio">
+                                    <img class="logo-text" src="images/UniOlogo.svg">    
+                                </div>            
+                            </div>
+                            <div class="background-text-unio">
+                                <img class="background-text-1" src="images/unio-bg-text.svg">
+                                <img class="background-text-2" src="images/unio-bg-text.svg">
+                                <img class="placeholder" src="images/medtime-bg-text.svg">
+                            </div>
+                            <form>
+                                <button formaction="unio-case-study.html" class="unio-view-study">
+                                    VIEW CASE STUDY                                </button>
+                            </form>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="footer">
+        <p>©2023 Designed and Coded by Alice Ma.</p>
+    </div>
+    </body>
+    <script src="js/slide.js"></script>
+    <script src="js/splash.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/headerslide.js"></script>
+</html>
