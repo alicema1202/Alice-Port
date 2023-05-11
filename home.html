@@ -46,7 +46,7 @@
                 <nav class="nav-bar">
                     <ul>
                         <li class="dropdown left">
-                            <p class="hover-underline-animation drop-button" onclick="hover()">WORKS
+                            <p class="hover-underline-animation drop-button" onclick="goToWorks()">WORKS
                                 <b class="dropdown-content removepad">
                                     <a class="list-item" href="https://alicemadesign.com/medtime-case-study">MedTime</a>
                                     <a class="list-item" href="https://alicemadesign.com/cinema-case-study">CineMa</a>
@@ -70,6 +70,9 @@
                 </nav>
             </header>
             <script>
+                function goToWorks() {
+                    document.getElementById("works").scrollIntoView();
+                }
                 hamburger = document.querySelector(".hamburger");
                 hamburger.onclick = function() {
                     navBar = document.querySelector(".nav-bar");
