@@ -307,8 +307,12 @@ strong {
     /* animation: fadeIn 0.5s 0s 1; */
     opacity: 1;
 }
-.drop-button:hover .removepad {
-    /* top: 3ch; */
+.margins .removepad {
+    top: 3ch;
+    transform: translateY(0);
+}
+.margins:hover .removepad {
+    transform: translateY(3ch);
 }
 .center {
     text-align: center;
