@@ -243,31 +243,55 @@
             // contents.classList.toggle("removepad");
         }
     </script>
-    
+    <style>
+        .about {
+            position: relative;
+            display: flex;
+            /* top: calc(70px + 1.3em); */
+            /* margin-top: 0; */
+            height: calc(100vh - 70px - 1.3em); 
+            justify-items: center;
+            grid-template-columns: 1fr;
+            justify-content: center;
+        }
+        .button:hover {
+            background-color: black;
+            border-color: black;
+        }
+        .footer {
+            position: relative;
+        }
+        @media only screen and (max-width: 900px) {
+            .about {
+                height: calc(100vh - 70px - 1.5em); 
+                margin-top: calc(70px + 1.5em); 
+                margin-bottom: 0;
+            }
+            .button {
+                border-radius: 100px;
+            }
+        }
+    </style>
     <body onscroll="appear()">
         <div class="about">
-            <div class="content">
+            <div class="content" style="width: 50vw; padding-top: 0;">
                 <h1>
-                    Hello, my name is Alice. 👋
+                    Oh No! Where'd my page go...🤔
                 </h1>
-                <p>
-                    I'm currently a 2nd year at UC San Diego studying Cognitive Science - Interaction Design with a minor in Computer Science.
+                <p style="margin-bottom: 5vh;">
+                    I'm so sorry about this! You were never supposed to see this page! I probably updated the url to something else. Why don't you press the button below to get started again!
                 </p>
-                <p>
-                    I was introduced to UX design during a hackathon I attended in 2020. Immediately, I grew interest in designing because it reminded me a lot of drawing and Photoshop, which were both activities that I've really enjoyed for many years.
-    
-                </p>
-                <p>
-                    On my free time, I like to watch TV, a lot of it. If I'm not working, you will most likely find me watching some new TV show 📺, doing my nails 💅, or maybe even both at the same time!
-    
-                </p>
+                <a href="https://alicemadesign.com/home">
+                    <button class="button view-prototype hidden">
+                        Back to Home
+                    </button>
+                </a> 
                 <!-- <p>
                     Find my full resume here.
                 </p> -->
             </div>
-            <img class="photo" src="images/pfp.jpg">
         </div>
-        <footer class="footer">
+        <footer class="footer" style="width: 100vw;">
             <p>©2023 Designed and Coded by Alice Ma.</p>
         </footer>
     </body>
