@@ -133,7 +133,7 @@ body {
     margin-left: 15vw;
     font-weight: 400;
     letter-spacing: 1px;
-    width: 23.5ch;
+    /* width: 23.5ch; */
     animation: typing 2s steps(23), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
