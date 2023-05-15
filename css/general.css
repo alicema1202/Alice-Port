@@ -129,12 +129,13 @@ body {
 }
 .greeting {
     margin-bottom: 0px;
-    font-size: 1.2em;
+    font-size: 25px;
     margin-left: 15vw;
     font-weight: 400;
     letter-spacing: 1px;
-    /* width: 23.5ch; */
+    /* width: auto; */
     animation: typing 2s steps(23), blink .5s step-end infinite alternate;
+    animation: blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid;
@@ -358,7 +359,7 @@ body {
         transition: 0.3s;
     }   
 }
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1100px) {
     .card-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -616,3 +617,72 @@ button {
     
 }
             
+/* New Header Text */
+.hero-text {
+    display: flex;
+    justify-items: center;
+    max-width: 1900px;
+    margin-left: 0;
+}
+.intro-desc, .hello {
+    /* width: 100%; */
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+.hello {
+    font-size: 4em;
+    line-height: 1em;
+    margin-top: 0;
+    font-weight: 700;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.2em;
+}
+.intro-desc {
+    font-size: 2em;
+    line-height: 1.4em;
+    margin-top: 10px;
+    font-weight: 400;
+}
+.hero-text {
+    /* background-color: rgba(255, 192, 203, 0.681); */
+    top: calc(70px + 1.3em);
+}
+@media only screen and (min-width: 2300px) {
+    .intro-desc, .hello {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .intro-desc, .hello {
+        /* width: 100%; */
+        margin-left: 15vw;
+        margin-right: 15vw; 
+    }
+    .hello {
+        font-size: 3.8em;
+        margin-bottom: 0;
+        margin-top: 0;
+        font-weight: 700;
+    }
+    .intro-desc {
+        font-size: 1.5em;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .intro-desc, .hello {
+        /* width: 100%; */
+        margin-left: 10vw;
+        margin-right: 10vw; 
+    }
+    .hello {
+        font-size: 3.5em;
+        margin-bottom: 0;
+        margin-top: 0;
+        font-weight: 700;
+    }
+    .intro-desc {
+        font-size: 1.3em;
+    }
+}
