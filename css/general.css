@@ -168,6 +168,8 @@ body {
     animation-name: enter;
     animation-duration: 1s;
     animation-delay: 3s;
+    background-color: rgba(255, 255, 255, 0.507);
+    border-bottom-color: rgba(2, 2, 2, 0.19);
 }
 .scroll-works {
     margin: none;
@@ -694,4 +696,7 @@ button {
     .intro-desc {
         font-size: 1.3em;
     }
+}
+.hero-text {
+    height: calc(100vh - 70px - 1.3em);
 }
