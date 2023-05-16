@@ -171,6 +171,10 @@ body {
     background-color: rgba(255, 255, 255, 0.507);
     border-bottom-color: rgba(2, 2, 2, 0.19);
 }
+.right-btn {
+    margin-right: 10px;
+    margin-left: 10px;
+}
 .scroll-works {
     margin: none;
     margin-top: 0;
@@ -537,7 +541,7 @@ body {
     top: 0;
     left: 0;
     background-color: rgb(15, 15, 15);
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.579);
     transition: 1s;
     backdrop-filter: blur(100px);
     -ms-backdrop-filter: blur(100px);
@@ -644,7 +648,7 @@ button {
 .intro-desc {
     font-size: 2em;
     line-height: 1.4em;
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: 400;
 }
 .hero-text {
@@ -762,6 +766,11 @@ button {
 
 .scroll {
     margin-bottom: 0;
+}
+@media only screen and (min-width: 2000px) {
+    .go-to-works {
+        margin-right: 20vw;
+    }
 }
 @media only screen and (max-width: 900px) {
     .landing-page {
