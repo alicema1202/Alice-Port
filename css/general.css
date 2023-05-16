@@ -65,7 +65,7 @@ html {
     cursor: pointer;
     display: flex;
     margin: auto;
-    margin-top: 11vh;
+    margin-top: 10vh;
     margin-bottom: 0;
     flex-direction: column;
     justify-content: center;
@@ -82,6 +82,7 @@ html {
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
 }
+
 @keyframes bounce {
 	0%, 100% {
 		-webkit-transform: translateY(0);
@@ -654,6 +655,11 @@ button {
         margin-right: 0;
     }
 }
+@media only screen and (max-width: 1200px) {
+    .scroll-section {
+        margin-top: 0vh;
+    }
+}
 @media only screen and (max-width: 1000px) {
     .intro-desc, .hello {
         /* width: 100%; */
@@ -668,6 +674,9 @@ button {
     }
     .intro-desc {
         font-size: 1.5em;
+    }
+    .scroll-section {
+        margin-top: 13vh;
     }
 }
 @media only screen and (max-width: 750px) {
