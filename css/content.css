@@ -1,4 +1,4 @@
-h1 {
+h2 {
     font-size: 3.8ch;
     line-height: 2ch;
     margin-left: 0;
@@ -7,6 +7,9 @@ h1 {
     position: relative;
     left: -0.1ch;
     color: rgb(54, 54, 54);
+}
+h3 {
+    font-size: 1.2ch!important;
 }
 /* NAV BAR THING */
 .right-btn {
@@ -147,10 +150,10 @@ strong {
         padding-right: 0;
         margin: auto;
     }
-    h1 {
+    h2 {
         font-size: 4.3ch;
     }
-    h2 {
+    h3 {
         font-size: 1.4ch!important;
     }
     .arrow {
@@ -199,7 +202,7 @@ strong {
     .final-mockups {
         grid-template-columns: 1fr 1fr;  
     }
-    h1 {
+    h2 {
         font-size: 3ch;
         line-height: 2ch;
     }
