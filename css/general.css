@@ -44,6 +44,7 @@ html {
     min-width: 120%;
     min-height: 120%;
     filter: blur(3vw);
+    opacity: 0.9;
 }
 .scroll {
     margin: auto;
@@ -752,7 +753,7 @@ button {
     flex-direction: row-reverse;
     margin: 5vw;
     align-items: center;
-    color: #33506B;
+    color: #233b51;
 }
 .label, .scroll {
     margin-top: 0!important;

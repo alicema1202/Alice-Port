@@ -414,3 +414,17 @@ strong {
         text-align: center;
     }
 }
+
+/* Skeleton */
+.skeleton {
+    animation: skeleton-color 1s linear infinite alternate;
+}
+
+@keyframes skeleton-color {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 90%);
+    }
+}
