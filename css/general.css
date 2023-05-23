@@ -4,7 +4,7 @@ html {
 }
 
 ::selection {
-    background-color: rgba(107, 119, 150, 0.527) ;
+    background-color: rgba(136, 153, 195, 0.527) ;
 }
 
 @keyframes enter {
@@ -174,7 +174,6 @@ body {
 }
 .right-btn {
     margin-right: 10px;
-    margin-left: 10px;
 }
 .scroll-works {
     margin: none;

@@ -7,14 +7,14 @@ body {
    
 }
 ::-moz-selection { /* Code for Firefox */
-    color: rgb(255, 255, 255);
-    background: #2f798a6f;
+    /* color: rgb(255, 255, 255); */
+    background: #66bacd6f;
     border: solid;
 }
 
 ::selection {
-    color: rgb(255, 255, 255);
-    background: #2f798a6f;
+    /* color: rgb(255, 255, 255); */
+    background: #66bacd6f;
 }
 @media (min-width: 2500px) {
     body {

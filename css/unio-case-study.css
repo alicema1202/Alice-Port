@@ -7,14 +7,14 @@ body {
     
 }
 ::-moz-selection { /* Code for Firefox */
-    color: rgb(255, 255, 255);
-    background: #6d5bde;
+    /* color: rgb(255, 255, 255); */
+    background: #9a8eea6e;
     border: solid;
   }
   
   ::selection {
-    color: rgb(255, 255, 255);
-    background: #4d419b6e;
+    /* color: rgb(255, 255, 255); */
+    background: #9a8eea6e;
   }
 
 .header-bar {
