@@ -15,6 +15,11 @@ h3 {
 .right-btn {
     margin-right: 10px;
 }
+@media only screen and (max-width: 900px) {
+    .right-btn {
+        margin-left: 10px;
+    }
+}
 .item {
     min-width: 60vw;
 }
