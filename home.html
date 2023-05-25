@@ -33,9 +33,7 @@
         <meta property="og:url" content="https://alicemadesign.com">
         <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
         <body>
-            <style>
-                
-            </style>
+            
             <header class="remove header-bar">
                 <div class="left-section">
                     <a href="https://alicemadesign.com/home" class="logo-container logo">
@@ -51,17 +49,20 @@
                 <nav class="nav-bar">
                     <ul>
                         <li class="dropdown left">
-                            <p class="hover-underline-animation drop-button" onclick="goToWorks()">WORKS
+                            <div class="hover-underline-animation drop-button">
+                                <p class="WORKS-container" onclick="goToWorks()">
+                                    WORKS
+                                </p>
                                 <b class="dropdown-content removepad">
                                     <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
                                     <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
                                     <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
                                 </b>
-                            </p>
+                            </div>
                         </li>
                     
                         <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT ME</a>
                         </li>
         
                         <li>
@@ -75,6 +76,7 @@
                 </nav>
             </header>
             <script>
+
                 function goToWorks() {
                     document.getElementById("works").scrollIntoView();
                 }
