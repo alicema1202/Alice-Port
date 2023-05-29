@@ -432,3 +432,23 @@ strong {
         background-color: hsl(200, 20%, 90%);
     }
 }
+/* ACTIVE NAV */
+.hover-underline-animation:after, .visible:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.1em;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after, .visible:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+   

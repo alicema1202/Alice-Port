@@ -126,13 +126,13 @@ a {
   padding: 0.3em 0;
 }
 
-.hover-underline-animation {
+.hover-underline-animation, .visible {
   display: inline-block;
   position: relative;
   color: #000000;
 }
 
-.hover-underline-animation:after {
+.hover-underline-animation:after, .visible:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -145,11 +145,12 @@ a {
   transition: transform 0.25s ease-out;
 }
 
-.hover-underline-animation:hover:after {
+.hover-underline-animation:hover:after, .visible:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
+  
 
 .cover-photo {
     background-image: url("../images/cinema-banner.png");
