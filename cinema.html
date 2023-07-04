@@ -104,6 +104,179 @@
             .fa-solid {
                 color: white;
             }
+
+            .project {
+                width: fit-content;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* background-color: blue; */
+                column-gap: 90px;
+                margin-top: 40px;
+                margin-bottom: 50px;
+                transition: transform 0.3s;
+            }
+            
+            /* .reverse {
+                flex-direction: row-reverse;
+            } */
+            .v3 {
+                width: calc(54vw - 570px);
+                height: 410px;
+                background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s;
+            }
+            .cinema {
+                background: conic-gradient(from 104deg at 63.21% 57.38%, #A35050 0deg, #762121 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .unio {
+                background: conic-gradient(from -58deg at 49.92% 54.66%, #9761DE 0deg, #53357B 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .v3:hover {
+                transform: translateY(-10px);
+                transition: transform 0.3s;
+            }
+            .phone {
+                width: 279px;
+                height: 100%;
+                object-fit:contain;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p, .read-more{
+                color: #363636;
+                font-family: lexend, Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+            .text {
+                width: 480px;
+                /* background-color: purple; */
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+                row-gap: 24px;
+            }
+            .app-name {
+                font-size: 14px;
+                /* font-weight: 300; */
+                letter-spacing: 1px;
+                color: #363636;
+                /* background-color: pink; */
+            }
+            .headline {
+                font-size: 38.3px;
+                font-weight: 700;
+                /* background-color: orange; */
+            }
+            .message {
+                font-size: 16.15px;
+                /* background-color: purple */
+                line-height: 30px;
+                font-weight: 400;
+            }
+            @media only screen and (min-width: 2000px) {
+                .message {
+                    font-size: 26.2496px;
+                }
+                .headline {
+                    font-size: 56.4366px;
+                    font-weight: 700;
+                    /* background-color: orange; */
+                }
+            }
+            @media only screen and (min-width: 2500px) {
+                .message {
+                    font-size: 20.192px;
+                }
+                .headline {
+                    font-size: 43.4128px;
+                    font-weight: 700;
+                    /* background-color: orange; */
+                }
+            }
+            .read-more {
+                text-decoration: none;
+                /*padding: 10px 20px;
+                border: solid 1px #363636;
+                border-radius: 8px;
+                width:fit-content;
+                transition: 0.3s; */
+            }
+            .read-more:hover {
+                /* background-color: #363636;
+                color: #fefefe;
+                transition: 0.3s; */
+                background-color: #3e3190;
+                border-color: #3e3190;
+            }
+            @media only screen and (max-width: 1700px) {
+                .v3 {
+                    width: 500px;
+                }
+                .text {
+                    width: fit-content;
+                }
+                .phone {
+                    width: 230px;
+                }
+            }
+            @media only screen and (max-width: 1300px) {
+                .project {
+                    flex-direction: column;
+                    row-gap: 50px;
+                }
+                
+            }
+            
+            @media only screen and (max-width: 1300px) {
+                .v3, .text {
+                    width: 54vw;
+                }
+            }
+            @media only screen and (max-width: 700px) {
+                .v3, .text {
+                    width: 74vw;
+                }
+            }
+            @media only screen and (min-width: 2000px) {
+                .project {
+                    max-width: 1300px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin: 0;
+                    margin-top: 60px;
+                }
+                .v3 {
+                    width: 630px;
+                }
+                .text {
+                    width: 580px;
+                }
+            }
+            @media only screen and (max-width: 700px) {
+                .headline {
+                    font-size: 30.288px;
+                }
+            }
+            #next-up .button {
+                margin:0;
+                margin-bottom: 0;
+                width: fit-content;
+            }
+            #next-up h3 {
+                color: #5a4bb7;
+                border-top: 1px solid #B8B8B8;
+                padding-top: 20px;
+            }
+           
         </style>
         <header class="header-bar">
             <div class="left-section">
@@ -387,6 +560,22 @@
                     I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
                 </div>
             </section>
+            <section id="next-up">
+                <h3 class="hidden">
+                    UP NEXT: UNIO
+                </h3>
+                <div class="project reverse">
+                    <a class="v3 unio hidden" href="https://alicemadesign.com/unio">
+                        <img class="phone" src="../images/unio-laptop.png">
+                    </a>
+                    <div class="text hidden">
+                        <p class="headline"> A smooth cross-platform notetaking experience. </p>
+                        <p class="message"> A digital notetaking platform that seamlessly integrates notetaking across all your devices. </p>
+                        <a class="read-more button view-prototype" href="https://alicemadesign.com/unio"> Read case study → </a>
+                    </div> 
+                </div>
+            </section>
+            
         </div>
         
         <div class="footer">

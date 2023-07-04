@@ -42,8 +42,8 @@ section {
 }
 .content {
     padding-top: 4.5ch;
-    padding-left: 18vw;
-    padding-right: 18vw;
+    padding-left: 23vw;
+    padding-right: 23vw;
 }
 
 .button {
@@ -451,4 +451,16 @@ strong {
     transform-origin: bottom left;
   }
   
-   
+/* Header change */
+@media only screen and (min-width: 900px) {
+    .header-bar {
+        padding-top: 20px;
+        padding-bottom: 20px!important;
+    }
+    .right-btn {
+        margin-right: 4rem;
+    }
+    .logo {
+        margin-left: 4rem;
+    }
+}

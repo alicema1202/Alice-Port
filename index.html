@@ -9,14 +9,14 @@
         <link href="css/animation.css" rel="stylesheet">
         <link href="css/headerforCS.css" rel="stylesheet">
         <link href="css/content.css" rel="stylesheet">
-        <link href="css/splash.css" rel="stylesheet">
         <link href="css/general.css" rel="stylesheet">
+        <link href="css/splash.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
         <meta name="msapplication-TileImage" content="images/WEBSITE-THUMBB.png">
  
         <meta property="og:site_name" content="Alice Ma Design">
@@ -33,13 +33,214 @@
         
         <meta property="og:url" content="https://alicemadesign.com">
         <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
+        <style>
+            body {
+                background-color: #121212;
+            }
+            .blob-phone, .blob {
+                filter: blur(100px);
+                opacity: 1;
+            }
+            @media only screen and (max-width: 500px) {
+                .blob-phone, .blob {
+                    filter: blur(10px);
+                    opacity: 1;
+                }
+            }
+
+            .hello {
+                font-family: poppins, arial, sans-serif;
+                font-weight: 700;
+            }
+            .hero-text {
+                color: rgba(255, 255, 255, 0.9);
+                top: calc(40px + 1.3em);            
+            }
+            .intro-desc {
+                font-weight: 300;
+            }
+            .go-to-works {
+                color: rgba(255, 255, 255, 0.9);
+                width: 100vw;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .scroll {
+                margin: 0;
+            }
+            .header-bar {
+                background-color: rgba(0, 0, 0, 0.362);
+                border-color: rgba(255, 255, 255, 0.116);
+            }
+            .logo, .nav-bar p, .nav-bar a{
+                color: rgba(255, 255, 255, 0.9);
+                font-weight: 300;
+            }
+            .hamburger .line {
+                background-color: rgba(255, 255, 255, 0.9)!important;
+            }
+            .hover-underline-animation:after {
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+            
+            .footer {
+                background-color: rgb(22, 22, 22);
+                color: rgba(255, 255, 255, 0.9);
+                border-color: rgba(255, 255, 255, 0.116);
+            }
+            @media only screen and (min-width: 900px) {
+                .header-bar {
+                    padding-top: 20px;
+                    padding-bottom: 20px!important;
+                }
+                .right-btn {
+                    margin-right: 4rem;
+                }
+                .logo {
+                    margin-left: 4rem;
+                }
+            }
+            @media only screen and (max-width: 900px) {
+                .nav-bar.black {
+                    background-color: rgb(0, 0, 0);
+                }
+                .margins .dropdown-content .list-item {
+                    color: rgba(255, 255, 255, 0.593);
+                }
+                
+            }
+
+            .project {
+                width: fit-content;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* background-color: blue; */
+                column-gap: 90px;
+                margin-top: 70px;
+                margin-bottom: 50px;
+                transition: transform 0.3s;
+            }
+            .reverse {
+                flex-direction: row-reverse;
+                /* background-color: purple; */
+            }
+            .v3 {
+                width: 620px;
+                height: 410px;
+                background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s;
+            }
+            .cinema {
+                background: conic-gradient(from 104deg at 63.21% 57.38%, #A35050 0deg, #762121 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .unio {
+                background: conic-gradient(from -58deg at 49.92% 54.66%, #9761DE 0deg, #53357B 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .v3:hover {
+                transform: translateY(-10px);
+                transition: transform 0.3s;
+            }
+            .phone {
+                width: 279px;
+                height: 100%;
+                object-fit:contain;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p, .read-more{
+                color: white;
+                font-family: lexend, Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+            .text {
+                width: 480px;
+                /* background-color: purple; */
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+                row-gap: 24px;
+            }
+            .app-name {
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                color: rgba(255, 255, 255, 0.662);
+                /* background-color: pink; */
+            }
+            .headline {
+                font-size: 35px;
+                font-weight: 700;
+                /* background-color: orange; */
+            }
+            .message {
+                font-size: 18px;
+                /* background-color: purple */
+                line-height: 30px;
+                font-weight: 300;
+            }
+            .read-more {
+                text-decoration: none;
+                padding: 10px 20px;
+                border: solid 1px white;
+                border-radius: 8px;
+                width:fit-content;
+                transition: 0.3s;
+            }
+            .read-more:hover {
+                background-color: rgba(255, 255, 255, 0.819);
+                color: #0e0e03;
+                transition: 0.3s;
+            }
+            @media only screen and (max-width: 1700px) {
+                .v3, .text {
+                    width: 500px;
+                }
+            }
+            @media only screen and (max-width: 1300px) {
+                .project {
+                    flex-direction: column;
+                    row-gap: 50px;
+                }
+                
+            }
+            @media only screen and (max-width: 720px) {
+                .v3, .text {
+                    width: 320px;
+                }
+            }
+            .blob-phone {
+                mix-blend-mode: normal;
+            }
+            .texture {
+                position: absolute;
+                z-index: 1;
+                mix-blend-mode: soft-light;
+                width: 100vw;
+                height: 120vh;
+                object-fit: cover;
+                opacity: 0.5;
+            }
+            .logoo {
+                color: white;
+            }
+        </style>
+
         <body>
             <div class="introduction">
                 <h1 class="logo-header">
                     <span class="logoo word1">ALICE MA</span><span class="logoo word2">DESIGN</span>
                 </h1>
             </div>
-            <header class="header-bar">
+            <header class="remove header-bar">
                 <div class="left-section">
                     <a href="https://alicemadesign.com/home" class="logo-container logo">
                         ALICE MA
@@ -81,6 +282,7 @@
                 </nav>
             </header>
             <script>
+
                 function goToWorks() {
                     document.getElementById("works").scrollIntoView();
                 }
@@ -101,6 +303,7 @@
                     // contents.classList.toggle("removepad");
                 }
             </script>
+            
             <div class="landing-page">
                 <a onclick="goToWorks()" class="go-to-works scroll-section">
                     <i class="fa-solid fa-chevron-down scroll"></i>
@@ -122,77 +325,45 @@
                         <p class="label">Scroll for more</p>
                     </a>
                 </div> -->
-                <img class="blob-phone" src="images/lightmode-blobs.mp4">
+                <!-- <img class="blob-phone" src="images/blob-video.mp4"> -->
+                <img class="texture" src="images/texture.png">
                 <video class="blob" autoplay playsinline loop muted>
-                    <source src="images/lightmode-blobs.mp4">
+                    <source src="images/landing-bg.mp4">
                 </video>
             </div>
-            <div id="works" class="projects">
-                <div class="view-works hidden">
-                    View My Works
+            <div id="works" class="remove projects">
+                <div class="project">
+                    <a class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
+                        <img class="phone" src="../images/medtime-phones.png">
+                    </a>
+                    <div class="text hidden">
+                        <p class="app-name"> 01 | MEDTIME MEDICINE REMINDERS </p>
+                        <p class="headline"> Get reminders anywhere, anytime. </p>
+                        <p class="message"> A medicine reminder application ensures that you never forget to take your medication again. </p>
+                        <a class="read-more" href="https://alicemadesign.com/medtime"> Read case study → </a>
+                    </div> 
                 </div>
-                <div class="card-grid">
-                    <a title="Pegasystems Internship" class="card hidden" href="https://www.pega.com/about/careers/interns" target="blank" >
-                        <div class="poster pega">
-                            <img class="phone" src="images/pega-phones.png">
-                        </div>
-                        <div class="description">
-                            <div class="title">
-                                <img class="icon" src="images/pega-horse.png">
-                                <h2 class="project-name">Pegasystems</h2>
-                            </div>
-                            <p class="purpose">UX Design Intern @ Pegasystems Summer 2023</p>
-                        </div>
+                <div class="project reverse">
+                    <a class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
+                        <img class="phone" src="../images/cinema-phones.png">
                     </a>
-                    <a title="MedTime Case Study" class="card hidden" href="https://alicemadesign.com/medtime">
-                        <div class="poster medtime">
-                            <img class="phone" src="images/medtime-phones.png">
-                        </div>
-                        <div class="description">
-                            <div class="title">
-                                <img class="icon" src="images/medtime-icon.svg">
-                                <h2 class="project-name">MedTime</h2>
-                            </div>
-                            <p class="purpose">Designed a medicine reminder app to help people take meds on time</p>
-                        </div>
+                    <div class="text hidden">
+                        <p class="app-name"> 02 | CINEMA MOBILE TICKETING </p>
+                        <p class="headline"> An easier way to purchase movie tickets. </p>
+                        <p class="message"> A mobile ticketing apps that streamlines the ticket purchasing and scanning process. </p>
+                        <a class="read-more" href="https://alicemadesign.com/cinema"> Read case study → </a>
+                    </div> 
+                </div>
+                <div class="project">
+                    <a class="v3 unio hidden" href="https://alicemadesign.com/unio">
+                        <img class="phone" src="../images/unio-laptop.png">
                     </a>
-                    <a title="CineMa Case Study" class="card hidden" href="https://alicemadesign.com/cinema">
-                        <div class="poster cinema">
-                            <img class="phone" src="images/cinema-phones.png">
-                        </div>
-                        <div class="description">
-                            <div class="title">
-                                <img class="icon" src="images/cinema-logo-icon.png">
-                                <h2 class="project-name">CineMa</h2>
-                            </div>
-                            <p class="purpose">Built a mobile ticketing app used to buy and scan movie tickets</p>
-                        </div>
-                    </a>
-            
-                    <a title="myChinatown Hackathon" class="card hidden" target="blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRpkD0QZ1wiItlL9utl_3eSvP1Crcj8-deGABEpIgBQ1__tKcpV8QHXHuljONntQQuBm7nMsVIO7884/pub?start=false&loop=false&delayms=3000">
-                        <div class="poster mychinatown">
-                            <img class="phone" src="images/mychinatown-phones.png">
-                        </div>
-                        <div class="description">
-                            <div class="title">
-                                <img class="icon" src="images/myct-logo.png">
-                                <h2 class="project-name">MyChinatown</h2>
-                            </div>
-                            <p class="purpose">Hackathon project created to help businesses in Chinatown strive</p>
-                        </div>
-                    </a>
-                    <a title="UniO Case Study" class="card hidden" href="https://alicemadesign.com/unio">
-                        <div class="poster unio">
-                            <img class="phone" src="images/unio-laptop.png">
-                        </div>
-                        <div class="description">
-                            <div class="title">
-                                <img class="icon" src="images/unio-logo.png">
-                                <h2 class="project-name">UniO Notes</h2>
-                            </div>
-                            <p class="purpose">Created a notetaking platform for an online university</p>
-                        </div>
-                    </a>
+                    <div class="text hidden">
+                        <p class="app-name"> 03 | UNIO ONLINE NOTETAKING </p>
+                        <p class="headline"> A smooth cross-platform notetaking experience. </p>
+                        <p class="message"> A digital notetaking platform that seamlessly integrates notetaking across all your devices. </p>
+                        <a class="read-more" href="https://alicemadesign.com/unio"> Read case study → </a>
+                    </div> 
                 </div>
             </div>
             

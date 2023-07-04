@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<style>
+    .card {
+        width: fit-content;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 90px;
+        transition: transform 0.3s;
+    }
+    .v3 {
+        width: 620px;
+        height: 410px;
+        background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card:hover {
+        transform: translateY(10px);
+        transition: transform 0.3s;
+    }
+    .phone {
+        width: 279px;
+        height: 100%;
+        object-fit:contain;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    p, .read-more{
+        color: white;
+        font-family: lexend, Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+    .text {
+        width: 480px;
+        /* background-color: purple; */
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        row-gap: 24px;
+    }
+    .app-name {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.56);
+        /* background-color: pink; */
+    }
+    .headline {
+        font-size: 35px;
+        font-weight: 700;
+        /* background-color: orange; */
+    }
+    .description {
+        font-size: 20px;
+        /* background-color: purple */
+        line-height: 30px;
+    }
+    .read-more {
+        text-decoration: none;
+        padding: 10px 20px;
+        border: solid 1px white;
+        border-radius: 8px;
+        width:fit-content;
+        transition: 0.3s;
+    }
+    .read-more:hover {
+        background-color: rgba(255, 255, 255, 0.819);
+        color: #0e0e03;
+        transition: 0.3s;
+    }
+    @media only screen and (max-width: 1300px) {
+        .card {
+            flex-direction: column;
+            row-gap: 50px;
+        }
+        .v3, .text {
+            width: 500px;
+        }
+    }
+    @media only screen and (max-width: 720px) {
+        .v3, .text {
+            width: 350px;
+        }
+    }
+</style>
+<body style="background-color: #0e0e0e;">
+    <div class="card">
+        <a class="v3" href="https://alicemadesign.com/medtime">
+            <img class="phone" src="../images/medtime-phones.png">
+        </a>
+        <div class="text">
+            <p class="app-name"> 01 | MEDTIME MEDICINE REMINDERS </p>
+            <p class="headline"> A multi-platform medicine reminder app </p>
+            <p class="description"> Designed a medicine reminder app to reminds people to take their medication on time </p>
+            <a class="read-more" href="https://alicemadesign.com/medtime"> Read case study </a>
+        </div> 
+    </div>
+    
+</body>
+</html>
