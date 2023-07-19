@@ -129,7 +129,7 @@
             .v3 {
                 width: 620px;
                 height: 410px;
-                background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
+                background: radial-gradient(134.70% 67.69% at 48.87% 48.78%, #38ABC6 0%, #1F6B7C 100%);
                 border-radius: 12px;
                 display: flex;
                 align-items: center;
@@ -137,10 +137,16 @@
                 transition: transform 0.3s;
             }
             .cinema {
-                background: conic-gradient(from 104deg at 63.21% 57.38%, #A35050 0deg, #762121 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+                background: radial-gradient(96.94% 45.45% at 63.21% 57.38%, #A04040 0%, #762121 100%), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
             }
             .unio {
-                background: conic-gradient(from -58deg at 49.92% 54.66%, #9761DE 0deg, #53357B 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+                background: radial-gradient(154.79% 80.04% at 49.92% 54.66%, #9761DE 0%, #53357B 100%), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .pega {
+                background: radial-gradient(50% 50.00% at 50% 50.00%, #333B77 0%, #1F2656 100%), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .pega .phone {
+                mix-blend-mode: lighten;
             }
             .v3:hover {
                 transform: translateY(-10px);
@@ -232,6 +238,46 @@
             .logoo {
                 color: white;
             }
+
+            .hero-text {
+                /* background-color: purple; */
+                max-width: 559px;
+                align-items: center;
+            }
+
+            .hero-text h1 {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 100px;
+                line-height: 110px;
+                font-weight: 300;
+                /* background-color: pink; */
+                margin: 24px 0;
+                text-align: center;
+            }
+            
+            .hero-text p {
+                margin: 0;
+                font-size: 28px;
+                font-weight: 300;
+                max-width: 510px;
+                text-align: center;
+                line-height: 38px;
+            }
+            .hero-text .role {
+                font-size: 23px;
+                font-weight: 500;
+            }
+            @media only screen and (max-width: 1600px) {
+                .hero-text {
+                    transform: scale(0.7);
+                }
+            }
+            @media only screen and (max-width: 500px) {
+                .hero-text h1{
+                    font-size: 80px;
+                    line-height: 90px;
+                }
+            }
         </style>
 
         <body>
@@ -310,13 +356,20 @@
                     <p class="label">Scroll for more</p>
                 </a>
                 <div class="hero-text">
+                    <p class="role">
+                        UX DESIGN INTERN @ PEGA
+                    </p>
+                    <h1>
+                        ALICE MA
+                    </h1>
+                    <p>
+                        UX designer with a passion for creating accessible and intuitive user experiences. 
+                    </p>
+                </div>
+                <!-- <div class="hero-text">
                     <p class="hello">Hi! I'm Alice,</p>
                     <p class="intro-desc">a UX Designer with a passion for creating accessible and intuitive user experiences. I am currently studying Cognitive Science @ UCSD.</p>
-                    <!-- <a onclick="goToWorks()" id="go-to-works" class="scroll-section">
-                        <i class="fa-solid fa-chevron-down scroll"></i>
-                        <p class="label">Scroll for more</p>
-                    </a> -->
-                </div>
+                </div> -->
                 <!-- <div class="hero-text">
                     <div class="greeting">HI, NICE TO MEET YOU!</div>
                     <div class="intro">I'm Alice, a UX Designer with a passion for creating accessible and intuitive user experiences. I am currently studying Cognitive Science @ UCSD.</div>
@@ -366,7 +419,17 @@
                     </div> 
                 </div>
             </div>
-            
+            <div class="project reverse">
+                <a class="v3 pega hidden" >
+                    <img class="phone" src="../images/pega-logo.png">
+                </a>
+                <div class="text hidden">
+                    <p class="app-name"> 04 | PEGA UX DESIGN INTERN </p>
+                    <p class="headline"> Research and Testing Team Summer 2023 </p>
+                    <p class="message"> Conducting research and designing user flows to improve the authoring experience of Pega's Constellation design system. </p>
+                    <a class="read-more"> Coming soon... </a>
+                </div> 
+            </div>
             <footer class="footer">
                 <p>©2023 Designed and Coded by Alice Ma.</p>
             </footer>
