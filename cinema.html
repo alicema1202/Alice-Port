@@ -276,7 +276,18 @@
                 border-top: 1px solid #B8B8B8;
                 padding-top: 20px;
             }
-           
+            .WORKS-container .scroll {
+                font-size: 14px;
+                margin-right: 0;
+                color: black;
+            }
+            .WORKS-container {
+                display: flex;
+                gap: 8px;
+                /* border: 1px white solid; */
+                justify-content: center;
+                align-items: center;
+            }
         </style>
         <header class="header-bar">
             <div class="left-section">
@@ -319,22 +330,25 @@
             <nav class="nav-bar">
                 <ul>
                     <li class="dropdown left">
-                        <p class="hover-underline-animation drop-button" onclick="hover()">Work
+                        <div class="hover-underline-animation drop-button">
+                            <p class="WORKS-container" onclick="goToWorks()">
+                                Work <i class="drop fa-solid fa-chevron-down scroll"></i>
+                            </p>
                             <b class="dropdown-content removepad">
                                 <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
                                 <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
                                 <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
                             </b>
-                        </p>
+                        </div>
                     </li>
                 
                     <li>
                         <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
                     </li>
     
-                    <li>
+                    <!-- <li>
                         <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                    </li>
+                    </li> -->
                         
                     <li class="right-btn">
                         <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
@@ -343,6 +357,32 @@
             </nav>
         </header>
         <script>
+            // function myFunction(x) {
+            //     if (x.matches) { // If media query matches
+            //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
+
+            //     } else {
+            //         document.body.style.backgroundColor = "pink";
+            //     }
+            // }
+
+            // var x = window.matchMedia("(max-width: 900px)")
+            // myFunction(x) // Call listener function at run time
+            // x.addListener(myFunction) // Attach listener function on state changes
+            
+            works = document.querySelector(".nav-bar li");
+           arrow = document.querySelector(".drop");
+            works.onmouseover = function() {
+                arrow.classList.toggle("fa-chevron-down");
+                arrow.classList.toggle("fa-chevron-up");
+            }
+            works.onmouseout = function() {
+                arrow.classList.toggle("fa-chevron-down");
+                arrow.classList.toggle("fa-chevron-up");
+            }
+            function goToWorks() {
+                document.getElementById("works").scrollIntoView();
+            }
             hamburger = document.querySelector(".hamburger");
             hamburger.onclick = function() {
                 navBar = document.querySelector(".nav-bar");

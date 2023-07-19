@@ -274,6 +274,24 @@
                     line-height: 90px;
                 }
             }
+            /* .left-section a {
+                font-family: 'Cormorant Garamond', serif;
+                font-weight: 300;
+                font-size: 20px;
+            } */
+            .WORKS-container .scroll {
+                font-size: 14px;
+                margin-right: 0;
+            }
+            .WORKS-container {
+                display: flex;
+                gap: 8px;
+                /* border: 1px white solid; */
+                justify-content: center;
+            }
+            @media only screen and (max-width: 900px) {
+                
+            }
         </style>
 
         <body>
@@ -294,7 +312,7 @@
                         <li class="dropdown left">
                             <div class="hover-underline-animation drop-button">
                                 <p class="WORKS-container" onclick="goToWorks()">
-                                    Work
+                                    Work <i class="fa-solid fa-chevron-down scroll"></i>
                                 </p>
                                 <b class="dropdown-content removepad">
                                     <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
@@ -308,9 +326,9 @@
                             <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
                         </li>
         
-                        <li>
+                        <!-- <li>
                             <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                        </li>
+                        </li> -->
                             
                         <li class="right-btn">
                             <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
@@ -319,7 +337,30 @@
                 </nav>
             </header>
             <script>
+                // function myFunction(x) {
+                //     if (x.matches) { // If media query matches
+                //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
 
+                //     } else {
+                //         document.body.style.backgroundColor = "pink";
+                //     }
+                // }
+
+                // var x = window.matchMedia("(max-width: 900px)")
+                // myFunction(x) // Call listener function at run time
+                // x.addListener(myFunction) // Attach listener function on state changes
+                
+                works = document.querySelector(".nav-bar li");
+                works.onmouseover = function() {
+                    arrow = document.querySelector(".fa-solid");
+                    arrow.classList.toggle("fa-chevron-down");
+                    arrow.classList.toggle("fa-chevron-up");
+                }
+                works.onmouseout = function() {
+                    arrow = document.querySelector(".fa-solid");
+                    arrow.classList.toggle("fa-chevron-down");
+                    arrow.classList.toggle("fa-chevron-up");
+                }
                 function goToWorks() {
                     document.getElementById("works").scrollIntoView();
                 }
