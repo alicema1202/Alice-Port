@@ -503,3 +503,70 @@ strong {
     gap: 10px;
     padding-bottom: 0!important;
 }
+
+/* Updated persona */
+.bio {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.basic-info {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+}
+.persona-pic {
+    width: 100px;
+}
+.title {
+    font-size: 2ch;
+}
+.age {
+    font-size: 1.5ch;
+    color: gray;
+}
+ol {
+    width: fit-content;
+    padding-left: 0;
+    margin-top: 1rem!important;
+    margin-right: 0!important;
+
+}
+ol .item{
+    width: calc(100% - 32px);
+    text-align: left;
+    min-width: 0;
+}
+.item {
+    margin-left: 32px;
+}
+@media (min-width:900px) {
+    .persona-card {
+        display: flex;
+        width: 100%;
+        gap: 3rem;
+        margin-bottom: 0;
+    }
+    .bio, .information {
+        width: 50%;
+    }
+    .bottom {  
+        margin-bottom: 0!important;
+    }
+    .item{
+        width: calc(100% - 32px);
+        text-align: left;
+        min-width: 0;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    .title {
+        font-size: 2.5ch;
+    }
+    .age {
+        font-size: 1.8ch;
+    }
+    
+}

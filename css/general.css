@@ -44,7 +44,7 @@ html {
     min-width: 120%;
     min-height: 120%;
     filter: blur(3vw);
-    opacity: 0.9;
+    opacity: 0;
 }
 .scroll {
     margin: auto;
@@ -196,6 +196,7 @@ body {
         transform-origin: 60% 70%;
         /* transform: scale(0.3); */
         filter: blur(3vw);
+        opacity: 0.9;
     }
 }
 @media only screen and (min-width: 420px) {
