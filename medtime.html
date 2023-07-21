@@ -587,8 +587,104 @@
                 <p class="description hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Bill, a 71 year old male:
                 </p>
-                <img class="picture persona hidden" title="Bill's Persona" src="images/bill-persona.png"> 
+                <!-- <img class="picture persona hidden" title="Bill's Persona" src="images/bill-persona.png"> -->
+                <div class="persona-card">
+                    <div class="bio">
+                        <div class="basic-info">
+                            <img class="persona-pic" src="images/old-man-light.png">
+                            <div class="name-age">
+                                <p class="title">Bill</p>
+                                <p class="age">71 / Male</p>
+                            </div>
+                        </div>
+                        <p class="about description">
+                            Bill is from Los Angeles. Unfortunately, he has developed diabetes and dementia, so he needs to take three prescribed medications. Due to dementia, he often forgets to take them, so he hopes to find a good solution to receive reminders.
+                        </p>
+                    </div>
+                    <div class="information">
+                        <div class="goals">
+                            <p class="title">Bill's Goals</p>
+                            <ol class="description">
+                                <li class="item">
+                                    <p>Remember to take his medication everyday</p>
+                                </li>
+                                <li class="item">
+                                    <p>Know exactly when to take which medication</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="pain-points">
+                            <p class="title">Bill's Pain Points</p>
+                            <ol class="description bottom">
+                                <li class="item">
+                                    <p>Bill always forgets to take his medicine, so his family has to remind him, but they don't always remember</p>
+                                </li>
+                                <li class="item">
+                                    <p>Forgetting to take his medication can lead to some serious issues</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
             </section>
+            <style>
+                .bio {
+                    display: flex;
+                    gap: 20px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .basic-info {
+                    display: flex;
+                    /* justify-content: center; */
+                    align-items: center;
+                    gap: 20px;
+                }
+                .persona-pic {
+                    width: 100px;
+                }
+                .title {
+                    font-size: 2ch;
+                }
+                .age {
+                    font-size: 1.5ch;
+                    color: gray;
+                }
+                ol {
+                    width: fit-content;
+                    padding-left: 0;
+                    margin: 1rem!important;
+                }
+                ol .item{
+                    width: calc(100% - 16px);
+                    text-align: left;
+                    min-width: 0;
+                }
+                @media (min-width:900px) {
+                    .persona-card {
+                        display: flex;
+                        width: 100%;
+                        gap: 3rem;
+                        margin-bottom: 0;
+                    }
+                    .bio, .information {
+                        width: 50%;
+                    }
+                    .bottom {  
+                        margin-bottom: 0!important;
+                    }
+                }
+                @media only screen and (min-width: 2000px) {
+                    .title {
+                        font-size: 2.5ch;
+                    }
+                    .age {
+                        font-size: 1.8ch;
+                    }
+                    
+                }
+            </style>
             <section id="ideation">
                 <h3 class="hidden">
                     IDEATION
