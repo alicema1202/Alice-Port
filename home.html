@@ -287,12 +287,20 @@
             .WORKS-container .scroll {
                 font-size: 14px;
                 margin-right: 0;
+                color: rgb(255, 255, 255);
+                transform: scaleY(1);
+                transition: transform 0.3s;
             }
             .WORKS-container {
                 display: flex;
                 gap: 8px;
                 /* border: 1px white solid; */
                 justify-content: center;
+                align-items: center;
+            }
+            .dropdown:hover .scroll {
+                transform: scaleY(-1);
+                transition: transform 0.3s;
             }
             @media only screen and (max-width: 900px) {
                 
@@ -358,17 +366,17 @@
                 // myFunction(x) // Call listener function at run time
                 // x.addListener(myFunction) // Attach listener function on state changes
                 
-                works = document.querySelector(".nav-bar li");
-                works.onmouseover = function() {
-                    arrow = document.querySelector(".fa-solid");
-                    arrow.classList.toggle("fa-chevron-down");
-                    arrow.classList.toggle("fa-chevron-up");
-                }
-                works.onmouseout = function() {
-                    arrow = document.querySelector(".fa-solid");
-                    arrow.classList.toggle("fa-chevron-down");
-                    arrow.classList.toggle("fa-chevron-up");
-                }
+                // works = document.querySelector(".nav-bar li");
+                // works.onmouseover = function() {
+                //     arrow = document.querySelector(".fa-solid");
+                //     arrow.classList.toggle("fa-chevron-down");
+                //     arrow.classList.toggle("fa-chevron-up");
+                // }
+                // works.onmouseout = function() {
+                //     arrow = document.querySelector(".fa-solid");
+                //     arrow.classList.toggle("fa-chevron-down");
+                //     arrow.classList.toggle("fa-chevron-up");
+                // }
                 function goToWorks() {
                     document.getElementById("works").scrollIntoView();
                 }

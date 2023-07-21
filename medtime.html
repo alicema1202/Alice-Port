@@ -283,16 +283,6 @@
                     font-size: 30.288px;
                 }
             }
-            #next-up .button {
-                margin:0;
-                margin-bottom: 0;
-                width: fit-content;
-            }
-            #next-up h3 {
-                color: #9e3435;
-                border-top: 1px solid #B8B8B8;
-                padding-top: 20px;
-            }
             /* .left-section a {
                 font-family: 'Cormorant Garamond', serif;
                 font-weight: 400;
@@ -302,6 +292,8 @@
                 font-size: 14px;
                 margin-right: 0;
                 color: black;
+                transform: scaleY(1);
+                transition: transform 0.3s;
             }
             .WORKS-container {
                 display: flex;
@@ -309,6 +301,10 @@
                 /* border: 1px white solid; */
                 justify-content: center;
                 align-items: center;
+            }
+            .dropdown:hover .scroll {
+                transform: scaleY(-1);
+                transition: transform 0.3s;
             }
         </style>
         <header class="header-bar">
@@ -513,16 +509,16 @@
             // myFunction(x) // Call listener function at run time
             // x.addListener(myFunction) // Attach listener function on state changes
             
-            works = document.querySelector(".nav-bar li");
-           arrow = document.querySelector(".drop");
-            works.onmouseover = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
-            works.onmouseout = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
+        //     works = document.querySelector(".nav-bar li");
+        //    arrow = document.querySelector(".drop");
+        //     works.onmouseover = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+        //     works.onmouseout = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
             function goToWorks() {
                 document.getElementById("works").scrollIntoView();
             }
@@ -591,8 +587,7 @@
                 <p class="description hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Bill, a 71 year old male:
                 </p>
-                <div class="picture persona hidden" title="Bill's Persona">
-                </div>
+                <img class="picture persona hidden" title="Bill's Persona" src="images/bill-persona.png"> 
             </section>
             <section id="ideation">
                 <h3 class="hidden">
@@ -739,10 +734,18 @@
             </section>
 
             <section id="next-up">
-                <h3 class="hidden">
+                <p class="description hidden">
+                    <a href="https://alicemadesign.com/unio">
+                        <i style="color:black;display:block;" class="drop fa-solid fa-chevron-left scroll"></i> <strong>Previous: UniO</strong>
+                    </a>
+                    <a href="https://alicemadesign.com/cinema">
+                        <strong>Next: CineMa</strong> <i style="color:black;display:block;" class="drop fa-solid fa-chevron-right scroll"></i>
+                    </a>
+                </p>
+                <!-- <h2 class=" hidden">
                     UP NEXT: CINEMA
-                </h3>
-                <div class="project reverse">
+                </h2> -->
+                <!-- <div class="project reverse">
                     <a class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
                         <img class="phone" src="../images/cinema-phones.png">
                     </a>
@@ -751,7 +754,7 @@
                         <p class="message"> A mobile ticketing apps that streamlines the ticket purchasing and scanning process. </p>
                         <a class="read-more button view-prototype" href="https://alicemadesign.com/cinema"> Read case study →</a>
                     </div> 
-                </div>
+                </div> -->
             </section>
         </div>
         

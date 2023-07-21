@@ -282,6 +282,8 @@
                 font-size: 14px;
                 margin-right: 0;
                 color: black;
+                transform: scaleY(1);
+                transition: transform 0.3s;
             }
             .WORKS-container {
                 display: flex;
@@ -289,6 +291,10 @@
                 /* border: 1px white solid; */
                 justify-content: center;
                 align-items: center;
+            }
+            .dropdown:hover .scroll {
+                transform: scaleY(-1);
+                transition: transform 0.3s;
             }
         </style>
         <header class="header-bar">
@@ -372,16 +378,16 @@
             // myFunction(x) // Call listener function at run time
             // x.addListener(myFunction) // Attach listener function on state changes
             
-            works = document.querySelector(".nav-bar li");
-           arrow = document.querySelector(".drop");
-            works.onmouseover = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
-            works.onmouseout = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
+        //     works = document.querySelector(".nav-bar li");
+        //    arrow = document.querySelector(".drop");
+        //     works.onmouseover = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+        //     works.onmouseout = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
             function goToWorks() {
                 document.getElementById("works").scrollIntoView();
             }
@@ -448,8 +454,7 @@
                 <p class="description hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
                 </p>
-                <div class="persona hidden" title="Zhao's Persona">
-                </div>
+                <img class="persona hidden" title="Zhao's Persona" src="images/zhaopersona.png">
             </section>
             <section id="ideation">
                 <h3 class="hidden">
@@ -603,19 +608,14 @@
                 </div>
             </section>
             <section id="next-up">
-                <h3 class="hidden">
-                    UP NEXT: UNIO
-                </h3>
-                <div class="project reverse">
-                    <a class="v3 unio hidden" href="https://alicemadesign.com/unio">
-                        <img class="phone" src="../images/unio-laptop.png">
+                <p class="description hidden">
+                    <a href="https://alicemadesign.com/medtime">
+                        <i style="color:black;display:block;" class="drop fa-solid fa-chevron-left scroll"></i> <strong>Previous: MedTime</strong>
                     </a>
-                    <div class="text hidden">
-                        <p class="headline"> A smooth cross-platform notetaking experience. </p>
-                        <p class="message"> A digital notetaking platform that seamlessly integrates notetaking across all your devices. </p>
-                        <a class="read-more button view-prototype" href="https://alicemadesign.com/unio"> Read case study → </a>
-                    </div> 
-                </div>
+                    <a href="https://alicemadesign.com/unio">
+                        <strong>Next: UniO</strong> <i style="color:black;display:block;" class="drop fa-solid fa-chevron-right scroll"></i>
+                    </a>
+                </p>
             </section>
             
         </div>

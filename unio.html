@@ -305,6 +305,8 @@
                 font-size: 14px;
                 margin-right: 0;
                 color: black;
+                transform: scaleY(1);
+                transition: transform 0.3s;
             }
             .WORKS-container {
                 display: flex;
@@ -312,6 +314,10 @@
                 /* border: 1px white solid; */
                 justify-content: center;
                 align-items: center;
+            }
+            .dropdown:hover .scroll {
+                transform: scaleY(-1);
+                transition: transform 0.3s;
             }
         </style>
         <header class="header-bar">
@@ -369,19 +375,19 @@
             // myFunction(x) // Call listener function at run time
             // x.addListener(myFunction) // Attach listener function on state changes
             
-            works = document.querySelector(".nav-bar li");
-           arrow = document.querySelector(".drop");
-            works.onmouseover = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
-            works.onmouseout = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
-            function goToWorks() {
-                document.getElementById("works").scrollIntoView();
-            }
+        //     works = document.querySelector(".nav-bar li");
+        //    arrow = document.querySelector(".drop");
+        //     works.onmouseover = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+        //     works.onmouseout = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+        //     function goToWorks() {
+        //         document.getElementById("works").scrollIntoView();
+        //     }
             hamburger = document.querySelector(".hamburger");
             hamburger.onclick = function() {
                 navBar = document.querySelector(".nav-bar");
@@ -446,8 +452,7 @@
                 <p class="description hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Jill, a 19 year old female:
                 </p>
-                <div class="persona hidden" title="Jill's Persona">
-                </div>
+                <img class="persona hidden" title="Jill's Persona" src="images/jillpersona.png">
             </section>
             <section id="ideation">
                 <h3 class="hidden">
@@ -605,7 +610,7 @@
                 </div>
             </section>
             <section id="next-up">
-                <h3 class="hidden">
+                <!-- <h3 class="hidden">
                     UP NEXT: MEDTIME
                 </h3>
                 <div class="project reverse">
@@ -617,7 +622,15 @@
                         <p class="message"> A medicine reminder application that ensures you never forget to take your medication again. </p>
                         <a class="read-more button view-prototype" href="https://alicemadesign.com/medtime"> Read case study → </a>
                     </div> 
-                </div>
+                </div> -->
+                <p class="description hidden">
+                    <a href="https://alicemadesign.com/cinema">
+                        <i style="color:black;display:block;" class="drop fa-solid fa-chevron-left scroll"></i> <strong>Previous: CineMa</strong>
+                    </a>
+                    <a href="https://alicemadesign.com/medtime">
+                        <strong>Next: MedTime</strong> <i style="color:black;display:block;" class="drop fa-solid fa-chevron-right scroll"></i>
+                    </a>
+                </p>
             </section>
         </div>
         

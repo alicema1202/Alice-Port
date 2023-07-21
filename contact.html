@@ -172,6 +172,8 @@
                 font-size: 14px;
                 margin-right: 0;
                 color: black;
+                transform: scaleY(1);
+                transition: transform 0.3s;
             }
             .WORKS-container {
                 display: flex;
@@ -179,6 +181,10 @@
                 /* border: 1px white solid; */
                 justify-content: center;
                 align-items: center;
+            }
+            .dropdown:hover .scroll {
+                transform: scaleY(-1);
+                transition: transform 0.3s;
             }
         </style>
     </head>
@@ -238,16 +244,16 @@
             // myFunction(x) // Call listener function at run time
             // x.addListener(myFunction) // Attach listener function on state changes
             
-            works = document.querySelector(".nav-bar li");
-           arrow = document.querySelector(".drop");
-            works.onmouseover = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
-            works.onmouseout = function() {
-                arrow.classList.toggle("fa-chevron-down");
-                arrow.classList.toggle("fa-chevron-up");
-            }
+        //     works = document.querySelector(".nav-bar li");
+        //    arrow = document.querySelector(".drop");
+        //     works.onmouseover = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+        //     works.onmouseout = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
             function goToWorks() {
                 document.getElementById("works").scrollIntoView();
             }
