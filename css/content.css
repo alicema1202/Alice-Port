@@ -179,7 +179,8 @@ strong {
         max-width: 250px;
     }
     .unio-final {
-        max-width: 1300px;
+        /* max-width: 1300px; */
+        width: 100%;
     }
     .design-system {
         max-width: 1000px;

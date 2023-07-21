@@ -382,10 +382,12 @@ li {
 .web-mockups {
     display: flex;
     justify-content: center;
+    gap: 2rem;
 }
 .mockup-pic-2 {
-    height:45vh;
-    margin: 1em;
+    /* height:45vh; */
+    width: calc(40% - 2rem);
+    /* margin: 1em; */
     margin-bottom: 4rem;
 }
 .mockup, .mockup-notes {
@@ -393,7 +395,7 @@ li {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.34);
 }
 .mockup-pic {
-    width: 60vw;
+    /* width: 60vw; */
 }
 
 
@@ -425,27 +427,30 @@ li {
         width: 80vw;
     }
       
-.design-system {
-    width: 70vw;
-}
+    .design-system {
+        width: 70vw;
+    }
 
-.mockup-pic {
-    width: 70vw;
-}
+    .mockup-pic {
+        width: 70vw;
+    }
 
-.mockup-notes {
-    width: 25vw;
-}
-.web-mockups {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.mockup-pic-2 {
-    height:50vh;
-    object-fit: contain;
-    margin: 0.5em;
-}
+    .mockup-notes {
+        width: 25vw;
+    }
+    .web-mockups {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* width: 50%; */
+
+        flex-direction: column;
+        justify-content: center;
+    }
+    .mockup-pic-2 {
+        object-fit: contain;
+        margin: 0.5em;
+        width: 100%;
+    }
 }
 @media (max-width:600px) {
             
