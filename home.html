@@ -237,17 +237,22 @@
             }
             .hero-text {
                 /* background-color: purple; */
-                max-width: 559px;
+                max-width: none;
                 align-items: center;
             }
 
+            @font-face {
+                font-family: Akira;
+                src: url(images/Akira.otf);
+            }
             .hero-text h1 {
                 font-family: 'Cormorant Garamond', serif;
-                font-size: 100px;
-                line-height: 110px;
+                font-family: 'Akira', sans-serif;
+                font-size: 85px;
+                line-height: 90px;
                 font-weight: 300;
                 /* background-color: pink; */
-                margin: 24px 0;
+                margin: 16px 0;
                 text-align: center;
             }
             
@@ -275,8 +280,8 @@
             }
             @media only screen and (max-width: 500px) {
                 .hero-text h1{
-                    font-size: 80px;
-                    line-height: 90px;
+                    font-size: 70px;
+                    line-height: 75px;
                 }
             }
             /* .left-section a {
