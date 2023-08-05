@@ -63,6 +63,7 @@ html {
     scroll-behavior: smooth;
 }
 .scroll-section {
+    /* background-color: pink; */
     cursor: pointer;
     display: flex;
     margin: auto;
@@ -73,7 +74,7 @@ html {
     align-items: center;
     flex-direction: column-reverse;
     transform: translateY(0);
-    transition: 0.3s;
+    /* transition: 0.3s; */
     -webkit-animation-duration: 1.5s;
     animation-duration: 1.5s;
     -webkit-animation-fill-mode: both;
@@ -82,6 +83,7 @@ html {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
+    
 }
 
 @keyframes bounce {
@@ -101,7 +103,7 @@ html {
 	}
 }
 .scroll-section {
-    transition: 0.3s;
+    /* transition: 0.3s; */
     animation-name: bounce;
     -moz-animation-name: bounce;
 }

@@ -62,9 +62,13 @@
             }
             .go-to-works {
                 color: rgba(255, 255, 255, 0.9);
-                width: 100vw;
-                margin-left: 0;
-                margin-right: 0;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                left: 0;
             }
             .scroll {
                 margin: 0;
@@ -248,16 +252,16 @@
 
             @font-face {
                 font-family: Akira;
-                src: url(images/Akira.otf);
+                src: url(images/Akira.otf) format('opentype');
             }
             @font-face {
                 font-family: Korsson;
-                src: url(images/KORSSON.otf);
+                src: url(images/KORSSON.otf) format('opentype');
             }
             .hero-text h1 {
                 font-family: 'Cormorant Garamond', serif;
                 font-family: 'Akira', sans-serif;
-                font-family: 'Korsson', sans-serif;
+                /* font-family: 'Korsson', sans-serif; */
                 /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
                 color: white;
                 /* color: rgba(255, 255, 255, 0); */
@@ -292,7 +296,7 @@
                     transform: scale(0.7);
                 }
             }
-            @media only screen and (max-width: 500px) {
+            @media only screen and (max-width: 600px) {
                 .hero-text h1{
                     font-size: 58px;
                     line-height: 70px;
@@ -318,9 +322,11 @@
                 transition: transform 0.3s;
             }
             @media only screen and (max-width: 900px) {
-                
+                .hero-text h1 {
+                    font-family: 'Akira', sans-serif;
+                }
             }
-            .texture {
+            .texture,.blob-phone {
                 pointer-events: none;
             }
         </style>
@@ -373,6 +379,7 @@
                 </nav>
             </header>
             <script>
+                
                 // function myFunction(x) {
                 //     if (x.matches) { // If media query matches
                 //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
@@ -446,14 +453,39 @@
                         <p class="label">Scroll for more</p>
                     </a>
                 </div> -->
-                <img class="blob-phone" src="images/landing-bg.mp4">
-                
+                <img class="bsm" src="images/landing-bg.mp4">
                 <img class="texture" src="images/texture.png">
-                <video class="blob"autoplay playsinline loop muted>
+                <video id="regular" class="blob"autoplay playsinline loop muted>
                     <source src="images/landing-bg.mp4">
                 </video>
                 
             </div>
+            <script>
+                document.querySelector('.bsm').style.display = "none";
+                
+                var video = document.querySelector('.blob');
+                var promise = video.play();
+
+                if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started!
+                }).catch(error => {
+                    // Autoplay not allowed!
+                    // Mute video and try to play again
+                    video.muted = true;
+                    video.play();
+                    document.querySelector('.bsm').classList.toggle("blob-phone");
+                    // Show something in the UI that the video is muted
+                });
+                }
+            </script>
+            <style>
+                @media (max-width: 420px) {
+                    .blob-phone {
+                        display: block !important;;
+                    }    
+                }  
+            </style>
             <div id="works" class="remove projects">
                 <div class="project">
                     <a class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
