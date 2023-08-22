@@ -357,6 +357,7 @@
                                     Work <i class="fa-solid fa-chevron-down scroll"></i>
                                 </p>
                                 <b class="dropdown-content removepad">
+                                    <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
                                     <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
                                     <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
                                     <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
@@ -438,7 +439,8 @@
                         ALICE MA
                     </h1>
                     <p>
-                        UX designer with a passion for creating accessible and intuitive user experiences. 
+                        UX designer based in California. Currently studying interaction design at <a title="Pega website" style="display: inline; text-decoration: underline;" href="https://www.ucsd.edu" target="_blank">UC San Diego</a>
+                        <!-- with a passion for creating accessible and intuitive user experiences.  -->
                     </p>
                 </div>
                 <!-- <div class="hero-text">
@@ -458,11 +460,11 @@
                 <video id="regular" class="blob"autoplay playsinline loop muted>
                     <source src="images/landing-bg.mp4">
                 </video>
-                
             </div>
             <script>
                 document.querySelector('.bsm').style.display = "none";
-                
+                // document.querySelector('.bsm').classList.remove("blob-phone");
+
                 var video = document.querySelector('.blob');
                 var promise = video.play();
 
@@ -474,17 +476,17 @@
                     // Mute video and try to play again
                     video.muted = true;
                     video.play();
-                    document.querySelector('.bsm').classList.toggle("blob-phone");
+                    document.querySelector('.bsm').classList.add("blob-phone");
                     // Show something in the UI that the video is muted
                 });
                 }
             </script>
             <style>
-                @media (max-width: 420px) {
+                /* @media (max-width: 420px) {
                     .blob-phone {
                         display: block !important;;
                     }    
-                }  
+                }   */
             </style>
             <div id="works" class="remove projects">
                 <div class="project">
