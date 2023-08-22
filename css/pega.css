@@ -1,0 +1,21 @@
+.cover-photo {
+    background-image: url('../images/pega.png');
+}
+::-moz-selection { /* Code for Firefox */
+    /* color: rgb(255, 255, 255); */
+    background: #8ea8ea6e;
+    border: solid;
+  }
+  
+::selection {
+    /* color: rgb(255, 255, 255); */
+    background: #8ea8ea6e;
+}
+
+.view-prototype:hover {
+    color: white;
+    background-color:#3C458B;
+    border-color: #3C458B;
+    transition:0.2s;
+    box-shadow: none;
+}
