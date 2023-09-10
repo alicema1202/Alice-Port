@@ -164,9 +164,11 @@
             .pega .phone {
                 mix-blend-mode: lighten;
             }
-            .v3:hover {
-                transform: translateY(-10px);
-                transition: transform 0.3s;
+            .v3:hover .phone{
+                /* transform: translateY(-10px);
+                transition: transform 0.3s; */
+                transform: scale(1.05);
+                transition: 0.4s;
             }
             .phone {
                 width: 350px;
@@ -176,6 +178,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: 0.4s;
             }
             p, .read-more{
                 color: white;
@@ -570,6 +573,7 @@
                         display: block !important;;
                     }    
                 }  
+                
             </style>
             <!-- <Style>
                 #container {
@@ -594,50 +598,58 @@
     }
             </Style> -->
             <div id="works" class="remove projects">
-                <div class="project">
-                    <a class="v3 pega hidden"  href="https://alicemadesign.com/pega">
-                        <img class="phone" src="../images/pega-logo.png">
-                    </a>
-                    <div class="text hidden">
-                        <p class="app-name"> 01 | PEGA UX DESIGN INTERN </p>
-                        <p class="headline"> Research and Testing Team Summer 2023 </p>
-                        <p class="message"> Conducting research and designing user flows to improve the authoring experience of Pega's Constellation design system. </p>
-                        <a class="read-more" href="https://alicemadesign.com/pega"> Read about my internship → </a>
-                    </div> 
-                </div>
-                <div class="project reverse">
-                    <a class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
-                        <img class="phone" src="../images/medtime-phones.png">
-                    </a>
-                    <div class="text hidden">
-                        <p class="app-name"> 02 | MEDTIME MEDICINE REMINDERS </p>
-                        <p class="headline"> Get reminders anywhere, anytime. </p>
-                        <p class="message"> A medicine reminder application that ensures you never forget to take your medication again. </p>
-                        <a class="read-more" href="https://alicemadesign.com/medtime"> Read case study → </a>
-                    </div> 
-                </div>
-                <div class="project">
-                    <a class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
-                        <img class="phone" src="../images/cinema-phones.png">
-                    </a>
-                    <div class="text hidden">
-                        <p class="app-name"> 03 | CINEMA MOBILE TICKETING </p>
-                        <p class="headline"> An easier way to purchase movie tickets. </p>
-                        <p class="message"> A mobile ticketing apps that streamlines the ticket purchasing and scanning process. </p>
-                        <a class="read-more" href="https://alicemadesign.com/cinema"> Read case study → </a>
-                    </div> 
-                </div>
-                <div class="project reverse">
-                    <a class="v3 unio hidden" href="https://alicemadesign.com/unio">
-                        <img class="phone" src="../images/unio-laptop.png">
-                    </a>
-                    <div class="text hidden">
-                        <p class="app-name"> 04 | UNIO ONLINE NOTETAKING </p>
-                        <p class="headline"> A smooth cross-platform notetaking experience. </p>
-                        <p class="message"> A digital notetaking platform that seamlessly integrates notetaking across all your devices. </p>
-                        <a class="read-more" href="https://alicemadesign.com/unio"> Read case study → </a>
-                    </div> 
-                </div>
+                <a href="https://alicemadesign.com/pega">
+                    <div class="project">
+                        <div class="v3 pega hidden"  href="https://alicemadesign.com/pega">
+                            <img class="phone" src="../images/pega-logo.png">
+                        </div>
+                        <div class="text hidden">
+                            <p class="app-name"> 01 | PEGA UX DESIGN INTERN </p>
+                            <p class="headline"> Research and Testing Team Summer 2023 </p>
+                            <p class="message"> Conducting research and designing user flows to improve the authoring experience of Pega's Constellation design system. </p>
+                            <p class="read-more" href="https://alicemadesign.com/pega"> Read about my internship → </p>
+                        </div> 
+                    </div>               
+                </a>
+                <a href="https://alicemadesign.com/medtime">
+                    <div class="project reverse">
+                        <div class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
+                            <img class="phone" src="../images/medtime-phones.png">
+                        </div>
+                        <div class="text hidden">
+                            <p class="app-name"> 02 | MEDTIME MEDICINE REMINDERS </p>
+                            <p class="headline"> Get reminders anywhere, anytime. </p>
+                            <p class="message"> A medicine reminder application that ensures you never forget to take your medication again. </p>
+                            <p class="read-more" href="https://alicemadesign.com/medtime"> Read case study → </p>
+                        </div> 
+                    </div>
+                </a>
+                <a href="https://alicemadesign.com/cinema">
+                    <div class="project">
+                        <div class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
+                            <img class="phone" src="../images/cinema-phones.png">
+                        </div>
+                        <div class="text hidden">
+                            <p class="app-name"> 03 | CINEMA MOBILE TICKETING </p>
+                            <p class="headline"> An easier way to purchase movie tickets. </p>
+                            <p class="message"> A mobile ticketing apps that streamlines the ticket purchasing and scanning process. </p>
+                            <p class="read-more" href="https://alicemadesign.com/cinema"> Read case study → </p>
+                        </div> 
+                    </div>
+                </a>
+                <a href="https://alicemadesign.com/unio">
+                    <div class="project reverse">
+                        <div class="v3 unio hidden" href="https://alicemadesign.com/unio">
+                            <img class="phone" src="../images/unio-laptop.png">
+                        </div>
+                        <div class="text hidden">
+                            <p class="app-name"> 04 | UNIO ONLINE NOTETAKING </p>
+                            <p class="headline"> A smooth cross-platform notetaking experience. </p>
+                            <p class="message"> A digital notetaking platform that seamlessly integrates notetaking across all your devices. </p>
+                            <p class="read-more" href="https://alicemadesign.com/unio"> Read case study → </p>
+                        </div> 
+                    </div>
+                </a>
             </div>
             
             <footer class="footer">
