@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
         <meta name="msapplication-TileImage" content="images/WEBSITE-THUMBB.png">
  
@@ -76,10 +76,16 @@
             .header-bar {
                 background-color: rgba(0, 0, 0, 0.362);
                 border-color: rgba(255, 255, 255, 0.116);
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                backdrop-filter: blur(0);
+                -webkit-backdrop-filter: blur(0);
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.399) 0%, rgba(0, 0, 0, 0.00) 100%);
             }
             .logo, .nav-bar p, .nav-bar a{
                 color: rgba(255, 255, 255, 0.9);
                 font-weight: 300;
+                font-weight: 400;
             }
             .hamburger .line {
                 background-color: rgba(255, 255, 255, 0.9)!important;
@@ -97,12 +103,18 @@
                 .header-bar {
                     padding-top: 20px;
                     padding-bottom: 20px!important;
+                    padding-bottom: 40px!important;
                 }
                 .right-btn {
                     margin-right: 4rem;
+                    margin-right: 0;
                 }
                 .logo {
                     margin-left: 4rem;
+                    margin-left: 0;
+                }
+                .nav-bar li div p, .nav-bar a {
+                    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.641);
                 }
             }
             @media only screen and (max-width: 900px) {
@@ -158,7 +170,7 @@
                 transition: transform 0.3s;
             }
             .phone {
-                width: 279px;
+                width: 350px;
                 height: 100%;
                 object-fit:contain;
                 margin: auto;
@@ -227,6 +239,18 @@
                 .v3, .text {
                     width: 320px;
                 }
+                .v3 {
+                    height: 230px;
+                }
+                .phone {
+                    width: 250px;
+                    height: 100%;
+                    object-fit:contain;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             }
             .blob-phone {
                 mix-blend-mode: normal;
@@ -240,39 +264,39 @@
                 object-fit: cover;
                 opacity: 0.5;
             }
-            .logoo {
-                color: white;
-            }
-
             .hero-text {
                 /* background-color: purple; */
                 max-width: none;
                 align-items: center;
+                top: 0px;
+                height: 100%;
             }
 
             @font-face {
                 font-family: Akira;
-                src: url(images/Akira.otf) format('opentype');
+                src: url(images/Akira.otf);
             }
             @font-face {
                 font-family: Korsson;
-                src: url(images/KORSSON.otf) format('opentype');
+                src: url(images/KORSSON.otf);
             }
             .hero-text h1 {
                 font-family: 'Cormorant Garamond', serif;
-                font-family: 'Akira', sans-serif;
+                /* font-family: 'Akira', sans-serif; */
                 /* font-family: 'Korsson', sans-serif; */
                 /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
                 color: white;
                 /* color: rgba(255, 255, 255, 0); */
                 font-size: 85px;
+                font-style: italic;
+                font-size: 100px;
                 line-height: 90px;
                 font-weight: 300;
+                font-weight: 400;
                 /* background-color: pink; */
                 margin: 16px 0;
                 text-align: center;
             }
-            
             
             .hero-text p {
                 margin: 0;
@@ -282,6 +306,7 @@
                 text-align: center;
                 line-height: 38px;
             }
+            
             .hero-text .role {
                 font-size: 22px;
                 font-weight: 500;
@@ -299,10 +324,23 @@
             @media only screen and (max-width: 600px) {
                 .hero-text h1{
                     font-size: 58px;
+                    font-size: 70px;
                     line-height: 70px;
                 }
+                .hero-text p {
+                    margin: 0;
+                    font-size: 25px;
+                }
+                .hero-text .role {
+                    margin: 0;
+                    font-size: 20px;
+                }
             }
-            
+            /* .left-section a {
+                font-family: 'Cormorant Garamond', serif;
+                font-weight: 300;
+                font-size: 20px;
+            } */
             .WORKS-container .scroll {
                 font-size: 14px;
                 margin-right: 0;
@@ -323,11 +361,42 @@
             }
             @media only screen and (max-width: 900px) {
                 .hero-text h1 {
-                    font-family: 'Akira', sans-serif;
+                    /* font-family: 'Akira', sans-serif; */
                 }
             }
-            .texture,.blob-phone {
+            .texture, .blob-phone {
                 pointer-events: none;
+            }
+            /* .left-section, .nav-bar ul {
+                align-items: center;
+            } */
+            .header-bar {
+                display: flex;
+                justify-content: center;
+                /* padding-right:0;
+                padding-left: 0;  */
+                width: 100vw;
+            }
+            .inside {
+                display: flex;
+                width: 100%;
+                max-width: 1090px;
+            }
+            @media screen and (min-width: 1700px) {
+                .inside {
+                    width: 1190px;
+                    max-width: none;
+                }
+            }
+            #works {
+                width: calc(100vw);
+                /* background-color: pink; */
+            }
+            /* .left-section, .nav-bar ul {
+                align-items: center;
+            } */
+            .logo-header span{
+                color: white;
             }
         </style>
 
@@ -338,49 +407,53 @@
                 </h1>
             </div>
             <header class="remove header-bar">
-                <div class="left-section">
-                    <a href="https://alicemadesign.com/home" class="logo-container logo">
-                        ALICE MA
-                    </a>
-                </div>
-                <div class="hamburger">
-                    <div class="line one"></div>
-                    <div class="line two"></div>
-                    <div class="line three"></div>
-                </div>
-                
-                <nav class="nav-bar">
-                    <ul>
-                        <li class="dropdown left">
-                            <div class="hover-underline-animation drop-button">
-                                <p class="WORKS-container" onclick="goToWorks()">
-                                    Work <i class="fa-solid fa-chevron-down scroll"></i>
-                                </p>
-                                <b class="dropdown-content removepad">
-                                    <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
-                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
-                                </b>
-                            </div>
-                        </li>
+                <header class="inside">
+                    <div class="left-section">
+                        <a href="https://alicemadesign.com/home" class="logo-container logo">
+                            ALICE MA
+                        </a>
+                    </div>
+                    <div class="hamburger">
+                        <div class="line one"></div>
+                        <div class="line two"></div>
+                        <div class="line three"></div>
+                    </div>
                     
-                        <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
-                        </li>
-        
-                        <!-- <li>
-                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                        </li> -->
-                            
-                        <li class="right-btn">
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
+                    <nav class="nav-bar">
+                        <ul>
+                            <li class="dropdown left">
+                                <div class="hover-underline-animation drop-button">
+                                    <p class="WORKS-container" onclick="goToWorks()">
+                                        Work <i class="fa-solid fa-chevron-down scroll"></i>
+                                    </p>
+                                    <b class="dropdown-content removepad">
+                                        <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
+                                        <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                        <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                        <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
+                                    </b>
+                                </div>
+                            </li>
+                        
+                            <li>
+                                <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
+                            </li>
+            
+                            <!-- <li>
+                                <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
+                            </li> -->
+                                
+                            <li class="right-btn"r>
+                                <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
+                            </li>
+                            <!-- <li class="right-btn">
+                                <a class="read-more" href="https://alicemadesign.com/contact">Resume</a>
+                            </li> -->
+                        </ul>
+                    </nav>
+                </header>
             </header>
             <script>
-                
                 // function myFunction(x) {
                 //     if (x.matches) { // If media query matches
                 //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
@@ -426,21 +499,21 @@
                 }
             </script>
             
-            <div class="landing-page">
+            <div class="remove landing-page">
                 <a onclick="goToWorks()" class="go-to-works scroll-section">
                     <i class="fa-solid fa-chevron-down scroll"></i>
-                    <p class="label">Scroll for more</p>
+                    <p class="label">Take a look</p>
                 </a>
                 <div class="hero-text">
                     <p class="role">
                         UX DESIGN INTERN @ <a title="Pega website" style="display: inline; text-decoration: underline;" href="https://www.pega.com" target="_blank">PEGA</a>
                     </p>
                     <h1>
-                        ALICE MA
+                        Hi, I'm Alice!
                     </h1>
                     <p>
-                        UX designer based in California. Currently studying interaction design at <a title="Pega website" style="display: inline; text-decoration: underline;" href="https://www.ucsd.edu" target="_blank">UC San Diego</a>
-                        <!-- with a passion for creating accessible and intuitive user experiences.  -->
+                        UX designer based in California. Currently studying interaction design at <a title="Pega website" style="display: inline; text-decoration: underline;" href="https://www.ucsd.edu" target="_blank">UC San Diego</a>.
+                         <!-- with a passion for creating accessible and intuitive user experiences.  -->
                     </p>
                 </div>
                 <!-- <div class="hero-text">
@@ -455,16 +528,38 @@
                         <p class="label">Scroll for more</p>
                     </a>
                 </div> -->
+                <!-- <div id="video">
+                    <div id="container">
+                        <script>
+                            (function() {
+                            document.addEventListener("mousemove", parallax);
+                            const elem = document.querySelector("#container");
+                
+                            function parallax(e) {
+                                let _w = window.innerWidth/2;
+                                let _h = window.innerHeight/2;
+                                let _mouseX = e.clientX;
+                                let _mouseY = e.clientY;
+                                let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+                                let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+                                let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+                                let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+                                let y = `${_depth3}, ${_depth2}, ${_depth1}`;
+                                elem.style.backgroundPosition = x;
+                            }
+                        })();
+                        </script>
+                    </div>
+                </div> -->
                 <img class="bsm" src="images/landing-bg.mp4">
                 <img class="texture" src="images/texture.png">
-                <video id="regular" class="blob"autoplay playsinline loop muted>
+                <video class="blob" autoplay playsinline loop muted>
                     <source src="images/landing-bg.mp4">
                 </video>
             </div>
             <script>
                 document.querySelector('.bsm').style.display = "none";
-                // document.querySelector('.bsm').classList.remove("blob-phone");
-
+                
                 var video = document.querySelector('.blob');
                 var promise = video.play();
 
@@ -476,21 +571,43 @@
                     // Mute video and try to play again
                     video.muted = true;
                     video.play();
-                    document.querySelector('.bsm').classList.add("blob-phone");
+                    document.querySelector('.bsm').classList.toggle("blob-phone");
                     // Show something in the UI that the video is muted
                 });
                 }
             </script>
             <style>
-                /* @media (max-width: 420px) {
+                @media (max-width: 420px) {
                     .blob-phone {
                         display: block !important;;
                     }    
-                }   */
+                }  
             </style>
+            <!-- <Style>
+                #container {
+        /* background-color: #99c2f8; */
+        background-image: url('images/landing-bg.gif');
+        /* position: absolute; */
+
+        background-size: 120vw 120vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+    }
+    #video {
+        filter: blur(120px);
+        background-color: black;
+        /* overflow: hidden; */
+        width: 100vw;
+        height: -webkit-fill-available;
+        transform: scale(1.1);
+
+    }
+            </Style> -->
             <div id="works" class="remove projects">
                 <div class="project">
-                    <a class="v3 pega hidden" href="https://alicemadesign.com/pega">
+                    <a class="v3 pega hidden"  href="https://alicemadesign.com/pega">
                         <img class="phone" src="../images/pega-logo.png">
                     </a>
                     <div class="text hidden">

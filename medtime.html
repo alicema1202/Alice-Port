@@ -307,194 +307,101 @@
                 transition: transform 0.3s;
             }
         </style>
-        <header class="header-bar">
-            <div class="left-section">
-                <a href="https://alicemadesign.com/home" class="logo-container logo">
-                    ALICE MA
-                </a>
-            </div>
-            <div class="hamburger">
-                <div class="line one"></div>
-                <div class="line two"></div>
-                <div class="line three"></div>
-            </div>
-            <!-- <style>
-                /* Handle */
-                /* ::-webkit-scrollbar-thumb {
-                    background: #2295af;
-                } */
-                .dropdown {
-                    transition: height 5s; 
-                    margin-bottom: 0vh;
-                    text-align: left;
-                }
-                .left {
-                    text-align: left;
-                }
-                .drop-button {
-                    margin: 0;
-                    margin-bottom: 10px;
-                    z-index: 1;
-                }
-                .dropdown-content {
-                    display: block;
-                    position: absolute;
-                    pointer-events: none;
-                    opacity: 0;
-                    top: 0;
-                    overflow: hidden;
-                    font-weight: 400;
-                    transition: opacity 0.5s, transform 0.5s;
-                    /* animation: fadeIn 0.5s 0s 1; */
-                    background-color: rgb(41, 41, 41);
-                    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.434);
-                    border: none;
-                    border-radius: 0.3em;
-                    border-top-left-radius: 0;
-                    z-index: 10;
-                    margin-bottom: 3vh;
-                    padding-top: 0.6ch;
-                    padding-bottom: 0.6ch;
-                    transform: translateY(0);
-                    transition: opacity 0.3s, transform 0.7s;
-                }
-                .drop-button:hover {
-                    cursor: pointer;
-                }
-                .drop-button:hover .dropdown-content {
-                    display: block;
-                    pointer-events: all;
-                    transform: translateY(3ch);
-                    /* top: calc(30px + 2.4ch); */
-                    transition: opacity 0.7s, transform 0.3s;
-                    /* animation: fadeIn 0.5s 0s 1; */
-                    opacity: 1;
-                }
-                .drop-button:hover .removepad {
-                    /* top: 3ch; */
-                }
-                .center {
-                    text-align: center;
-                }
-                .list-item {
-                    min-width: 10ch;
-                    padding: 1em 2em;
-                    color: rgba(255, 255, 255, 0.692);
-                }
-                @media only screen and (min-width: 900px){
-                    .list-item {
-                        position: relative;
-                    }
-                }
-                .list-item:hover {
-                    color: rgb(255, 255, 255);
-                    background-color: rgba(0, 0, 0, 0.595);
-                    transition: 0.2s;
-                }
-                @keyframes fadeIn {
-                    0% {opacity: 0; transform: translateY(-30px);}
-                    100% {opacity: 1; transform: translateY(0px);}
-                }
-                @keyframes fadeOut {
-                    0% {opacity: 1; transform: translateY(0px);}
-                }
-                .drop-button {
-                    padding: 0.3em 0;
-                    margin-bottom: 0;
-                }
-                /* .margins:hover {
-                    margin-right: calc(2rem - 1.88ch);
-                } */
-                @media only screen and (max-width: 900px) {
-                    .drop-button {
-                        margin-bottom: 6vh;
-                        z-index: 10;
-                    }
-                    .dropdown {
-                        margin-bottom: 0;
-                    }
-                    .drop-button:hover .removepad {
-                        top: 3ch;
-                    }
-                    .margins:hover {
-                        margin-right: 2rem;
-                        margin-left: 2rem;
-                    }
-                    .drop-button {
-                        font-size: 2.5vh;
-                    }
-                    .margins .dropdown-content {
-                        position: relative;
+        <header class="remove header-bar">
+            <header class="inside">
+                <div class="left-section">
+                    <a href="https://alicemadesign.com/home" class="logo-container logo">
+                        ALICE MA
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <div class="line one"></div>
+                    <div class="line two"></div>
+                    <div class="line three"></div>
+                </div>
+                <style>
+                    .header-bar {
+                        font-family: lexend, Arial, Helvetica, sans-serif;
                         font-weight: 400;
-                        margin-bottom: 1ch;
-                        display: none;
                     }
-                    .dropdown:hover .drop-button {
-                        margin-bottom: 0;
+                    .button, .brief-desc,.content,.description, .footer {
+                        font-family: lexend, Arial, Helvetica, sans-serif;
                     }
-                    .drop-button:hover .dropdown-content {
-                        font-size: large;
-                        top: 0;
-                        transform: translateY(0);
-                        background-color: rgba(255, 255, 255, 0);
-                        /* transform: translateY(calc(30px+2.4ch)); */
+                    .brief-desc {
+                        font-size: 0.9em;
                     }
-                    .margins .dropdown-content .list-item {
-                        color: rgba(0, 0, 0, 0.626);
-                        margin-top: 0.5ch;
-                        padding: 0.5em;
+                    .button {
+                        font-weight: 500;
                     }
-                    .margins .dropdown-content .list-item:hover {
-                        background-color: rgba(255, 255, 255, 0);
+                    .description {
+                        letter-spacing: normal;
                     }
-                    /* .drop-button:hover {
-                        margin-bottom: 1vh;
-                    } */
-                    .margins:hover .dropdown-content{
-                        box-shadow: none;
-                        top: 0;
-                        margin: 0;
-                        padding: 0;
-                        /* background-color: rgba(255, 255, 255, 0); */
-                        margin-bottom: 2vh;
+                    h2 {
+                        font-weight: 700;
                     }
-                    .margins:hover .dropdown-content .list-item {
-                        margin-bottom: 0;
+                    h3 {
+                        font-weight: 600;
                     }
-                    .dropdown {
-                        text-align: center;
+                    .drop-button {
+                        color: black;
                     }
-                }
-            </style> -->
-            <nav class="nav-bar">
-                <ul>
-                    <li class="dropdown left">
-                        <div class="hover-underline-animation drop-button">
-                            <p class="WORKS-container" onclick="goToWorks()">
-                                Work <i class="drop fa-solid fa-chevron-down scroll"></i>
-                            </p>
-                            <b class="dropdown-content removepad">
-                                <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
-                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
-                            </b>
-                        </div>
-                    </li>
-                
-                    <li>
-                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
-                    </li>
-    
-                    <!-- <li>
-                        <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                    </li> -->
-                        
-                    <li class="right-btn">
-                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+                    .header-bar {
+                        display: flex;
+                        justify-content: center;
+                        /* padding-right:0;
+                        padding-left: 0;  */
+                        width: 100vw;
+                    }
+                    .inside {
+                        display: flex;
+                        width: 100%;
+                        max-width: 1090px;
+                    }
+                    @media screen and (min-width: 1700px) {
+                        .inside {
+                            width: 1190px;
+                            max-width: none;
+                        }
+                    }
+                    .right-btn {
+                        margin-right: 4rem;
+                        margin-right: 0;
+                    }
+                    .logo {
+                        margin-left: 4rem;
+                        margin-left: 0;
+                    }
+                </style>
+                <nav class="nav-bar">
+                    <ul>
+                        <li class="dropdown left">
+                            <div class="hover-underline-animation drop-button">
+                                <p class="WORKS-container" onclick="goToWorks()">
+                                    Work <i class="drop fa-solid fa-chevron-down scroll"></i>
+                                </p>
+                                <b class="dropdown-content removepad">
+                                    <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
+                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
+                                </b>
+                            </div>
+                        </li>
+                    
+                        <li>
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
+                        </li>
+        
+                        <!-- <li>
+                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
+                        </li> -->
+                            
+                        <li class="right-btn">
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         </header>
         <script>
             // function myFunction(x) {

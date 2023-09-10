@@ -189,47 +189,101 @@
         </style>
     </head>
     <body>
-        <header class="header-bar remove">
-            <div class="left-section">
-                <a href="https://alicemadesign.com/home" class="logo-container logo">
-                    ALICE MA
-                </a>
-            </div>
-            <div class="hamburger">
-                <div class="line one"></div>
-                <div class="line two"></div>
-                <div class="line three"></div>
-            </div>
-            
-            <nav class="nav-bar">
-                <ul>
-                    <li class="dropdown left">
-                        <div class="hover-underline-animation drop-button">
-                            <p class="WORKS-container" onclick="goToWorks()">
-                                Work <i class="drop fa-solid fa-chevron-down scroll" style="margin-left:0"></i>
-                            </p>
-                            <b class="dropdown-content removepad">
-                                <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
-                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
-                            </b>
-                        </div>
-                    </li>
-                
-                    <li>
-                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
-                    </li>
-    
-                    <!-- <li>
-                        <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                    </li> -->
-                        
-                    <li class="right-btn">
-                        <a class="hover-underline-animation visible" href="https://alicemadesign.com/contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+        <header class="remove header-bar">
+            <header class="inside">
+                <div class="left-section">
+                    <a href="https://alicemadesign.com/home" class="logo-container logo">
+                        ALICE MA
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <div class="line one"></div>
+                    <div class="line two"></div>
+                    <div class="line three"></div>
+                </div>
+                <style>
+                    .header-bar {
+                        font-family: lexend, Arial, Helvetica, sans-serif;
+                        font-weight: 400;
+                    }
+                    .button, .brief-desc,.content,.description, .footer {
+                        font-family: lexend, Arial, Helvetica, sans-serif;
+                    }
+                    .brief-desc {
+                        font-size: 0.9em;
+                    }
+                    .button {
+                        font-weight: 500;
+                    }
+                    .description {
+                        letter-spacing: normal;
+                    }
+                    h2 {
+                        font-weight: 700;
+                    }
+                    h3 {
+                        font-weight: 600;
+                    }
+                    .drop-button {
+                        color: black;
+                    }
+                    .header-bar {
+                        display: flex;
+                        justify-content: center;
+                        /* padding-right:0;
+                        padding-left: 0;  */
+                        width: 100vw;
+                    }
+                    .inside {
+                        display: flex;
+                        width: 100%;
+                        max-width: 1090px;
+                    }
+                    @media screen and (min-width: 1700px) {
+                        .inside {
+                            width: 1190px;
+                            max-width: none;
+                        }
+                    }
+                    .right-btn {
+                        margin-right: 4rem;
+                        margin-right: 0;
+                    }
+                    .logo {
+                        margin-left: 4rem;
+                        margin-left: 0;
+                    }
+                </style>
+                <nav class="nav-bar">
+                    <ul>
+                        <li class="dropdown left">
+                            <div class="hover-underline-animation drop-button">
+                                <p class="WORKS-container" onclick="goToWorks()">
+                                    Work <i class="drop fa-solid fa-chevron-down scroll"></i>
+                                </p>
+                                <b class="dropdown-content removepad">
+                                    <a class="list-item" href="https://alicemadesign.com/pega">Pega</a>
+                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
+                                </b>
+                            </div>
+                        </li>
+                    
+                        <li>
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
+                        </li>
+        
+                        <!-- <li>
+                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
+                        </li> -->
+                            
+                        <li class="right-btn">
+                            <a class="hover-underline-animation visible" href="https://alicemadesign.com/contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         </header>
         <script>
             // function myFunction(x) {
