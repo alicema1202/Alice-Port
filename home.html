@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +15,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
         <meta name="msapplication-TileImage" content="images/WEBSITE-THUMBB.png">
  
         <meta property="og:site_name" content="Alice Ma Design">
@@ -203,9 +207,20 @@
             }
             .headline {
                 font-size: 35px;
+                font-size: 45px;
+                font-size: 35px;
                 font-weight: 700;
+                font-weight: 600;
+                font-family: 'Cormorant Garamond', serif;
+                font-family: 'DM Serif Text', serif;
+                /* font-family: 'Noto Serif Display', serif; */
+                font-weight: 400;
+                font-weight: 500;
+                font-style: italic;
+                /* text-transform: uppercase; */
                 /* background-color: orange; */
             }
+            
             .message {
                 font-size: 18px;
                 /* background-color: purple */
@@ -224,6 +239,23 @@
                 background-color: rgba(255, 255, 255, 0.819);
                 color: #0e0e03;
                 transition: 0.3s;
+            }
+            @media only screen and (max-width: 700px) {
+                .headline {
+                    font-size: 35px;
+                }
+                .message {
+                    font-size: 17px;
+                }
+                .app-name {
+                    font-size: 12px;
+                }
+                .text {
+                    row-gap: 20px;
+                }
+                .project {
+                    margin-bottom: 20px;
+                }
             }
             @media only screen and (max-width: 1700px) {
                 .v3, .text {
@@ -255,7 +287,8 @@
                 }
             }
             .blob-phone {
-                mix-blend-mode: normal;
+                mix-blend-mode: lighten;
+                opacity: 0.6
             }
             .texture {
                 position: absolute;
@@ -284,6 +317,8 @@
             }
             .hero-text h1 {
                 font-family: 'Cormorant Garamond', serif;
+                font-family: 'DM Serif Text', serif;
+                /* font-family: 'Noto Serif Display', serif; */
                 /* font-family: 'Akira', sans-serif; */
                 /* font-family: 'Korsson', sans-serif; */
                 /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
@@ -292,9 +327,11 @@
                 font-size: 85px;
                 font-style: italic;
                 font-size: 100px;
+                font-size: 80px;
                 line-height: 90px;
                 font-weight: 300;
                 font-weight: 400;
+                /* font-weight: 500; */
                 /* background-color: pink; */
                 margin: 16px 0;
                 text-align: center;
@@ -328,6 +365,7 @@
                     font-size: 58px;
                     font-size: 70px;
                     line-height: 70px;
+                    font-size: 65px;
                 }
                 .hero-text p {
                     margin: 0;
@@ -535,7 +573,7 @@
             <div class="remove landing-page">
                 <a onclick="goToWorks()" class="go-to-works scroll-section">
                     <i class="fa-solid fa-chevron-down scroll"></i>
-                    <p class="label">Take a look</p>
+                    <p class="message">Take a look</p>
                 </a>
                 <div class="hero-text">
                     <p class="role">
@@ -615,7 +653,12 @@
                         display: block !important;;
                     }    
                 }  
-                
+                .header-bar {
+                    pointer-events: none;
+                }
+                .nav-bar, .logo, .hamburger {
+                    pointer-events: all;
+                }
             </style>
             <!-- <Style>
                 #container {
@@ -646,19 +689,18 @@
                             <img class="phone" src="../images/pega-logo.png">
                         </div>
                         <div class="text hidden">
-                            <p class="app-name"> 01 | PEGA UX DESIGN INTERN </p>
-                            <p class="headline"> Research and Testing Team Intern Summer 2023 </p>
-                            <div class="tags" id="pega">
+                            <p class="app-name"> 01 | PEGA UX DESIGN INTERN 2023</p>
+                            <p class="headline"> UX Design Internship with Pega Design Team</p>
+                            <!-- <div class="tags" id="pega">
                                 <p class="chip">
-                                    Web design
+                                    Internship
                                 </p>
-                                <!-- <p class="chip">
-                                    App design
-                                </p> -->
+                                
                                 <p class="chip">
-                                    Design systems
+                                    UX Design
                                 </p>
-                            </div>
+                                
+                            </div> -->
                             <p class="message"> Conducting research and designing user flows to improve the authoring experience of Pega's Constellation design system. </p>
                             <p class="read-more" href="https://alicemadesign.com/pega"> Read about my internship → </p>
                         </div> 
@@ -671,8 +713,8 @@
                         </div>
                         <div class="text hidden">
                             <p class="app-name"> 02 | MEDTIME MEDICINE REMINDERS </p>
-                            <p class="headline"> Get reminders anywhere, anytime. </p>
-                            <div class="tags" id="medtime">
+                            <p class="headline"> Medicine reminders from anywhere, at anytime. </p>
+                            <!-- <div class="tags" id="medtime">
                                 <p class="chip">
                                     App design
                                 </p>
@@ -682,7 +724,7 @@
                                 <p class="chip">
                                     Mobile
                                 </p>
-                            </div>
+                            </div> -->
                             <p class="message"> A medicine reminder application that ensures you never forget to take your medication again. </p>
                             <p class="read-more" href="https://alicemadesign.com/medtime"> Read case study → </p>
                         </div> 
@@ -696,14 +738,14 @@
                         <div class="text hidden">
                             <p class="app-name"> 03 | CINEMA MOBILE TICKETING </p>
                             <p class="headline"> An easier way to purchase movie tickets. </p>
-                            <div class="tags" id="cinema">
+                            <!-- <div class="tags" id="cinema">
                                 <p class="chip">
                                     App design
                                 </p>
                                 <p class="chip">
                                     Mobile
                                 </p>
-                            </div>
+                            </div> -->
                             <p class="message"> A mobile ticketing apps that streamlines the ticket purchasing and scanning process. </p>
                             <p class="read-more" href="https://alicemadesign.com/cinema"> Read case study → </p>
                         </div> 
@@ -717,11 +759,11 @@
                         <div class="text hidden">
                             <p class="app-name"> 04 | UNIO ONLINE NOTETAKING </p>
                             <p class="headline"> A smooth cross-platform notetaking experience. </p>
-                            <div class="tags" id="unio">
+                            <!-- <div class="tags" id="unio">
                                 <p class="chip">
                                     Responsive web design
                                 </p>
-                            </div>
+                            </div> -->
                             <p class="message"> A digital notetaking platform that seamlessly integrates notetaking across all your devices. </p>
                             <p class="read-more" href="https://alicemadesign.com/unio"> Read case study → </p>
                         </div> 
