@@ -7,6 +7,11 @@ h2 {
     position: relative;
     left: -0.1ch;
     color: rgb(54, 54, 54);
+    font-family: 'DM Serif Text', Serif;
+    font-weight: 500!important;
+    /* letter-spacing: 0px!important; */
+    font-style: italic;
+    font-size: 4.2ch;
 }
 h3 {
     font-size: 1.2ch!important;
@@ -211,7 +216,9 @@ strong {
     }
     h2 {
         font-size: 3ch;
-        line-height: 2ch;
+        line-height: 2.2ch;
+        font-size: 3.3ch;
+        /* line-height: 1.8ch; */
     }
     
     .content {
