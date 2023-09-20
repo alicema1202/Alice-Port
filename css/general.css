@@ -103,7 +103,6 @@ html {
 	}
 }
 .scroll-section {
-    /* transition: 0.3s; */
     animation-name: bounce;
     -moz-animation-name: bounce;
 }
