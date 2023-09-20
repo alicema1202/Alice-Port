@@ -1,6 +1,11 @@
 body {
     background-color: #121212;
 }
+.nav-bar {
+    left: -35px;
+    top: -35px;
+}
+
 .appear {
     animation-name: appear;
     animation-duration: 1s;
@@ -41,7 +46,9 @@ body {
     -webkit-animation-name: popdown;
     -webkit-animation-duration: 1.2s;
     -webkit-animation-delay: 0.9s;
-    -webkit-animation-fill-mode: forwards;
+    /* -webkit-animation-fill-mode: forwards; */
+    top: 0;
+    position: relative;
 }
 @keyframes popup {
     from {
@@ -66,12 +73,13 @@ body {
 @keyframes popdown {
     from {
         opacity: 0;
-        transform: translateY(-50px)
+        top: -50px;
+        /* transform: translateY(-50px); */
+        /* transform: scale(1); */
     }
     to {
         opacity: 1;
-        /* top: 0;
-        transform: translateY(0) */
+        /* top: 0; */
     }
 }
 
