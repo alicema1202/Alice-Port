@@ -5,7 +5,12 @@ body {
     left: -35px;
     top: -35px;
 }
-
+@media only screen and (max-width: 900px) {
+    .margins .dropdown-content .list-item { 
+        color: rgba(255, 255, 255, 0.692)!important;
+    }
+}
+    
 .appear {
     animation-name: appear;
     animation-duration: 1s;
