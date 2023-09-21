@@ -23,7 +23,14 @@ h3 {
 @media only screen and (max-width: 900px) {
     .right-btn {
         margin-left: 10px;
+        margin-right: 10px!important;
     }
+}
+.WORKS-container .scroll, .nav-bar ul li a, .WORKS-container, .logo-container, .footer p{
+    color: rgb(54, 54, 54)!important;
+}
+.hamburger-line {
+    background-color: rgb(54, 54, 54)!important;
 }
 .item {
     min-width: 60vw;
@@ -255,10 +262,8 @@ strong {
 }
 @media (min-width: 500px) {
     html {
-        /* background-color: rgb(232, 10, 10); */
         margin: 0;
         height: auto;
-        /* overflow: auto;  */
         overflow-x: hidden;
         overflow-y: overlay;
       }

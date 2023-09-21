@@ -47,9 +47,9 @@
         }
     </style> -->
     <body onscroll="appear()">
-        <a onclick="scrollWin()" class="back-to-top hide" >
+        <!-- <a onclick="scrollWin()" class="back-to-top hide" >
             <i class="fa-solid fa-chevron-up"></i>
-        </a>
+        </a> -->
         <script>
             function scrollWin() {
                 window.scrollTo(0, 0);
@@ -388,9 +388,15 @@
                             <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
                         </li> -->
                             
-                        <li class="right-btn">
+                        <li>
                             <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
                         </li>
+
+                        <li class="right-btn">
+                            <a class="hover-underline-animation visible" href="https://alicemadesign.com/resume">Resume</a>
+                        </li>
+
+                        
                     </ul>
                 </nav>
             </header>
@@ -440,30 +446,53 @@
             }
         </script>
         
-        
-        <div class="content">
-            <section id="overview">
-                <h3 class="hidden">
-                    OVERVIEW
-                </h3>
-                <h2 class="hidden">
-                    What I did as a UX design intern at <a title="Pega website" style="display: inline; text-decoration: underline;" href="https://www.pega.com" target="_blank">Pega</a>
-                </h2>
-                <p class="description hidden">
-                    I was a UX design intern on Pegasystem's Research and Testing team during the summer of 2023. I primarily worked on Pega's new design system "Constellation." More specifically, I conducted <strong>usability studies</strong> to test newly released features, collaborated with other designers to <strong>align UX patterns</strong>, and worked on <strong>new design system features</strong>.
-                </p>
-                <p class="description hidden">
-                    An example of a feature that I worked on is designing the <strong>additional information feature on different field types</strong>. I collaborated with other designers to conduct a competitive audit of other companies' approaches to displaying additional information with accessibility considerations in mind. Then, I had multiple ideation workshops with other designers to create wireframes and mockups for our new designs. Finally, I organized a design proposal file that is ready for development!
-                </p>
-                <!-- <object data="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" 
-                width="800"
-                height="1000">
-                </object> -->
-            
-            </section>
-                
+        <div class="resume">
+            <!-- <iframe src="images/resume.pdf#view=fit" width="100%" height="100%" allowfullscreen></iframe> -->
+            <iframe src="https://drive.google.com/file/d/1RO_wTOo47t4zLhJ_ErRg0mQRWYJJzkS7/preview" width="100%" height="100%"></iframe>
+
         </div>
         
+        <style>
+            body {
+                margin: 0!important;
+                height: 100%;
+                /* overflow-y: hidden; */
+            }
+            .resume {
+                top: 71px;
+                /* left: -2px; */
+                position: relative;
+                width: calc(100vw);
+                /* height: -webkit-fill-available; */
+                height: calc(100vh - 71px);
+                margin-left: 0;
+                /* box-sizing: border-box; */
+            }
+            iframe {
+                border: 1px rgba(0, 0, 0, 0.795) solid;
+            }
+            .footer {
+                position: absolute;
+                width: 100vw;
+                top: calc(100vh);
+            }
+            @media (max-width: 900px) {
+                .resume {
+                    top: 93px;
+                    width: 100vw;
+                    height: calc(100vh - 93px);
+                }
+                /* .footer {
+                    position: absolute;
+                    width: 100vw;
+                    top: calc(100vh + 93px);
+                } */
+            }
+            
+            .header-bar {
+                /* opacity: 0; */
+            }
+        </style>
         <div class="footer">
             <p>©2023 Designed and Coded by Alice Ma.</p>
         </div>
