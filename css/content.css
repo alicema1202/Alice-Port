@@ -464,7 +464,7 @@ strong {
     height: 0.1em;
     bottom: 0;
     left: 0;
-    background-color: #000000;
+    background-color: #363636;
     transform-origin: bottom left;
     transition: transform 0.25s ease-out;
   }

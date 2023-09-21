@@ -129,7 +129,7 @@ a {
 .hover-underline-animation, .visible {
   display: inline-block;
   position: relative;
-  color: #000000;
+  color: #363636;
 }
 
 .hover-underline-animation:after, .visible:after {
@@ -140,7 +140,7 @@ a {
   height: 0.1em;
   bottom: 0;
   left: 0;
-  background-color: #000000;
+  background-color: #363636;
   transform-origin: bottom left;
   transition: transform 0.25s ease-out;
 }
