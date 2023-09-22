@@ -17,13 +17,17 @@ h3 {
     font-size: 1.2ch!important;
 }
 /* NAV BAR THING */
-.right-btn {
-    margin-right: 10px;
+.nav-bar ul li {
+    margin: 0 1.5rem;
 }
+.right-btn {
+    margin-right: 15px!important;
+}
+
 @media only screen and (max-width: 900px) {
     .right-btn {
-        margin-left: 10px;
-        margin-right: 10px!important;
+        /* margin-left: 10px; */
+        margin-right: 1.5rem!important;
     }
 }
 .WORKS-container .scroll, .nav-bar ul li a, .WORKS-container, .logo-container, .footer p{
