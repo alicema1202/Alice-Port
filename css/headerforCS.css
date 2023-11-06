@@ -18,6 +18,7 @@ header {
     color: black;
     font-family: 'DM Serif Text', Serif!important;
     transform: scale(1.2);
+    font-style: italic;
     transform-origin: bottom;
 }
 @media only screen and (min-width: 2000px) {
