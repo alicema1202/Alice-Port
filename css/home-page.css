@@ -118,13 +118,13 @@ body {
 }
 
 .blob-phone, .blob {
-    filter: blur(200px);
+    filter: blur(160px);
     opacity: 1;
 }
 @media only screen and (max-width: 500px) {
     .blob-phone, .blob {
         filter: blur(50px);
-        opacity: 0.8;
+        opacity: 0.9;
     }
 }
 
