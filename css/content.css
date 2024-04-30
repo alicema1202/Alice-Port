@@ -1,6 +1,6 @@
 h2 {
     font-size: 3.8ch;
-    line-height: 2ch;
+    line-height: auto;
     margin-left: 0;
     margin-top: 0.8ch;
     margin-bottom: 0.6ch;
@@ -14,7 +14,8 @@ h2 {
     font-size: 4.2ch;
 }
 h3 {
-    font-size: 1.2ch!important;
+    font-size: 1.25ch!important;
+    letter-spacing: 0.2ch!important;
 }
 /* NAV BAR THING */
 .nav-bar ul li {
@@ -50,6 +51,7 @@ section {
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 2rem;
+    margin-bottom: 2ch;
     letter-spacing: 0.05ch;
     font-size: 1.6ch;
 }
@@ -539,7 +541,7 @@ strong {
     width: 100px;
 }
 .title {
-    font-size: 2ch;
+    font-size: 2.2ch;
 }
 .age {
     font-size: 1.5ch;

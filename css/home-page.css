@@ -244,6 +244,9 @@ body {
 .pega {
     background: radial-gradient(50% 50.00% at 50% 50.00%, #333B77 0%, #1F2656 100%), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
 }
+.cooklab {
+    background: radial-gradient(154.79% 80.04% at 49.92% 54.66%, #3b8b4b 0%, #194b24 100%), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+}
 .pega .phone {
     mix-blend-mode: lighten;
 }
