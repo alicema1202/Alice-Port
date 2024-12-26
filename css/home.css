@@ -244,9 +244,10 @@ h1 {
     width: fit-content;
     color: white;
     z-index: 2;
-    animation: slide-up 1s ease-in-out 3s 1 forwards;
+    animation: slide-up 1s ease-in-out 3.3s 1 forwards;
     text-shadow: none;
     transition: text-shadow 1s;
+    padding-top: 76px;
 }
 h1:hover {
     /* animation: slide-up 1s ease-in-out 3s 1 forwards, glow 2s ease-in-out 1s infinite alternate; */
@@ -272,7 +273,7 @@ body:hover::after {
 h2 {
     width: 600px;
     opacity: 0;
-    animation: slide-up 1s ease-in-out 3.1s 1 forwards;
+    animation: slide-up 1s ease-in-out 3.5s 1 forwards;
     font-weight: 200;
     margin: 0;
     line-height: 48px;
@@ -335,11 +336,18 @@ h2 z{
 }
 
 #hi-im-alice {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    /* transform: translate(-50%, -50%); */
     opacity: 0;
-    animation: opacityOn 1s ease-in 2.4s 1 forwards;
+    animation: opacityOn 1s ease-in 2.1s 1 forwards, shift 1s ease-in-out 3.3s 1 forwards  ;
 }
 #loadingDots{
     position: absolute;
+    top: 40%;
+    left: 40%;
+    /* transform: translate(-150%, -50%); */
     z-index: 1;
     padding: auto;
     background-color: #26252A;
@@ -349,8 +357,8 @@ h2 z{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    animation: size-up 0.5s ease-in-out 0s 1 forwards, opacityOff 0.5s linear 2.5s 1 forwards;
-    }
+    animation: size-up 0.5s ease-in-out 0s 1 forwards, opacityOff 0.5s linear 2.2s 1 forwards;
+}
 #loadingDots:after, #loadingDots:before{
    content: '';
    position: absolute;
@@ -396,6 +404,9 @@ h2 z{
     .text-message {
         padding: 8px 13px;
     }
+    #hi-im-alice, #loadingDots {
+        left: 30%;
+    }
     #loadingDots {
         height: 40px;
         width: fit-content;
@@ -436,6 +447,7 @@ h2 z{
     .hero-text h1 {
         font-size: 80px;
         line-height: 85px;
+        padding-top: 50px;
     }
     h2 {
         max-width: 90vw;
@@ -512,7 +524,16 @@ h2 z{
         opacity: 1;
     }
 }
-
+@keyframes shift {
+    0% {
+        
+    }
+    
+    100% {
+        top: 0;
+        left: 0
+    }
+}
 @keyframes slide-left {
     0% {
         transform: scale(1.5) translateX(20vw) translateY(-10vh);
