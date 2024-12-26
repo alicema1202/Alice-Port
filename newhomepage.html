@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Alice Ma</title>
+
+    <!-- Style files -->
+    <link href="css/header-bar.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-bar">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item active">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                </ul>  
+            </nav>
+        </div>
+       
+    </header>
+    
+    <div class="hero-container">
+        <div id="splash"></div>
+        <img id="glow" src="images/glow.svg">
+        <img class="texture" src="images/texture.png">
+        <div class="pop-up hero-text">
+            <span id="loadingDots">
+                <span class="dot1"></span>
+                <span class="dot2"></span>
+                <span class="dot3"></span>
+                </span> 
+            <div class="text-message" id="hi-im-alice">
+                <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                    <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                </svg>
+                <p>Hi, I'm Alice!</p>
+                <img class="memoji" src = "images/memoji.png">
+            </div>
+
+            <h1>
+                UX Designer
+            </h1>
+            <h2>
+                <i>crafting</i> &nbsp;
+                <z> intuitive designs & </z>
+                <i>enhancing</i> &nbsp;
+                <z> digital experiences.</z>
+            </h2>
+            <!-- <p>
+                UX designer based in California. Currently studying interaction design @ <a title="UCSD website" style="display: inline; text-decoration: underline;" href="https://www.ucsd.edu" target="_blank">UC San Diego</a>.
+            </p> -->
+        </div>
+    </div>
+    <script>
+        const button = document.querySelector("body");
+
+        const readout = document.querySelector("p");
+
+        button.addEventListener("mousemove", (e) => {
+        const { x, y } = button.getBoundingClientRect();
+        button.style.setProperty("--x", e.clientX - x);
+        button.style.setProperty("--y", e.clientY - y);
+        });
+
+        function rotate (event) 
+        {
+            var x = event.clientX;
+            var w = window.innerWidth;
+            var midpointX = w / 2;
+            var posX = x;
+            var valX = (posX / w) * -40;
+
+            var y = event.clientY;
+            var h = window.innerHeight;
+            var midpointY = h / 2;
+            var posY = y;
+            var valY = (posY / h) * -40;
+
+            var glow = document.querySelector(".hero-text");
+            glow.style.transform = "translateX(" + valX + "px) translateY(" + valY + "px) perspective(100px)" ;
+        }
+
+        function rotate2 (event) 
+        {
+            var x = event.clientX;
+            var w = window.innerWidth;
+            var midpointX = w / 2;
+            var posX = x;
+            var valX = (posX / w) * 50;
+
+            var y = event.clientY;
+            var h = window.innerHeight;
+            var midpointY = h / 2;
+            var posY = y;
+            var valY = (posY / h) * 20;
+
+            var glow = document.getElementById("glow");
+            glow.style.transform = "translateX(" + valX + "px) translateY(" + valY + "px) perspective(100px)" ;
+        }
+
+        // let widthMatch = window.matchMedia("(max-width: 1200px)");
+        // widthMatch.addEventListener('change', function(mm) {
+        //     if (mm.matches) {
+                
+        //     }
+        //     else {
+                
+        //         document.addEventListener("mousemove", function (event)
+        //         {
+        //             // rotate (event);
+        //             rotate2 (event)
+        //         }, false);
+        //     }
+        // });
+        
+        document.addEventListener("mousemove", function (event)
+                {
+                    // rotate (event);
+                    rotate2 (event)
+                }, false);   
+    </script>
+
+
+    <!-- <div class="container">
+        
+        <div class="blob-c">
+        <div class="shape-blob"></div>
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>
+        <div class="shape-blob four"></div>
+       
+        </div>
+    
+    </div>
+     -->
+    <section class="hidden" id="projects">
+        <h2>💫 My Latest Projects</h2>
+        <hr width="100%">
+        <a class="hidden" href="https://alicemadesign.com/cooklaborate">
+            <div class="project">
+                <div class="v3 cooklab" href="https://alicemadesign.com/cooklaborate">
+                    <img class="phone" src="../images/cooklab-frames.png">
+                </div>
+                <div class="text">
+                    <p class="headline"> <i>CookLaborate</i> Meal Swapping App</p>
+                    <div class="tags">
+                        <p class="chip">
+                            Mobile
+                        </p>
+                        <p class="chip">
+                            Application
+                        </p>
+                    </div>
+                    <p class="message"> A platform to organize events for people in their community to exchange meals that they have prepped in advance </p>
+                </div> 
+            </div>
+        </a>
+
+        <a href="https://alicemadesign.com/cooklaborate">
+            <div class="project reverse">
+                <div class="v3 mpa hidden" href="https://alicemadesign.com/cooklaborate">
+                    <img class="phone" src="../images/mpa-screen.png">
+                </div>
+                <div class="text hidden">
+                    <p class="headline"> <i>MPA Collaborative Network</i> Website Redesign</p>
+                    <div class="tags">
+                        <p class="chip">
+                            Desktop
+                        </p>
+                        <p class="chip">
+                            Website
+                        </p>
+                        <p class="chip">
+                            Front-End
+                        </p>
+                    </div>
+                    <p class="message"> Worked with MPA Collaborative Network to redesign and modernize their website, starting from research and ending with development </p>
+                </div> 
+            </div>
+        </a>
+
+    </section>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded',() => {
+        VANTA.CLOUDS({
+        el: "#splash",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        skyColor: 0x0,
+        cloudColor: 0x1b2349,
+        cloudShadowColor: 0x0,
+        sunColor: 0x0,
+        sunGlareColor: 0x0,
+        sunlightColor: 0x0,
+        backgroundColor: 0x0,
+        speed: 0.55
+        })
+    })
+
+</script>
+<script>
+    
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        navBar = document.querySelector(".nav-content");
+        // hamburger = document.querySelector(".hamburger");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        // hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        // button.classList.toggle("hover-underline-animation")
+        contents = document.querySelector(".dropdown-content");
+        document.querySelector(".name").classList.toggle("name-gone");
+        // contents.classList.toggle("removepad");
+        // document.querySelector(".fa-solid").classList.toggle("fa-chevron-down");
+        const arr = document.querySelectorAll(".mobile-nav");
+        // arr.shift();
+        arr.forEach(item => {
+            item.classList.toggle("fa-chevron-right");
+        })
+        document.querySelector(".back").classList.remove("active");
+        dropdown.classList.remove("visibility");
+
+        // document.querySelector(".back").classList.toggle("active");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        // dropdown.classList.toggle("close");
+        document.querySelector(".back").classList.add("active");
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+    };
+    
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+    
+</script>
+<script src="js/slide.js"></script>
+</html>

@@ -166,9 +166,9 @@ body {
     font-weight: 300;
     font-weight: 400;
 }
-.WORKS-container .scroll, .nav-bar ul li a, .WORKS-container, .logo-container, .footer p {
+/* .WORKS-container .scroll, .nav-bar ul li a, .WORKS-container, .logo-container, .footer p {
     color: rgba(255, 255, 255, 0.9)!important;
-}
+} */
 .hamburger .line {
     background-color: rgba(255, 255, 255, 0.9)!important;
 }

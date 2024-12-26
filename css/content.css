@@ -31,9 +31,9 @@ h3 {
         margin-right: 1.5rem!important;
     }
 }
-.WORKS-container .scroll, .nav-bar ul li a, .WORKS-container, .logo-container, .footer p{
+/* .WORKS-container .scroll, .nav-bar ul li a, .WORKS-container, .logo-container, .footer p{
     color: rgb(54, 54, 54)!important;
-}
+} */
 .hamburger-line {
     background-color: rgb(54, 54, 54)!important;
 }
