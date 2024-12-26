@@ -329,13 +329,15 @@
     
     hamburger.onclick = function() {
         navBar = document.querySelector(".nav-content");
-        // hamburger = document.querySelector(".hamburger");
         navBar.classList.toggle("active");
         navBar.classList.toggle("black");
-        // hamburger.classList.toggle("active");
+        hamburger.classList.toggle("active");
         works = document.querySelector(".dropdown");
         works.classList.toggle("left");
         droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
         droplist.classList.toggle("margins");
         button = document.querySelector(".drop-button");
         // button.classList.toggle("hover-underline-animation")
@@ -350,6 +352,7 @@
         })
         document.querySelector(".back").classList.remove("active");
         dropdown.classList.remove("visibility");
+        document.querySelector(".name").style.opacity = 1;
 
         // document.querySelector(".back").classList.toggle("active");
     };
@@ -358,10 +361,13 @@
         dropdown.classList.add("visibility");
         // dropdown.classList.toggle("close");
         document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").style.opacity = 0;
     };
     document.querySelector(".back").onclick = function() {
         dropdown.classList.toggle("visibility");
         document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").style.opacity = 1;
+
     };
     
     window.addEventListener('load', () => {
