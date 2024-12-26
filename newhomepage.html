@@ -7,8 +7,8 @@
     <title>Portfolio — Alice Ma</title>
 
     <!-- Style files -->
-    <link href="css/header-bar.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
@@ -85,9 +85,33 @@
                 </ul>  
             </nav>
         </div>
-       
     </header>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector(".header-bar");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;               
+            /* if we're scrolling up, or we haven't passed the header,
+                show the header at the top */
+            if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+                headerDiv.style.top = "0";
+            }
+            else{
+                /* otherwise we're scrolling down & have passed the header so hide it */
+                headerDiv.style.top = "-200px";
+            } 
+
+            prevScrollpos = currentScrollPos;
+        }
+        var st = $(this).scrollTop();
     
+    
+    </script>
+
     <div class="hero-container">
         <div id="splash"></div>
         <img id="glow" src="images/glow.svg">
@@ -205,12 +229,12 @@
     <section class="hidden" id="projects">
         <h2>💫 My Latest Projects</h2>
         <hr width="100%">
-        <a class="hidden" href="https://alicemadesign.com/cooklaborate">
+        <a href="https://alicemadesign.com/cooklaborate">
             <div class="project">
-                <div class="v3 cooklab" href="https://alicemadesign.com/cooklaborate">
+                <div class="v3 cooklab hidden" href="https://alicemadesign.com/cooklaborate">
                     <img class="phone" src="../images/cooklab-frames.png">
                 </div>
-                <div class="text">
+                <div class="text hidden">
                     <p class="headline"> <i>CookLaborate</i> Meal Swapping App</p>
                     <div class="tags">
                         <p class="chip">
@@ -224,7 +248,7 @@
                 </div> 
             </div>
         </a>
-
+        <!-- <hr width="100%"> -->
         <a href="https://alicemadesign.com/cooklaborate">
             <div class="project reverse">
                 <div class="v3 mpa hidden" href="https://alicemadesign.com/cooklaborate">
@@ -249,6 +273,31 @@
         </a>
 
     </section>
+    <footer>
+        <hr>
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Happy Holidays! -Alice</p>
+                    <img class="memoji" src = "images/christmas-memoji.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="active hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+        <!-- <hr> -->
+        <p id="copyright">© 2024 Alice Ma</p>
+    </footer>
 </body>
 <script>
     window.addEventListener('DOMContentLoaded',() => {
@@ -321,4 +370,5 @@
     
 </script>
 <script src="js/slide.js"></script>
+<script src="js/headerslide.js"></script>
 </html>

@@ -3,9 +3,9 @@ body {
 	padding: 0;
     overflow-x: hidden;
     width: 100vw;
-    background-color: black;
+    background-color: #0e0e11;
     /* cursor: none; */
-    font-family: SF Pro, sans-serif;
+    font-family: "SF Pro", sans-serif;
 }
 @font-face {
     font-family: SF Pro;
@@ -40,7 +40,7 @@ body {
 .hero-text h1 {
     font-size: 100px;
     font-weight: 300;
-    line-height: 110px;
+    line-height: 120px;
     /* background-color: palegreen; */
     margin: 0;
 }
@@ -275,7 +275,7 @@ h2 {
     animation: slide-up 1s ease-in-out 3.1s 1 forwards;
     font-weight: 200;
     margin: 0;
-    line-height: 51.421px;
+    line-height: 48px;
 }
 h2 i{
     color: rgba(255, 255, 255, 0.70);
@@ -297,11 +297,12 @@ h2 z{
     padding: 13.215px 21.36px;
     justify-content: center;
     width: fit-content;
+    height: fit-content;
     align-items: center;
     gap: 7.649px;
     border-radius: 30.827px;
     background: #26252A;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     position: relative;
     border-radius: 30.827px;
 }
@@ -348,7 +349,7 @@ h2 z{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    animation: size-up 0.5s ease-in-out 0s 1 forwards, opacityOff 0.5s linear 2.4s 1 forwards;
+    animation: size-up 0.5s ease-in-out 0s 1 forwards, opacityOff 0.5s linear 2.5s 1 forwards;
     }
 #loadingDots:after, #loadingDots:before{
    content: '';
@@ -537,16 +538,21 @@ h2 z{
     /* background-color: green; */
     animation: none;
     opacity: 1;
-    font-family: SF Pro, sans-serif;
-    font-weight: 300;
+    font-family: "SF Pro", sans-serif;
+    font-weight: 200;
     display: block;
     width: fit-content;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 18px;
     text-transform: uppercase;
 }
-#projects hr {
+#projects hr, footer hr {
     display: block;
-    opacity: 0.3;
+    opacity: 0.2!important;
+    height: 0.8px;
+    border: none;
+    background-color: white;
+    width: 100%;
 }
 .project {
     width: 100%;
@@ -556,8 +562,8 @@ h2 z{
     justify-content: center;
     /* background-color: blue; */
     column-gap: 64px;
-    /* margin-top: 70px; */
-    margin-bottom: 50px;
+    margin: 40px 0px;
+    margin-bottom: 64px;
     transition: transform 0.3s;
 }
 .reverse {
@@ -565,7 +571,7 @@ h2 z{
     /* background-color: purple; */
 }
 .v3 {
-    width: 620px;
+    width: 50%;
     height: 410px;
     background: radial-gradient(134.70% 67.69% at 48.87% 48.78%, #38ABC6 0%, #1F6B7C 100%);
     border-radius: 12px;
@@ -575,11 +581,12 @@ h2 z{
     transition: transform 0.3s;
 }
 .phone {
-    width: 350px;
-    height: 100%;
+    min-width: 350px;
+    width: 80%;
+    height: auto;
     object-fit:contain;
     margin: 80px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     transition: 0.4s;
@@ -587,20 +594,22 @@ h2 z{
 .headline {
     font-size: 50px;
     line-height: 55px;
-    font-family: Instrument Serif, serif;
+    font-family: "Instrument Serif", serif;
     margin: 0;
     color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
 }
 .headline i {
     display: block;
     color: white;
+    font-style: normal;
 }
 #projects a {
     text-decoration: none;
 }
 #projects .text {
     width: auto;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     display: grid;
     gap: 16px;
 }
@@ -619,10 +628,10 @@ h2 z{
     width: fit-content;
     font-size: 14px;
     border-radius: 163.478px;
-    background: rgba(37, 37, 37, 0.87);
-    box-shadow: 0px 0px 1.635px 0px rgba(255, 255, 255, 0.25) inset;
+    background: #26252A;
+    /* box-shadow: 0px 0px 1.635px 0px rgba(255, 255, 255, 0.25) inset; */
     display: flex;
-    padding: 12px 19.617px;
+    padding: 10px 14px;
     justify-content: center;
     align-items: center;
     gap: 16.348px;
@@ -637,7 +646,7 @@ h2 z{
 .hidden {
     opacity: 0;
     transform: translateY(100px);
-    transition: 0.8s, opacity ease-in-out 0.5s, transform ease-in-out 0.8s;
+    transition: 1s, opacity ease-in-out 0.5s, transform ease-in-out 0.8s;
 }
 @media(prefers-reduced-motion) {
     .hidden {
@@ -648,4 +657,80 @@ h2 z{
     opacity: 1;
     transform: translateX(0);
 }
-
+@media only screen and (max-width: 900px) {
+    .project {
+        flex-direction: column;
+        gap: 24px;
+    }    
+    .v3 {
+        width: 100%;
+        height: 400px;
+    }
+    .phone {
+        min-width: 300px;
+        width: 60%;
+    }
+    .headline {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    .headline i {
+        display: inline;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .v3 {
+        height: 300px;
+    }
+}
+/* FOOTER */
+footer {
+    width: 100vw;
+    height: fit-content;
+    /* padding-top: 64px; */
+    /* padding-bottom: 28px; */
+    /* background-color: #000000; */
+}
+footer .content {
+    max-width: 1092px;
+    margin: auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+footer nav a{
+    display: block;
+    width: fit-content;
+    text-align: end;
+    font-size: 32px;
+    line-height: 34px;
+    font-family: "Instrument Serif", serif;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+footer .active {
+    color: white;
+    border-bottom: 1px white solid;
+    margin-bottom: 2px;
+}
+#copyright {
+    color: white;    
+    text-align: center;
+    margin: 0;
+    /* font-family: "Instrument Serif", serif; */
+    /* font-style: italic; */
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 16px;
+    padding: 24px 0;
+    background-color: #26252A;
+    color: rgba(255, 255, 255, 0.7);
+}
