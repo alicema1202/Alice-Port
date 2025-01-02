@@ -1,418 +1,589 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>About — Alice Ma</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/header-case-studies.css" rel="stylesheet"> 
-        <link href="css/animation.css" rel="stylesheet">
-        <link href="css/headerforCS.css" rel="stylesheet">
-        <link href="css/content.css" rel="stylesheet">
-        <link href="css/general.css" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Alice Ma</title>
 
-        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
 
-        <!-- <meta name="msapplication-TileImage" content="images/CINEMA-THUMBNAIL.png">
-        <meta property="og:image" itemprop="image" content="images/CINEMA-THUMBNAIL.png">
-         -->
-        <meta property="og:type" content="website" />
-        <meta property="og:image:type" content="image/png">
-        
-        <meta property="og:image:width" content="300">
-        <meta property="og:image:height" content="201">
-        
-        <meta property="og:url" content="https://alicemadesign.com/about">
-        <meta property="og:description" content="Hi! My name is Alice. I'm currently a 2nd year at UC San Diego studying Cognitive Science - Interaction Design with a minor in Computer Science.">
-
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
-        <!-- <link rel="shortcut icon" type="x-icon" href="images/about-icon.png"> -->
-        <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
-
-    </head>
-    <!-- <style>
-        body {
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            right: 0;
-            margin-right: 0;
-            margin-left: 0;
-        }
-    </style> -->
-    <style>
-        .hide {
-            opacity: 0;
-        }
-        h2 {
-            font-size: 1.2ch;
-            color: #9e3435;
-            font-weight: 700;
-            letter-spacing: 0.3ch;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        .back-to-top {
-            transition: opacity 0.3s;
-            /* opacity: 0; */
-            z-index: 1000;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: #c13739;
-            margin: 2rem;
-            height: 4rem;
-            width: 4rem;
-            border-radius: 50%;
-            transition: 0.3s;
-            background-color: rgba(169, 169, 169, 0.564);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .back-to-top:hover {
-            margin-bottom: 2.4rem;
-            background-color: rgba(122, 122, 122, 0.644);
-            transition: 0.3s;
-        }
-        .fa-solid {
-            color: white;
-        }
-    </style>
-    <header class="remove header-bar">
-        <header class="inside">
-            <div class="left-section">
-                <a href="https://alicemadesign.com/" class="logo-container logo">
-                    Alice Ma
-                </a>
+</head>
+<body>
+    <header class="header-bar" style="animation: none;position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <div class="hamburger">
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
                 <div class="line one"></div>
                 <div class="line two"></div>
                 <div class="line three"></div>
-            </div>
-            <style>
-                .header-bar {
-                    font-family: lexend, Arial, Helvetica, sans-serif;
-                    font-weight: 400;
-                }
-                .button, .brief-desc,.content,.description, .footer {
-                    font-family: lexend, Arial, Helvetica, sans-serif;
-                }
-                .brief-desc {
-                    font-size: 0.9em;
-                }
-                .button {
-                    font-weight: 500;
-                }
-                .description {
-                    letter-spacing: normal;
-                }
-                h2 {
-                    font-weight: 700;
-                }
-                h3 {
-                    font-weight: 600;
-                }
-                .drop-button {
-                    color: black;
-                }
-                .header-bar {
-                    display: flex;
-                    justify-content: center;
-                    /* padding-right:0;
-                    padding-left: 0;  */
-                    width: 100vw;
-                }
-                .inside {
-                    display: flex;
-                    width: 100%;
-                    max-width: 1090px;
-                }
-                @media screen and (min-width: 1700px) {
-                    .inside {
-                        width: 1190px;
-                        max-width: none;
-                    }
-                }
-                .right-btn {
-                    margin-right: 4rem;
-                    margin-right: 0;
-                }
-                .logo {
-                    margin-left: 4rem;
-                    margin-left: 0;
-                }
-                .header-bar {
-                    font-family: lexend, Arial, Helvetica, sans-serif;
-                    font-weight: 400;
-                }
-                .button, .brief-desc,.content,.description, .footer {
-                    font-family: lexend, Arial, Helvetica, sans-serif;
-                }
-                .brief-desc {
-                    font-size: 0.9em;
-                }
-                .button {
-                    font-weight: 500;
-                }
-                .description {
-                    letter-spacing: normal;
-                }
-                h1 {
-                    /* font-weight: 700; */
-                    font-family: 'DM Serif Text', Serif;
-                    font-style: italic;
-                    font-weight: 500;
-                }
-                h2 {
-                    font-weight: 600;
-                }
-                .list-item {
-                    font-weight: 400;
-                }
-                .content {
-                    padding-left: 0;
-                    padding-right: 0;
-                    display: flex;
-                    flex-direction: column;
-                }
-                .photo {
-                    width: 100%;
-                    max-width: 30vw;
-                    border-radius: 20px;
-                    pointer-events: none;
-                }
-                .about {
-                    margin-top: calc(70px + 1.3em);
-                    /* margin-bottom: calc(70px); */
-                    height: calc(100vh - 70px - 1.3em);
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    justify-items: end;
-                    align-items: center;
-                    justify-content: center;
-                    align-content: center;
-                    margin-left: 10vw;
-                    margin-right: 10vw;
-                    column-gap: 2vw;
-                    /* background-color: blue; */
-                }
-
-                .about .content p {
-                    font-weight: 400;
-                    line-height: 1.5em;
-                }
-                @media only screen and (min-width: 2000px) {
-                    .about {
-                        max-width: 1300px;
-                        margin: auto;
-                        column-gap: 3vw;
-                        margin-top: calc(70px + 1.3em);
-                        margin-bottom: 70px;
-                    }
-                    body {
-                        width: 100vw;
-                    }
-                }
-                @media only screen and (max-width: 1000px) {
-                    .photo {
-                        width: 100%;
-                        max-width: 40vw;
-                        border-radius: 20px;
-                    }
-                    .about {
-                        display: flex;
-                        flex-direction: column-reverse;
-                        justify-items: center;
-                        align-items: center;
-                        justify-content: flex-end;
-                        align-content: center;
-                        margin-left: 15vw!important;
-                        margin-right: 15vw!important;
-                        margin-top: calc(70px + 5em);
-                        margin-bottom: calc(70px);
-                        height: auto;
-                    }
-                }
-                @media only screen and (max-width: 700px) {
-                    
-                    .photo {
-                        width: 100%;
-                        max-width: 60vw;
-                        border-radius: 20px;
-                    }
-                }
-                .drop-button {
-                    color: black;
-                }
-                @media only screen and (min-width: 900px) {
-                    .header-bar {
-                        padding-top: 20px;
-                        padding-bottom: 20px!important;
-                    }
-                }
-                .WORKS-container .scroll {
-                    font-size: 14px;
-                    margin-right: 0;
-                    color: rgb(0, 0, 0);
-                    transform: scaleY(1);
-                    transition: transform 0.3s;
-                }
-                .WORKS-container {
-                    display: flex;
-                    gap: 8px;
-                    /* border: 1px white solid; */
-                    justify-content: center;
-                    align-items: center;
-                }
-                .dropdown:hover .scroll {
-                    transform: scaleY(-1);
-                    transition: transform 0.3s;
-                }
-                body {
-                    width: 100vw;
-                }
-                .about {
-                    max-width: 1090px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                div {
-                    color: rgb(54, 54, 54);
-                }
-            </style>
-            <nav class="nav-bar">
+            </div> -->
+            
+            <nav class="nav-content">
                 <ul>
-                    <li class="dropdown left">
+                    <li class="dropdown nav-item">
                         <div class="hover-underline-animation drop-button">
-                            <p class="WORKS-container" onclick="goToWorks()">
-                                Work <i class="drop fa-solid fa-chevron-down scroll" style="margin-left:0"></i>
-                            </p>
-                            <b class="dropdown-content removepad">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
                                 <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
                                 <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
                                 <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
                                 <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
                             </b>
                         </div>
-                    </li>
-                
-                    <li>
-                        <a class="hover-underline-animation visible" href="https://alicemadesign.com/about">About</a>
-                    </li>
-
-                    <!-- <li>
-                        <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                    </li> -->
-                        
-                    <li>
-                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
-                    </li>
-
-                    <li class="right-btn">
-                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">Resume</a>
-                    </li>
-                </ul>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item active">
+                        <a class="hover-underline-animation active" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
             </nav>
-        </header>
+        </div>
     </header>
     <script>
-        // function myFunction(x) {
-        //     if (x.matches) { // If media query matches
-        //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
-
-        //     } else {
-        //         document.body.style.backgroundColor = "pink";
-        //     }
-        // }
-
-        // var x = window.matchMedia("(max-width: 900px)")
-        // myFunction(x) // Call listener function at run time
-        // x.addListener(myFunction) // Attach listener function on state changes
+        // var prevScrollpos = window.pageYOffset;
         
-        // works = document.querySelector(".nav-bar li");
-        // arrow = document.querySelector(".drop");
-        // works.onmouseover = function() {
-        //     arrow.classList.toggle("fa-chevron-down");
-        //     arrow.classList.toggle("fa-chevron-up");
+        // /* Get the header element and it's position */
+        // var headerDiv = document.querySelector(".header-bar");
+        // var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        // window.onscroll = function() {
+        //     var currentScrollPos = window.pageYOffset;               
+        //     /* if we're scrolling up, or we haven't passed the header,
+        //         show the header at the top */
+        // if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+        //         headerDiv.style.top = "0";
+        //     }
+        //     else if (document.querySelector(".nav-content").classList.contains('active') == false){
+        //         /* otherwise we're scrolling down & have passed the header so hide it */
+        //         headerDiv.style.top = "-200px";
+        //     } 
+
+        //     prevScrollpos = currentScrollPos;
         // }
-        // works.onmouseout = function() {
-        //     arrow.classList.toggle("fa-chevron-down");
-        //     arrow.classList.toggle("fa-chevron-up");
-        // }
-        // function goToWorks() {
-        //     document.getElementById("works").scrollIntoView();
-        // }
-        hamburger = document.querySelector(".hamburger");
-        hamburger.onclick = function() {
-            navBar = document.querySelector(".nav-bar");
-            hamburger = document.querySelector(".hamburger");
-            navBar.classList.toggle("active");
-            navBar.classList.toggle("black");
-            hamburger.classList.toggle("active");
-            works = document.querySelector(".dropdown");
-            works.classList.toggle("left");
-            droplist = document.querySelector(".nav-bar ul .dropdown");
-            droplist.classList.toggle("margins");
-            button = document.querySelector(".drop-button");
-            button.classList.toggle("hover-underline-animation")
-            contents = document.querySelector(".dropdown-content");
-            // contents.classList.toggle("removepad");
-        }
+        // var st = $(this).scrollTop();
+    
+    
     </script>
-    
-    <body onscroll="appear()">
-        <div class="about">
-            <div class="content">
-                <h1>
-                    Hello, my name is Alice. 👋
-                </h1>
-                <p>
-                    I'm currently a 3rd year at UC San Diego studying Cognitive Science - Interaction Design with a minor in Computer Science.
+
+    <section class="" id="about" style="margin-top: 32px;">
+        <div id="picture" class="hidden">
+            <img id="about-pic" src="images/disneypic.png">
+            <p class="caption">
+               🏰 Exploring Tokyo DisneySea! Summer 2024.
+            </p>
+        </div>
+        <div id="about-text" class="hidden">
+                <p class="intro">
+                    Nice to meet you, I'm Alice!
                 </p>
+                
                 <p>
-                    I was introduced to UX design during a hackathon I attended in 2020. Immediately, I grew interest in designing because it reminded me a lot of drawing and Photoshop, which were both activities that I've really enjoyed for many years.
-    
+                    I'm currently a 4th year student at UC San Diego studying Cognitive Science with a Specialization in Interaction Design with minors in Computer Science and Design.
                 </p>
+           
                 <p>
-                    On my free time, I like to watch TV, a lot of it. If I'm not working, you will most likely find me watching some new TV show 📺, doing my nails 💅, or maybe even both at the same time!
-    
+                    In my free time, I like to watch TV, a lot of it. If I'm not working, you will most likely find me watching some new TV show 📺, doing my nails 💅, or maybe even both at the same time!
                 </p>
+           
                 <p>
-                    Download my resume <a title="Resume" style="display: inline; text-decoration: underline; color: rgb(35, 149, 58);" href="images/resume.pdf" target="_blank">here</a> 💚
+                    Contact me: <br>
+                    <a onclick="copy()">alicema1202@gmail.com</a>
+                    <br>
+                    <a href="https://www.linkedin.com/in/alicema1215" target="_blank">linkedin.com/in/alicema1215</a> <a href="https://www.linkedin.com/in/alicema1215" target="_blank"></a>
+                </p>
+           
+        </div>
+        <!-- <div>
+            <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                <p>
+                    Hello! My name is Alice Ma.
+                </p>
+                <img class="memoji" src = "images/memoji.png">
+            </div>
+            <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                <p style="padding: 2.5px 0px; ">
+                    I'm currently a 4th year student at UC San Diego studying Cognitive Science with a Specialization in Interaction Design with minors in Computer Science and Design.
                 </p>
             </div>
-            <img class="photo" src="images/pfp.jpg">
+            <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                <p style="padding: 2.5px 0px; ">
+                    In my free time, I like to watch TV, a lot of it. If I'm not working, you will most likely find me watching some new TV show 📺, doing my nails 💅, or maybe even both at the same time!
+                </p>
+            </div>
+            <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                    <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                </svg>
+                <p style="padding: 2.5px 0px; ">
+                    Contact me: <br>
+                    <a onclick="copy()">alicema1202@gmail.com</a> <i class="fa-regular fa-copy" onclick="copy()"></i>
+                    <br>
+                    <a href="https://www.linkedin.com/in/alicema1215" target="_blank">linkedin.com/in/alicema1215</a> <a href="https://www.linkedin.com/in/alicema1215" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </p>
+            </div>
+        </div> -->
+    </section>
+    <section class="hidden" id="projects">
+        <div id="my-projects" class="hidden">
+            <h2>💫 My Experience</h2>
+            <a class="hover-underline-animation" href="https://doc-0g-60-prod-00-apps-viewer.googleusercontent.com/viewer2/prod-00/pdf/c90gdirm0c99hrcedhbjph0lo614le9l/j6ahlm1hs6daht69gi1edt0bgrhdiauu/1735816125000/3/112298455423825836847/APznzaY_ekLflEEoJv5Kiby08NRcGcyR63llK6PRUluUaF6rx7rYou3AJ0jnXgu6W9jN1gtuTV10o2nvJXqZdIeam7kscqKRWneE-3uP9n_Mp4Q6av84NlCpe7W8I40sHPZUTaP5iwlWNfxx3MVdE1kfIz-y62_OKXQVVnqRS63XCIDfALWApoKZg8uHnaNTJ2LmZZGimCmYpTbtTGJzEawOti4m274pW942-M2mt2GY5YUArwR2tPsapipBrwaB3bhsiIkodvlwabVXxrh_JAQUosw_2HUTmZxZ2LGFkKQHOjVXtcbdneM-x5Jkw9mnhAm669MF8gaeEBXVQ4plvFFjpDA6X6OdaurtiFLKPCbB5n-uEbBOFOj41tCRZezcyz46SatJaUXLU8lKxpIcUZPtcNxZNKATkQ==?authuser=0&nonce=rpruvflfove9q&user=112298455423825836847&hash=v928kerhjbq7keqetod1klklb9nqod9d" target="_blank">View full resume &nbsp <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:18px"></i></a> 
         </div>
-        <footer class="footer">
-            <p>©2023 Designed and Coded by Alice Ma.</p>
-        </footer>
-    </body>
-    <script src="js/slide.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/headerslide.js"></script>
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/simplebar@6.2.5/dist/simplebar.css"
-    />
-    <script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
-    <!-- or -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
+        <hr width="100%" class="hidden">
+        <div class="experience hidden">
+            <div class="title">
+                <p class="position">
+                    Instructional Assistant
+                </p>
+                <p class="location">
+                    (COGS 120: Interaction Design)
+                </p>
+            </div>
+            <p class="date">
+                Jan 2025 - Present · La Jolla, CA          
+            </p>
+            <ul class="description">
+                <li>
+                    Working as an instructional assistant for upper-division interaction design course
+                </li>
+                <li>
+                    Holding discussion and office hours to help students understand fundamentals of user-centered design and cognitive principles
+                </li>
+        </div>
+        <hr width="100%" class="hidden">
+        <div class="experience hidden">
+            <div class="title">
+                <p class="position">
+                    Web Developer
+                </p>
+                <p class="location">
+                    (MPA Collaborative Network, Design Co UP-Grade)
+                </p>
+            </div>
+            <p class="date">
+                Jun 2024 - Sept 2024 · La Jolla, CA
+            </p>
+            <ul class="description">
+                <li>
+                    Worked closely with stakeholders from MPA Collaborative Network to redesign website
+                </li>
+                <li>
+                    Gathered 30 survey responses and interviewed 8 MPACN affiliated members to identify potential design/accessibility improvements
+                </li>
+                <li>
+                    Conducted website audit, competitive analysis, and SWOT analysis to identify potential solutions                
+                </li>
+                <li>
+                    Designed brand new UI elements and restructured site map and prototyped 20+ high-fidelity screens
+                </li>
+                <li>
+                    Implemented approved design onto MPACN's site using HTML, CSS, and JavaScript to create and update UI elements
+                </li>
+        </div>
+        <hr width="100%" class="hidden">
+        <div class="experience hidden">
+            <div class="title">
+                <p class="position">
+                    Instructional Assistant
+                </p>
+                <p class="location">
+                    (DSGN 1: Design of Everyday Things)
+                </p>
+            </div>
+            <p class="date">
+                Jan 2024 - Mar 2024 · La Jolla, CA   
+            </p>
+            <ul class="description">
+                <li>
+                    Acted as an instructional assistant for an introductory design course aimed to teach students fundamentals of design thinking
+                </li>
+                <li>
+                    Led weekly studio sessions in assistance to TAs, providing students with suggestions to iterate and improve on their projects
+                </li>
+                <li>
+                    Graded and provided detailed feedback on design journals and assignments for 200+ students
+                </li>
+        </div>
+        <hr width="100%" class="hidden">
+        <div class="experience hidden">
+            <div class="title">
+                <p class="position">
+                    UX Designer
+                </p>
+                <p class="location">
+                    (ACM at UC San Diego)
+                </p>
+            </div>
+            <p class="date">
+                Oct 2023 - Apr 2024 · La Jolla, CA        
+            </p>
+            <ul class="description">
+                <li>
+                    Collaborated with team of 4 to create a high-fidelity meal kit delivery service prototype
+                </li>
+                <li>
+                    Performed user research through running 30+ surveys, 10+ interviews, and 2 rounds of usability testing
+                </li>
+                <li>
+                    Compiled a style guide to organize color schemes, logos, spacing, typography, and components
+                </li>
+                <li>
+                    Presented and demoed final prototype at end-of-quarter showcase to ACM members
+                </li>
+        </div>
+        <hr width="100%" class="hidden">
+        <div class="experience hidden">
+            <div class="title">
+                <p class="position">
+                    UX Design Intern
+                </p>
+                <p class="location">
+                    (Pegasystems)
+                </p>
+            </div>
+            <p class="date">
+                May 2023 - Aug 2023 · Waltham, MA
+            </p>
+            <ul class="description">
+                <li>
+                    Moderated and observed 10+ internal usability studies on Pegasystems' live software environment
+                </li>
+                <li>
+                    Conducted regular meetings with product owners and stakeholders to establish measurable project goals
+                </li>
+                <li>
+                    Designed new components (e.g. authoring additional information in fields, file attachment widget, etc) for Pega's design system
+                </li>
+                <li>
+                    Collaborated with 7 other designers to align overall UX patterns for Constellation
+                </li>
 
+                <li>
+                    Prepared high-fidelity prototypes on Figma for developer hand-off
+                </li>
+        </div>
+
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Happy Holidays! -Alice</p>
+                    <img class="memoji" src = "images/christmas-memoji.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="active hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+
+        
+        <!-- <hr> -->
+        <p id="copyright">© 2024 Alice Ma</p>
+    </footer>
+    <div id="copied">
+        <i class="fa-solid fa-check"></i>
+        <p>Copied to clipboard!</p>
+    </div>
+</body>
+
+<style>
+    #about {
+        width: 90vw;
+        max-width: 1092px;
+        display: flex;
+        margin: auto;
+        gap: 32px;
+        gap: 64px;
+        align-items: flex-start;
+    }
+    #about-pic {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 16px;
+    }
+    #about a {
+        text-decoration: underline;
+        color: #7AB8FD;
+    }
+    #about .text-message p {
+        font-size: 22px;
+    }
+    #about .text-tick {
+    width: 23.12px;
+    height: 31.983px;
+    position: absolute;
+    left: -10.516px;
+    bottom: -1px;
+    fill: #26252A;
+    
+}
+    #about .text-message {
+        padding: 10px 18px;
+    }
+    #about .memoji {
+        width: 30px;
+        height: 30px;
+    }
+    #about-text {
+        color: white;
+    }
+    #about .intro {
+        font-family: "Instrument Serif", serif;
+        font-size: 40px;
+    }
+    #about-text p {
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 200;
+    }
+    #copied {
+        background-color: #000000;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 0px 16px 0px 16px;
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: ease-in-out 0.3s;
+        bottom: -20px;
+        border: 1px rgba(255, 255, 255, 0.356) solid;
+    }
+    a {
+        cursor: pointer;
+    }
+    #copied.active {
+        opacity: 1;
+        bottom: 12px;
+    }
+    .fa-copy, .fa-arrow-up-right-from-square {
+        color: #7AB8FD;
+        /* color: #7AB8FD; */
+        cursor: pointer;
+    }
+    .fa-arrow-up-right-from-square {
+        font-size: 21px;
+    }
+    .caption {
+        color: white;
+        opacity: 0.7;
+        font-weight: 200;
+    }
+    #picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .experience {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .title {
+        display: flex;
+        gap: 6px;
+        align-items: flex-end;
+    }
+    .position {
+        font-family: "Instrument Serif", sans-serif;
+        font-size: 40px;
+        margin: 0;
+    }
+    .location {
+        font-family: "Instrument Serif", sans-serif;
+        font-size: 24px;
+        line-height: 40px;
+        font-weight: 100;
+        font-style: italic;
+        opacity: 0.7;
+        margin: 0;
+    }
+    .date {
+        font-size: 18px;
+        font-weight: 200;
+        margin: 0;
+        opacity: 0.7;
+    }
+    .description {
+        font-size: 20px;
+        font-weight: 200;
+        margin: 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    @media only screen and (max-width: 800px) {
+        #about {
+            flex-direction: column;
+        }
+        #about-pic {
+            height: 300px;
+            width: auto;
+        }
+        #about .text-message p {
+            font-size: 18px;
+        }
+        #picture {
+            width: min-content;
+            margin: auto;
+        }
+        .title {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
+        .position {
+            font-size: 36px;
+        }
+        .location {
+            font-size: 22px;
+            line-height: normal;
+        }
+        .date {
+            font-size: 16px;;
+        }
+        .description {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .fa-arrow-up-right-from-square {
+            font-size: 16px;
+            display: none;
+        }
+        .fa-copy {
+            display: none;
+        }
+    }
+</style>
+<script>
+    function copy() {
+        navigator.clipboard.writeText("alicema1202@gmail.com");
+        document.getElementById("copied").classList.add("active");
+        setTimeout(function() {
+            document.getElementById("copied").classList.remove("active");
+        }, 1500);
+        
+    }
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        // button.classList.toggle("hover-underline-animation")
+        contents = document.querySelector(".dropdown-content");
+        document.querySelector(".name").classList.toggle("name-gone");
+        // contents.classList.toggle("removepad");
+        // document.querySelector(".fa-solid").classList.toggle("fa-chevron-down");
+        const arr = document.querySelectorAll(".mobile-nav");
+        // arr.shift();
+        arr.forEach(item => {
+            item.classList.toggle("fa-chevron-right");
+        })
+        document.querySelector(".back").classList.remove("active");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".name").style.opacity = 1;
+
+        // document.querySelector(".back").classList.toggle("active");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        // dropdown.classList.toggle("close");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").style.opacity = 0;
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").style.opacity = 1;
+
+    };
+    
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+    
+</script>
+<script src="js/slide.js"></script>
+<script src="js/header-bar.js"></script>
 </html>
