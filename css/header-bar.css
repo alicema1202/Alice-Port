@@ -380,6 +380,9 @@ header {
         z-index: 0;
         pointer-events: none!important;
     }
+    .hover-underline-animation {
+        opacity: 1;
+    }
     .menu-icon {
         pointer-events: all!important;
     }
