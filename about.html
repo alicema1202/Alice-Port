@@ -114,7 +114,7 @@
     
     </script>
 
-    <section class="" id="about" style="margin-top: 32px;">
+    <section class="" id="about" style="margin-top: 16px;">
         <div id="picture" class="hidden">
             <img id="about-pic" src="images/disneypic.png">
             <p class="caption">
@@ -123,7 +123,7 @@
         </div>
         <div id="about-text" class="hidden">
                 <p class="intro">
-                    Nice to meet you, I'm Alice!
+                    Nice to meet you, I'm Alice Ma! 👋🏻
                 </p>
                 
                 <p>
@@ -354,6 +354,7 @@
         gap: 32px;
         gap: 64px;
         align-items: flex-start;
+        align-items: center;
     }
     #about-pic {
         width: 100%;
@@ -391,6 +392,7 @@
         font-family: "Instrument Serif", serif;
         font-size: 40px;
         line-height: 46px;
+        margin: 0;
     }
     #about-text p {
         font-size: 20px;
@@ -474,20 +476,26 @@
         font-size: 20px;
         font-weight: 200;
         margin: 0;
+        padding-left: 30px;
     }
     li {
         margin-bottom: 8px;
     }
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 900px) {
         #about {
             flex-direction: column;
+            gap: 8px;
         }
         #about-pic {
-            height: 300px;
-            width: auto;
+            max-width: 500px;
+            width: 85vw;
         }
         #about .text-message p {
             font-size: 18px;
+        }
+        #about-text p {
+            font-size: 18px;
+            line-height: 24px;
         }
         #picture {
             width: min-content;

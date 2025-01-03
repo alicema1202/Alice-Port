@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study — Alice Ma</title>
+
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/case-study.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
+
+</head>
+<body>
+    <header class="header-bar" style="animation: none;position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <!-- <script>
+        var prevScrollpos = window.pageYOffset;
+        
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector(".header-bar");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;               
+            /* if we're scrolling up, or we haven't passed the header,
+                show the header at the top */
+        if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+                headerDiv.style.top = "0";
+            }
+            else if (document.querySelector(".nav-content").classList.contains('active') == false){
+                /* otherwise we're scrolling down & have passed the header so hide it */
+                headerDiv.style.top = "-200px";
+            } 
+
+            prevScrollpos = currentScrollPos;
+        }
+        var st = $(this).scrollTop();
+    
+    
+    </script> -->
+    <section class="hero">
+        <img class="logo hidden" src="../images/cooklab-logo.svg"></svg>
+        <img class="hidden" src="../images/cooklab-frames.png">
+        <div class="description hidden">
+            <div class="section">
+                <strong>purpose</strong>
+                <p>Breaking the monotony of meal prepping</p>
+            </div>
+            <div class="section">
+                <strong>my role</strong>
+                <p>UX Design, UX Research, Visual Design</p>
+            </div>
+            <div class="section" style="width: min-content;">
+                <strong>Duration</strong>
+                <p style="width: 250px;">January - March 2024</p>
+            </div>
+        </div>
+        <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
+    </section>
+    <section id="content" class="content">
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>overview</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    People lack variety in their daily meals
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    People often don't have time to cook for themselves every day or struggle with finding new and easy recipes to make. As a result, they either resort to ordering takeout, meal prepping in bulk, or cooking the same meals everyday. The first option is costly and also tends to be unhealthy. The second and last option, while it is cheaper and more nutritious, eating the same few meals for several days at a time easily can get repetitive and boring.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>exploration</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Conducting surveys to understand our users
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    We conducted an online survey to understand our user's current cooking habits, with the main goal of learning their cooking habits, how they find ideas for what meals to cook, and their general opinions towards meal prepping.
+                    <br><br>
+                    Our survey included a total of 14 open and close-ended questions, consisting of 4 demographic questions and 10 questions about cooking habits. We recruited a total of 25 participants (8 males, 17 females) by sending our survey to online UCSD channels such as class discord servers and club group chats.
+                </p>
+                <h4 class="hidden">
+                    <br>Summary of findings:
+                </h4>
+                <ul>
+                    <li class="first-item hidden">
+                        11 out of 25 participants cook 2-3 times a week at home, 8 participants cook 5-6 times a week at home, 4 participants cook every day at home, 2 people cook once a week at home, and lastly, 1 participant does not cook at home (Figure 1).
+                    </li>
+                    <li class="hidden">
+                        13 out of 25 participants do not meal prep. However, 12 participants do meal prep (Figure 2).
+                    </li>
+                    <br>
+                </ul>
+                <div class="two-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/chart1.svg" title="How often do you cook at home?">
+                        <p class="caption">
+                            Figure 1. How often do you cook at home?
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/chart2.svg" title="Do you meal prep?">
+                        <p class="caption">
+                            Figure 2. Do you meal prep?
+                        </p>
+                    </div>
+                </div>
+                <h4 class="hidden">
+                    <br>Quotes from respondents:
+                </h4>
+                <ul>
+                    <li class="first-item hidden">
+                        "I go online and search for whatever I want to make. I don't really use recipes in detail, I just look at the general ingredients and steps and then go for it."
+                    </li>
+                    <li class="hidden">
+                        "I think it [meal prepping] is fast and convenient because it saves a lot of time cooking. However, I personally like to each fresh cook food because it just tastes better than meal prep. Moreover, meal prepping may get repetitive food over the week and have left over if you can finish it on time which eventually be in the trash can. It would be good for people who like it and can finish all the food."
+                    </li>
+                    <li class="hidden">
+                        "A pro is that it's healthy and saves money. Some cons are that it's limited to certain meals and gets repetitive."
+                    </li>
+                    <br>
+                </ul>
+                <h4 class="hidden">
+                    How we plan to address user pain points:
+                </h4>
+                <ul>
+                    <li class="first-item hidden">
+                        Difficulty in finding recipes - Browse diverse recipes with a personalized recommendation system
+                    </li>
+                    <li class="hidden">
+                        Lack of variety in daily meals - Enjoy a variety of dishes by participating in meal exchanges
+                    </li>
+                    <li class="hidden">
+                        Laziness - No longer have to take as much effort thinking and cooking different meals everyday
+                    </li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>competitive audit</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    What were the current solutions?
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    To explore the existing solutions, we analyzed the competitive space to find gaps that we could address.
+                </p>
+                <br>
+                <div class="two-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/allrecipes.png" title="AllRecipes">
+                        <p class=hidden>
+                            "Allrecipes.com" has cooking videos, how-to guides, and articles on food trends, nutrition, and culinary techniques. It features shopping lists, meal planners, and a variety of meal selections.
+
+                            Users can post recipes, comment and rate others' recipes, participate in forums.
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/prm.png" title="Paprika Recipe Manager">
+                        <p class=hidden>
+                            "Paprika Recipe Manager 3" allows you to download and add your recipes, and create grocery lists. It features meal planners and ingredient tracking. Users can share grocery lists, which allows users to add to a shared grocery list with live updates.
+                        </p>
+                    </div>
+                </div>
+                <h4 class="hidden">
+                    <br>The competition did not address the repetitiveness of meal-prepping...
+                </h4>
+                <p class=hidden>
+                    While Allrecipes and Paprika Recipe Manager 3 aided users in their meal-prepping process by providing features like grocery lists and easy access to recipes, neither of these addressed the problem that meal prepped meals get repetitive overtime.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>Our novel idea</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Reducing repetition by facilitating meal swaps!
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    After conducting research through surveys and competitive analysis, we found that the problem of repetitiveness was brought up by all survey respondents who meal-prepped, yet it has not been addressed by existing solutions on the market today.
+                    <br><br>
+                    Therefore, we plan to incorporate an interactive activity within the community or close friends by enabling not only the sharing of recipes, but also the exchanging of meal preps to address the full scope of our problem.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>Prototyping round 1</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Basic matching functionality using Google Sheets
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    In our first round of prototyping, we wanted to implement a "playable prototype" for our user testing session with the following features:
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        Uploading your own dishes and recipes
+                    </li>
+                    <li class="hidden">
+                        Match for meal exchanges with those who are also interested in trying your meal
+                    </li>
+                    <li class="hidden">
+                        Enable comments and feedback for users to improve their recipes
+                    </li>
+                    <li class="hidden">
+                        An option to receive the dish's recipe from people you've exchanged with
+                    </li>
+                </ul>
+                <p class=hidden>
+                    To create this functionality, we used scripting within Google Sheets to enable automatic meal matching and rating calculations.
+                </p>
+                <div class="two-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p1a.png" title="Prototype">
+                        <p class="caption">
+                            Users can upload an image of their dish, the recipe, and reheat instructions.
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p1b.png" title="Prototype">
+                        <p class="caption">
+                            Users can decide if they would like to exchange meals on the left, and matches automatically appear on the right.
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p1c.png" title="Prototype">
+                        <p class="caption">
+                            Leave comments after the exchange (left), and view the feedback you received (right).
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p1d.png" title="Prototype">
+                        <p class="caption">
+                            Give all users you've exchanged with ratings so users can build credibility over time.
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <a class="button hidden" href="https://docs.google.com/spreadsheets/d/1RIdwqDBknOzen43RE4JtaRCgl-yin2TvW2zWDe8TZu4/edit#gid=0" target="_blank">
+                   <p>View prototype</p>
+               </a>
+               <h4 class="hidden">
+                <br>Feedback and Key Takeaways
+                </h4>
+                <p class="hidden">
+                    After conducting our first prototyping session, we sent out a quick feedback survey with our live audience to understand any issues with our initial prototype.
+                </p>
+                <p class="hidden">
+                    1. Lack of nutrition information
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        "I think have a step for the ingredients too and having users be able to see the ingredients before meeting up to account for allergies"
+                    </li>
+                    <li class="hidden">
+                        "I think something that I would like to see is making sure that the idea takes into account that people have dietary restrictions or preferences for food. It would be really helpful especially if you have a severe allergy."
+                    </li>
+                </ul>
+                <p class="hidden">
+                    2. Recipe sharing
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        "There are no regulations on how detailed the recipes should be. If they make the recipe too simplified, then it's difficult to recreate the dish based on their oversimplified recipe."
+                    </li>
+                    <li class="hidden">
+                        "You might want a recipe but because you don't match you don't get it and that can suck"
+                    </li>
+                </ul>
+                <p class="hidden">
+                    3. General prototype feedback
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        "Once I got the hang of the prototype, it made sense but it was difficult understanding the instructions at first or the structure of the prototype."
+                    </li>
+                    <li class="hidden">
+                        "The exchanged recipe didn't show up when I selected I would like to recreate. I'm not sure if thats a bug."
+                    </li>
+                    <br>
+                </ul>
+                <h4>
+                    Considerations for round 2
+                </h4>
+                <ul>
+                    <li class="first-item hidden">
+                        Make sure the prototype accounts for nutrition information and dietary restrictions
+                    </li>
+                    <li class="hidden">
+                        Refine the recipe sharing process to address user concerns
+                    </li>
+                    <li class="first-item hidden">
+                        Reconsider the current user flow to make it less confusing
+                    </li>
+                    <li class="hidden">
+                        Make the prototype look better overall
+                    </li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>Prototyping round 2</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Improving prototype based on user feedback
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    In our second round of prototyping, we improved the overall look of the prototype, as well as implemented a few changes based on the feedback we received last round.
+                </p>
+                <p class="hidden">
+                    Users can now:
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        Input dietary restrictions of the meal they created, which will show up to other users when their recipe appears on the matching screen
+                    </li>
+                    <li class="hidden">
+                        Input dietary restrictions of the meal they created, which will show up to other users when their recipe appears on the matching screen
+                    </li>
+                    <li class="hidden">
+                        View their feedback directly on the user profile page + an updated user rating section
+                    </li>
+                    <br>
+                </ul>
+                <div class="three-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p2a.png" title="Prototype">
+                        <p class="caption">
+                            Addition of a dietary restriction field, which also appears in the matching page
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p2b.png" title="Prototype">
+                        <p class="caption">
+                            Users can now see all recipes they're interested in, regardless of their matching status
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/p2c.png" title="Prototype">
+                        <p class="caption">
+                            Comments now appear in the user's profile page, rather than at the end of the prototype
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <a class="button hidden" href="https://docs.google.com/spreadsheets/d/1fYh8_C66RtjGJzEiLzk2CvhYOvaJ1JZQWmfr25G8830/edit" target="_blank">
+                   <p>View prototype</p>
+               </a>
+               <h4 class="hidden">
+                <br>Feedback and Key Takeaways
+                </h4>
+                <p class="hidden">
+                    After this round of prototyping, we sent out another quick feedback survey to the session participants. Our team noticed that this time around, the participants were able to finish the matching process a lot quicker. Overall, the feedback was positive and they enjoyed all the changes that we've made to the prototype. Given the time constraints, we concluded our prototyping and user testing phase and moved on to create a final prototype for our app!
+                </p>
+                <br>
+                <h4>
+                    Considerations for final prototype
+                </h4>
+                <ul>
+                    <li class="first-item hidden">
+                        More security features - Stricter onboarding and verification
+                    </li>
+                    <li class="hidden">
+                        Have reviews public on user profile - See reviews that other users left
+                    </li>
+                    <li class="first-item hidden">
+                        Food Handler Certification - Ensure knowledge of proper food handling training
+                    </li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>Final product</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    The final high fidelity design
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    Here are the high fidelity screens we designed on Figma. These screens are representative of the functional Google Sheets prototype.
+                </p>
+                <br>
+                <div class="five-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi1.png" title="Final Mockup">
+                        <p class="caption">
+                            Onboarding screen 1 to preview experience
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi2.png" title="Final Mockup">
+                        <p class="caption">
+                            Onboarding screen 2 to preview experience
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi3.png" title="Final Mockup">
+                        <p class="caption">
+                            Onboarding screen 3 to preview experience
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi4.png" title="Final Mockup">
+                        <p class="caption">
+                            New user profile needs to be verified before swapping
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi5.png" title="Final Mockup">
+                        <p class="caption">
+                            Verify number, ID, and upload certification
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi6.png" title="Final Mockup">
+                        <p class="caption">
+                            See recipes even without matching with users
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi7.png" title="Final Mockup">
+                        <p class="caption">
+                            Choose meals you are interested in eating
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi8.png" title="Final Mockup">
+                        <p class="caption">
+                            A list of all your matched recipes for swapping
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi9.png" title="Final Mockup">
+                        <p class="caption">
+                            Rate your experience after the exchange
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/hifi10.png" title="Final Mockup">
+                        <p class="caption">
+                            Profile page where user see ratings and edit meal
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/IUS7cmFCvhlnd40PuNW0Ue/COGS123-Prototype-Mockups?page-id=0%3A1&type=design&node-id=2-2455&viewport=697%2C-77%2C0.12&t=HRNVblrf55hz3JiF-1&scaling=scale-down&starting-point-node-id=2%3A2455&mode=design" target="_blank">
+                   <p>View prototype</p>
+               </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3>Reflection</h3>
+            </div>
+            <div class="right hidden">
+                <h2 class="hidden">
+                    Social structures and complexities
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    After concluding our design process, my group and I took some time to discuss the potential limitations of our project idea.
+                </p>
+                <h4 class="hidden">
+                    <br>Difficulty establishing user trust
+                </h4>
+                <p class="hidden">
+                    First, there's the problem of user trust because it may be difficult to trust that the meals they are receiving from the meal swaps were prepared under hygienic conditions and are safe to consume. We attempted to address this issue by adding user verification, where they need to verify their phone number, identity, and complete a food handling certification to become a member of the meal swapping community.
+                </p>
+                <h4 class="hidden">
+                    <br>The possibility of exclusive groups
+                </h4>
+                <p class="hidden">
+                    Next, our platform encourages community building by facilitating locally organized meal swap events. However, there is a possibility of forming exclusive groups, which may cause social division if certain individuals are consistently excluded from meal exchanges.
+                </p>
+                <h4 class="hidden">
+                    <br>Diversity & inclusion inadequately addressed
+                </h4>
+                <p class="hidden">
+                    Challenges revolving dietary restrictions, allergies, and cultural sensitivities may arise due to not being properly addressed by other users. To address this, we provided options for users to include dietary restrictions for their posted meals to notify users before they pick a dish.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3>Takeaways</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    What I learned from this
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    Throughout the entire design process, I took away many new insights about design and collaboration, such as:
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        How to conduct user research to investigate ideas and determine pain points
+                    </li>
+                    <li class="hidden">
+                        It is useful to piggyback on other apps to test out our ideas
+                    </li>
+                    <li class="hidden">
+                        Prototype sessions and feedback from our target audience offer practical advice on how to enhance the user experience
+                    </li>
+                </ul>
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Happy Holidays! -Alice</p>
+                    <img class="memoji" src = "images/christmas-memoji.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+        <!-- <hr> -->
+        <p id="copyright">© 2024 Alice Ma</p>
+    </footer>
+</body>
+<style>
+    
+
+</style>
+<script>
+    
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        // button.classList.toggle("hover-underline-animation")
+        contents = document.querySelector(".dropdown-content");
+        document.querySelector(".name").classList.toggle("name-gone");
+        // contents.classList.toggle("removepad");
+        // document.querySelector(".fa-solid").classList.toggle("fa-chevron-down");
+        const arr = document.querySelectorAll(".mobile-nav");
+        // arr.shift();
+        arr.forEach(item => {
+            item.classList.toggle("fa-chevron-right");
+        })
+        document.querySelector(".back").classList.remove("active");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".name").style.opacity = 1;
+
+        // document.querySelector(".back").classList.toggle("active");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        // dropdown.classList.toggle("close");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").style.opacity = 0;
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").style.opacity = 1;
+
+    };
+    
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+    
+</script>
+<script src="js/slide.js"></script>
+<script src="js/header-bar.js"></script>
+</html>

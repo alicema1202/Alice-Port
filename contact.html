@@ -1,386 +1,562 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Contact Me — Alice Ma</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/medtime-case-study.css" rel="stylesheet"> 
-        <link href="css/headerforCS.css" rel="stylesheet">
-        <link href="css/animation.css" rel="stylesheet">
-        <link href="css/general.css" rel="stylesheet">
-        <link href="css/content.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
-        <!-- <link rel="shortcut icon" type="x-icon" href="images/contact-icon.png"> -->
-        <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Alice Ma</title>
 
-        <style>
-            @media only screen and (min-width:2000px) {
-                .container {
-                    height: calc(100vh - 10rem);
-                    display: flex;
-                    margin: 0!important;
-                }
-            }
-            .container {
-                /* height: 100vh; */
-                margin-bottom: calc(3rem);
-                margin-top: calc(70px);
-            }
-            .form-control {
-                font-family: lexend, Arial, Helvetica, sans-serif!important;
-            }
-            .catch-line {
-                color: rgb(54, 54, 54);
-                font-size: 2rem;
-                /* font-weight: 700; */
-                font-family: 'DM Serif Text', Serif;
-                font-style: italic;
-                font-weight: 500;
-            }
-            .paragraph {
-                font-weight: 400;
-                line-height: 3ch;
-            }
-            .about-me {
-                display: flex;
-                width: 70vw;
-                /* height: calc(100vh - 90px); */
-                margin-left: 15vw;
-                margin-right: 15vw;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                /* top: calc(60px + 1.7em); */
-            }
-            .pic {
-                width: 35vw;
-                border-radius: 2vw;
-            }
-            .intro-about-me {
-                margin-right: 10vw;
-            }
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
+
+</head>
+<body>
+    <header class="header-bar" style="animation: none;position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
             
-            .view-prototype {
-                opacity: 1;
-                padding: 1em 2em 1em 2em;
-                margin-bottom: 2em;
-                margin-left: 0;
-                right: 0px;
-                font-weight: bold;
-                font-size: 17px;
-                background-color: white;
-                color: black;
-                border-color: rgb(0, 0, 0);
-                border-style: solid;
-                border-width: 2px;
-                border-radius: 30px;
-                transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-                cursor: pointer;
-                font-family: lexend , arial;
-                margin-top: 30px;
-                font-weight: 500;
-            }
-            .view-prototype:hover {
-                color: white;
-                background-color:black;
-                border-color: black;
-                transition:0.2s;
-                box-shadow: none;
-            }
-            .view-prototype {
-                transition:0.2s;
-            }
-            form {
-                /* font-family: roboto, arial; */
-            }
-            .row-1 {
-                margin-top: 100px;
-            }
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
             
-            .row {
-                margin-top: 15px;
-            }
-            @media (max-width: 700px) {
-                .container {
-                    margin-top: calc(70px + 3rem);
-                    margin-bottom: calc(70px + 3rem);
-                }
-                .about-me {
-                    width: auto;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    padding-right: 0!important;
-                    /* height: auto; */
-                    /* margin-top: calc(70px + 3rem);
-                    margin-bottom: calc(70px + 3rem); */
-                }
-                .contact {
-                    margin-top: 0;
-                    /* background-color: blue; */
-                }
-                .intro-about-me {
-                    /* width: 50vw; */
-                    margin-bottom: 0;
-                }
-                .intro-about-me {
-                    margin-right: 0vw;
-                    
-                }
-                .view-prototype {
-                    opacity: 1;
-                    margin-left: 0;
-                    line-height: auto;
-                    margin-bottom: 2em;
-                    right: 0px;
-                    font-weight: bold;
-                    font-size: 17px;
-                    background-color: white;
-                    color: rgb(54, 54, 54);
-                    border-color: rgb(54, 54, 54);
-                    border-style: solid;
-                    border-width: 1.5px;
-                    border-radius: 4rem;
-                    transition: 0.3s cubic-bezier(.1,.53,.66,.96);
-                    cursor: pointer;
-                    margin-top: 30px;
-                    font-weight: 500;
-                }
-                .view-prototype:hover {
-                    color: white;
-                    transition:0.2s;
-                    box-shadow: none;
-                }
-                .view-prototype {
-                    transition:0.2s;
-                }
-                .contact-form {
-                    margin-top: 0;
-                    width: 70vw;
-                }
-                .row-1 {
-                    margin-top: 20px;
-                }
-                .form-control {
-                    width: 100%;
-                }
-            }
-            .WORKS-container .scroll {
-                font-size: 14px;
-                margin-right: 0;
-                margin-left: 0;
-                color: black;
-                transform: scaleY(1);
-                transition: transform 0.3s;
-            }
-            .WORKS-container {
-                display: flex;
-                gap: 8px;
-                /* border: 1px white solid; */
-                justify-content: center;
-                align-items: center;
-            }
-            .dropdown:hover .scroll {
-                transform: scaleY(-1);
-                transition: transform 0.3s;
-            }
-            p, label {
-                color:rgb(54, 54, 54);
-            }
-        </style>
-    </head>
-    <body>
-        <header class="remove header-bar">
-            <header class="inside">
-                <div class="left-section">
-                    <a href="https://alicemadesign.com" class="logo-container logo">
-                        Alice Ma
-                    </a>
-                </div>
-                <div class="hamburger">
-                    <div class="line one"></div>
-                    <div class="line two"></div>
-                    <div class="line three"></div>
-                </div>
-                <style>
-                    .header-bar {
-                        font-family: lexend, Arial, Helvetica, sans-serif;
-                        font-weight: 400;
-                    }
-                    .button, .brief-desc,.content,.description, .footer {
-                        font-family: lexend, Arial, Helvetica, sans-serif;
-                    }
-                    .brief-desc {
-                        font-size: 0.9em;
-                    }
-                    .button {
-                        font-weight: 500;
-                    }
-                    .description {
-                        letter-spacing: normal;
-                    }
-                    h2 {
-                        font-weight: 700;
-                    }
-                    h3 {
-                        font-weight: 600;
-                    }
-                    .drop-button {
-                        color: black;
-                    }
-                    .header-bar {
-                        display: flex;
-                        justify-content: center;
-                        /* padding-right:0;
-                        padding-left: 0;  */
-                        width: 100vw;
-                    }
-                    .inside {
-                        display: flex;
-                        width: 100%;
-                        max-width: 1090px;
-                    }
-                    @media screen and (min-width: 1700px) {
-                        .inside {
-                            width: 1190px;
-                            max-width: none;
-                        }
-                    }
-                    .right-btn {
-                        margin-right: 4rem;
-                        margin-right: 0;
-                    }
-                    .logo {
-                        margin-left: 4rem;
-                        margin-left: 0;
-                    }
-                </style>
-                <nav class="nav-bar">
-                    <ul>
-                        <li class="dropdown left">
-                            <div class="hover-underline-animation drop-button">
-                                <p class="WORKS-container" onclick="goToWorks()">
-                                    Work <i class="drop fa-solid fa-chevron-down scroll"></i>
-                                </p>
-                                <b class="dropdown-content removepad">
-                                    <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
-                                    <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
-                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
-                                </b>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
-                        </li>
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item active right-btn">
+                        <a class="hover-underline-animation active" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <script>
+        // var prevScrollpos = window.pageYOffset;
         
-                        <!-- <li>
-                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                        </li> -->
-                            
-                        <li>
-                            <a class="hover-underline-animation visible" href="https://alicemadesign.com/contact">Contact</a>
-                        </li>
+        // /* Get the header element and it's position */
+        // var headerDiv = document.querySelector(".header-bar");
+        // var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
-                        <li class="right-btn">
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/resume">Resume</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </header>
-        <script>
-            // function myFunction(x) {
-            //     if (x.matches) { // If media query matches
-            //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
-
-            //     } else {
-            //         document.body.style.backgroundColor = "pink";
-            //     }
-            // }
-
-            // var x = window.matchMedia("(max-width: 900px)")
-            // myFunction(x) // Call listener function at run time
-            // x.addListener(myFunction) // Attach listener function on state changes
-            
-        //     works = document.querySelector(".nav-bar li");
-        //    arrow = document.querySelector(".drop");
-        //     works.onmouseover = function() {
-        //         arrow.classList.toggle("fa-chevron-down");
-        //         arrow.classList.toggle("fa-chevron-up");
+        // window.onscroll = function() {
+        //     var currentScrollPos = window.pageYOffset;               
+        //     /* if we're scrolling up, or we haven't passed the header,
+        //         show the header at the top */
+        // if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+        //         headerDiv.style.top = "0";
         //     }
-        //     works.onmouseout = function() {
-        //         arrow.classList.toggle("fa-chevron-down");
-        //         arrow.classList.toggle("fa-chevron-up");
-        //     }
-            function goToWorks() {
-                document.getElementById("works").scrollIntoView();
-            }
-            hamburger = document.querySelector(".hamburger");
-            hamburger.onclick = function() {
-                navBar = document.querySelector(".nav-bar");
-                hamburger = document.querySelector(".hamburger");
-                navBar.classList.toggle("active");
-                navBar.classList.toggle("black");
-                hamburger.classList.toggle("active");
-                works = document.querySelector(".dropdown");
-                works.classList.toggle("left");
-                droplist = document.querySelector(".nav-bar ul .dropdown");
-                droplist.classList.toggle("margins");
-                button = document.querySelector(".drop-button");
-                button.classList.toggle("hover-underline-animation")
-                contents = document.querySelector(".dropdown-content");
-                // contents.classList.toggle("removepad");
-            }
-        </script>
-        
-        <div class="container">
-            <div class="about-me">
-                <div class="intro-about-me">
-                    <p class="catch-line">
-                        Contact me here!
+        //     else if (document.querySelector(".nav-content").classList.contains('active') == false){
+        //         /* otherwise we're scrolling down & have passed the header so hide it */
+        //         headerDiv.style.top = "-200px";
+        //     } 
+
+        //     prevScrollpos = currentScrollPos;
+        // }
+        // var st = $(this).scrollTop();
+    
+    
+    </script>
+
+    <section id="contact">
+        <div class="left hidden">
+            <img id="about-pic" class="hidden" src="images/disneypic.png">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message ">
+                    <p style="padding: 2.5px 0px;">
+                        Need to get in touch with me?
                     </p>
-                    <p class="paragraph">
-                        alicema1202@gmail.com 
-                    </p>
-                    <p class="paragraph">
-                        415.770.2018
-                    </p>
-                    
                 </div>
-                <form class="contact-form" action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
-                    <div class="row-1">
-                        <label class="required" for="name">Full name:</label><br/>
-                        <input type="name" name="name" class="form-control" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
-                      </div>
-                      <div class="row">
-                        <label class="required" for="email">Email Address:</label><br/>
-                        <input type="email" name="email" class="form-control" required size="30" style="height: 40px; border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px;  font-family: roboto, arial;">
-                      </div>
-                      <div class="row">
-                        <label class="required" for="name">Message:</label><br />
-                        <textarea class="form-control" name="message" rows="10" cols="30" required style="border-radius:0.5rem;border-style:solid;border-width:1px;margin:10px 0 10px 0; padding:10px; font-family: roboto, arial;"></textarea>
-                      </div>
-                        <input class="view-prototype" type="submit" value="SEND" />
-                        <input type="hidden" name="_next" value="https://alicemadesign.com/thankyou">
-                        <input type="hidden" name="_captcha" value="false">
-               </form>
+                <div style="margin-bottom: 4px!important;" class="desktop text-message ">
+                    <p style="padding: 2.5px 0px;">
+                        Fill out the form on the right 👉🏻
+                    </p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="mobile text-message ">
+                    <p style="padding: 2.5px 0px;">
+                        Fill out the form below 👇🏻
+                    </p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message ">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">
+                        Or reach me here: <br>
+                        <a onclick="copy()">alicema1202@gmail.com</a>
+                        <br>
+                        <a href="https://www.linkedin.com/in/alicema1215" target="_blank">linkedin.com/in/alicema1215</a> <a href="https://www.linkedin.com/in/alicema1215" target="_blank"></a>
+                    </p>
+                </div>
             </div>
         </div>
-        
-        <div class="footer">
-            <p>©2023 Designed and Coded by Alice Ma.</p>
+        <div class="right hidden">
+            <h2>Let's connect!</h2>
+            <form class="contact-form" action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
+                <div class="row-1">
+                    <div class="first-name">
+                        <label class="required" for="name">
+                            First name <i>*</i> 
+                        </label><br/>
+                        <input type="text" name="first name" class="form-control" required >
+                    </div>
+                    <div class="last-name">
+                        <label class="optional">
+                            Last name
+                        </label><br/>
+                        <input type="text" name="last name" class="form-control" optional >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="email">
+                        <label class="required" for="email">
+                            Email Address <i>*</i>
+                        </label><br/>
+                        <input type="text" name="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="required" for="message">Message:</label><br />
+                    <textarea class="form-control" name="message" required style=></textarea>
+                </div>
+                <input class="button" type="submit" value="Send message" />
+                <input type="hidden" name="_next" value="https://alicemadesign.com/thankyou">
+                <input type="hidden" name="_captcha" value="false">
+           </form>
         </div>
-    </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/headerslide.js"></script>
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Happy Holidays! -Alice</p>
+                    <img class="memoji" src = "images/christmas-memoji.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="active hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+
+        
+        <!-- <hr> -->
+        <p id="copyright">© 2024 Alice Ma</p>
+    </footer>
+    <div id="copied">
+        <i class="fa-solid fa-check"></i>
+        <p>Copied to clipboard!</p>
+    </div>
+</body>
+
+<style>
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    h2 {
+        width: 100%;
+        opacity: 1;
+        animation: none;
+        line-height: 48px;
+        font-size: 48px;
+        font-family: "Instrument Serif", serif;
+        color: white;
+    }
+    .button {
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        width: fit-content;
+        margin: auto;
+        padding: 16px 24px 16px 24px;
+        border-radius: 100px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 22px;
+        font-family: "SF Pro", sans-serif;
+        font-weight: 200;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-top: 24px;
+    }
+    .button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .right {
+        width: 50%
+    }
+    .row-1 {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+    }
+    .first-name, .last-name {
+        width: 100%;
+    }
+    input[type=text], select, textarea {
+        height: 48px;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        width: 100%;
+        border-radius: 8px;
+        background: #26252A;
+        box-shadow: 0px 0px 1.444px 0px rgba(255, 255, 255, 0.25) inset;
+        border: none;
+        font-size: 22px;
+        color: white;
+        font-family: "SF Pro", sans-serif;
+        font-weight: 200;
+        padding-left: 12px;
+        box-sizing: border-box;
+    }
+    textarea {
+        padding-top: 12px;
+        height: 150px!important;
+    }
+    .email .form-control {
+        width: 100%;
+    }
+    form {
+        color: white;
+        width: 100%;
+        font-family: "SF Pro", sans-serif;
+    }
+    form i {
+        font-style: normal;
+        color: #CE5347;
+    }
+    /* footer {
+        position: absolute;
+        bottom: 0;
+    } */
+    #contact{
+        width: 90vw;
+        max-width: 1092px;
+        display: flex;
+        margin: auto;
+        margin-top: 64px;
+        gap: 32px;
+        gap: 64px;
+        align-items: flex-start;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #about-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+
+    }
+    .mobile {
+        display: none;
+    }
+    #contact a {
+        text-decoration: underline;
+        color: #7AB8FD;
+    }
+    #contact .text-tick {
+        width: 23.12px;
+        height: 31.983px;
+        position: absolute;
+        left: -10.16px;
+        bottom: -1px;
+        fill: #26252A;
+        
+    }
+    
+    #about-text {
+        color: white;
+    }
+    #contact.intro {
+        font-family: "Instrument Serif", serif;
+        font-size: 40px;
+        line-height: 46px;
+        margin: 0;
+    }
+    #about-text p {
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 200;
+    }
+    
+    .left {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px
+    }
+    #copied {
+        background-color: #000000;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 0px 16px 0px 16px;
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: ease-in-out 0.3s;
+        bottom: -20px;
+        border: 1px rgba(255, 255, 255, 0.356) solid;
+    }
+    a {
+        cursor: pointer;
+    }
+    #copied.active {
+        opacity: 1;
+        bottom: 12px;
+    }
+    .fa-copy, .fa-arrow-up-right-from-square {
+        color: #7AB8FD;
+        /* color: #7AB8FD; */
+        cursor: pointer;
+    }
+    .fa-arrow-up-right-from-square {
+        font-size: 21px;
+    }
+    .caption {
+        color: white;
+        opacity: 0.7;
+        font-weight: 200;
+    }
+    #picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .experience {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .title {
+        display: flex;
+        gap: 6px;
+        align-items: flex-end;
+    }
+    .position {
+        font-family: "Instrument Serif", sans-serif;
+        font-size: 40px;
+        margin: 0;
+    }
+    .location {
+        font-family: "Instrument Serif", sans-serif;
+        font-size: 24px;
+        line-height: 40px;
+        font-weight: 100;
+        font-style: italic;
+        opacity: 0.7;
+        margin: 0;
+    }
+    .date {
+        font-size: 18px;
+        font-weight: 200;
+        margin: 0;
+        opacity: 0.7;
+    }
+    .description {
+        font-size: 20px;
+        font-weight: 200;
+        margin: 0;
+        padding-left: 30px;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    @media only screen and (max-width: 900px) {
+        .text-message {
+            border-radius: 20px;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        #contact{
+            flex-direction: column;
+            gap: 64px;
+        }
+        .left, .right {
+            width: 100%;
+        }
+        input[type=text], select, textarea {
+            /* height: 36px; */
+            font-size: 18px;
+        }
+        .mobile {
+            display: block;
+        }
+        .desktop {
+            display: none;
+        }
+        #about-text p {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+        #picture {
+            width: min-content;
+            margin: auto;
+        }
+        .title {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
+        .position {
+            font-size: 36px;
+        }
+        .location {
+            font-size: 22px;
+            line-height: normal;
+        }
+        .date {
+            font-size: 16px;;
+        }
+        .description {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .fa-arrow-up-right-from-square {
+            font-size: 16px;
+            display: none;
+        }
+        .fa-copy {
+            display: none;
+        }
+    }
+</style>
+<script>
+    function copy() {
+        navigator.clipboard.writeText("alicema1202@gmail.com");
+        document.getElementById("copied").classList.add("active");
+        setTimeout(function() {
+            document.getElementById("copied").classList.remove("active");
+        }, 1500);
+        
+    }
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        // button.classList.toggle("hover-underline-animation")
+        contents = document.querySelector(".dropdown-content");
+        document.querySelector(".name").classList.toggle("name-gone");
+        // contents.classList.toggle("removepad");
+        // document.querySelector(".fa-solid").classList.toggle("fa-chevron-down");
+        const arr = document.querySelectorAll(".mobile-nav");
+        // arr.shift();
+        arr.forEach(item => {
+            item.classList.toggle("fa-chevron-right");
+        })
+        document.querySelector(".back").classList.remove("active");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".name").style.opacity = 1;
+
+        // document.querySelector(".back").classList.toggle("active");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        // dropdown.classList.toggle("close");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").style.opacity = 0;
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").style.opacity = 1;
+
+    };
+    
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+    
+</script>
+<script src="js/slide.js"></script>
+<script src="js/header-bar.js"></script>
 </html>

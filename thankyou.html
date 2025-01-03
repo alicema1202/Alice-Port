@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work — Alice Ma</title>
+    <title>Contact — Alice Ma</title>
 
     <!-- Style files -->
     <link href="css/home.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
 </head>
 <body>
-    <header class="header-bar" style="animation: none;position: sticky!important; top: 0!important;">
+    <header class="header-bar" style="animation: none;">
         <div class="header-content-container">
             <a href="https://alicemadesign.com" class="name">
                 Alice Ma
@@ -48,9 +48,9 @@
             
             <nav class="nav-content">
                 <ul>
-                    <li class="dropdown nav-item active">
-                        <div class="hover-underline-animation active drop-button">
-                            <a class="WORKS-container" onclick="goToWorks()">
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" href="https://alicemadesign.com/work" onclick="goToWorks()">
                                 WORK <i class="fa-solid fa-chevron-down scroll"></i>
                             </a>
                             <b class="dropdown-content">
@@ -114,145 +114,106 @@
     
     </script> -->
 
-    <section class="" id="projects" style="margin-top: 16px;">
-        <div id="my-projects">
-            <h2>💫 My Projects</h2>
+    <div class="hero-container">
+        <div id="splash" style="animation: none; opacity: 1"></div>
+        <img id="glow" src="images/glow.svg" style="animation: none; opacity: 1">
+        <img class="texture" src="images/texture.png">
+        <div class="pop-up hero-text">
+            <h1 style="animation: none; opacity: 1; margin-bottom: 12px;">
+                Thank you!
+            </h1>
+            <h2 style="animation: none; opacity: 1">
+                <z> Your form has been submitted successfully! </z>
+            </h2>
+            <a class="button hidden" href="https://www.alicemadesign.com">
+                <p>Back to home</p>
+            </a>
         </div>
-        <hr width="100%">
-        <!-- <a href="">
-            <div class="project">
-                <div class="v3 visfus hidden" href="">
-                    <img class="phone" src="../images/mpa-screen.png">
-                </div>
-                <div class="text hidden">
-                    <p class="headline"> <i>MPA Collaborative Network</i> Website Redesign</p>
-                    <div class="tags">
-                       
-                        <p class="chip">
-                            Summer 2024
-                       </p>
-                    </div>
-                    <p class="message"> Worked with MPA Collaborative Network to redesign and modernize their website, starting from research and ending with development </p>
-                </div> 
-            </div>
-        </a> -->
-        <a href="">
-            <div class="project">
-                <div class="v3 mpa hidden" href="">
-                    <img class="phone" src="../images/mpa-screen.png">
-                </div>
-                <div class="text hidden">
-                    <p class="headline"> <i>MPA Collaborative Network</i> Website Redesign</p>
-                    <div class="tags">
-                       
-                        <p class="chip">
-                            Summer 2024
-                       </p>
-                    </div>
-                    <p class="message"> Worked with MPA Collaborative Network to redesign and modernize their website, starting from research and ending with development </p>
-                </div> 
-            </div>
-        </a>
-        <a href="https://alicemadesign.com/cooklaborate">
-            <div class="project reverse">
-                <div class="v3 cooklab hidden" href="https://alicemadesign.com/cooklaborate">
-                    <img class="phone" src="../images/cooklab-frames.png">
-                </div>
-                <div class="text hidden">
-                    <p class="headline"> <i>CookLaborate</i> Meal Swapping App</p>
-                    <!-- <p>January 2024</p> -->
-                    <div class="tags">
-                        <!-- <p class="chip">
-                            Mobile
-                        </p>
-                        <p class="chip">
-                            Application
-                        </p>
-                        <p class="chip">
-                            UX Design
-                        </p> -->
-                        <p class="chip">
-                             Spring 2024
-                        </p>
-                    </div>
-                    <p class="message"> A platform to organize events for people in their community to exchange meals that they have prepped in advance </p>
-                </div> 
-            </div>
-        </a>
-        <!-- <hr width="100%"> -->
+    </div>
+    <script>
+        const button = document.querySelector("body");
+
+        const readout = document.querySelector("p");
+
+        button.addEventListener("mousemove", (e) => {
+        const { x, y } = button.getBoundingClientRect();
+        button.style.setProperty("--x", e.clientX - x);
+        button.style.setProperty("--y", e.clientY - y);
+        });
+
+        function rotate (event) 
+        {
+            var x = event.clientX;
+            var w = window.innerWidth;
+            var midpointX = w / 2;
+            var posX = x;
+            var valX = (posX / w) * -40;
+
+            var y = event.clientY;
+            var h = window.innerHeight;
+            var midpointY = h / 2;
+            var posY = y;
+            var valY = (posY / h) * -40;
+
+            var glow = document.querySelector(".hero-text");
+            glow.style.transform = "translateX(" + valX + "px) translateY(" + valY + "px) perspective(100px)" ;
+        }
+
+        function rotate2 (event) 
+        {
+            var x = event.clientX;
+            var w = window.innerWidth;
+            var midpointX = w / 2;
+            var posX = x;
+            var valX = (posX / w) * 50;
+
+            var y = event.clientY;
+            var h = window.innerHeight;
+            var midpointY = h / 2;
+            var posY = y;
+            var valY = (posY / h) * 20;
+
+            var glow = document.getElementById("glow");
+            glow.style.transform = "translateX(" + valX + "px) translateY(" + valY + "px) perspective(100px)" ;
+        }
+
+        // let widthMatch = window.matchMedia("(max-width: 1200px)");
+        // widthMatch.addEventListener('change', function(mm) {
+        //     if (mm.matches) {
+                
+        //     }
+        //     else {
+                
+        //         document.addEventListener("mousemove", function (event)
+        //         {
+        //             // rotate (event);
+        //             rotate2 (event)
+        //         }, false);
+        //     }
+        // });
         
-        <a href="https://alicemadesign.com/pega">
-            <div class="project">
-                <div class="v3 pega hidden" href="https://alicemadesign.com/pega">
-                    <img class="phone" src="../images/pega-logo.png">
-                </div>
-                <div class="text hidden">
-                    <p class="headline"> <i>Pegasystems</i> UX Design Internship</p>
-                    <div class="tags">
-                        <!-- <p class="chip">
-                            Internship
-                        </p>
-                        <p class="chip">
-                            UX Design
-                        </p> -->
-                        <p class="chip">
-                            Summer 2023
-                        </p>
-                    </div>
-                    <p class="message">  Conducting research and designing user flows with Pega's design team to improve the authoring experience of Pega's Constellation design system</p>
-                </div> 
-            </div>
-        </a>
-        <a href="https://alicemadesign.com/medtime">
-            <div class="project reverse">
-                <div class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
-                    <img class="phone" src="../images/medtime-phones.png">
-                </div>
-                <div class="text hidden">
-                    <p class="headline"> <i>MedTime</i> Medicine Reminder App</p>
-                    <div class="tags">
-                        <!-- <p class="chip">
-                            Mobile
-                        </p>
-                        <p class="chip">
-                            Application
-                        </p> -->
-                        <p class="chip">
-                            Summer 2022
-                        </p>
-                    </div>
-                    <p class="message">  A medicine reminder application that ensures you never forget to take your medication again </p>
-                </div> 
-            </div>
-        </a>
-        <a href="https://alicemadesign.com/cinema">
-            <div class="project">
-                <div class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
-                    <img class="phone" src="../images/cinema-phones.png">
-                </div>
-                <div class="text hidden">
-                    <p class="headline"> <i>CineMa</i> Movie Ticketing App</p>
-                    <div class="tags">
-                        <!-- <p class="chip">
-                            Mobile
-                        </p>
-                        <p class="chip">
-                            Application
-                        </p>
-                        <p class="chip">
-                            UX Design
-                        </p> -->
-                        <p class="chip">
-                            Summer 2022
-                        </p>
-                    </div>
-                    <p class="message">  A mobile ticketing apps that streamlines the ticket purchasing and scanning process </p>
-                </div> 
-            </div>
-        </a>
-    </section>
-    <footer>
-        <hr class="hidden">
+        document.addEventListener("mousemove", function (event)
+                {
+                    // rotate (event);
+                    rotate2 (event)
+                }, false);   
+    </script>
+
+
+    <!-- <div class="container">
+        
+        <div class="blob-c">
+        <div class="shape-blob"></div>
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>
+        <div class="shape-blob four"></div>
+       
+        </div>
+    
+    </div>
+     -->
+    
+    <footer style="margin-top:0">
         <div class="content">
             <div>
                 <div style="margin-bottom: 4px!important;" class="text-message hidden">
@@ -277,7 +238,25 @@
         <p id="copyright">© 2024 Alice Ma</p>
     </footer>
 </body>
+<script>
+    window.addEventListener('DOMContentLoaded',() => {
+        VANTA.CLOUDS({
+        el: "#splash",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        skyColor: 0x0,
+        cloudColor: 0x1b2349,
+        cloudShadowColor: 0x0,
+        sunColor: 0x0,
+        sunGlareColor: 0x0,
+        sunlightColor: 0x0,
+        backgroundColor: 0x0,
+        speed: 0.55
+        })
+    })
 
+</script>
 <script>
     
     function goToWorks() {
