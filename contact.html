@@ -149,33 +149,32 @@
         <div class="right hidden">
             <h2>Let's connect!</h2>
             <form class="contact-form" action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
-                <div class="row-1">
-                    <div class="first-name">
+                <div class="row">
                         <label class="required" for="name">
                             First name <i>*</i> 
-                        </label><br/>
+                        </label>
                         <input type="text" name="first name" class="form-control" required >
-                    </div>
-                    <div class="last-name">
+                </div>
+                <hr>
+                <div class="row">
                         <label class="optional">
                             Last name
-                        </label><br/>
+                        </label>
                         <input type="text" name="last name" class="form-control" optional >
-                    </div>
                 </div>
+                <hr>
                 <div class="row">
-                    <div class="email">
                         <label class="required" for="email">
                             Email Address <i>*</i>
-                        </label><br/>
+                        </label>
                         <input type="text" name="email" class="form-control" required>
-                    </div>
                 </div>
+                <hr>
                 <div class="row">
-                    <label class="required" for="message">Message:</label><br />
-                    <textarea class="form-control" name="message" required style=></textarea>
+                   <br>
+                    <textarea class="form-control" name="message" required placeholder="Start typing your message here..."></textarea>
                 </div>
-                <input class="button" type="submit" value="Send message" />
+                <input class="button" type="submit" value="Send" />
                 <input type="hidden" name="_next" value="https://alicemadesign.com/thankyou">
                 <input type="hidden" name="_captcha" value="false">
            </form>
@@ -197,9 +196,9 @@
                 </div>
             </div>
             <nav>
-                <a href="https://alicemadesign.com/" class="active hidden">work</a>
+                <a href="https://alicemadesign.com/" class="hidden">work</a>
                 <a class="hidden" href="https://alicemadesign.com/about">about</a>
-                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="active hidden" href="https://alicemadesign.com/contact">contact</a>
                 <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
             </nav>
         </div>
@@ -215,6 +214,36 @@
 </body>
 
 <style>
+    input:is(:-webkit-autofill, :autofill) {
+        height: 48px;
+        padding-left: 12px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        /* font-size: 16px; */
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+    .right hr {
+        display: block;
+        margin: 0;
+        opacity: 0.2!important;
+        height: 0.8px;
+        border: none;
+        background-color: white;
+        width: 100%;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 0px;
+    }
+    label {
+        min-width: fit-content;
+        margin-top: 14px;
+        opacity: 0.7;
+        font-weight: 200;
+    }
     .right {
         display: flex;
         flex-direction: column;
@@ -232,12 +261,15 @@
     .button {
         text-decoration: none;
         background-color: rgba(255, 255, 255, 0);
+        background-color: #3272ea;
         border: 2px solid rgba(255, 255, 255, 0.7);
+        border: 0;
         width: fit-content;
         margin: auto;
         padding: 16px 24px 16px 24px;
         border-radius: 100px;
         color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255);
         font-size: 22px;
         font-family: "SF Pro", sans-serif;
         font-weight: 200;
@@ -247,42 +279,64 @@
     }
     .button:hover {
         background-color: rgba(255, 255, 255, 0.2);
+        background-color: #1d4ca4;
     }
 
     .right {
-        width: 50%
+        width: 45%;
+        background: #26252A;
+        padding: 32px;
+        padding-top: 48px;
+        border-radius: 48px;
     }
-    .row-1 {
-        display: flex;
+    
+    /* .first-name, .last-name {
         width: 100%;
-        gap: 8px;
-    }
-    .first-name, .last-name {
-        width: 100%;
-    }
-    input[type=text], select, textarea {
-        height: 48px;
-        margin-top: 8px;
-        margin-bottom: 16px;
+    } */
+    .form-control {
+        height: 36px;
+        margin-top: 0px;
+        /* margin-bottom: 16px; */
         width: 100%;
         border-radius: 8px;
-        background: #26252A;
-        box-shadow: 0px 0px 1.444px 0px rgba(255, 255, 255, 0.25) inset;
+        background: #26252a00;
+        /* box-shadow: 0px 0px 1.444px 0px rgba(255, 255, 255, 0.25) inset; */
         border: none;
-        font-size: 22px;
+        font-size: 20px;
         color: white;
         font-family: "SF Pro", sans-serif;
-        font-weight: 200;
-        padding-left: 12px;
+        /* font-weight: 200; */
+        /* padding-left: 12px; */
+        padding-top: 0;
         box-sizing: border-box;
+        transition: 0.3s;
+        resize: vertical;
+    }
+    .form-control:focus {
+        /* margin-top: 8px; */
+        height: 48px;
+        
+        background: #26252a00;
+        border: none;
+        /* border: none; */
+        outline: none;
+        /* margin-bottom: 16px; */
     }
     textarea {
         padding-top: 12px;
+        font-size: 20px!important;
         height: 150px!important;
+        resize: none!important;
     }
-    .email .form-control {
+    textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 16px;
+        font-weight: 200;
+        padding-top: 4px;
+    }
+    /* .email .form-control {
         width: 100%;
-    }
+    } */
     form {
         color: white;
         width: 100%;
@@ -304,6 +358,7 @@
         margin-top: 32px;
         gap: 32px;
         gap: 64px;
+        gap: 128px;
         align-items: flex-start;
         align-items: center;
         justify-content: space-between;
@@ -438,16 +493,22 @@
             border-radius: 20px;
         }
     }
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 900px) {
         #contact{
             flex-direction: column;
             gap: 64px;
+            width: 90vw;
         }
         .left, .right {
-            width: 100%;
+            width: 85%;
+        }
+        .right {
+            padding: 24px;
+            padding-top: 48px;
         }
         input[type=text], select, textarea {
             /* height: 36px; */
+            padding: 0;
             font-size: 18px;
         }
         .mobile {
