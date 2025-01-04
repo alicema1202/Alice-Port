@@ -404,6 +404,10 @@
     dropdown = document.querySelector(".dropdown-content");
     
     hamburger.onclick = function() {
+        document.querySelector(".name").classList.remove("name-gone");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".mobile-nav").classList.toggle("fa-chevron-right");
         navBar = document.querySelector(".nav-content");
         navBar.classList.toggle("active");
         navBar.classList.toggle("black");
@@ -416,36 +420,20 @@
         }
         droplist.classList.toggle("margins");
         button = document.querySelector(".drop-button");
-        // button.classList.toggle("hover-underline-animation")
+        
         contents = document.querySelector(".dropdown-content");
-        document.querySelector(".name").classList.toggle("name-gone");
-        // contents.classList.toggle("removepad");
-        // document.querySelector(".fa-solid").classList.toggle("fa-chevron-down");
-        const arr = document.querySelectorAll(".mobile-nav");
-        // arr.shift();
-        arr.forEach(item => {
-            item.classList.toggle("fa-chevron-right");
-        })
-        document.querySelector(".back").classList.remove("active");
-        dropdown.classList.remove("visibility");
-        document.querySelector(".name").style.opacity = 1;
-
-        // document.querySelector(".back").classList.toggle("active");
     };
     
     dropbtn.onclick = function() {
         dropdown.classList.add("visibility");
-        // dropdown.classList.toggle("close");
         document.querySelector(".back").classList.add("active");
-        document.querySelector(".name").style.opacity = 0;
+        document.querySelector(".name").classList.add("name-gone");
     };
     document.querySelector(".back").onclick = function() {
         dropdown.classList.toggle("visibility");
         document.querySelector(".back").classList.remove("active");
-        document.querySelector(".name").style.opacity = 1;
-
+        document.querySelector(".name").classList.remove("name-gone");
     };
-    
     window.addEventListener('load', () => {
             document.querySelector('.menu-icon__cheeckbox').checked = false;
     });

@@ -151,27 +151,26 @@
             <form class="contact-form" action="https://formsubmit.co/alicema1202@gmail.com" method="POST">
                 <div class="row">
                         <label class="required" for="name">
-                            First name <i>*</i> 
+                            First name: <i>*</i> 
                         </label>
                         <input type="text" name="first name" class="form-control" required >
                 </div>
                 <hr>
                 <div class="row">
                         <label class="optional">
-                            Last name
+                            Last name:
                         </label>
                         <input type="text" name="last name" class="form-control" optional >
                 </div>
                 <hr>
                 <div class="row">
                         <label class="required" for="email">
-                            Email Address <i>*</i>
+                            Email Address: <i>*</i>
                         </label>
                         <input type="text" name="email" class="form-control" required>
                 </div>
                 <hr>
                 <div class="row">
-                   <br>
                     <textarea class="form-control" name="message" required placeholder="Start typing your message here..."></textarea>
                 </div>
                 <input class="button" type="submit" value="Send" />
@@ -323,6 +322,7 @@
         /* margin-bottom: 16px; */
     }
     textarea {
+        margin-top: 14px!important;
         padding-top: 12px;
         font-size: 20px!important;
         height: 150px!important;
@@ -401,7 +401,7 @@
         font-weight: 200;
     }
     
-    .left {
+    #contact .left {
         display: flex;
         align-items: flex-end;
         gap: 16px
@@ -499,7 +499,7 @@
             gap: 64px;
             width: 90vw;
         }
-        .left, .right {
+        #contact .left, #contact .right {
             width: 85%;
         }
         .right {
@@ -571,6 +571,10 @@
     dropdown = document.querySelector(".dropdown-content");
     
     hamburger.onclick = function() {
+        document.querySelector(".name").classList.remove("name-gone");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".mobile-nav").classList.toggle("fa-chevron-right");
         navBar = document.querySelector(".nav-content");
         navBar.classList.toggle("active");
         navBar.classList.toggle("black");
@@ -583,36 +587,20 @@
         }
         droplist.classList.toggle("margins");
         button = document.querySelector(".drop-button");
-        // button.classList.toggle("hover-underline-animation")
+        
         contents = document.querySelector(".dropdown-content");
-        document.querySelector(".name").classList.toggle("name-gone");
-        // contents.classList.toggle("removepad");
-        // document.querySelector(".fa-solid").classList.toggle("fa-chevron-down");
-        const arr = document.querySelectorAll(".mobile-nav");
-        // arr.shift();
-        arr.forEach(item => {
-            item.classList.toggle("fa-chevron-right");
-        })
-        document.querySelector(".back").classList.remove("active");
-        dropdown.classList.remove("visibility");
-        document.querySelector(".name").style.opacity = 1;
-
-        // document.querySelector(".back").classList.toggle("active");
     };
     
     dropbtn.onclick = function() {
         dropdown.classList.add("visibility");
-        // dropdown.classList.toggle("close");
         document.querySelector(".back").classList.add("active");
-        document.querySelector(".name").style.opacity = 0;
+        document.querySelector(".name").classList.add("name-gone");
     };
     document.querySelector(".back").onclick = function() {
         dropdown.classList.toggle("visibility");
         document.querySelector(".back").classList.remove("active");
-        document.querySelector(".name").style.opacity = 1;
-
+        document.querySelector(".name").classList.remove("name-gone");
     };
-    
     window.addEventListener('load', () => {
             document.querySelector('.menu-icon__cheeckbox').checked = false;
     });
