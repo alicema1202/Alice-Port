@@ -544,8 +544,7 @@ strong {
     font-size: 2.2ch;
 }
 .age {
-    font-size: 1.5ch;
-    color: gray;
+    font-size: 1px;
 }
 ol {
     width: fit-content;

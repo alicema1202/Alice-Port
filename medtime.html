@@ -1,725 +1,533 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>MedTime: Get Medicine Reminders — Alice Ma</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/medtime-case-study.css" rel="stylesheet"> 
-        <link href="css/animation.css" rel="stylesheet">
-        <link href="css/headerforCS.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
-        <link href="css/content.css" rel="stylesheet"> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTime — Alice Ma</title>
 
-        <meta name="msapplication-TileImage" content="images/MEDTIME-THUMBNAIL.png">
-        <meta property="og:image" itemprop="image" content="images/MEDTIME-THUMBNAIL.png">
-        
-        <meta property="og:type" content="website" />
-        <meta property="og:image:type" content="image/png">
-        
-        <meta property="og:image:width" content="300">
-        <meta property="og:image:height" content="201">
-        
-        <meta property="og:url" content="https://alicemadesign.com/medtime">
-        <meta property="og:description" content="Many people who have to take medicine end up forgetting to take it because they do not have a system set up to remind them. This could lead to serious consequences. MedTime is an app that reminds people to take their medication on time. This app will be helpful to those who suffer from forgetting to take their medicine.">
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/case-study.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
 
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;400;500;1,300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
-        <!-- <link rel="shortcut icon" type="x-icon" href="images/medtime-logo.png"> -->
-        <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
-
-    </head>
-    <body onscroll="appear()">
-        <a onclick="scrollWin()" class="back-to-top hide">
-            <i class="fa-solid fa-chevron-up"></i>
-        </a>
-        <script>
-            function scrollWin() {
-                window.scrollTo(0, 0);
-            }
-            function appear() {
-                document.querySelector(".back-to-top").classList.remove('hide');
-            }
-            window.addEventListener("scroll", function(){
-                if(window.scrollY==0){
-                    document.querySelector(".back-to-top").classList.add('hide');
-                }
-            });
-        </script>
-        <style>
-            .hide {
-                opacity: 0;
-                cursor: default!important;
-            }
-            h3 {
-                font-size: 1.2ch;
-                color: #1789a2;
-                font-weight: 700;
-                letter-spacing: 0.3ch;
-            }
-            html {
-                scroll-behavior: smooth;
-            }
-            .back-to-top {
-                cursor: pointer;
-                transition: opacity 0.3s;
-                /* opacity: 0; */
-                z-index: 1000;
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                background-color: #2295af;
-                margin: 2rem;
-                margin-right: calc(2rem + 10px);
-                height: 4rem;
-                width: 4rem;
-                border-radius: 50%;
-                transition: 0.3s;
-                background-color: rgba(169, 169, 169, 0.564);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-            }
-            .back-to-top:hover {
-                margin-bottom: 2.4rem;
-                background-color: rgba(122, 122, 122, 0.644);
-                transition: 0.3s;
-            }
+</head>
+<body>
+    <header class="header-bar" style="animation: none;position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
             
-            
-            .fa-solid {
-                color: white;
-            }
-        
-            .header-bar {
-                font-family: lexend, Arial, Helvetica, sans-serif;
-                font-weight: 400;
-            }
-            .button, .brief-desc,.content,.description, .footer {
-                font-family: lexend, Arial, Helvetica, sans-serif;
-            }
-            .brief-desc {
-                font-size: 0.9em;
-            }
-            .button {
-                font-weight: 500;
-            }
-            .description {
-                letter-spacing: normal;
-            }
-            h2 {
-                font-weight: 700;
-            }
-            h3 {
-                font-weight: 600;
-            }
-
-            .project {
-                width: fit-content;
-                margin: auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                /* background-color: blue; */
-                column-gap: 90px;
-                margin-top: 40px;
-                margin-bottom: 50px;
-                transition: transform 0.3s;
-            }
-            
-            /* .reverse {
-                flex-direction: row-reverse;
-            } */
-            .v3 {
-                width: calc(54vw - 570px);
-                height: 410px;
-                background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: transform 0.3s;
-            }
-            .cinema {
-                background: conic-gradient(from 104deg at 63.21% 57.38%, #A35050 0deg, #762121 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
-            }
-            .unio {
-                background: conic-gradient(from -58deg at 49.92% 54.66%, #9761DE 0deg, #53357B 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
-            }
-            .v3:hover {
-                transform: translateY(-10px);
-                transition: transform 0.3s;
-            }
-            .phone {
-                width: 279px;
-                height: 100%;
-                object-fit:contain;
-                margin: auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            p, .read-more{
-                color: #363636;
-                font-family: lexend, Arial, Helvetica, sans-serif;
-                margin: 0;
-            }
-            .text {
-                width: 480px;
-                /* background-color: purple; */
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                justify-content: center;
-                row-gap: 24px;
-            }
-            .app-name {
-                font-size: 14px;
-                /* font-weight: 300; */
-                letter-spacing: 1px;
-                color: #363636;
-                /* background-color: pink; */
-            }
-            .headline {
-                font-size: 38.3px;
-                font-weight: 700;
-                /* background-color: orange; */
-            }
-            .message {
-                font-size: 16.15px;
-                /* background-color: purple */
-                line-height: 30px;
-                font-weight: 400;
-            }
-            @media only screen and (min-width: 2000px) {
-                .message {
-                    font-size: 26.2496px;
-                }
-                .headline {
-                    font-size: 56.4366px;
-                    font-weight: 700;
-                    /* background-color: orange; */
-                }
-            }
-            @media only screen and (min-width: 2500px) {
-                .message {
-                    font-size: 20.192px;
-                }
-                .headline {
-                    font-size: 43.4128px;
-                    font-weight: 700;
-                    /* background-color: orange; */
-                }
-            }
-            .read-more {
-                text-decoration: none;
-                /*padding: 10px 20px;
-                border: solid 1px #363636;
-                border-radius: 8px;
-                width:fit-content;
-                transition: 0.3s; */
-            }
-            .read-more:hover {
-                /* background-color: #363636;
-                color: #fefefe;
-                transition: 0.3s; */
-                background-color: #AB3A3B;
-                border-color: #AB3A3B;
-            }
-            @media only screen and (max-width: 1700px) {
-                .v3 {
-                    width: 500px;
-                }
-                .text {
-                    width: fit-content;
-                }
-                .phone {
-                    width: 230px;
-                }
-            }
-            @media only screen and (max-width: 1300px) {
-                .project {
-                    flex-direction: column;
-                    row-gap: 50px;
-                }
-                
-            }
-            
-            @media only screen and (max-width: 1300px) {
-                .v3, .text {
-                    width: 54vw;
-                }
-            }
-            @media only screen and (max-width: 700px) {
-                .v3, .text {
-                    width: 74vw;
-                }
-            }
-            @media only screen and (min-width: 2000px) {
-                .project {
-                    max-width: 1300px;
-                    padding-left: 0;
-                    padding-right: 0;
-                    margin: 0;
-                    margin-top: 60px;
-                }
-                .v3 {
-                    width: 630px;
-                }
-                .text {
-                    width: 580px;
-                }
-            }
-            @media only screen and (max-width: 700px) {
-                .headline {
-                    font-size: 30.288px;
-                }
-            }
-            /* .left-section a {
-                font-family: 'Cormorant Garamond', serif;
-                font-weight: 400;
-                font-size: 20px;
-            } */
-            .WORKS-container .scroll {
-                font-size: 14px;
-                margin-right: 0;
-                color: black;
-                transform: scaleY(1);
-                transition: transform 0.3s;
-            }
-            .WORKS-container {
-                display: flex;
-                gap: 8px;
-                /* border: 1px white solid; */
-                justify-content: center;
-                align-items: center;
-            }
-            .dropdown:hover .scroll {
-                transform: scaleY(-1);
-                transition: transform 0.3s;
-            }
-        </style>
-        <header class="remove header-bar">
-            <header class="inside">
-                <div class="left-section">
-                    <a href="https://alicemadesign.com" class="logo-container logo">
-                        Alice Ma
-                    </a>
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="hamburger">
-                    <div class="line one"></div>
-                    <div class="line two"></div>
-                    <div class="line three"></div>
-                </div>
-                <style>
-                    .header-bar {
-                        font-family: lexend, Arial, Helvetica, sans-serif;
-                        font-weight: 400;
-                    }
-                    .button, .brief-desc,.content,.description, .footer {
-                        font-family: lexend, Arial, Helvetica, sans-serif;
-                    }
-                    .brief-desc {
-                        font-size: 0.9em;
-                    }
-                    .button {
-                        font-weight: 500;
-                    }
-                    .description {
-                        letter-spacing: normal;
-                    }
-                    h2 {
-                        font-weight: 700;
-                    }
-                    h3 {
-                        font-weight: 600;
-                    }
-                    .drop-button {
-                        color: black;
-                    }
-                    .header-bar {
-                        display: flex;
-                        justify-content: center;
-                        /* padding-right:0;
-                        padding-left: 0;  */
-                        width: 100vw;
-                    }
-                    .inside {
-                        display: flex;
-                        width: 100%;
-                        max-width: 1090px;
-                    }
-                    @media screen and (min-width: 1700px) {
-                        .inside {
-                            width: 1190px;
-                            max-width: none;
-                        }
-                    }
-                    .right-btn {
-                        margin-right: 4rem;
-                        margin-right: 0;
-                    }
-                    .logo {
-                        margin-left: 4rem;
-                        margin-left: 0;
-                    }
-                </style>
-                <nav class="nav-bar">
-                    <ul>
-                        <li class="dropdown left">
-                            <div class="hover-underline-animation drop-button">
-                                <p class="WORKS-container" onclick="goToWorks()">
-                                    Work <i class="drop fa-solid fa-chevron-down scroll"></i>
-                                </p>
-                                <b class="dropdown-content removepad">
-                                    <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
-                                    <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
-                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
-                                </b>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
-                        </li>
-        
-                        <!-- <li>
-                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                        </li> -->
-                            
-                        <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
-                        </li>
-
-                        <li class="right-btn">
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/resume">Resume</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </header>
-        <script>
-            // function myFunction(x) {
-            //     if (x.matches) { // If media query matches
-            //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
-
-            //     } else {
-            //         document.body.style.backgroundColor = "pink";
-            //     }
-            // }
-
-            // var x = window.matchMedia("(max-width: 900px)")
-            // myFunction(x) // Call listener function at run time
-            // x.addListener(myFunction) // Attach listener function on state changes
-            
-        //     works = document.querySelector(".nav-bar li");
-        //    arrow = document.querySelector(".drop");
-        //     works.onmouseover = function() {
-        //         arrow.classList.toggle("fa-chevron-down");
-        //         arrow.classList.toggle("fa-chevron-up");
-        //     }
-        //     works.onmouseout = function() {
-        //         arrow.classList.toggle("fa-chevron-down");
-        //         arrow.classList.toggle("fa-chevron-up");
-        //     }
-            function goToWorks() {
-                document.getElementById("works").scrollIntoView();
-            }
-            hamburger = document.querySelector(".hamburger");
-            hamburger.onclick = function() {
-                navBar = document.querySelector(".nav-bar");
-                hamburger = document.querySelector(".hamburger");
-                navBar.classList.toggle("active");
-                navBar.classList.toggle("black");
-                hamburger.classList.toggle("active");
-                works = document.querySelector(".dropdown");
-                works.classList.toggle("left");
-                droplist = document.querySelector(".nav-bar ul .dropdown");
-                droplist.classList.toggle("margins");
-                button = document.querySelector(".drop-button");
-                button.classList.toggle("hover-underline-animation")
-                contents = document.querySelector(".dropdown-content");
-                // contents.classList.toggle("removepad");
-            }
-        </script>
-        
-        <div class="cover">
-            <div>
-                <div alt ="medtime cover photo" class="cover-photo">
             </div>
-            <div class="brief-desc">
-                <div class="desc"><strong>PROJECT:</strong> MedTime Medicine Tracking</div>
-                <div class="desc"><strong>ROLE:</strong> UX Designer + Researcher</div>
-                <div class="desc"><strong>TIMELINE:</strong> July 2022</div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <!-- <script>
+        var prevScrollpos = window.pageYOffset;
+        
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector(".header-bar");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;               
+            /* if we're scrolling up, or we haven't passed the header,
+                show the header at the top */
+        if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+                headerDiv.style.top = "0";
+            }
+            else if (document.querySelector(".nav-content").classList.contains('active') == false){
+                /* otherwise we're scrolling down & have passed the header so hide it */
+                headerDiv.style.top = "-200px";
+            } 
+
+            prevScrollpos = currentScrollPos;
+        }
+        var st = $(this).scrollTop();
+    
+    
+    </script> -->
+    <section class="medtime hero">
+        <img class="logo hidden" src="../images/medtime-text-logo.svg"></svg>
+        <img class="hidden" src="../images/medtime-phones.png">
+        <div class="description hidden">
+            <div class="section">
+                <strong>purpose</strong>
+                <p>Remind people to take their medication on time to prevent negative consequences</p>
+            </div>
+            <div class="section">
+                <strong>my role</strong>
+                <p>UX Design, UX Research, Visual Design</p>
+            </div>
+            <div class="section" style="width: min-content;">
+                <strong>Duration</strong>
+                <p style="width: 98px;">July 2022</p>
             </div>
         </div>
-       
-        <div class="content">
-            <section id="problem">
-                <h3 class="hidden">
-                    PROBLEM
-                </h3>
+        <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
+    </section>
+    <section id="content" class="content">
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>overview</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     People forget to take their medicine
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     Many people who have to take medicine end up forgetting to take it because they do not have a proper system set up to remind them. Forgetting to take medication on time can lead to a worsening of symptoms and may decrease the effectiveness of the medication. MedTime is an app that <strong>reminds people to take their medication on time</strong>. This app will be helpful to those who suffer from forgetting to take their medicine. 
                 </p>
-            </section>
-<!-- 
-            <section id="solution">
-                <iframe style="border: 0px solid rgba(0, 0, 0, 0.1);" width="350" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FyxU8Cq981ji7kcearnGMyi%2FMobile-High-Fidelity-Design%3Fnode-id%3D98-5184%26page-id%3D2%253A3%26scaling%3Dscale-down%26starting-point-node-id%3D98%253A5184%26mode%3Ddesign%26t%3Db17djSk4ZD3Pyl9d-1"></iframe>
-            </section> -->
-            <section id="competitive-audit">
-                <h3 class="hidden">
-                    COMPETITIVE AUDIT
-                </h3>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>competitive audit</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     The lack of a cross-platform experience
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     To work towards understanding the users I am designing for, I did research by conducting<strong> competitive audits</strong> as part of my ideation process. Through the competitive analysis, I realized that <strong>the competition only offered mobile apps</strong>. With that in mind, I used this project as an opportunity to bridge this gap.
                 </p>
-                <a style="width:fit-content" class="button view-prototype hidden" href="https://docs.google.com/spreadsheets/d/15Se9cO5jka02QkhRPyZCQM8mw8VcFhb7uzcOniu-8dM/edit?usp=sharing" target="_blank"> View Full Audit</a>
-
-            </section>
-            <section id="persona">
-                <h3 class="hidden">
-                    UNDERSTANDING USERS
+                <br>
+                <div class="photo hidden">
+                    <img class="chart" src="images/competitive-audit-medtime.png" title="Competitive Audit">
+                    <p class="caption hidden">
+                        Conducted a competitive audit to identify gaps in the medicine reminder realm
+                    </p>
+                </div>
+                <br>
+                <a class="button hidden" href="https://docs.google.com/spreadsheets/d/15Se9cO5jka02QkhRPyZCQM8mw8VcFhb7uzcOniu-8dM/edit?usp=sharing" target="_blank">
+                    <p>View full audit</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class=medtime>
+                    understanding users
                 </h3>
+            </div>
+            <div class="right">
                 <h2 class="hidden">
                     Looking at the needs of the users
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Bill, a 71 year old male:
                 </p>
-                <!-- <img class="picture persona hidden" title="Bill's Persona" src="images/bill-persona.png"> -->
+                <br>
                 <div class="persona-card">
                     <div class="bio hidden">
                         <div class="basic-info">
                             <img class="persona-pic" src="images/old-man-light.png">
                             <div class="name-age">
-                                <p class="title">Bill</p>
+                                <h4 class="title">Bill</h4>
                                 <p class="age">71 / Male</p>
                             </div>
                         </div>
                         <p class="hidden about description">
                             Bill is from Los Angeles. Unfortunately, he has developed diabetes and dementia, so he needs to take three prescribed medications. Due to dementia, he often forgets to take them, so he hopes to find a good solution to receive reminders.
                         </p>
+                        <br>
                     </div>
                     <div class="information">
                         <div class="hidden goals">
-                            <p class="title">Bill's Goals</p>
+                            <h4 class="title">Bill's Goals</h4>
                             <ol class="description">
                                 <li class="item">
-                                    <p>Remember to take his medication everyday</p>
+                                    Remember to take his medication everyday
                                 </li>
                                 <li class="item">
-                                    <p>Know exactly when to take which medication</p>
+                                    Know exactly when to take which medication
                                 </li>
                             </ol>
                         </div>
                         <div class="hidden pain-points">
-                            <p class="title">Bill's Pain Points</p>
+                            <h4 class="title">Bill's Pain Points</h4>
                             <ol class="description bottom">
                                 <li class="item">
-                                    <p>Bill always forgets to take his medicine, so his family has to remind him, but they don't always remember</p>
+                                    Bill always forgets to take his medicine, so his family has to remind him, but they don't always remember
                                 </li>
                                 <li class="item">
-                                    <p>Forgetting to take his medication can lead to some serious issues</p>
+                                    Forgetting to take his medication can lead to some serious issues
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
-                
-            </section>
-            
-            <section id="ideation">
-                <h3 class="hidden">
-                    IDEATION
-                </h3>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>Ideation</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     From paper to prototype
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     I sketched multiple iterations of paper wireframes for multiple screens to get started with the design. I put stars next to any features I might consider keeping in the next iteration of the designs.
                 </p>
-                <img class="paper-drawing hidden" src="images/medtime-paper.jpg" Title="Paper wireframes">
-                <p class="description hidden">
-                    After creating these wireframes, I digitized them using Figma and turned the paper wireframes into working mid-fidelity digital prototypes.
-                </p>
-                <img class="paper-drawing hidden" src="images/medtime-lofi.png" Title="Low Fidelity Prototype">
-                <a style="width:fit-content" class="button view-prototype hidden" href="https://www.figma.com/proto/MdmV1zIERXIQo6swOwPNIF/Project-3?node-id=2%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=2%3A2" target="_blank"> View Mid-fi Prototype</a>
-
-            </section>
-            <section id="user-testing">
-                <h3 class="hidden">
-                    USER TESTING
+                <div class="photo hidden">
+                    <img class="chart" src="images/medtime-paper.jpg" title="Paper wireframes">
+                    <p class="caption hidden">
+                        Paper wireframes showing multiple iterations of the home screen
+                    </p>
+                </div>
+                <br>
+                <div class="photo hidden">
+                    <img class="chart" src="images/medtime-lofi.png" title="Lofi wireframes">
+                    <p class="caption hidden">
+                        Low-fidelity screens of the main user flow
+                    </p>
+                </div>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/MdmV1zIERXIQo6swOwPNIF/Project-3?node-id=2%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=2%3A2" target="_blank">
+                    <p>View mid-fi prototype</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class=medtime>
+                    User Testing
                 </h3>
+            </div>
+            <div class="right">
                 <h2 class="hidden">
                     The problems with my current design
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     After building the mid-fidelity prototype, I used it to conduct a usability study, and from it, I gained many new findings about how to improve my designs:
-                    <ul class="description hidden">
-                        <li class="item">The two add buttons on the home screen caused confusing navigation for most users</li>
-    
-                        <li class="item">The lack of a mark all as done button creates inconvenience for users</li>
-                        
-                        <li class="item">Although the primary add button is large, it is not the most visible because it lacks contrast</li>
-                    </ul>
                 </p>
-            </section>
-            <section id="making-changes">
-                <h3 class="hidden">
-                    MAKING CHANGES
-                </h3>
+                <ul>
+                    <li class="first-item hidden">
+                        The two add buttons on the home screen caused confusing navigation for most users
+                    </li>
+                    <li class="hidden">
+                        The lack of a mark all as done button creates inconvenience for users
+                    </li>
+                    <li class="hidden">
+                        Although the primary add button is large, it is not the most visible because it lacks contrast
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>Making changes</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     Making improvements based on study results
                 </h2>
+                <hr width="100%" class="hidden">
                 <p class="hidden">
-                    <p class="description hidden">After conducting the usability study, I made some changes to my high-fidelity prototype!</p>
-                    <div class="change hidden">
-                        <div class="leftside">
-                            <p class="description bold">1. Navigation and User Flow</p>
-                            <p class="description">I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.</p>
-                        </div>
-                        <div class="changes">
-                            <img class="mockup " src="images/medtime-home-lo.png" title="Before Screen">
-                            <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/medtime-home-hi.png" title="After Screen">
-                        </div>
-                    </div>
-                    <div class="change flip hidden">
-                        <div class="rightside">
-                            <p class="bold description">2. Customization Options</p> 
-                            <p class="description">Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.</p>      
-                        </div>
-                        <div class="changes">
-                            <img class="mockup " src="images/medtime-search-lo.png" title="Before Screen">
-                            <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/customize.png" title="After Screen">
-                        </div>
-                    </div>
+                    After conducting the usability study, I made some changes to my high-fidelity prototype!
                 </p>
-            </section>
-
-            <section id="finalmockups">
-                <h3 class="hidden">
-                    FINAL PRODUCT
-                </h3>
+                <!-- <p class="hidden">
+                    New features:
+                </p> -->
+                <ul class="changes">
+                    <p class="hidden">
+                        <strong>Customization Options: </strong>Users wanted a functioning change appearance feature for the pills. Most users from my usability study believed that having this function was a crucial part of an effective medicine reminder app.
+                    </p>
+                    <div class="two-photos hidden">
+                        <div class="photo hidden">
+                            <img class="chart" src="images/medtime-search-lo.png" title="Before screen">
+                            <p class="caption">
+                                Before
+                            </p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/customize.png" title="Prototype">
+                            <p class="caption">
+                                After
+                            </p>
+                        </div>
+                    </div>
+                </ul>
+                <br>
+                <ul class="changes reverse">
+                    <p class="hidden">
+                        <strong>Navigation and User Flow: </strong>I decided to remove the two plus buttons and make the primary plus button have more color contrast with its surroundings. Additionally, I also included a new “All done” button that allows users to record their completion easily.
+                    </p>
+                    <div class="two-photos hidden">
+                        <div class="photo hidden">
+                            <img class="chart" src="images/medtime-home-lo.png" title="Before screen">
+                            <p class="caption">
+                                Before
+                            </p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/medtime-home-hi.png" title="Prototype">
+                            <p class="caption">
+                                After
+                            </p>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>Final product</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     The final high fidelity design
                 </h2>
-                <div class="final-mockups hidden">
-                    <img class="mockup-pic" src="images/medtime-home-hi.png" title="Mockup Screen">
-                    <img class="mockup-pic" src="images/search.png" title="Mockup Screen">
-                    <img class="mockup-pic" src="images/options.png" title="Mockup Screen">
-                    <img class="mockup-pic" src="images/selection.png" title="Mockup Screen">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    Here are the high fidelity screens we designed on Figma.
+                </p>
+                <br>
+                <div class="four-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/medtime-home-hi.png" title="Final Mockup">
+                        <p class="caption">
+                            Home/Dashboard
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/search.png" title="Final Mockup">
+                        <p class="caption">
+                            Search
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/options.png" title="Final Mockup">
+                        <p class="caption">
+                            Scheduling
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/selection.png" title="Final Mockup">
+                        <p class="caption">
+                            Customization
+                        </p>
+                    </div>
                 </div>
-                <a style="width:fit-content" class="button view-prototype hidden" href="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank"> View Hi-fi Prototype</a>
-
-            </section>
-            <section id="cross-platform">
-                <h3 class="hidden">
-                    CROSS-PLATFORM
-                </h3>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank">
+                   <p>View hi-fi prototype</p>
+               </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class=medtime>Cross Platform</h3>
+            </div>
+            <div class="right hidden">
                 <h2 class="hidden">
-                    And there's a website too!
+                    Users should be able to access this anywhere!
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     Now that I have created a dedicated mobile app for MedTime. It would be good to have a web version of it as well. The web version is a responsive web design that adapts to different screen sizes, making on-the-go reminders even easier to achieve.
                 </p>
-                <div class="web-mockups hidden">
-                    <img class="mockup-pic-2" src="images/ipad-medtime.png" title="Mockup on Tablet">
-                    <img class="mockup-pic-2" src="images/laptop-medtime.png" title="Mockup on Laptop">
+                <div class="two-photos landscape hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/ipad-medtime.png" title="Mockup on Tablet">
+                        <p class="caption">
+                            MedTime on Tablet
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/laptop-medtime.png" title="Mockup on Laptop">
+                        <p class="caption">
+                            MedTime on Desktop
+                        </p>
+                    </div>
                 </div>
-                <a style="width:fit-content" class="button view-prototype hidden" href="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?page-id=268%3A27160&type=design&node-id=332-3691&t=KwWR8yKwNw1llHiR-0&scaling=scale-down&starting-point-node-id=332%3A3691&show-proto-sidebar=1" target="_blank"> View Web Prototype</a>
-
-            </section>
-            <section id="style-guide">
-                <h3 class="hidden">
-                    FINAL PRODUCT
-                </h3>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>Final Product</h3></div>
+            <div class="right">
                 <h2 class="hidden">
-                    The Style Guide
+                    MedTime's Style Guide
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
                 </p>
-                <img class="design-system hidden" title="Style Guide" src="images/medtime-system.png">
-            </section>
-            <section id="accessibility">
-                <h3 class="hidden">
-                    ACCESSIBILITY
-                </h3>
+                <div id="style-guide" class="photo hidden">
+                    <img class="chart" src="images/medtime-system.png" title="Style Guide">
+                    <p class="caption hidden">
+                        Style guide sheet
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>Accessibility</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     Taking accessibility into consideration
                 </h2>
-                <div class="description hidden">
-                    <strong>1. High Contrast Color</strong> 
-                    <p>In my design, I included high contrast colors and bolded fonts for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.</p>  
-                </div>
-                <div class="description hidden">
-                    <strong>2. Navigation</strong> 
-                    <p>I placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks without navigation issues.</p>  
-                </div>
-            </section>
-
-            <section id="takeaways">
-                <h3 class="hidden">
-                    TAKEAWAYS
-                </h3>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    In my design, I included <strong>high contrast colors</strong> and <strong>bolded fonts</strong>  for emphasis and ease of viewing. This allows for people with vision impairments to still read the text with less effort.
+                    <br><br>
+                    I also placed all the necessary functions of the primary user flow on the main page of the app, which means all the necessary features are able to be found in one place, allowing users to complete most tasks <strong>without navigation issues</strong>.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class=medtime>Takeaways</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     What I learned from this
                 </h2>
-                <div class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     I learned that designing for laptop and tablet are quite similar experiences because of their similar proportions. However, I thought that mobile apps and mobile sites would basically be the same, but there were many different considerations I had to make to transform the app into a mobile website design.
-                </div>
-            </section>
-
-            <section id="next-up">
-                <p class="description hidden">
-                    <a href="https://alicemadesign.com/pega">
-                        <i style="color:black;display:block;" class="drop fa-solid fa-chevron-left scroll"></i> <strong>Previous: Pega</strong>
-                    </a>
-                    <a href="https://alicemadesign.com/cinema">
-                        <strong>Next: CineMa</strong> <i style="color:black;display:block;" class="drop fa-solid fa-chevron-right scroll"></i>
-                    </a>
                 </p>
-                <!-- <h2 class=" hidden">
-                    UP NEXT: CINEMA
-                </h2> -->
-                <!-- <div class="project reverse">
-                    <a class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
-                        <img class="phone" src="../images/cinema-phones.png">
-                    </a>
-                    <div class="text hidden">
-                        <p class="headline"> An easier way to purchase movie tickets. </p>
-                        <p class="message"> A mobile ticketing apps that streamlines the ticket purchasing and scanning process. </p>
-                        <a class="read-more button view-prototype" href="https://alicemadesign.com/cinema"> Read case study →</a>
-                    </div> 
-                </div> -->
-            </section>
+            </div>
         </div>
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Happy Holidays! -Alice</p>
+                    <img class="memoji" src = "images/christmas-memoji.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+        <!-- <hr> -->
+        <p id="copyright">© 2024 Alice Ma</p>
+    </footer>
+</body>
+<style>
+    ::-moz-selection { /* Code for Firefox */
+        background: #0a4c5bbc;
+    }
+    ::selection {
+        background: #0a4c5bbc;
+    }
+</style>
+<script>
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        document.querySelector(".name").classList.remove("name-gone");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".mobile-nav").classList.toggle("fa-chevron-right");
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
         
-        <div class="footer">
-            <p>©2023 Designed and Coded by Alice Ma.</p>
-        </div>
-    </body>
-    <script src="js/slide.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/headerslide.js"></script>
+        contents = document.querySelector(".dropdown-content");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").classList.add("name-gone");
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").classList.remove("name-gone");
+    };
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+</script>
+<script src="js/slide.js"></script>
+<script src="js/header-bar.js"></script>
 </html>

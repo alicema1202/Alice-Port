@@ -8,7 +8,6 @@ html {
     margin: auto;
     margin: 0 16px 0 16px;
     /* background-color: #356f39; */
-    background: linear-gradient(307deg, #194b24 6.14%, #3b8b4b 98.68%);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -18,6 +17,12 @@ html {
     font-family: "SF Pro", sans-serif;
     gap: 4vh;
     padding-top: 64px;
+}
+.hero.cooklaborate {
+    background: linear-gradient(307deg, #194b24 6.14%, #3b8b4b 98.68%);
+}
+.hero.medtime {
+    background: linear-gradient(307deg, #118099 6.14%, #1597b4 98.68%);
 }
 .hero img {
     /* width: 50%; */
@@ -70,7 +75,7 @@ html {
     padding-top: 64px;
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 80px;
 }
 .text-box {
     display: flex;
@@ -87,6 +92,9 @@ html {
     line-height: 20px;
     font-weight: 500;
     opacity: 1;
+}
+.text-box .medtime {
+    color: #1eb8db;
 }
 .right {
     display: flex;
@@ -119,7 +127,7 @@ h2 {
     margin-top: 0;
     margin-bottom: 8px;
     letter-spacing: 0.3px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .right p {
     margin-top: 12px;
@@ -134,20 +142,30 @@ h2 {
     font-family: "Instrument Serif", serif;
     font-weight: 100;
     font-style: italic;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .first-item {
     margin-top: 0;
 }
-.two-photos, .three-photos, .five-photos {
+#style-guide {
+    display: flex;
+    margin: auto;
+    max-width: 500px;
+    flex-direction: column;
+}
+.two-photos, .three-photos, .four-photos, .five-photos {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
     column-gap: 32px;
     row-gap: 32px;
+    align-items: end;
 }
 .three-photos {
     grid-template-columns: 1fr 1fr 1fr;
+}
+.four-photos {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .five-photos {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -155,12 +173,12 @@ h2 {
 }
 .chart {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 .caption {
     font-size: 16px!important;
     line-height: normal!important;
-    width: 100%;
+    width: 100%!important;
     text-align: center;
 }
 .button {
@@ -178,7 +196,91 @@ h2 {
     color: white;
     margin-top: 0;
 }
+.bio {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+/* PERSONA */
+.basic-info {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+}
+.persona-pic {
+    width: 100px;
+}
+ol {
+    width: fit-content;
+    padding-left: 0;
+    margin-top: 1rem!important;
+    margin-right: 0!important;
 
+}
+ol .item{
+    width: calc(100% - 32px);
+    text-align: left;
+    min-width: 0;
+}
+.item {
+    margin-left: 32px;
+}
+@media (min-width:900px) {
+    .persona-card {
+        display: flex;
+        width: 100%;
+        gap: 3rem;
+        margin-bottom: 0;
+    }
+    .bio, .information {
+        width: 50%;
+    }
+    .bottom {  
+        margin-bottom: 0!important;
+    }
+    .item{
+        width: calc(100% - 32px);
+        text-align: left;
+        min-width: 0;
+    }
+}
+/* PHOTOS */
+.changes {
+    display: flex;
+    column-gap: 64px;
+    justify-content: center;
+    /* justify-items: center; */
+    /* align-items: center; */
+}
+.changes {
+    margin-left: 0;
+    padding-left: 0;
+}
+.changes .two-photos {
+    margin-top: 12px;
+}
+.changes p {
+    width: 100%;
+}
+@media only screen and (max-width: 900px) {
+    .changes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .changes p {
+        width: 100%;
+    }
+    /* .changes .two-photos {
+        min-width: 50%;
+        max-width: 400px;
+    } */
+    .four-photos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 @media only screen and (max-width: 900px) {
     .hero {
         height: calc(100vh - 100px - 16px);
@@ -247,6 +349,9 @@ h2 {
     }
     .five-photos {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .landscape {
+        grid-template-columns: 1fr;
     }
 }
 @media only screen and (max-width: 600px) {

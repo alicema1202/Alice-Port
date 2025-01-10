@@ -1,511 +1,184 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CineMa: Mobile Theater Tickets — Alice Ma</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/header-case-studies.css" rel="stylesheet"> 
-        <link href="css/animation.css" rel="stylesheet">
-        <link href="css/headerforCS.css" rel="stylesheet">
-        <link href="css/content.css" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMa — Alice Ma</title>
 
-        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/case-study.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
 
-        <meta name="msapplication-TileImage" content="images/CINEMA-THUMBNAIL.png">
-        <meta property="og:image" itemprop="image" content="images/CINEMA-THUMBNAIL.png">
-        
-        <meta property="og:type" content="website" />
-        <meta property="og:image:type" content="image/png">
-        
-        <meta property="og:image:width" content="300">
-        <meta property="og:image:height" content="201">
-        
-        <meta property="og:url" content="https://alicemadesign.com/cinema">
-        <meta property="og:description" content="CineMa is a mobile ticketing app that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.">
-
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
-        <!-- <link rel="shortcut icon" type="x-icon" href="images/cinema-logo-icon.png"> -->
-        <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
-
-    </head>
-    <!-- <style>
-        body {
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            right: 0;
-            margin-right: 0;
-            margin-left: 0;
-        }
-    </style> -->
-    <body onscroll="appear()">
-        <a onclick="scrollWin()" class="back-to-top hide" >
-            <i class="fa-solid fa-chevron-up"></i>
-        </a>
-        <script>
-            function scrollWin() {
-                window.scrollTo(0, 0);
-            }
-            function appear() {
-                document.querySelector(".back-to-top").classList.remove('hide');
-            }
-            window.addEventListener("scroll", function(){
-                if(window.scrollY==0){
-                    document.querySelector(".back-to-top").classList.add('hide');
-                }
-            });
-        </script>
-        <style>
-            .hide {
-                opacity: 0;
-                cursor: default!important;
-            }
-            h3 {
-                font-size: 1.2ch;
-                color: #9e3435;
-                font-weight: 700;
-                letter-spacing: 0.3ch;
-            }
-            html {
-                scroll-behavior: smooth;
-            }
-            .back-to-top {
-                cursor: pointer;
-                transition: opacity 0.3s;
-                /* opacity: 0; */
-                z-index: 1000;
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                background-color: #c13739;
-                margin: 2rem;
-                margin-right: calc(2rem + 10px);
-                height: 4rem;
-                width: 4rem;
-                border-radius: 50%;
-                transition: 0.3s;
-                background-color: rgba(169, 169, 169, 0.564);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-            }
-            .back-to-top:hover {
-                margin-bottom: 2.4rem;
-                background-color: rgba(122, 122, 122, 0.644);
-                transition: 0.3s;
-            }
-            .fa-solid {
-                color: white;
-            }
-
-            .project {
-                width: fit-content;
-                margin: auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                /* background-color: blue; */
-                column-gap: 90px;
-                margin-top: 40px;
-                margin-bottom: 50px;
-                transition: transform 0.3s;
-            }
+</head>
+<body>
+    <header class="header-bar" style="animation: none;position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
             
-            /* .reverse {
-                flex-direction: row-reverse;
-            } */
-            .v3 {
-                width: calc(54vw - 570px);
-                height: 410px;
-                background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: transform 0.3s;
-            }
-            .cinema {
-                background: conic-gradient(from 104deg at 63.21% 57.38%, #A35050 0deg, #762121 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
-            }
-            .unio {
-                background: conic-gradient(from -58deg at 49.92% 54.66%, #9761DE 0deg, #53357B 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
-            }
-            .v3:hover {
-                transform: translateY(-10px);
-                transition: transform 0.3s;
-            }
-            .phone {
-                width: 279px;
-                height: 100%;
-                object-fit:contain;
-                margin: auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            p, .read-more{
-                color: #363636;
-                font-family: lexend, Arial, Helvetica, sans-serif;
-                margin: 0;
-            }
-            .text {
-                width: 480px;
-                /* background-color: purple; */
-                display: flex;
-                flex-direction: column;
-                align-items: left;
-                justify-content: center;
-                row-gap: 24px;
-            }
-            .app-name {
-                font-size: 14px;
-                /* font-weight: 300; */
-                letter-spacing: 1px;
-                color: #363636;
-                /* background-color: pink; */
-            }
-            .headline {
-                font-size: 38.3px;
-                font-weight: 700;
-                /* background-color: orange; */
-            }
-            .message {
-                font-size: 16.15px;
-                /* background-color: purple */
-                line-height: 30px;
-                font-weight: 400;
-            }
-            @media only screen and (min-width: 2000px) {
-                .message {
-                    font-size: 26.2496px;
-                }
-                .headline {
-                    font-size: 56.4366px;
-                    font-weight: 700;
-                    /* background-color: orange; */
-                }
-            }
-            @media only screen and (min-width: 2500px) {
-                .message {
-                    font-size: 20.192px;
-                }
-                .headline {
-                    font-size: 43.4128px;
-                    font-weight: 700;
-                    /* background-color: orange; */
-                }
-            }
-            .read-more {
-                text-decoration: none;
-                /*padding: 10px 20px;
-                border: solid 1px #363636;
-                border-radius: 8px;
-                width:fit-content;
-                transition: 0.3s; */
-            }
-            .read-more:hover {
-                /* background-color: #363636;
-                color: #fefefe;
-                transition: 0.3s; */
-                background-color: #3e3190;
-                border-color: #3e3190;
-            }
-            @media only screen and (max-width: 1700px) {
-                .v3 {
-                    width: 500px;
-                }
-                .text {
-                    width: fit-content;
-                }
-                .phone {
-                    width: 230px;
-                }
-            }
-            @media only screen and (max-width: 1300px) {
-                .project {
-                    flex-direction: column;
-                    row-gap: 50px;
-                }
-                
-            }
-            
-            @media only screen and (max-width: 1300px) {
-                .v3, .text {
-                    width: 54vw;
-                }
-            }
-            @media only screen and (max-width: 700px) {
-                .v3, .text {
-                    width: 74vw;
-                }
-            }
-            @media only screen and (min-width: 2000px) {
-                .project {
-                    max-width: 1300px;
-                    padding-left: 0;
-                    padding-right: 0;
-                    margin: 0;
-                    margin-top: 60px;
-                }
-                .v3 {
-                    width: 630px;
-                }
-                .text {
-                    width: 580px;
-                }
-            }
-            @media only screen and (max-width: 700px) {
-                .headline {
-                    font-size: 30.288px;
-                }
-            }
-            #next-up .button {
-                margin:0;
-                margin-bottom: 0;
-                width: fit-content;
-            }
-            #next-up h3 {
-                color: #5a4bb7;
-                border-top: 1px solid #B8B8B8;
-                padding-top: 20px;
-            }
-            .WORKS-container .scroll {
-                font-size: 14px;
-                margin-right: 0;
-                color: black;
-                transform: scaleY(1);
-                transition: transform 0.3s;
-            }
-            .WORKS-container {
-                display: flex;
-                gap: 8px;
-                /* border: 1px white solid; */
-                justify-content: center;
-                align-items: center;
-            }
-            .dropdown:hover .scroll {
-                transform: scaleY(-1);
-                transition: transform 0.3s;
-            }
-        </style>
-        <header class="remove header-bar">
-            <header class="inside">
-                <div class="left-section">
-                    <a href="https://alicemadesign.com" class="logo-container logo">
-                        Alice Ma
-                    </a>
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="hamburger">
-                    <div class="line one"></div>
-                    <div class="line two"></div>
-                    <div class="line three"></div>
-                </div>
-                <style>
-                    .header-bar {
-                        font-family: lexend, Arial, Helvetica, sans-serif;
-                        font-weight: 400;
-                    }
-                    .button, .brief-desc,.content,.description, .footer {
-                        font-family: lexend, Arial, Helvetica, sans-serif;
-                    }
-                    .brief-desc {
-                        font-size: 0.9em;
-                    }
-                    .button {
-                        font-weight: 500;
-                    }
-                    .description {
-                        letter-spacing: normal;
-                    }
-                    h2 {
-                        font-weight: 700;
-                    }
-                    h3 {
-                        font-weight: 600;
-                    }
-                    .drop-button {
-                        color: black;
-                    }
-                    .header-bar {
-                        display: flex;
-                        justify-content: center;
-                        /* padding-right:0;
-                        padding-left: 0;  */
-                        width: 100vw;
-                    }
-                    .inside {
-                        display: flex;
-                        width: 100%;
-                        max-width: 1090px;
-                    }
-                    @media screen and (min-width: 1700px) {
-                        .inside {
-                            width: 1190px;
-                            max-width: none;
-                        }
-                    }
-                    .right-btn {
-                        margin-right: 4rem;
-                        margin-right: 0;
-                    }
-                    .logo {
-                        margin-left: 4rem;
-                        margin-left: 0;
-                    }
-                </style>
-                <nav class="nav-bar">
-                    <ul>
-                        <li class="dropdown left">
-                            <div class="hover-underline-animation drop-button">
-                                <p class="WORKS-container" onclick="goToWorks()">
-                                    Work <i class="drop fa-solid fa-chevron-down scroll"></i>
-                                </p>
-                                <b class="dropdown-content removepad">
-                                    <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
-                                    <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
-                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
-                                </b>
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
-                        </li>
-        
-                        <!-- <li>
-                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
-                        </li> -->
-                            
-                        <li>
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
-                        </li>
-
-                        <li class="right-btn">
-                            <a class="hover-underline-animation" href="https://alicemadesign.com/resume">Resume</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </header>
-        <script>
-            // function myFunction(x) {
-            //     if (x.matches) { // If media query matches
-            //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
-
-            //     } else {
-            //         document.body.style.backgroundColor = "pink";
-            //     }
-            // }
-
-            // var x = window.matchMedia("(max-width: 900px)")
-            // myFunction(x) // Call listener function at run time
-            // x.addListener(myFunction) // Attach listener function on state changes
-            
-        //     works = document.querySelector(".nav-bar li");
-        //    arrow = document.querySelector(".drop");
-        //     works.onmouseover = function() {
-        //         arrow.classList.toggle("fa-chevron-down");
-        //         arrow.classList.toggle("fa-chevron-up");
-        //     }
-        //     works.onmouseout = function() {
-        //         arrow.classList.toggle("fa-chevron-down");
-        //         arrow.classList.toggle("fa-chevron-up");
-        //     }
-            function goToWorks() {
-                document.getElementById("works").scrollIntoView();
-            }
-            hamburger = document.querySelector(".hamburger");
-            hamburger.onclick = function() {
-                navBar = document.querySelector(".nav-bar");
-                hamburger = document.querySelector(".hamburger");
-                navBar.classList.toggle("active");
-                navBar.classList.toggle("black");
-                hamburger.classList.toggle("active");
-                works = document.querySelector(".dropdown");
-                works.classList.toggle("left");
-                droplist = document.querySelector(".nav-bar ul .dropdown");
-                droplist.classList.toggle("margins");
-                button = document.querySelector(".drop-button");
-                button.classList.toggle("hover-underline-animation")
-                contents = document.querySelector(".dropdown-content");
-                // contents.classList.toggle("removepad");
-            }
-        </script>
-        
-        <div class="cover">
-            <div>
-                <div class="cover-photo" title="CineMa Banner">
             </div>
-            <div class="brief-desc">
-                <div class="desc"><strong>PROJECT:</strong> CineMa, a mobile ticketing app</div>
-                <div class="desc"><strong>ROLE:</strong> UX Designer + Researcher</div>
-                <div class="desc"><strong>TIMELINE:</strong> June 2022</div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <!-- <script>
+        var prevScrollpos = window.pageYOffset;
+        
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector(".header-bar");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;               
+            /* if we're scrolling up, or we haven't passed the header,
+                show the header at the top */
+        if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+                headerDiv.style.top = "0";
+            }
+            else if (document.querySelector(".nav-content").classList.contains('active') == false){
+                /* otherwise we're scrolling down & have passed the header so hide it */
+                headerDiv.style.top = "-200px";
+            } 
+
+            prevScrollpos = currentScrollPos;
+        }
+        var st = $(this).scrollTop();
+    
+    
+    </script> -->
+    <section class="cinema hero">
+        <img class="logo hidden" src="../images/cinema-logo.svg"></svg>
+        <img class="hidden" src="../images/cinema-phones.png">
+        <div class="description hidden">
+            <div class="section">
+                <strong>purpose</strong>
+                <p>Designing a convenient and easy way to purchase movie tickets</p>
+            </div>
+            <div class="section">
+                <strong>my role</strong>
+                <p>UX Design, UX Research, Visual Design</p>
+            </div>
+            <div class="section" style="width: min-content;">
+                <strong>Duration</strong>
+                <p style="width: 110px;">June 2022</p>
             </div>
         </div>
-       
-        <div class="content">
-            <section id="problem">
-                <h3 class="hidden">
-                    PROJECT OVERVIEW
-                </h3>
+        <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
+    </section>
+    <section id="content" class="content">
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">overview</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     An easier way to purchase and scan movie tickets
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
                 </p>
-            </section>
-
-            <section id="competitive-audit">
-                <h3 class="hidden">
-                    USABILITY STUDIES
+            </div>
+        </div>
+        
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class="cinema">
+                    understanding users
                 </h3>
-                <h2 class="hidden">
-                    No language options or bundled ticket scanning
-                </h2>
-                <p class="description hidden">
-                    I conducted <strong>two unmoderated usability studies</strong> throughout my design process to identify user pain points. Through my research of patterns from study participants, it became evident that these pain points included: lack of language options and bundled ticket scans.
-                </p>
-            </section>
-            <section id="persona">
-                <h3 class="hidden">
-                    UNDERSTANDING USERS
-                </h3>
+            </div>
+            <div class="right">
                 <h2 class="hidden">
                     Looking at the needs of the users
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
                 </p>
-                <!-- <img class="persona hidden" title="Zhao's Persona" src="images/zhaopersona.png"> -->
+                <br>
                 <div class="persona-card">
-                    <div class="bio">
-                        <div class="hidden basic-info">
+                    <div class="bio hidden">
+                        <div class="basic-info">
                             <img class="persona-pic" src="images/woman-light.png">
                             <div class="name-age">
-                                <p class="title">Zhao</p>
+                                <h4 class="title">Zhao</h4>
                                 <p class="age">42 / Female</p>
                             </div>
                         </div>
                         <p class="hidden about description">
                             Zhao is from China, and she recently moved to the US with her husband and two children. Zhao and her family speak very limited English, but they enjoy going to the movie theaters for family day.
                         </p>
+                        <br>
                     </div>
                     <div class="information">
                         <div class="hidden goals">
-                            <p class="title">Zhao's Goals</p>
+                            <h4 class="title">Zhao's Goals</h4>
                             <ol class="description">
                                 <li class="item">
                                     <p>Buy multiple tickets for her family easily</p>
@@ -519,7 +192,7 @@
                             </ol>
                         </div>
                         <div class="hidden pain-points">
-                            <p class="title">Zhao's Pain Points</p>
+                            <h4 class="title">Zhao's Pain Points</h4>
                             <ol class="description bottom">
                                 <li class="item">
                                     <p>Zhao cannot communicate to workers at the theater due to limited English</p>
@@ -531,189 +204,310 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section id="ideation">
-                <h3 class="hidden">
-                    IDEATION
-                </h3>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">Ideation</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     From paper to prototype
                 </h2>
-                <p class="description hidden">
-                    To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms.
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms. 
                 </p>
-                <img class="paper-drawing hidden" src="images/cinema-paper.jpg" title="Paper Wireframes">
-                <p class="description hidden">
+                <div class="photo hidden">
+                    <img class="chart" src="images/cinema-paper.jpg" title="Paper wireframes">
+                    <p class="caption hidden">
+                        Paper wireframes showing multiple iterations of the home screen
+                    </p>
+                </div>
+                <br>
+                <p class="hidden">
                     After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
                 </p>
-                <img class="paper-drawing hidden" src="images/cinema-lofi.png" title="Low Fidelity Prototype">
-                <form action="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank" >
-                    <button class="button view-prototype hidden">
-                        View Lo-fi Prototype
-                    </button>
-                </form>
-            </section>
-            <section id="user-testing">
-                <h3 class="hidden">
-                    USER TESTING
+                <div class="photo hidden">
+                    <img class="chart" src="images/cinema-lofi.png" title="Lofi wireframes">
+                    <p class="caption hidden">
+                        Low-fidelity screens of the main user flow
+                    </p>
+                </div>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank">
+                    <p>View mid-fi prototype</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class="cinema">
+                    User Testing
                 </h3>
+            </div>
+            <div class="right">
                 <h2 class="hidden">
                     The problems with my current design
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
-                    <ul class="description hidden">
-                        <li class="item">Lacked language options</li>
-
-                        <li class="item">Users need to be able to review their ticket order</li>
-                    
-                        <li class="item">There should be the option of bundle scanning</li>
-                    </ul>
                 </p>
-                <p class="description hidden">
+                <ul>
+                    <li class="first-item hidden">
+                        Lacked language options
+                    </li>
+                    <li class="hidden">
+                        Users need to be able to review their ticket order
+                    </li>
+                    <li class="hidden">
+                        There should be the option of bundle scanning
+                    </li>
+                </ul>
+                <p class="hidden">
                     Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
                 </p>
-                <ul class="description hidden">
-                    <li class="item">The user flow was missing a seat selection feature</li>
-                    
-                    <li class="item">Some gesture and touch options were not working</li>
-                    
-                    <li class="item">Movie titles should be includes in the tickets</li>
+                <ul>
+                    <li class="first-item hidden">
+                        The user flow was missing a seat selection feature
+                    </li>
+                    <li class="hidden">
+                        Some gesture and touch options were not working
+                    </li>
+                    <li class="hidden">
+                        Movie titles should be includes in the tickets
+                    </li>
                 </ul>
-            </section>
-            <section id="making-changes">
-                <h3 class="hidden">
-                    MAKING CHANGES
-                </h3>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">Making changes</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     Making improvements based on study results
                 </h2>
+                <hr width="100%" class="hidden">
                 <p class="hidden">
-                    <p class="description hidden">
-                        After conducting both usability studies, I made some changes to my high-fidelity prototype!
-                    </p>
-                    <div class="change hidden">
-                        <div class="leftside">
-                            <p class="description bold">
-                                1. Seat Selection
-                            </p>
-                            <p class="description">
-                                Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
-                            </p>
-                        </div>
-                        <div class="changes">
-                            <img class="mockup " src="images/Movie Info.png" title="Before">
-                            <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/cinema-seats.png" title="After">
-                        </div>
-                    </div>
-                    <div class="change flip hidden">
-                        <div class="rightside">
-                            <p class="bold description">2. Language Options</p> 
-                            <p class="description">Adding language options is a must to improve accessibility for many users whose preferred language is not English.</p>      
-                        </div>
-                        <div class="changes">
-                            <img class="mockup " src="images/homelow.png" title="Before">
-                            <div class="arrow ">&#8594</div>
-                            <img class="mockup " src="images/Select English (1).png" title="After">
-                        </div>
-                    </div>
+                    After conducting the usability study, I made some changes to my high-fidelity prototype!
                 </p>
-            </section>
-            <section id="finalmockups">
-                <h3 class="hidden">
-                    FINAL PRODUCT
-                </h3>
+                <!-- <p class="hidden">
+                    New features:
+                </p> -->
+                <ul class="changes">
+                    <p class="hidden">
+                        <strong>Seat Selection: </strong>  Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
+
+                    </p>
+                    <div class="two-photos hidden">
+                        <div class="photo hidden">
+                            <img class="chart" src="images/Movie Info.png" title="Before screen">
+                            <p class="caption">
+                                Before
+                            </p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/cinema-seats.png" title="Prototype">
+                            <p class="caption">
+                                After
+                            </p>
+                        </div>
+                    </div>
+                </ul>
+                <br>
+                <ul class="changes reverse">
+                    <p class="hidden">
+                        <strong>Language Options: </strong>Adding language options is a must to improve accessibility for many users whose preferred language is not English.
+                    </p>
+                    <div class="two-photos hidden">
+                        <div class="photo hidden">
+                            <img class="chart" src="images/homelow.png" title="Before screen">
+                            <p class="caption">
+                                Before
+                            </p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/Select English (1).png" title="Prototype">
+                            <p class="caption">
+                                After
+                            </p>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">Final product</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     The final high fidelity design
                 </h2>
-                <div class="final-mockups hidden">
-                    <img class="mockup-pic" src="images/my-tickets.png" title="Final Mockups">
-                    <img class="mockup-pic" src="images/Select English (1).png" title="Final Mockups">
-                    <img class="mockup-pic" src="images/heyyy.png" title="Final Mockups">
-                    <img class="mockup-pic" src="images/cinema-seats.png" title="Final Mockups">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    Here are the high fidelity screens we designed on Figma.
+                </p>
+                <br>
+                <div class="four-photos hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/Select English (1).png" title="Final Mockup">
+                        <p class="caption">
+                            Language selection
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/Home Page (6).png" title="Final Mockup">
+                        <p class="caption">
+                            Home
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/heyyy.png" title="Final Mockup">
+                        <p class="caption">
+                            Scheduling
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/cinema-seats.png" title="Final Mockup">
+                        <p class="caption">
+                            Seat selection
+                        </p>
+                    </div>
                 </div>
-                <form action="https://bit.ly/3PJw5sB" target="_blank" >
-                    <button class="button view-prototype hidden">
-                        View Hi-fi Prototype
-                    </button>
-                </form>
-            </section>
-            <section id="style-guide">
-                <h3 class="hidden">
-                    FINAL PRODUCT
-                </h3>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank">
+                   <p>View hi-fi prototype</p>
+               </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">Final Product</h3></div>
+            <div class="right">
                 <h2 class="hidden">
-                    The Style Guide
+                    CineMa's Style Guide
                 </h2>
-                <p class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
                 </p>
-                <img class="design-system hidden" title="Style Guide" src="images/cinema-design-system.png">
-            </section>
-            <section id="accessibility">
-                <h3 class="hidden">
-                    ACCESSIBILITY
-                </h3>
+                <div id="style-guide" class="photo hidden">
+                    <img class="chart" src="images/cinema-design-system.png" title="Style Guide">
+                    <p class="caption hidden">
+                        Style guide sheet
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">Accessibility</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     Taking accessibility into consideration
                 </h2>
-                <div class="description hidden">
-                    <strong>1. Language Options</strong> 
-                    <p>The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.</p>  
-                </div>
-                <div class="description hidden">
-                    <strong>2. Contrasting Colors</strong> 
-                    <p>With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.</p>  
-                </div>
-                <div class="description hidden">
-                    <strong>3. Labels</strong> 
-                    <p>I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.</p>  
-                </div>
-            </section>
-
-            <section id="takeaways">
-                <h3 class="hidden">
-                    TAKEAWAYS
-                </h3>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.
+                    <br><br>
+                    With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.
+                    <br><br>
+                    I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="cinema">Takeaways</h3></div>
+            <div class="right">
                 <h2 class="hidden">
                     What I learned from this
                 </h2>
-                <div class="description hidden">
+                <hr width="100%" class="hidden">
+                <p class="hidden">
                     I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
-                </div>
-            </section>
-            <section id="next-up">
-                <p class="description hidden">
-                    <a href="https://alicemadesign.com/medtime">
-                        <i style="color:black;display:block;" class="drop fa-solid fa-chevron-left scroll"></i> <strong>Previous: MedTime</strong>
-                    </a>
-                    <a href="https://alicemadesign.com/unio">
-                        <strong>Next: UniO</strong> <i style="color:black;display:block;" class="drop fa-solid fa-chevron-right scroll"></i>
-                    </a>
                 </p>
-            </section>
-            
+            </div>
         </div>
-        
-        <div class="footer">
-            <p>©2023 Designed and Coded by Alice Ma.</p>
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Happy Holidays! -Alice</p>
+                    <img class="memoji" src = "images/christmas-memoji.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
         </div>
-    
+        <!-- <hr> -->
+        <p id="copyright">© 2024 Alice Ma</p>
+    </footer>
 </body>
+<style>
+    ::-moz-selection { /* Code for Firefox */
+        background: #762121a8;
+    }
+    ::selection {
+        background: #762121a8;
+    }
+    .text-box .cinema {
+        background: none;
+        color: #cf5858;
+    }
+    .photo img{
+        border: 2px solid rgba(255, 255, 255, 0.226); 
+    }
+</style>
+<script>
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        document.querySelector(".name").classList.remove("name-gone");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".mobile-nav").classList.toggle("fa-chevron-right");
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        
+        contents = document.querySelector(".dropdown-content");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").classList.add("name-gone");
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").classList.remove("name-gone");
+    };
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+</script>
 <script src="js/slide.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="js/headerslide.js"></script>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/simplebar@6.2.5/dist/simplebar.css"
-/>
-<script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
-<!-- or -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
-
+<script src="js/header-bar.js"></script>
 </html>
