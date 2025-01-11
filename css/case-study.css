@@ -154,13 +154,14 @@ h2 {
     max-width: 500px;
     flex-direction: column;
 }
+
 .two-photos, .three-photos, .four-photos, .five-photos {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
     column-gap: 32px;
     row-gap: 32px;
-    align-items: end;
+    /* align-items: end; */
 }
 .three-photos {
     grid-template-columns: 1fr 1fr 1fr;
@@ -281,6 +282,7 @@ ol .item{
     .four-photos {
         grid-template-columns: 1fr 1fr;
     }
+    
 }
 @media only screen and (max-width: 900px) {
     .hero {
@@ -351,9 +353,7 @@ ol .item{
     .five-photos {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .landscape {
-        grid-template-columns: 1fr;
-    }
+    
 }
 @media only screen and (max-width: 600px) {
     .three-photos {
@@ -361,5 +361,8 @@ ol .item{
     }
     .five-photos {
         grid-template-columns: 1fr 1fr;
+    }
+    .landscape {
+        grid-template-columns: 1fr;
     }
 }
