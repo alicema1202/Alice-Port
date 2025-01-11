@@ -367,7 +367,7 @@
             </nav>
         </div>
         <!-- <hr> -->
-        <p id="copyright">© 2024 Alice Ma</p>
+        <p id="copyright">© 2025 Alice Ma</p>
     </footer>
 </body>
 
@@ -433,7 +433,34 @@
     window.addEventListener('load', () => {
             document.querySelector('.menu-icon__cheeckbox').checked = false;
     });
-    
+
+
+    // Check if the page has been visited in this session
+    const isVisited = sessionStorage.getItem('page_visited');
+
+    // Get the content element
+    const header = document.querySelector('.header-bar');
+    const loadingDots = document.querySelector('#loadingDots');
+    const hero = document.querySelector('.hero-text');
+    const text = document.querySelector('#hi-im-alice');
+    const uxdesigner = document.querySelector('.hero-container h1');
+    const description = document.querySelector('.hero-container h2');
+
+    if (!isVisited) {
+      // First time in this session: Add animation class
+    //   content.classList.add('animate');
+    //   content.classList.remove('hidden');
+      // Set the flag in sessionStorage
+      sessionStorage.setItem('page_visited', 'true');
+    } else {
+        hero.classList.add('hidden');
+        text.style = "animation:none;opacity:1;top:0;left:0;";
+        header.style = "animation:none;opacity:1;";
+        uxdesigner.style = "animation:none;opacity:1;";
+        description.style = "animation:none;opacity:1;";
+        loadingDots.style = "display:none!important";
+
+    }
 </script>
 <script src="js/slide.js"></script>
 <script src="js/header-bar.js"></script>
