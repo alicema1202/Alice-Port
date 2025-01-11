@@ -30,6 +30,7 @@ html {
     max-width: 600px;
 }
 .hero .logo {
+    position: relative;
     height: auto;
     width: 20%;
     max-height: 50px;

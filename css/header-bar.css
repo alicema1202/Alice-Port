@@ -10,7 +10,12 @@ body {
     width: calc(100vw - 70px);
     transition: top 0.8s;
     /* top: -150px; */
-    animation: slide-down 1s ease-in-out 2.7s 1 both;
+    animation: slide-down 1s ease-in-out 1 forwards;
+}
+.delay {
+    transform: translateY(-100px);
+    animation: slide-down 1s ease-in-out 2.7s 1 forwards;
+
 }
 /* .animate {
     animation: slide-down 0.8s ease-in-out 0s 1 both;
@@ -20,7 +25,7 @@ body {
 }
 @keyframes slide-down {
     0% {
-        transform: translateY(-200px);
+        transform: translateY(-100px);
     }
     100% {
         transform: translateY(0);
@@ -355,7 +360,7 @@ header {
 .logo {
     color: black;
     font-family: 'DM Serif Text', Serif!important;
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
     font-style: italic;
     transform-origin: bottom;
 }
