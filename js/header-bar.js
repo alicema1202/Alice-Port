@@ -1,4 +1,4 @@
-document.querySelector(".header-bar").classList.add('animate');
+// document.querySelector(".header-bar").classList.add('animate');
 var prevScrollpos = window.pageYOffset;
         
         /* Get the header element and it's position */

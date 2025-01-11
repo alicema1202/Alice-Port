@@ -12,10 +12,9 @@ body {
     /* top: -150px; */
     animation: slide-down 1s ease-in-out 2.7s 1 both;
 }
-.animate {
-    /* top: -150px; */
+/* .animate {
     animation: slide-down 0.8s ease-in-out 0s 1 both;
-}
+} */
 .nav-up {
     top: -200px;
 }
