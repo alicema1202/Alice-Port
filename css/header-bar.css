@@ -376,7 +376,7 @@ header {
         line-height: 20px;
         line-height: 17px;
         margin-top: -13px;
-        transform: scale(1.2);
+        /* transform: scale(1.2); */
         transform-origin: center;
     }
 }
