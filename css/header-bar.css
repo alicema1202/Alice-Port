@@ -10,6 +10,7 @@ body {
     width: calc(100vw - 70px);
     transition: top 0.8s;
     /* top: -150px; */
+    top: 0;
     animation: slide-down 1s ease-in-out 1 forwards;
 }
 .delay {

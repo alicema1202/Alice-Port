@@ -20,7 +20,7 @@ else if (prevScrollpos > currentScrollPos) {
 else if (currentScrollPos <  200) {
     headerDiv.style.top = "0";
     // headerDiv.style.opacity = "0";
-    // headerDiv.classList.add("midpage");
+    headerDiv.classList.add("midpage");
     document.querySelector(".back-to-top").classList.add('hide');
 }
 else if (document.querySelector(".nav-content").classList.contains('active') == false){
