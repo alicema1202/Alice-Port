@@ -38,6 +38,15 @@ html {
     max-width: 500px;
     min-width: 250px;
 }
+.pega img {
+    /* max-height: 400px; */
+    object-fit: contain;
+    height: 50%;
+    width: 55%;
+    max-width: auto;
+    height: 50%; 
+    mix-blend-mode: lighten;
+}
 .hero strong, .text-box h3 {
     font-size: 14px;
     text-transform: uppercase;
@@ -97,6 +106,13 @@ html {
 }
 .text-box .medtime {
     color: #1eb8db;
+}
+.text-box .eCW {
+    color: #4087b3;
+}
+.text-box .pega {
+    color: #5950bd;
+    background: none;
 }
 .right {
     display: flex;
@@ -304,9 +320,12 @@ ol .item{
         max-width: 500px;
         height: auto;
     }
+    .pega img {
+        height:fit-content;
+    }
     .hero .logo {
         height: auto;
-        width: 60%;
+        width: 50%;
         max-width: 90%;
         min-width: 0;
     }

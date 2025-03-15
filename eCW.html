@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eClinicalWorks — Alice Ma</title>
+
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/case-study.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
+
+</head>
+<body>
+    <a onclick="scrollWin()" class="back-to-top hide" >
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <header class="header-bar" style="position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <a class="list-item" href="https://alicemadesign.com/unio">UniO</a> 
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <!-- <script>
+        var prevScrollpos = window.pageYOffset;
+        
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector(".header-bar");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;               
+            /* if we're scrolling up, or we haven't passed the header,
+                show the header at the top */
+        if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+                headerDiv.style.top = "0";
+            }
+            else if (document.querySelector(".nav-content").classList.contains('active') == false){
+                /* otherwise we're scrolling down & have passed the header so hide it */
+                headerDiv.style.top = "-200px";
+            } 
+
+            prevScrollpos = currentScrollPos;
+        }
+        var st = $(this).scrollTop();
+    
+    
+    </script> -->
+    <section class="ecw hero">
+        <img class="logo hidden" src="../images/eCW-logo.svg"></svg>
+        <img class="hidden" src="../images/eCW-home.png">
+        <div class="description hidden">
+            <div class="section">
+                <strong>purpose</strong>
+                <p>Unifying the experience of updating patient medical records</p>
+            </div>
+            <div class="section">
+                <strong>my role</strong>
+                <p>UX Design, UX Research, Visual Design</p>
+            </div>
+            <div class="section" style="width: min-content;">
+                <strong>Duration</strong>
+                <p style="width: 170px;">Jan - Mar 2025</p>
+            </div>
+        </div>
+        <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
+    </section>
+    <section id="content" class="content">
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">overview</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Medical receptions require multiple tools to update patient records
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    In a medical setting, the medical receptionists are the first point of contact for patients in person and over the phone. In general, they are responsible for organizing the medical office's operations. 
+                    <br>
+                    <br>
+                    Our two stakeholders, both medical receptionists, ensure the smooth running of the medical office by communicating with clients/patients, managing schedules, making appointments, addressing patient inquiries, and more.
+                    <br>
+                    <br>
+                    In a typical workday, medical receptionists rely on multiple digital tools to streamline workflow. However, inefficiencies in these systems often lead to frustration and delays in patient care. By exploring their experiences and challenges, this project aims to identify opportunities to improve workflow efficiency and enhance the overall patient care experience.
+
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">STAKEHOLDERS</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Meet our stakeholders in the medical field
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    We are conducting two stakeholder interviews. We conducted the first interview before Milestone 1 and conducted the second interview before Milestone 2.
+                    <br><br>
+                    <strong>Stakeholder 1: </strong>The person I have contacted is the head intern of the research department. He leads interns in the research department, organizing shifts, coordinating tasks, and training interns. He also does work with papers that his department is working on as well as a large project that the clinic is involved in.
+                    <br><br>
+                    <strong>Stakeholder 2: </strong> The person I have contacted for this project is someone working at NEMS front desk in San Francisco. She has been working there for around 30 years. She works front desk on the pediatrician floor and is responsible for taking calls, making appointments, and organizing schedules for her co-workers.
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class="eCW">
+                    Stakeholder Interviews
+                </h3>
+            </div>
+            <div class="right">
+                <h2 class="hidden">
+                    Both stakeholders face pain points in their overall user workflow
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    We met up with our stakeholders in person and conducted an interview for 1-1.5 hours. The interview consisted of open-ended questions as well as a walkthrough of some of their daily work tasks. The goal of the interview was to learn more about how they interact with applications at work, in hopes of gaining insight about challenges/frustrations that they face. Here is a summary of our findings:
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        Both stakeholders have to switch around different applications to complete one tasks
+                    </li>
+                    <li class="hidden">
+                        Stakeholder needs to ask patient the same pre check-in questions every time they come in (even if the patient is visiting frequently), which feels repetitive for the stakeholder 
+                    </li>
+                    <li class="hidden">
+                        Electronic medical record systems have too many restrictions that don't allow its users to have effective workflows
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class="eCW">
+                    understanding users
+                </h3>
+            </div>
+            <div class="right">
+                <h2 class="hidden">
+                    Looking at the needs of the users
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    Moving forward, we created user personas that represented different users in order to help with identifying different user pain points. One of our personas is Daniel, a 22 year old intern at a neurosurgery clinic:
+                </p>
+                <br>
+                <div class="persona-card">
+                    <div class="bio hidden">
+                        <div class="basic-info">
+                            <img class="persona-pic" src="images/old-man-light.png">
+                            <div class="name-age">
+                                <h4 class="title">Daniel</h4>
+                                <p class="age">22 / Male</p>
+                            </div>
+                        </div>
+                        <p class="hidden about description">
+                            Daniel has been interning at this neurosurgery clinic for the past year. As the head intern, he has to organize shifts, coordinate tasks, train interns, and communicate with various departments.
+                        </p>
+                        <br>
+                    </div>
+                    <div class="information">
+                        <div class="hidden goals">
+                            <h4 class="title">Daniel's Needs</h4>
+                            <ol class="description">
+                                <li class="item">
+                                    Cross-reference different pages at once to accurately input information
+                                </li>
+                                <li class="item">
+                                    Have several applications open at once to properly process information and tasks
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="hidden pain-points">
+                            <h4 class="title">Daniel's Pain Points</h4>
+                            <ol class="description bottom">
+                                <li class="item">
+                                    Current program feels outdating and frustrating to use
+                                </li>
+                                <li class="item">
+                                    Program only allows one window at a time, requiring excessive clicks for basic navigation and lack of cross-referencing
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">Ideation</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Taking two different approaches
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    To address our stakeholder's pain points, we created two different user flow directions to conduct user testing on before deciding one one flow.
+                </p>
+                <br>
+                <div class="two-photos landscape hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/flow-1.png" title="Flow 1">
+                        <p class=hidden>
+                            Flow 1: Allowing patients to complete pre-checkin protocol on their own devices
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/flow-2.png" title="Flow 2">
+                        <p class=hidden>
+                            Flow 2: Unifying the process and experience of updating a patient's medical record
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">Ideation</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Sketching out our two flows
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    After creating flow charts for both potential directions, we drew basic UI sketches for each flow
+                </p>
+                <br>
+                <div class="two-photos landscape hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/flow-1-sketch.png" title="Flow 1">
+                        <p class=hidden>
+                            Flow 1: Allowing patients to complete pre-checkin protocol on their own devices
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/flow-2-sketch.png" title="Flow 2">
+                        <p class=hidden>
+                            Flow 2: Unifying the process and experience of updating a patient's medical record
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">Prototyping</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Moving from sketches to low-fidelity wireframes
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    With the basic ideas of our flows sketched out, we moved onto Figma to create basic low-fidelity prototypes of both flows for user testing. We decided to do two different prototype flows to show the two main problems our stakeholders had. Each of the flows will help with different issues. 
+                </p>
+                <p class="hidden">
+                    Flow 1 alleviates the frustration of repetitively asking the same questions to help patients check in by providing a self-check-in option. 
+                </p>
+                <div class="photo hidden">
+                    <img class="chart" src="images/flow-1-lofi.png" title="Flow 1">
+                    <p class="caption hidden">
+                        Low-fidelity wireframes of check in flow
+                    </p>
+                </div>
+                <br>
+                <p class="hidden">
+                    Flow 2 differs by addressing a different stakeholder issue. Rather than focusing on the repetitive check-in process, flow 2 aims to assist stakeholders by simplifying their workflow. Currently, our stakeholders need to switch between different programs and windows to update patient records, so flow 2 aims to streamline this process and limit the amount of switching between programs.
+                </p>
+                <div class="photo hidden">
+                    <img class="chart" src="images/flow-2-lofi.png" title="Flow 1">
+                    <p class="caption hidden">
+                        Low-fidelity wireframes of updating patient record flow
+                    </p>
+                </div>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/aRmk24vQ6H81aRd88dIVVg/cogs-127-case-study?node-id=233-2093&t=GQ0KfB7SlJI0bL0h-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=233%3A2093&show-proto-sidebar=1" target="_blank">
+                    <p>View lo-fi prototype</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class="eCW">
+                    User Testing
+                </h3>
+            </div>
+            <div class="right">
+                <h2 class="hidden">
+                    Users liked both flows, but flow 2 was more relevant to work tasks
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    For our user test, we interviewed two stakeholders. One stakeholder is a head intern at a neurosurgery clinic, and the other is an ER intern. We found them through contacting mutual friends.
+                    <br>
+                    Our interview questions include two tasks, one per flow. After each task, we asked the participants a series of follow-up questions about the prototype, so that we can understand what they liked/disliked about it, as well as identify any areas of frustration and confusion.
+                </p>
+                <h4 class="hidden">
+                    <br>Point of view statement
+                </h4>
+                <p class="hidden">
+                    During user testing, we discovered that users liked both prototypes. Our users liked the simplicity of flow 1 because of the lack of unnecessary information. While the prototype for flow 1 would reduce the workload for our users, this prototype is meant to be used by patients rather than our stakeholders. They found it confusing on how it would be implemented in real life. For flow 2, our users liked that it simplified the process by using a single interface, but our stakeholders were concerned about the feasibility of combining multiple processes into one. We believe flow 2 should be further developed based on our stakeholders frequent tasks.
+
+                </p>
+                <h4 class="hidden">
+                    <br>Plans for next steps
+                </h4>
+                <p class="hidden">
+                    For our next step, we decided to move forward with flow 2, the medical record updating feature because this feature aligns more closely with our stakeholders daily work tasks and contributes to a more significant area of their work. 
+                    <br>
+                    For our high-fidelity prototypes, we have to create clearer interactions. Based on our interview with one of our stakeholders, they addressed that flow 2 lacked clear visual indicators. We plan on creating buttons that are more obvious to help address our users' needs and create a smooth workflow. 
+                </p>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">High-fidelity Prototype</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    Making improvements based on study results
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    With the feedback we received from our last user testing on our low-fidelity prototypes, we created out first iteration of high fidelity designs!
+                </p>
+                <div class="photo hidden">
+                    <img class="chart" src="images/flow-2-hifi.gif" title="Flow 1">
+                    <p class="caption hidden">
+                        High-fidelity prototype of updating patient record flow
+                    </p>
+                </div>
+                <br>
+                <p class="hidden">
+                    Additionally, we created alternate versions of two of our key screens to see which design our users would prefer. Our first screen is the patient home page, and our second screen is the patient document page.
+                </p>
+                <h4 class="hidden">
+                    <br>Alternate version 1
+                </h4>
+                <p class="hidden">
+                    In our alternate screen, we decided to modify the top navigation bar so that the user can keep track of incoming notifications. To reduce the cognitive load on our users, the improved top bar can help with keeping track of email notifications, with the top as the most recent. In our current design, the only way to keep track of recent emails is through individual patient pages, which might be difficult if the user forgets which patient or the ID they were recently looking at. Our alternative screen makes it easier for the user by allowing the user to reference recent notifications and the patient the notification is about.
+                </p>
+                <br>
+                <div class="two-photos landscape hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/orig-1.png" title="Flow 1">
+                        <p class="caption hidden">
+                            Original
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/alt-1.png" title="Flow 2">
+                        <p class="caption hidden">
+                            Alternative
+                        </p>
+                    </div>
+                </div>
+                <h4 class="hidden">
+                    <br>Alternate version 2
+                </h4>
+                <p class="hidden">
+                    In this alternative screen, we redesigned the way our user moves a file into patient documents. In the original version (left), the patient docs are organized in a list of folders that each have a “move here” button. In the alternative version (right), we decided to minimize the repetitiveness of the button and rearranged the folders into a grid view with a singular “move to [folder name]” button at the bottom. The alternative design highlights which folder has been selected by filling the folder blue and specifying the selected folder in the “move” button's text label. From user testing next week, we hope that we can learn which method of interaction and organization the users prefer (grid vs. list) and whether they prefer multiple or one “move” button.
+                </p>
+                <br>
+                <div class="two-photos landscape hidden">
+                    <div class="photo hidden">
+                        <img class="chart" src="images/orig-2.gif" title="Flow 1">
+                        <p class="caption hidden">
+                            Original
+                        </p>
+                    </div>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/alt-2.gif" title="Flow 2">
+                        <p class="caption hidden">
+                            Alternative
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/aRmk24vQ6H81aRd88dIVVg/cogs-127-case-study?node-id=136-1119&t=GQ0KfB7SlJI0bL0h-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=136%3A1119" target="_blank">
+                    <p>View initial hi-fi prototype</p>
+                </a>
+                
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden">
+                <h3 class="eCW">
+                    User Testing
+                </h3>
+            </div>
+            <div class="right">
+                <h2 class="hidden">
+                    Discovering underlying flaws in visual design 
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    For our final user testing session, we conducted a round of informal user testing, where we asked our two users to go through the initial hi-fi prototype, and asked them to give us overall feedback. Then, we showed them our two alternative screens, and asked them to tell us their thoughts about the different versions. The feedback they gave us revealed small visual design flaws as well as gave us a clear step towards our final design.
+                </p>
+                <ul>
+                    <li class="first-item hidden">
+                        <strong>Scrollable:</strong> Based on our feedback, users think the prototype should be scrollable because it will give users a better idea of how the actual website functions. We decided to make it scrollable because it will be a better representation of the real website. The main features we made when making the prototype scrollable was to make the header sticky. This will allow users to easily navigate throughout the website. 
+                    </li>
+                    <li class="hidden">
+                        <strong>Inbox: </strong>Both of the feedback we received favored alternative option for viewing the message inbox. For our final design, we will be including an inbox icon on the top right corner because it will be easier to find and see when there is a new message. Users can preview their new messages without switching to a new page. We think this will improve the user's experience because they can view their new messages anywhere on the website since it will be in the header. 
+                    </li>
+                    <li class="hidden">
+                        <strong>List & grid view: </strong>Another improvement we will be making is creating a list & grid view because based on our feedback, our users prefer viewing files in grid view. By providing both options, people can customize their experience to their own preferences. So between our original and alternative 2 screens, we decided to combine both of them and allow the user to toggle between them. 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-box hidden">
+            <div class="left hidden"><h3 class="eCW">Final product</h3></div>
+            <div class="right">
+                <h2 class="hidden">
+                    The final high fidelity design
+                </h2>
+                <hr width="100%" class="hidden">
+                <p class="hidden">
+                    Here is a walkthrough of our final high-fidelity prototype, where a user of eCW tries to update the records for one of their patients. In this scenario, they are trying to upload a new X-Ray file.
+                </p>
+                <p class="hidden">
+                    First, the user tries to get a copy of a patient file by sending an email to another clinic.
+                </p>
+                <div class="photo hidden">
+                    <img class="chart" src="images/updating-1.gif" title="Flow part 1">
+                    <p class="caption hidden">
+                        Updating patient record part 1
+                    </p>
+                </div>
+                <br>
+                <p class="hidden">
+                    After receiving the file, the user checks the messages and moves the file directly into the patient's X-Ray record.
+                </p>
+                <div class="photo hidden">
+                    <img class="chart" src="images/updating-2.gif" title="Flow part 2">
+                    <p class="caption hidden">
+                        Updating patient record part 2
+                    </p>
+                </div>
+                <br>
+                
+                <br>
+                <a class="button hidden" href="https://www.figma.com/proto/aRmk24vQ6H81aRd88dIVVg/cogs-127-case-study?node-id=182-2560&t=GQ0KfB7SlJI0bL0h-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=182%3A2560" target="_blank">
+                   <p>View hi-fi prototype</p>
+               </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                </div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+        <!-- <hr> -->
+        <p id="copyright">© 2025 Alice Ma</p>
+    </footer>
+</body>
+<style>
+    ::-moz-selection { /* Code for Firefox */
+        background: #0a4c5bbc;
+    }
+    ::selection {
+        background: #0a4c5bbc;
+    }
+</style>
+<script>
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        document.querySelector(".name").classList.remove("name-gone");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".mobile-nav").classList.toggle("fa-chevron-right");
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        
+        contents = document.querySelector(".dropdown-content");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").classList.add("name-gone");
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").classList.remove("name-gone");
+    };
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+</script>
+<script src="js/slide.js"></script>
+<script src="js/header-bar.js"></script>
+</html>
