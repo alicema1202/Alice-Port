@@ -135,6 +135,7 @@ h2 {
     opacity: 1;
     animation: none;
     line-height: 48px;
+    line-height: normal;
     font-size: 48px;
     font-family: "Instrument Serif", serif;
 }
