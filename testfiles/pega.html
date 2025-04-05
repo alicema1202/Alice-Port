@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pega: UX Design Intern — Alice Ma</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/header-case-studies.css" rel="stylesheet"> 
+        <link href="css/pega.css" rel="stylesheet"> 
+        <link href="css/animation.css" rel="stylesheet">
+        <link href="css/headerforCS.css" rel="stylesheet">
+        <link href="css/content.css" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+
+        <meta name="msapplication-TileImage" content="images/Pega-thumbnail.png">
+        <meta property="og:image" itemprop="image" content="images/Pega-thumbnail.png">
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/png">
+        
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="201">
+        
+        <meta property="og:url" content="https://alicemadesign.com/pega">
+        <meta property="og:description" content="Conducting research and designing user flows to improve the authoring experience of Pega's Constellation design system.">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&display=swap" rel="stylesheet">
+        <!-- <link rel="shortcut icon" type="x-icon" href="images/cinema-logo-icon.png"> -->
+        <link rel="shortcut icon" type="x-icon" href="images/webicon.png">
+
+    </head>
+    <!-- <style>
+        body {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            right: 0;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    </style> -->
+    <body onscroll="appear()">
+        <a onclick="scrollWin()" class="back-to-top hide" >
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <script>
+            function scrollWin() {
+                window.scrollTo(0, 0);
+            }
+            function appear() {
+                document.querySelector(".back-to-top").classList.remove('hide');
+            }
+            window.addEventListener("scroll", function(){
+                if(window.scrollY==0){
+                    document.querySelector(".back-to-top").classList.add('hide');
+                }
+            });
+        </script>
+        <style>
+            .hide {
+                opacity: 0;
+                cursor: default!important;
+            }
+            h3 {
+                font-size: 1.2ch;
+                color: #3C458B;
+                font-weight: 700;
+                letter-spacing: 0.3ch;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            .back-to-top {
+                cursor: pointer;
+                transition: opacity 0.3s;
+                /* opacity: 0; */
+                z-index: 1000;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #c13739;
+                margin: 2rem;
+                margin-right: calc(2rem + 10px);
+                height: 4rem;
+                width: 4rem;
+                border-radius: 50%;
+                transition: 0.3s;
+                background-color: rgba(169, 169, 169, 0.564);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
+            .back-to-top:hover {
+                margin-bottom: 2.4rem;
+                background-color: rgba(122, 122, 122, 0.644);
+                transition: 0.3s;
+            }
+            .fa-solid {
+                color: white;
+            }
+
+            .project {
+                width: fit-content;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* background-color: blue; */
+                column-gap: 90px;
+                margin-top: 40px;
+                margin-bottom: 50px;
+                transition: transform 0.3s;
+            }
+            
+            /* .reverse {
+                flex-direction: row-reverse;
+            } */
+            .v3 {
+                width: calc(54vw - 570px);
+                height: 410px;
+                background: conic-gradient(from 237deg at 48.87% 48.78%, #38ABC6 0deg, #1F6B7C 360deg);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s;
+            }
+            .cinema {
+                background: conic-gradient(from 104deg at 63.21% 57.38%, #A35050 0deg, #762121 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .unio {
+                background: conic-gradient(from -58deg at 49.92% 54.66%, #9761DE 0deg, #53357B 360deg), linear-gradient(223deg, #FFC3CE 0%, rgba(255, 174, 188, 0.00) 100%), #C95959;
+            }
+            .v3:hover {
+                transform: translateY(-10px);
+                transition: transform 0.3s;
+            }
+            .phone {
+                width: 279px;
+                height: 100%;
+                object-fit:contain;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p, .read-more{
+                color: #363636;
+                font-family: lexend, Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+            .text {
+                width: 480px;
+                /* background-color: purple; */
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+                row-gap: 24px;
+            }
+            .app-name {
+                font-size: 14px;
+                /* font-weight: 300; */
+                letter-spacing: 1px;
+                color: #363636;
+                /* background-color: pink; */
+            }
+            .headline {
+                font-size: 38.3px;
+                font-weight: 700;
+                /* background-color: orange; */
+            }
+            .message {
+                font-size: 16.15px;
+                /* background-color: purple */
+                line-height: 30px;
+                font-weight: 400;
+            }
+            @media only screen and (min-width: 2000px) {
+                .message {
+                    font-size: 26.2496px;
+                }
+                .headline {
+                    font-size: 56.4366px;
+                    font-weight: 700;
+                    /* background-color: orange; */
+                }
+            }
+            @media only screen and (min-width: 2500px) {
+                .message {
+                    font-size: 20.192px;
+                }
+                .headline {
+                    font-size: 43.4128px;
+                    font-weight: 700;
+                    /* background-color: orange; */
+                }
+            }
+            .read-more {
+                text-decoration: none;
+                /*padding: 10px 20px;
+                border: solid 1px #363636;
+                border-radius: 8px;
+                width:fit-content;
+                transition: 0.3s; */
+            }
+            .read-more:hover {
+                /* background-color: #363636;
+                color: #fefefe;
+                transition: 0.3s; */
+                background-color: #3e3190;
+                border-color: #3e3190;
+            }
+            @media only screen and (max-width: 1700px) {
+                .v3 {
+                    width: 500px;
+                }
+                .text {
+                    width: fit-content;
+                }
+                .phone {
+                    width: 230px;
+                }
+            }
+            @media only screen and (max-width: 1300px) {
+                .project {
+                    flex-direction: column;
+                    row-gap: 50px;
+                }
+                
+            }
+            
+            @media only screen and (max-width: 1300px) {
+                .v3, .text {
+                    width: 54vw;
+                }
+            }
+            @media only screen and (max-width: 700px) {
+                .v3, .text {
+                    width: 74vw;
+                }
+            }
+            @media only screen and (min-width: 2000px) {
+                .project {
+                    max-width: 1300px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin: 0;
+                    margin-top: 60px;
+                }
+                .v3 {
+                    width: 630px;
+                }
+                .text {
+                    width: 580px;
+                }
+            }
+            @media only screen and (max-width: 700px) {
+                .headline {
+                    font-size: 30.288px;
+                }
+            }
+            #next-up .button {
+                margin:0;
+                margin-bottom: 0;
+                width: fit-content;
+            }
+            #next-up h3 {
+                color: #5a4bb7;
+                border-top: 1px solid #B8B8B8;
+                padding-top: 20px;
+            }
+            .WORKS-container .scroll {
+                font-size: 14px;
+                margin-right: 0;
+                color: black;
+                transform: scaleY(1);
+                transition: transform 0.3s;
+            }
+            .WORKS-container {
+                display: flex;
+                gap: 8px;
+                /* border: 1px white solid; */
+                justify-content: center;
+                align-items: center;
+            }
+            .dropdown:hover .scroll {
+                transform: scaleY(-1);
+                transition: transform 0.3s;
+            }
+        </style>
+        <header class="remove header-bar">
+            <header class="inside">
+                <div class="left-section">
+                    <a href="https://alicemadesign.com" class="logo-container logo">
+                        Alice Ma
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <div class="line one"></div>
+                    <div class="line two"></div>
+                    <div class="line three"></div>
+                </div>
+                <style>
+                    .header-bar {
+                        font-family: lexend, Arial, Helvetica, sans-serif;
+                        font-weight: 400;
+                    }
+                    .button, .brief-desc,.content,.description, .footer {
+                        font-family: lexend, Arial, Helvetica, sans-serif;
+                    }
+                    .brief-desc {
+                        font-size: 0.9em;
+                    }
+                    .button {
+                        font-weight: 500;
+                    }
+                    .description {
+                        letter-spacing: normal;
+                    }
+                    h2 {
+                        font-weight: 700;
+                    }
+                    h3 {
+                        font-weight: 600;
+                    }
+                    .drop-button {
+                        color: black;
+                    }
+                    .header-bar {
+                        display: flex;
+                        justify-content: center;
+                        /* padding-right:0;
+                        padding-left: 0;  */
+                        width: 100vw;
+                    }
+                    .inside {
+                        display: flex;
+                        width: 100%;
+                        max-width: 1090px;
+                    }
+                    @media screen and (min-width: 1700px) {
+                        .inside {
+                            width: 1190px;
+                            max-width: none;
+                        }
+                    }
+                    .right-btn {
+                        margin-right: 4rem;
+                        margin-right: 0;
+                    }
+                    .logo {
+                        margin-left: 4rem;
+                        margin-left: 0;
+                    }
+                </style>
+                <nav class="nav-bar">
+                    <ul>
+                        <li class="dropdown left">
+                            <div class="hover-underline-animation drop-button">
+                                <p class="WORKS-container" onclick="goToWorks()">
+                                    Work <i class="drop fa-solid fa-chevron-down scroll"></i>
+                                </p>
+                                <b class="dropdown-content removepad">
+                                    <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                    <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                    <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                    <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                    <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>
+                                </b>
+                            </div>
+                        </li>
+                    
+                        <li>
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/about">About</a>
+                        </li>
+        
+                        <!-- <li>
+                            <a class="hover-underline-animation" target="_blank" href="images/resume.pdf">Resume</a>
+                        </li> -->
+                            
+                        <li>
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/contact">Contact</a>
+                        </li>
+
+                        <li class="right-btn">
+                            <a class="hover-underline-animation" href="https://alicemadesign.com/resume">Resume</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </header>
+        <script>
+            // function myFunction(x) {
+            //     if (x.matches) { // If media query matches
+            //         document.querySelector(".nav-bar ul li div p .fa-solid").style.display = "none";
+
+            //     } else {
+            //         document.body.style.backgroundColor = "pink";
+            //     }
+            // }
+
+            // var x = window.matchMedia("(max-width: 900px)")
+            // myFunction(x) // Call listener function at run time
+            // x.addListener(myFunction) // Attach listener function on state changes
+            
+        //     works = document.querySelector(".nav-bar li");
+        //    arrow = document.querySelector(".drop");
+        //     works.onmouseover = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+        //     works.onmouseout = function() {
+        //         arrow.classList.toggle("fa-chevron-down");
+        //         arrow.classList.toggle("fa-chevron-up");
+        //     }
+            function goToWorks() {
+                document.getElementById("works").scrollIntoView();
+            }
+            hamburger = document.querySelector(".hamburger");
+            hamburger.onclick = function() {
+                navBar = document.querySelector(".nav-bar");
+                hamburger = document.querySelector(".hamburger");
+                navBar.classList.toggle("active");
+                navBar.classList.toggle("black");
+                hamburger.classList.toggle("active");
+                works = document.querySelector(".dropdown");
+                works.classList.toggle("left");
+                droplist = document.querySelector(".nav-bar ul .dropdown");
+                droplist.classList.toggle("margins");
+                button = document.querySelector(".drop-button");
+                button.classList.toggle("hover-underline-animation")
+                contents = document.querySelector(".dropdown-content");
+                // contents.classList.toggle("removepad");
+            }
+        </script>
+        
+        <div class="cover">
+            <div>
+                <div class="cover-photo" title="Pega Banner">
+            </div>
+            <div class="brief-desc">
+                <div class="desc"><strong>LOCATION:</strong> Pegasystems</div>
+                <div class="desc"><strong>ROLE:</strong> UX Design Intern</div>
+                <div class="desc"><strong>TIMELINE:</strong> May - August 2023</div>
+            </div>
+        </div>
+       
+        <div class="content">
+            <section id="overview">
+                <h3 class="hidden">
+                    OVERVIEW
+                </h3>
+                <h2 class="hidden">
+                    What I did as a UX design intern at <a title="Pega website" style="display: inline; text-decoration: underline;" href="https://www.pega.com" target="_blank">Pega</a>
+                </h2>
+                <p class="description hidden">
+                    I was a UX design intern on Pegasystem's Research and Testing team during the summer of 2023. I primarily worked on Pega's new design system "Constellation." More specifically, I conducted <strong>usability studies</strong> to test newly released features, collaborated with other designers to <strong>align UX patterns</strong>, and worked on <strong>new design system features</strong>.
+                </p>
+                <p class="description hidden">
+                    An example of a feature that I worked on is designing the <strong>additional information feature on different field types</strong>. I collaborated with other designers to conduct a competitive audit of other companies' approaches to displaying additional information with accessibility considerations in mind. Then, I had multiple ideation workshops with other designers to create wireframes and mockups for our new designs. Finally, I organized a design proposal file that is ready for development!
+                </p>
+            </section>
+
+            <section id="takeaways">
+                <h3 class="hidden">
+                    TAKEAWAYS
+                </h3>
+                <h2 class="hidden">
+                    What I learned from this experience
+                </h2>
+                <p class="description hidden" style="margin-bottom:1em">
+                    Like I said to all the people I worked with during my time at Pega, working here has been an <strong>AMAZING</strong> experience! So, I would like to share a few key takeaways that I've gained from it!
+                    <ul class="description hidden">
+                        <li class="item hidden">
+                            <strong>Build strong relationships</strong>
+                            <p class="hidden" style="margin-bottom:1em">
+                                The format of my internship was really flexible, and I got to work on a breadth of projects ranging from research to prototyping. As I jumped from project to project, I got to work with many different designers (who were all very, very nice) and build great relationships with them. I learned that building rapport with others is definitely something that makes a work day enjoyable.
+                            </p>
+                        </li>
+                        <li class="item hidden">
+                            <strong>It's okay to be confused</strong>
+                            <p class=" hidden"  style="margin-bottom:1em">
+                                Pega is complicated! There's a lot of things to learn during onboarding, like the weeks of design training to introduce the design system and to learn Pega-specific terms, such as their version of MVP, MLP (minimum loveable product). The designers that I worked with always emphasize that it's okay for me to not understand how Pega's software works because it takes time to get the hang of it. At first, I felt clueless listening in on meetings, but after some time, I started to understand more and more. Now I know, it's okay to be confused; it just takes some time!
+                            </p>
+                        </li>
+                        <li class="item hidden">
+                            <strong>Explore different parts of design</strong>
+                            <p class=" hidden"  style="margin-bottom:1em">
+                                As an early career designer, I really wanted to gain experience in different aspects of design to figure out what I am most interested in. Thanks to the flexibility of the program, I was able to join both the research team AND the design team on projects and really spend time working on all aspects of the design process. As I move forward with my career, I still hope that I can continue exploring different sectors of design.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </section>
+            <section id="projects">
+                <h3 class="hidden">
+                    PROJECTS
+                </h3>
+                <h2 class="hidden">
+                    Projects I worked on as an intern
+                </h2>
+                <p class="description hidden">
+                    <!-- Unfortunately, this work is under NDA.  -->
+                    If you would like to learn more about the projects that I worked on, please reach out to me through my contact form or through the methods listed on the contact page. I'd love to chat with you!
+                </p>
+                <a style="width:fit-content" class="button view-prototype hidden" href="https://alicemadesign.com/contact"> Contact me</a>
+
+            </section>
+
+            <section id="next-up">
+                <p class="description hidden">
+                    <a href="https://alicemadesign.com/unio">
+                        <i style="color:black;display:block;" class="drop fa-solid fa-chevron-left scroll"></i> <strong>Previous: UniO</strong>
+                    </a>
+                    <a href="https://alicemadesign.com/medtime">
+                        <strong>Next: MedTime</strong> <i style="color:black;display:block;" class="drop fa-solid fa-chevron-right scroll"></i>
+                    </a>
+                </p>
+            </section>
+            
+            
+        </div>
+        
+        <div class="footer">
+            <p>©2023 Designed and Coded by Alice Ma.</p>
+        </div>
+    
+</body>
+<script src="js/slide.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="js/headerslide.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/simplebar@6.2.5/dist/simplebar.css"
+/>
+<script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
+<!-- or -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
+
+</html>
