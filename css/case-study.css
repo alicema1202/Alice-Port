@@ -395,6 +395,30 @@ img {vertical-align: middle;}
 
 .photo .active {
 }
+td.checkbox {
+    text-align: center;
+    transform: scale(1.5);
+    vertical-align: middle;
+}
+table {
+    border-radius: 12px;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid rgba(221, 221, 221, 0.415);
+    /* vertical-align: text-top; */
+}
+/* tr:nth-child(1){background-color: #fcfcfc;}
+tr:nth-child(1) th {
+    color: black;
+} */
+tr:nth-child(1) {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+th {
+    text-align: left;
+    
+}
 @media only screen and (max-width: 900px) {
     .changes {
         display: grid;
