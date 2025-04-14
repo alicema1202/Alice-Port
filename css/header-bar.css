@@ -90,7 +90,7 @@ body {
 }
 
 .midpage {
-    background: #101010c9;
+    background: #101010c9!important;
     padding-bottom: 20px!important;
     backdrop-filter: blur(50px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -141,7 +141,7 @@ body {
     opacity: 1;
 }
 .dropdown {
-    height: 3ch!important;
+    height: 2.5ch!important;
     display: flex;
 }
 /* old css to help w/ dropdown menu */
@@ -506,7 +506,7 @@ header {
     /* background-color: pink; */
     /* display: block; */
     /* position: absolute; */
-    top: 30px;
+    top: 25px;
 }
 .list-item {
     display: block;

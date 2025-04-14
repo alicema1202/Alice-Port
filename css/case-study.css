@@ -3,7 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 strong {
-    font-weight: 600;
+    font-weight: 550;
 }
 .hero {
     width: calc(100vw - 32px);
@@ -321,8 +321,8 @@ img {vertical-align: middle;}
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   margin: 0 2px;
   background-color: rgb(105, 105, 105);
   border-radius: 50%;
@@ -330,7 +330,7 @@ img {vertical-align: middle;}
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.dot.active, .dot:hover {
   background-color: #ffffff;
 }
 
@@ -525,13 +525,15 @@ th {
         grid-template-columns: 1fr;
     }
     .competitor {
-        display: grid;
+        display: flex;
+        flex-direction: column;
     }
     .competitor div {
         width: 100%!important;
     }
     .competitor .photo {
-        width: 80%!important;
+        width: 90%!important;
+        max-width: 400px;
         margin: auto;
     }
 }

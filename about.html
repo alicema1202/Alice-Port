@@ -114,15 +114,16 @@
     
     
     </script>
-
-    <section class="" id="about" style="margin-top: 16px;">
-        <div id="picture" class="hidden">
-            <img id="about-pic" src="images/disneypic.png">
-            <p class="caption">
+    <p style="height:0; opacity: 0;">Block</p>
+    <section class="hidden" id="about" style="margin-top: 16px;">
+        <div id="picture" class="">
+            <!-- <img id="about-pic" src="images/disneypic.png"> -->
+            <img id="about-pic" src="images/mememe.png">
+            <!-- <p class="caption">
                🏰 Exploring Tokyo DisneySea! Summer 2024.
-            </p>
+            </p> -->
         </div>
-        <div id="about-text" class="hidden">
+        <div id="about-text" class="">
                 <p class="intro">
                     Nice to meet you, I'm Alice Ma! 👋🏻
                 </p>
@@ -174,11 +175,11 @@
         </div> -->
     </section>
     <section class="hidden" id="projects">
-        <div id="my-projects" class="hidden">
+        <div id="my-projects" class="">
             <h2>💫 My Experience</h2>
             <a class="hover-underline-animation" href="https://drive.google.com/file/d/1RO_wTOo47t4zLhJ_ErRg0mQRWYJJzkS7/view?usp=sharing" target="_blank">View full resume &nbsp <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:18px"></i></a> 
         </div>
-        <hr width="100%" class="hidden">
+        <hr width="100%" class="">
         <div class="experience hidden">
             <div class="title">
                 <p class="position">
@@ -193,10 +194,16 @@
             </p>
             <ul class="description">
                 <li>
-                    Working as an instructional assistant for upper-division interaction design course
+                    Worked as an instructional assistant for upper-division interaction design course
                 </li>
                 <li>
-                    Holding discussion and office hours to help students understand fundamentals of user-centered design and cognitive principles
+                    Held office hours to help students understand user-centered design fundamentals
+                </li>
+                <li>
+                    Provided input on course structure to help improve current iteration of the course
+                </li>
+                <li>
+                    Graded student assignments on topics relating to design heuristics and user interfaces
                 </li>
         </div>
         <hr width="100%" class="hidden">
@@ -322,7 +329,7 @@
                         <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
                     </svg>
                     <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
-                    <img class="memoji" src = "images/memoji.png">
+                    <img class="memoji" src = "images/memoji matcha.png">
                 </div>
             </div>
             <nav>
@@ -439,6 +446,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     .experience {
         display: flex;
@@ -482,11 +490,11 @@
     @media only screen and (max-width: 900px) {
         #about {
             flex-direction: column;
-            gap: 8px;
+            gap: 32px;
         }
         #about-pic {
             max-width: 500px;
-            width: 85vw;
+            width: 90vw;
         }
         #about .text-message p {
             font-size: 18px;
