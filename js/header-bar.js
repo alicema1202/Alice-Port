@@ -9,7 +9,8 @@ window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;               
     /* if we're scrolling up, or we haven't passed the header,
         show the header at the top */
-if (currentScrollPos <= 200) {
+if (currentScrollPos < 200) {
+    headerDiv.style.top = "0";
     headerDiv.classList.remove("midpage");
     document.querySelector(".back-to-top").classList.add('hide');
 }
