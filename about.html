@@ -114,28 +114,50 @@
     
     
     </script>
-    <p style="height:0; opacity: 0;">Block</p>
-    <section class="hidden" id="about" style="margin-top: 16px;">
-        <div id="picture" class="">
-            <!-- <img id="about-pic" src="images/disneypic.png"> -->
-            <img id="about-pic" src="images/mememe.png">
+    <!-- <p style="height:0; opacity: 0;">Block</p> -->
+    <section class="" id="about" style="margin-top: 16px;">
+        <img class="hidden" id="about-pic-mobile" src="images/mememe.jpg">
+        <div id="picture" class="song hidden">
+            <video id="about-pic" autoplay muted playsinline preload="auto" class="video chart" src="images/mememe.mp4" style="opacity:1!important"></video>
+            <div class="song-title">
+                <p class="intro">A Slice of Life 🍰</p>
+                <p> Alice Ma</p>
+            </div>
+            <video id="progress" autoplay muted playsinline preload="auto" class="video chart" src="images/progress bar.mp4" style="opacity: 1!important"></video>
+            <!-- <video id="about-pic"  loop playsinline preload class="video chart" src="images/mememe.mp4" style="opacity:1!important"></video> -->
+            <img id="control" src="images/play.png">
             <!-- <p class="caption">
-               🏰 Exploring Tokyo DisneySea! Summer 2024.
+               Hover me ^^
             </p> -->
         </div>
-        <div id="about-text" class="">
+        <div id="about-text" class="hidden">
                 <p class="intro">
-                    Nice to meet you, I'm Alice Ma! 👋🏻
+                    Nice to meet you, I'm Alice! 👋🏻
                 </p>
-                
                 <p>
-                    I'm currently a 4th year student at UC San Diego studying Cognitive Science with a Specialization in Interaction Design with minors in Computer Science and Design.
+                    I am a UX designer in my 4th year at UC San Diego, where I'm majoring Cognitive Science with a specialization in Interaction Design, with minors in Computer Science and Design.
                 </p>
-           
-                <p>
+
+                <!-- <p>
                     In my free time, I like to watch TV, a lot of it. If I'm not working, you will most likely find me watching some new TV show 📺, doing my nails 💅, or maybe even both at the same time!
                 </p>
-           
+            -->
+                <p>
+                    Get to know me — here are three fun facts about me:
+                    <div class="bullet">
+                        <p>💅🏻</p>
+                        <p>I love giving myself manicures; in fact, you'll rarely catch me without a set of painted nails.</p>
+                    </div>
+                    <div class="bullet">
+                        <p>💚</p>
+                        <p>I've fallen into the matcha craze; find me starting all my days with a glass of matcha.</p>
+                    </div>
+                    
+                    <div class="bullet">
+                        <p>📺</p>
+                        <p>I'm usually in the middle of at least one TV show — currently finishing up Season 7 of Black Mirror. </p>
+                    </div>
+                </p>
                 <p>
                     Contact me: <br>
                     <a onclick="copy()">alicema1202@gmail.com</a>
@@ -349,8 +371,41 @@
         <p>Copied to clipboard!</p>
     </div>
 </body>
+<script>
+    const song = document.querySelector('.song');  // Select all video elements
+    const videos = document.querySelectorAll('.video');  // Select all video elements
+    videos.forEach(video => {
+        document.addEventListener("DOMContentLoaded", () => {
+            video.play().then(() => video.pause()).catch(()=> {
 
+            })
+        });
+    })
+    
+
+    song.addEventListener('mouseenter', () => {
+        videos.forEach(video => {
+            video.play();
+        })        
+        document.querySelector("#control").src='images/pause.png'
+    });
+
+    // Pause the video when mouse leaves
+    song.addEventListener('mouseleave', () => {
+        videos.forEach(video => {
+            video.pause();
+        })  
+        document.querySelector("#control").src='images/play.png'
+
+    });
+    
+</script>
 <style>
+    p {
+        color: white;
+        font-weight: 200;
+        margin-bottom: 8px;
+    }
     #about {
         width: 90vw;
         max-width: 1092px;
@@ -361,11 +416,59 @@
         align-items: flex-start;
         align-items: center;
     }
-    #about-pic {
+    .bullet {
+        display: flex;
+        gap: 8px;
+        margin: 0;
+        margin-left: 8px;
+    }
+    .bullet p {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+    #about-pic-mobile {
+        display: none;
+    }
+    #picture {
+        display: grid;
+        row-gap: 24px;
+        width: 30%;
+        background-color: rgb(35, 35, 35);
+        padding: 24px;
+        border-radius: 24px;
+        box-shadow: 0.5px -0.5px 3px rgb(109, 109, 109);
+        transition: 0.5s;
+    }
+    #picture:hover {
+        transform: scale(1.03) rotate(-4deg);
+        cursor: pointer;
+    }
+    #progress {
+        height: 10px;
         width: 100%;
+        object-fit:cover;
+        filter: brightness(150%);
+        mix-blend-mode: screen;
+    }
+    .song-title {
+        display: grid;
+        grid-gap: 8px
+    }
+    .song-title p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.74);
+    }
+    #about-pic {
+        /* width: 100%; */
         height: auto;
         object-fit: contain;
         border-radius: 16px;
+        border-radius: 32px;
+        border-radius: 12px;
+    }
+    #control {
+        width: 100%;
+        object-fit: contain;
     }
     #about a {
         text-decoration: underline;
@@ -392,12 +495,14 @@
     }
     #about-text {
         color: white;
+        width: 70%;
     }
-    #about .intro {
+    #about .intro, .intro {
         font-family: "Instrument Serif", serif;
         font-size: 40px;
         line-height: 46px;
         margin: 0;
+        color: white;
     }
     #about-text p {
         font-size: 20px;
@@ -445,8 +550,8 @@
     #picture {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
+        /* align-items: center; */
+        /* width: 100%; */
     }
     .experience {
         display: flex;
@@ -494,18 +599,30 @@
         }
         #about-pic {
             max-width: 500px;
-            width: 90vw;
+            /* width: 90vw; */
         }
         #about .text-message p {
             font-size: 18px;
+        }
+        #about-text {
+            width: 100%;
         }
         #about-text p {
             font-size: 18px;
             line-height: 24px;
         }
+        #about-pic-mobile {
+            display: block;
+            width: 90vw;
+            border-radius: 12px;
+            max-width: 500px;
+        }
         #picture {
             width: min-content;
-            margin: auto;
+            /* width: 85vw; */
+            width: calc(90vw - 48px);
+            /* margin: auto; */
+            display: none;
         }
         .title {
             flex-direction: column;

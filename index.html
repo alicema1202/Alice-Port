@@ -416,7 +416,8 @@
 <script>
     
     function goToWorks() {
-        document.getElementById("works").scrollIntoView();
+        // document.getElementById("works").scrollIntoView();
+        document.querySelector("body").style.top = "100vh";
     }
     hamburger = document.querySelector(".menu-icon");
     dropbtn = document.querySelector(".dropdown");

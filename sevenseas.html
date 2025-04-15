@@ -1024,18 +1024,20 @@ showSlides(1, 3);
 </script>
 <script>
     const videos = document.querySelectorAll('.video');  // Select all video elements
+    document.addEventListener("DOMContentLoaded", () => {
 
-videos.forEach(video => {
-    // Play the video when mouse enters
-    video.addEventListener('mouseenter', () => {
-        video.play();  // Start playing the video
-    });
+        videos.forEach(video => {
+            // Play the video when mouse enters
+            video.addEventListener('mouseenter', () => {
+                video.play();  // Start playing the video
+            });
 
-    // Pause the video when mouse leaves
-    video.addEventListener('mouseleave', () => {
-        video.pause();  // Pause the video
+            // Pause the video when mouse leaves
+            video.addEventListener('mouseleave', () => {
+                video.pause();  // Pause the video
+            });
+        });
     });
-});
 </script>
 
 <script src="js/slide.js"></script>
