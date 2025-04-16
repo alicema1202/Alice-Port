@@ -158,12 +158,12 @@
                         <p>I'm usually in the middle of at least one TV show — currently finishing up Season 7 of Black Mirror. </p>
                     </div>
                 </p>
-                <p>
+                <!-- <p>
                     Contact me: <br>
                     <a onclick="copy()">alicema1202@gmail.com</a>
                     <br>
                     <a href="https://www.linkedin.com/in/alicema1215" target="_blank">linkedin.com/in/alicema1215</a> <a href="https://www.linkedin.com/in/alicema1215" target="_blank"></a>
-                </p>
+                </p> -->
            
         </div>
         <!-- <div>
@@ -199,7 +199,9 @@
     <section class="hidden" id="projects">
         <div id="my-projects" class="">
             <h2>💫 My Experience</h2>
-            <a class="hover-underline-animation" href="https://drive.google.com/file/d/1RO_wTOo47t4zLhJ_ErRg0mQRWYJJzkS7/view?usp=sharing" target="_blank">View full resume &nbsp <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:18px"></i></a> 
+            <!-- <a class="hover-underline-animation" href="https://drive.google.com/file/d/1RO_wTOo47t4zLhJ_ErRg0mQRWYJJzkS7/view?usp=sharing" target="_blank">View full resume &nbsp <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:18px"></i></a>  -->
+            <a class="hover-underline-animation" href="https://www.alicemadesign.com/resume">View full resume &nbsp <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:18px"></i></a> 
+
         </div>
         <hr width="100%" class="">
         <div class="experience hidden">
@@ -214,7 +216,7 @@
             <p class="date">
                 Jan 2025 - Present · La Jolla, CA          
             </p>
-            <ul class="description">
+            <!-- <ul class="description">
                 <li>
                     Worked as an instructional assistant for upper-division interaction design course
                 </li>
@@ -226,22 +228,22 @@
                 </li>
                 <li>
                     Graded student assignments on topics relating to design heuristics and user interfaces
-                </li>
+                </li> -->
         </div>
-        <hr width="100%" class="hidden">
+        <!-- <hr width="100%" class="hidden"> -->
         <div class="experience hidden">
             <div class="title">
                 <p class="position">
                     Web Developer
                 </p>
                 <p class="location">
-                    (MPA Collaborative Network, Design Co UP-Grade)
+                    (MPA Collaborative Network)
                 </p>
             </div>
             <p class="date">
                 Jun 2024 - Sept 2024 · La Jolla, CA
             </p>
-            <ul class="description">
+            <!-- <ul class="description">
                 <li>
                     Worked closely with stakeholders from MPA Collaborative Network to redesign website
                 </li>
@@ -256,9 +258,9 @@
                 </li>
                 <li>
                     Implemented approved design onto MPACN's site using HTML, CSS, and JavaScript to create and update UI elements
-                </li>
+                </li> -->
         </div>
-        <hr width="100%" class="hidden">
+        <!-- <hr width="100%" class="hidden"> -->
         <div class="experience hidden">
             <div class="title">
                 <p class="position">
@@ -271,7 +273,7 @@
             <p class="date">
                 Jan 2024 - Mar 2024 · La Jolla, CA   
             </p>
-            <ul class="description">
+            <!-- <ul class="description">
                 <li>
                     Acted as an instructional assistant for an introductory design course aimed to teach students fundamentals of design thinking
                 </li>
@@ -280,9 +282,9 @@
                 </li>
                 <li>
                     Graded and provided detailed feedback on design journals and assignments for 200+ students
-                </li>
+                </li> -->
         </div>
-        <hr width="100%" class="hidden">
+        <!-- <hr width="100%" class="hidden"> -->
         <div class="experience hidden">
             <div class="title">
                 <p class="position">
@@ -295,7 +297,7 @@
             <p class="date">
                 Oct 2023 - Apr 2024 · La Jolla, CA        
             </p>
-            <ul class="description">
+            <!-- <ul class="description">
                 <li>
                     Collaborated with team of 4 to create a high-fidelity meal kit delivery service prototype
                 </li>
@@ -307,9 +309,9 @@
                 </li>
                 <li>
                     Presented and demoed final prototype at end-of-quarter showcase to ACM members
-                </li>
+                </li> -->
         </div>
-        <hr width="100%" class="hidden">
+        <!-- <hr width="100%" class="hidden"> -->
         <div class="experience hidden">
             <div class="title">
                 <p class="position">
@@ -322,7 +324,7 @@
             <p class="date">
                 May 2023 - Aug 2023 · Waltham, MA
             </p>
-            <ul class="description">
+            <!-- <ul class="description">
                 <li>
                     Moderated and observed 10+ internal usability studies on Pegasystems' live software environment
                 </li>
@@ -338,7 +340,7 @@
 
                 <li>
                     Prepared high-fidelity prototypes on Figma for developer hand-off
-                </li>
+                </li> -->
         </div>
 
     </section>
@@ -402,9 +404,11 @@
 </script>
 <style>
     p {
-        color: white;
+        color: rgba(255, 255, 255, 0.8);
         font-weight: 200;
         margin-bottom: 8px;
+        font-size: 22px;
+        line-height: 32px;
     }
     #about {
         width: 90vw;
@@ -452,11 +456,16 @@
     }
     .song-title {
         display: grid;
-        grid-gap: 8px
+        /* grid-gap: 8px */
     }
     .song-title p {
         margin: 0;
         color: rgba(255, 255, 255, 0.74);
+        font-size: 16px;
+    }
+    #about .song-title .intro {
+        font-size: 34px;
+        
     }
     #about-pic {
         /* width: 100%; */
@@ -504,11 +513,11 @@
         margin: 0;
         color: white;
     }
-    #about-text p {
-        font-size: 20px;
-        line-height: 26px;
+    /* #about-text p {
+        font-size: 22px;
+        line-height: 36px;
         font-weight: 200;
-    }
+    } */
     #copied {
         background-color: #000000;
         display: flex;
@@ -556,7 +565,7 @@
     .experience {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
     }
     .title {
         display: flex;
@@ -567,6 +576,7 @@
         font-family: "Instrument Serif", sans-serif;
         font-size: 40px;
         margin: 0;
+        line-height: normal;
     }
     .location {
         font-family: "Instrument Serif", sans-serif;
@@ -581,13 +591,17 @@
         font-size: 18px;
         font-weight: 200;
         margin: 0;
+        margin-bottom: 32px;
         opacity: 0.7;
+        line-height: normal;
     }
     .description {
-        font-size: 20px;
+        font-size: 22px;
+        line-height: 32px;
         font-weight: 200;
         margin: 0;
         padding-left: 30px;
+        color: rgba(255, 255, 255, 0.8);
     }
     li {
         margin-bottom: 8px;
@@ -624,17 +638,20 @@
             /* margin: auto; */
             display: none;
         }
+    }
+    @media only screen and (max-width:750px) {
         .title {
             flex-direction: column;
             align-items: flex-start;
-            gap: 0;
+            gap: 2px;
         }
         .position {
             font-size: 36px;
+            line-height: normal;
         }
         .location {
             font-size: 22px;
-            line-height: normal;
+            line-height: 32px;
         }
         .date {
             font-size: 16px;;
