@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TritonAI Chatbot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1b2a;
+      color: #fff;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 260px;
+      background-color: #161f2e;
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+      padding: 1rem;
+      border-right: 1px solid #2e4057;
+    }
+    .sidebar h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #f9d342;
+      text-align: center;
+    }
+    .chat-history {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .chat-history div {
+      padding: 0.5rem 0.5rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .chat-history div:hover {
+      background: #2e4057;
+    }
+    .chat-history .active {
+      background-color: #1e3a8a;
+      font-weight: 600;
+      border-left: 4px solid #3b82f6;
+    }
+    .categories button {
+      display: block;
+      width: 100%;
+      margin: 0.4rem 0;
+      padding: 0.75rem;
+      background: #1f4068;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .categories button:hover {
+      background: #415a77;
+      transform: translateY(-2px);
+    }
+    .chat-container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      background: #0f2138;
+    }
+    .chat-box {
+      flex-grow: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .message {
+      padding: 1rem;
+      border-radius: 14px;
+      max-width: 70%;
+      line-height: 1.4;
+      font-size: 1rem;
+    }
+    .user-message {
+      background: #1f4068;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .bot-message {
+      background: #2e4057;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .input-container {
+      display: flex;
+      padding: 1rem;
+      background: #161f2e;
+      border-top: 1px solid #2e4057;
+    }
+    input[type="text"] {
+      flex-grow: 1;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1rem;
+      background: #1b263b;
+      color: #fff;
+    }
+    input::placeholder {
+      color: #aaa;
+    }
+    button.send-btn {
+      margin-left: 0.75rem;
+      padding: 0.9rem 1.5rem;
+      background: #f9d342;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #000;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button.send-btn:hover {
+      background: #ffd60a;
+      transform: translateY(-2px);
+    }
+    .new-chat-btn {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background: #f9d342;
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .new-chat-btn:hover {
+      background: #ffd60a;
+      transform: translateY(-2px);
+    }
+    .new-chat-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      gap: 1rem;
+    }
+    .new-chat-center h1 {
+      font-size: 2.5rem;
+      color: #f9d342;
+    }
+    .new-chat-center p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    .new-chat-center input {
+      padding: 0.9rem 1rem;
+      width: 50%;
+      max-width: 400px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: #1b263b;
+      color: #fff;
+    }
+    .new-chat-center input::placeholder {
+      color: #aaa;
+    }
+    .new-chat-center button {
+      padding: 0.9rem 1.5rem;
+      background: #f9d342;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #000;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .new-chat-center button:hover {
+      background: #ffd60a;
+      transform: translateY(-2px);
+    }
+    .chat-box::-webkit-scrollbar,
+    .chat-history::-webkit-scrollbar {
+      width: 6px;
+    }
+    .chat-box::-webkit-scrollbar-track,
+    .chat-history::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .chat-box::-webkit-scrollbar-thumb,
+    .chat-history::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+    }
+    .chat-box::-webkit-scrollbar-thumb:hover,
+    .chat-history::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .sidebar-hr {
+      border: none;
+      height: 1px;
+      background-color: #2e4057;
+      margin: 0;
+    }
+    h3 {
+      margin: 0;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>TritonAI</h2>
+    <button class="new-chat-btn" onclick="startNewChat()">➕ New Chat</button>
+    <h3>Quick Access</h3>
+    <hr class="sidebar-hr" />
+    <div class="categories">
+      <button class="quick-access">📘 Class Planning</button>
+      <button class="quick-access">📖 Course Information</button>
+      <button class="quick-access">🔬 Research Help</button>
+      <button class="quick-access">💼 Career Advice</button>
+    </div>
+    <h3>Chats</h3>
+    <hr class="sidebar-hr" />
+    <div class="chat-history">
+      <div id='planning' onclick="loadChat('planning')">Planning Spring Quarter</div>
+      <div id='syllabus' onclick="loadChat('syllabus')">COGS 101A Syllabus</div>
+      <div id='research' onclick="loadChat('research')">Research Opportunities</div>
+      <div id='resume' onclick="loadChat('resume')">Resume Review</div>
+      <div id='ge' onclick="loadChat('ge')">Choosing GE Courses</div>
+    </div>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-box" id="chat-box"></div>
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Type a message..." />
+      <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const responses = [
+      "Sure, I can help with that!",
+      "COGS 101A is a good intro course to take early on.",
+      "You might want to check your degree audit on TritonLink.",
+      "Cognitive Science often overlaps with psychology and computer science.",
+      "I recommend forming a study group for COGS 108!"
+    ];
+
+    let responseIndex = 0;
+    let chatCount = 1;
+    let activeChatId = null;
+
+    const conversations = {
+      planning: [
+        { user: "I need help planning for Spring Quarter.", bot: "Sure! Which major requirements are you focusing on?" },
+        { user: "I want to take COGS 108 and COGS 101C.", bot: "Great combo! Be aware that both are project-heavy." }
+      ],
+      syllabus: [
+        { user: "Can I see the syllabus for COGS 101A?", bot: "Yes, the syllabus covers perception, sensory systems, and includes weekly quizzes." }
+      ],
+      research: [
+        { user: "How do I get research experience?", bot: "Check the Cognitive Science department website for labs recruiting undergrads." },
+        { user: "Any specific labs for HCI?", bot: "Yes, look into Design Lab or Dr. Hollan’s group." }
+      ],
+      resume: [
+        { user: "Can you review my resume?", bot: "Sure! Focus on highlighting projects like COGS 108 assignments and UX internships." }
+      ],
+      ge: [
+        { user: "What GE courses should I take next quarter?", bot: "Popular choices are PHIL 10 for ethics and LIGN 7 for language and the brain." }
+      ]
+    };
+
+    function displayConversation(chatId) {
+      const chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML = "";
+      const msgs = conversations[chatId] || [];
+      msgs.forEach(msg => {
+        if (msg.user) {
+          const userMsg = document.createElement("div");
+          userMsg.className = "user-message message";
+          userMsg.textContent = msg.user;
+          chatBox.appendChild(userMsg);
+        }
+        if (msg.bot) {
+          const botMsg = document.createElement("div");
+          botMsg.className = "bot-message message";
+          botMsg.textContent = msg.bot;
+          chatBox.appendChild(botMsg);
+        }
+      });
+    }
+
+    function loadChat(chatId) {
+      activeChatId = chatId;
+      document.querySelector(".input-container").style.display = "flex";
+
+      const chatHistory = document.querySelector(".chat-history");
+      chatHistory.querySelectorAll(".active").forEach(item => item.classList.remove("active"));
+      const selectedChat = chatHistory.querySelector(`#${chatId}`);
+      if (selectedChat) selectedChat.classList.add("active");
+
+      displayConversation(chatId);
+    }
+
+    function startNewChat() {
+      const chatId = `newchat-${chatCount++}`;
+      activeChatId = chatId;
+      conversations[chatId] = [];
+
+      // Clear active state from other sidebar items
+      const chatHistory = document.querySelector(".chat-history");
+      chatHistory.querySelectorAll(".active").forEach(item => item.classList.remove("active"));
+      // Note: do NOT create a sidebar div yet; will only appear after first message
+
+      const chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML = `
+        <div class="new-chat-center">
+          <h1>New Conversation</h1>
+          <p>Type your message to start chatting.</p>
+          <div class="new-chat-input-container">
+            <input type="text" id="new-chat-input" placeholder="Type your message..." />
+            <button onclick="sendNewChatMessage('${chatId}')">Send</button>
+          </div>
+        </div>
+      `;
+
+      // Hide bottom input until first message
+      document.querySelector(".input-container").style.display = "none";
+    }
+
+
+    function sendNewChatMessage(chatId) {
+      if (!chatId) chatId = activeChatId;
+      if (!conversations[chatId]) conversations[chatId] = [];
+      activeChatId = chatId;
+
+      const input = document.getElementById("new-chat-input");
+      if (!input.value.trim()) return;
+
+      const chatBox = document.getElementById("chat-box");
+      document.querySelector(".input-container").style.display = "flex";
+      chatBox.innerHTML = "";
+
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-message message";
+      userMsg.textContent = input.value;
+      chatBox.appendChild(userMsg);
+      conversations[chatId].push({ user: input.value });
+
+      // Only now add to chat history
+      // Add to sidebar if first message
+      if (!document.getElementById(chatId)) {
+        const historyDiv = document.querySelector(".chat-history");
+
+        const newChatEntry = document.createElement("div");
+        newChatEntry.id = chatId;
+        newChatEntry.textContent = `💬 New Chat ${chatCount}`;
+        newChatEntry.onclick = () => loadChat(chatId);
+
+        // Add to top of sidebar
+        historyDiv.prepend(newChatEntry);
+
+        // Mark as active (current chat)
+        historyDiv.querySelectorAll(".active").forEach(item => item.classList.remove("active"));
+        newChatEntry.classList.add("active");
+      }
+
+      setTimeout(() => {
+        const botMsg = document.createElement("div");
+        botMsg.className = "bot-message message";
+        botMsg.textContent = "Hello! I'm ready to chat with you.";
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        conversations[chatId].push({ bot: botMsg.textContent });
+      }, 600);
+
+      input.value = "";
+    }
+
+    function sendMessage() {
+      if (!activeChatId) return;
+      const input = document.getElementById("user-input");
+      if (!input.value.trim()) return;
+
+      const chatBox = document.getElementById("chat-box");
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-message message";
+      userMsg.textContent = input.value;
+      chatBox.appendChild(userMsg);
+      conversations[activeChatId].push({ user: input.value });
+
+      setTimeout(() => {
+        const botMsg = document.createElement("div");
+        botMsg.className = "bot-message message";
+        botMsg.textContent = responses[responseIndex % responses.length];
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        conversations[activeChatId].push({ bot: botMsg.textContent });
+        responseIndex++;
+      }, 600);
+
+      input.value = "";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initial chatbox
+      startNewChat();
+
+      const userInput = document.getElementById("user-input");
+      if (userInput) {
+        userInput.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function(e) {
+        const newChatInput = document.getElementById("new-chat-input");
+        if (newChatInput && document.body.contains(newChatInput)) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendNewChatMessage(activeChatId);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whisk & Wink — Sweet Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaff;             /* soft pink-ish */
+      --card: #ffffff;
+      --ink: #503a4f;            /* plum */
+      --muted: #7a5d78;
+      --accent: #988ad9;         /* strawberry */
+      --accent-2: #fce3ff;       /* pale strawberry */
+      --mint: #dcd8ff;           /* mint highlight */
+      --lemon: #fff2a8;          /* lemon highlight */
+      --shadow: 0 10px 30px rgba(255, 132, 165, 0.15), 0 4px 12px rgba(80, 58, 79, 0.07);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    /* html, body { height: 100%; } */
+    body {
+      margin: 0;
+      font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 20% -10%, var(--accent-2) 0%, transparent 60%),
+                  radial-gradient(900px 700px at 120% 30%, var(--mint) 0%, transparent 55%),
+                  var(--bg);
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: conic-gradient(from 200deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .logo span {
+      font-family: 'Fredoka', cursive;
+      font-weight: 700; font-size: 28px; line-height: 1;
+      transform: rotate(-8deg);
+    }
+
+    .title {
+      display: grid;
+    }
+    .title h1 {
+      font-family: 'Fredoka', cursive; margin: 0; font-size: 32px;
+      letter-spacing: 0.5px;
+    }
+    .title p { margin: 2px 0 0; color: var(--muted); }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero {
+      aspect-ratio: 16/9;
+      border-radius: calc(var(--radius) - 6px);
+      background: linear-gradient(145deg, #fff0f5, #fff);
+      display: grid; place-items: center; overflow: hidden;
+      position: relative;
+    }
+    .hero svg { width: 70%; max-width: 480px; opacity: 0.95; }
+
+    .badge {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--lemon); padding: 6px 10px; border-radius: 999px;
+      font-weight: 700; font-size: 12px; letter-spacing: 0.3px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .controls {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+      margin: 8px 0 4px;
+    }
+
+    .chip {
+      border: 2px solid var(--accent-2);
+      background: #fff;
+      color: var(--ink);
+      padding: 8px 12px; border-radius: 999px; font-weight: 700;
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.03);
+    }
+    .chip strong { font-family: 'Fredoka'; font-size: 18px; }
+
+    .stepper {
+      display: inline-flex; align-items: center; border-radius: 999px; overflow: hidden;
+      border: 2px solid var(--accent);
+      background: #fff;
+    }
+    .stepper button {
+      all: unset; cursor: pointer; padding: 8px 12px; font-weight: 900;
+    }
+    .stepper button[disabled] { opacity: 0.4; cursor: not-allowed; }
+    .stepper .val { padding: 8px 12px; font-weight: 800; min-width: 38px; text-align: center; }
+
+    .quick {
+      display: inline-flex; gap: 8px; margin-left: 4px;
+    }
+    .quick button {
+      all: unset; cursor: pointer; padding: 8px 12px; border-radius: 999px; font-weight: 800;
+      border: 2px dashed var(--accent-2); background: #fff;
+    }
+    .quick button.active { background: var(--accent-2); border-style: solid; }
+
+    h2 { font-family: 'Fredoka'; margin: 0; font-size: 22px; }
+
+    .ing-list {
+      list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
+    }
+    .ing-list li {
+      background: linear-gradient(90deg, rgba(255,215,226,0.45), transparent 40%);
+      padding: 10px 12px; border-radius: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .ing-list input[type="checkbox"] {
+      width: 18px; height: 18px; accent-color: var(--accent);
+    }
+    .ing-qty { font-weight: 800; min-width: 72px; text-align: right; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag { background: var(--mint); padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 12px; }
+
+    .steps { counter-reset: step; display: grid; gap: 12px; }
+    .step {
+      display: grid; gap: 6px; padding: 16px; border-radius: 14px; background: linear-gradient(145deg, #fff, #fff5f8);
+      border: 1px dashed var(--accent-2);
+    }
+    .step h3::before {
+      counter-increment: step; content: counter(step);
+      width: 28px; height: 28px; display: inline-grid; place-items: center; margin-right: 8px;
+      background: var(--accent); color: white; border-radius: 50%; font-family: 'Fredoka';
+    }
+    .step h3 { margin: 0; display: flex; align-items: center; font-size: 18px; }
+
+    .footer {
+      margin-top: 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .btn {
+      all: unset; cursor: pointer; padding: 10px 14px; font-weight: 800; border-radius: 12px; background: var(--accent);
+      color: white; box-shadow: var(--shadow);
+    }
+
+    .credits { color: var(--muted); font-size: 13px; }
+    p {
+        margin: 0;
+    }
+    @media (max-width: 860px) {
+      .grid { display: grid;grid-template-columns: 1fr; }
+      .card {width: auto!important;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="../images/memoji.png" style="width: 50px; height: 50px;">
+      <!-- <div class="logo" aria-hidden="true"><span><img src="../images/memoji.png"></span></div> -->
+      <div class="title">
+        <h1>Alice's Recipes</h1>
+        <p>I made it for you! ✿</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left: Hero & meta -->
+      
+      <section class="card" style="gap: 12px; width: calc(55% - 11px); max-width: 500px;">
+        <h2 style="font-size: 36px; text-align: center">Bacon Buldak Pasta 🥓</h2>
+        <!-- <p style="margin-top:-4px; color: var(--muted)">Creamy one-pot bacon buldak pasta with cottage cheese sauce -->
+        </p>
+        <div class="hero" role="img" aria-label="Illustration of strawberry shortcake with hearts">
+          <!-- <div class="badge">New ✿ Easy</div> -->
+          <!-- Cute cake SVG illustration -->
+          <!-- <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> -->
+            <!-- <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffd7e2"/>
+                <stop offset="100%" stop-color="#fff"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="520" height="320" fill="url(#g1)"/>
+            <g transform="translate(110,80)">
+              <ellipse cx="150" cy="180" rx="170" ry="18" fill="#f4c1d3" opacity=".5"/>
+              <rect x="30" y="120" rx="18" ry="18" width="240" height="70" fill="#ffe9ef" stroke="#ff84a5" stroke-width="3"/>
+              <rect x="50" y="90" rx="16" ry="16" width="200" height="50" fill="#fff2a8" stroke="#f5d55f" stroke-width="3"/>
+              <rect x="40" y="60" rx="16" ry="16" width="220" height="44" fill="#fff" stroke="#ff84a5" stroke-width="3"/>
+              <g>
+                <circle cx="90" cy="52" r="16" fill="#ff5b84"/>
+                <path d="M90 44c4 4 9 6 9 12a9 9 0 1 1-18 0c0-6 5-8 9-12z" fill="#e93d66"/>
+              </g>
+              <g>
+                <circle cx="205" cy="52" r="16" fill="#ff5b84"/>
+                <path d="M205 44c4 4 9 6 9 12a9 9 0 1 1-18 0c0-6 5-8 9-12z" fill="#e93d66"/>
+              </g>
+            </g>
+          </svg> -->
+          <img src="../images/pasta.jpg" style="width: 100%;">
+        </div>
+
+        <div class="controls" aria-label="Servings controls">
+          <span class="chip" id="servesChip">Serves <strong id="serves">6</strong></span>
+          <div class="stepper" role="group" aria-label="Adjust serving multiplier">
+            <button id="minus" aria-label="decrease multiplier">−</button>
+            <span class="val" id="mult">1×</span>
+            <button id="plus" aria-label="increase multiplier">＋</button>
+          </div>
+          <div class="quick" role="group" aria-label="quick multipliers">
+            <button data-qm="1">1×</button>
+            <button data-qm="2">2×</button>
+            <button data-qm="3">3×</button>
+            <button data-qm="4">4×</button>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">30 mins</span>
+          <span class="tag">One-pot</span>
+          <span class="tag">REALLY GOOD</span>
+        </div>
+        
+      </section>
+
+      <!-- Right: Ingredients & Steps -->
+      <section class="card" style="width: calc(45% - 11px); max-width: 500px;">
+
+        <h2>Ingredients</h2>
+        <ul class="ing-list" id="ingredients">
+          <li>
+            <input type="checkbox" aria-label="check pasta (shape of choice)" />
+            <span class="ing-qty" data-base-qty="2.5" data-unit="oz">2 oz</span>
+            <span>pasta (shape of choice)</span>
+          </li>
+          <li>
+            <input type="checkbox" aria-label="check cottage cheese" />
+            <span class="ing-qty" data-base-qty="0.5" data-unit="cup">1/2 cup</span>
+            <span>cottage cheese</span>
+          </li>
+          <li>
+            <input type="checkbox" aria-label="check bacon (chopped)" />
+            <span class="ing-qty" data-base-qty="3" data-unit="slice">1 slices</span>
+            <span>bacon (chopped)</span>
+          </li>
+          <li>
+            <input type="checkbox" aria-label="check parm" />
+            <span class="ing-qty" data-base-qty="0.33333" data-unit="cup">1/3 cup</span>
+            <span>parmesan cheese</span>
+          </li>
+          
+          <li>
+            <input type="checkbox" aria-label="check buldak" />
+            <span class="ing-qty" data-base-qty="2" data-unit="tbsp">2 tbsp</span>
+            <span>buldak hot sauce</span>
+          </li>
+          <li>
+            <input type="checkbox" aria-label="check onion" />
+            <span class="ing-qty" data-base-qty="0.5" data-unit="cup">1/2 cup</span>
+            <span>onion (diced)</span>
+          </li>
+          <li>
+            <input type="checkbox" aria-label="check garlic" />
+            <span class="ing-qty" data-base-qty="5" data-unit="clove">5 cloves</span>
+            <span>garlic (minced)</span>
+          </li>
+          <li>
+            <input type="checkbox" aria-label="check black pepper" />
+            <span class="ing-qty" data-base-qty="1" data-unit="tsp">1 tsp</span>
+            <span>black pepper</span>
+          </li>
+        </ul>
+      </section>
+      <section class="card" style="width: 100%;">
+        <h2>Steps</h2>
+        <div class="steps">
+          <div class="step">
+            <h3>Fry the bacon</h3>
+            <p>In a pan, fry your chopped bacon until all the fat has been rendered out. Then, remove the bacon from the pan and pour out the fat. </p>
+          </div>
+          <div class="step">
+            <h3>Fry the onion and garlic</h3>
+            <p>In the same pan, pour in garlic and onion. Stir fry until you feel like stopping lol doesn't really matter🤣</p>
+          </div>
+          <div class="step">
+            <h3>Pasta time!</h3>
+            <p>Pour pasta into the same pan and fill with water until pasta is covered.</p>
+          </div>
+          <div class="step">
+            <h3>Spicy buldak! (Optional if don't want spice) </h3>
+            <p>Add the buldak into the pasta and let it boil together! Pasta absorb all the buldak!!</p>
+          </div>
+          <div class="step">
+            <h3>Waiting for the pasta to cook!</h3>
+            <p>Leave the pan uncovered and monitor the pasta. After a few minutes, pour the bacon back into the pasta until the pasta is cooked (If you want crispy bacon, you can save some to sprinkle in later). </p>
+          </div>
+          <div class="step">
+            <h3>Parm and black pepper time!</h3>
+            <p>As the water evaporates most of the way, sprinkle the black pepper and add the parmesan into the pasta.  </p>
+          </div>
+          <div class="step">
+            <h3>Saucing it up</h3>
+            <p>Once the pasta is dry enough (up to you but I like a little liquid), turn off heat. With heat off, add cottage cheese into the pasta, mix mix mix, and serve! If you saved some bacon, sprinkle on top now!</p>
+          </div>
+        </div>
+
+        <div class="footer">
+          <button class="btn" id="print">🖨️ Print recipe</button>
+          <span class="credits">Make it soon! I'm waiting for the pics! -Alice</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // Utility: format fractions up to 1/8ths for cute readability
+    function toFraction(num) {
+        const tolerance = 0.02;
+        const whole = Math.floor(num);
+        const frac = num - whole;
+
+        // If effectively whole, return as integer string
+        if (Math.abs(num - Math.round(num)) < tolerance) return String(Math.round(num));
+
+        // Check for thirds
+        if (Math.abs(frac - 1/3) < tolerance) return whole > 0 ? `${whole} 1/3` : '1/3';
+        if (Math.abs(frac - 2/3) < tolerance) return whole > 0 ? `${whole} 2/3` : '2/3';
+
+        // Check for eighths
+        const eighths = Math.round(frac * 8);
+        const glyphs = {1:'1/8',2:'1/4',3:'3/8',4:'1/2',5:'5/8',6:'3/4',7:'7/8'};
+        if (eighths === 0) return String(whole); // fallback
+        return whole === 0 ? glyphs[eighths] || frac.toFixed(2) : `${whole} ${glyphs[eighths] || frac.toFixed(2)}`;
+    }
+
+    const maxMult = 4;
+    const minMult = 1;
+
+    const multEl = document.getElementById('mult');
+    const minus = document.getElementById('minus');
+    const plus = document.getElementById('plus');
+    const quickBtns = Array.from(document.querySelectorAll('[data-qm]'));
+    const servesEl = document.getElementById('serves');
+    const servesChip = document.getElementById('servesChip');
+
+    let multiplier = Number(localStorage.getItem('ww-mult') || 1);
+    multiplier = Math.min(maxMult, Math.max(minMult, multiplier));
+
+    function updateIngredients() {
+      document.querySelectorAll('.ing-qty').forEach(span => {
+        const base = parseFloat(span.getAttribute('data-base-qty')) || 0;
+        const unit = span.getAttribute('data-unit') || '';
+        const qty = base * multiplier;
+        span.textContent = `${toFraction(qty)} ${unit}`.trim();
+      });
+      multEl.textContent = multiplier + '×';
+      servesEl.textContent = 1 * multiplier; // base serves 6
+      minus.disabled = multiplier <= minMult;
+      plus.disabled = multiplier >= maxMult;
+      quickBtns.forEach(b => b.classList.toggle('active', Number(b.dataset.qm) === multiplier));
+      servesChip.setAttribute('aria-label', `Serves ${6 * multiplier}`);
+      localStorage.setItem('ww-mult', multiplier);
+    }
+
+    minus.addEventListener('click', () => {
+      if (multiplier > minMult) { multiplier--; updateIngredients(); }
+    });
+    plus.addEventListener('click', () => {
+      if (multiplier < maxMult) { multiplier++; updateIngredients(); }
+    });
+    quickBtns.forEach(btn => btn.addEventListener('click', () => {
+      multiplier = Number(btn.dataset.qm);
+      updateIngredients();
+    }));
+
+    document.getElementById('print').addEventListener('click', () => window.print());
+
+    updateIngredients();
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
