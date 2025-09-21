@@ -908,6 +908,7 @@ footer .active {
 .button {
     text-decoration: none;
     border: 2px solid rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
     width: fit-content;
     padding: 14px 24px 14px 24px;
     border-radius: 100px;

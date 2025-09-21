@@ -217,13 +217,14 @@ h2 {
     letter-spacing: 0px;
     color: rgba(255, 255, 255, 0.814);
     /* opacity: 0.8; */
+    margin-left: 0;
 }
 .right p {
     margin-top: 12px;
     margin-bottom: 0;
 }
 .right ul {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     margin: 0;
 }
 .right h4 {
