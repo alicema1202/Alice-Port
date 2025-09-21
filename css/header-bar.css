@@ -11,7 +11,7 @@ body {
     transition: top 0.8s;
     /* top: -150px; */
     top: 0;
-    animation: slide-down 1s ease-in-out 1 forwards;
+    animation: slide-down 0.8s ease-in-out 1 forwards;
 }
 .delay {
     transform: translateY(-100px);
@@ -27,6 +27,7 @@ body {
 @keyframes slide-down {
     0% {
         transform: translateY(-100px);
+        filter: blur(10px);
     }
     100% {
         transform: translateY(0);

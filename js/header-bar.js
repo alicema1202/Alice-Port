@@ -9,14 +9,22 @@ window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;               
     /* if we're scrolling up, or we haven't passed the header,
         show the header at the top */
+// if (currentScrollPos < window.innerHeight + 90) {
+//     document.querySelector("aside").classList.remove('extra-top-padding');
+// }
 if (currentScrollPos < 200) {
     headerDiv.style.top = "0";
     headerDiv.classList.remove("midpage");
-    document.querySelector(".back-to-top").classList.add('hide');
-}
+    document.querySelector(".back-to-top").classList.add('hide');}
 else if (prevScrollpos > currentScrollPos) {  
         headerDiv.style.top = "0";
         headerDiv.classList.add("midpage");
+        if (currentScrollPos > window.innerHeight + 91) {
+            document.querySelector("aside").classList.add('extra-top-padding');
+        }
+        else {
+            document.querySelector("aside").classList.remove('extra-top-padding');
+        }
 }
 else if (currentScrollPos <  200) {
     headerDiv.style.top = "0";
@@ -28,6 +36,7 @@ else if (document.querySelector(".nav-content").classList.contains('active') == 
     /* otherwise we're scrolling down & have passed the header so hide it */
     headerDiv.style.top = "-200px";
     document.querySelector(".back-to-top").classList.remove('hide');
+    document.querySelector("aside").classList.remove('extra-top-padding');
 } 
 
     prevScrollpos = currentScrollPos;

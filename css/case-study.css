@@ -21,6 +21,8 @@ strong {
     font-family: "SF Pro", sans-serif;
     gap: 4vh;
     padding-top: 36px;
+    overflow: hidden;
+    position: relative;
 }
 .hero.cooklaborate {
     background: linear-gradient(307deg, #194b24 6.14%, #3b8b4b 98.68%);
@@ -78,30 +80,84 @@ strong {
 }
 #read-more {
     position: absolute;
-    bottom: 48px;
+    bottom: 32px;
     color: white;
     text-decoration: none;
 }
-#content {
-    width: 90vw;
+.body {
     max-width: 1092px;
+    width: 90vw;
     margin: auto;
-    padding-top: 64px;
+    display: flex;
+    gap: 92px;
+}
+aside {
+    position: sticky;
+    top: 0;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    padding-top: 64px;
+    transition: 0.5s ease-in-out!important;
+}
+.previous {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.6)!important;
+    align-items: center;
+}
+.extra-top-padding {
+    padding-top: 155px;
+}
+aside ul {
+    padding: 0;
+    margin-top: 36px;
+    width: max-content;
+} 
+aside a {
+    color: rgba(255, 255, 255, 0.284);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 250;
+}
+aside a.active {
+  /* color: #0070f3;  */
+  font-weight: 250;
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.3s ease-out;
+}
+aside ::marker {
+    color: rgba(0, 0, 0, 0)
+}
+#content {
+    width: 90vw;
+    width: 100%;
+    max-width: 1092px;
+    max-width: none;
+    margin: auto;
+    /* padding-top: 64px; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 80px; */
 }
 .text-box {
     display: flex;
+    flex-direction: column;
     color: white;
     /* background-color: palegoldenrod; */
     gap: 80px;
+    gap: 24px;
+    padding-top: 64px;
     justify-content: space-evenly;
 }
 
 .text-box h3 {
     margin: 0;
     width: 120px;
+    width: auto;
     color: #449f4a;
     line-height: 20px;
     font-weight: 500;
@@ -126,7 +182,9 @@ strong {
     flex-direction: column;
     /* background-color: purple; */
     gap: 16px;
+    gap: 8px;
     width: 80%;
+    width: 100%;
 }
 .text-box hr {
     display: block;
@@ -144,15 +202,19 @@ h2 {
     line-height: 48px;
     line-height: normal;
     font-size: 48px;
+    margin-bottom: 8px;
     font-family: "Instrument Serif", serif;
 }
 .right p, .right li {
     font-size: 22px;
+    font-size: 18px;
     font-weight: 250;
     line-height: 36px;
+    line-height: 28px;
     margin-top: 0;
     margin-bottom: 8px;
     letter-spacing: 0.3px;
+    letter-spacing: 0px;
     color: rgba(255, 255, 255, 0.814);
     /* opacity: 0.8; */
 }
@@ -161,6 +223,7 @@ h2 {
     margin-bottom: 0;
 }
 .right ul {
+    padding-left: 20px;
     margin: 0;
 }
 .right h4 {
@@ -350,6 +413,7 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 @media (min-width:900px) {
+    
     .persona-card {
         display: flex;
         width: 100%;
@@ -441,6 +505,9 @@ th {
     
 }
 @media only screen and (max-width: 900px) {
+    aside {
+        display: none;
+    }
     .hero {
         height: calc(100vh - 100px - 16px);
         height: calc(100svh - 100px - 16px);

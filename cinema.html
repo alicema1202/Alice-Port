@@ -134,296 +134,316 @@
         </div>
         <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
     </section>
-    <section id="content" class="content">
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">overview</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    An easier way to purchase and scan movie tickets
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
-                </p>
+    <section class="body">
+        <aside>
+            <a class="previous hidden" href="/"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>BACK </a>
+            <nav>
+                <ul class="hidden">
+                    <a href="#overview"><p>Overview</p></a>
+                    <a href="#problem-statement"><p>Problem Statement</p></a>
+                    <a href="#user-research"><p>User Interviews</p></a>
+                    <a href="#competitive-audit"><p>Competitive Audit</p></a>
+                    <a href="#branding"><p>Branding</p></a>
+                    <a href="#lofi"><p>Low-fidelity testing</p></a>
+                    <a href="#site-architecture"><p>Site Architecture</p></a>
+                    <a href="#design-components"><p>Design Components</p></a>
+                    <a href="#usability-test"><p>Usability Testing</p></a>
+                    <a href="#solution"><p>Final Product</p></a>
+                    <a href="#what-i-learned"><p>What I Learned</p></a>
+                </ul>
+            </nav>
+        </aside>
+        <section id="content" class="content">
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">overview</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        An easier way to purchase and scan movie tickets
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        CineMa is a <strong>mobile ticketing app</strong> that gives movie enthusiasts a convenient and easy way to purchase and scan movie tickets. CineMa aims to ease the process of mobile ticketing overall and offer users a smooth experience.
+                    </p>
+                </div>
             </div>
-        </div>
-        
-        <div class="text-box hidden">
-            <div class="left hidden">
-                <h3 class="cinema">
-                    understanding users
-                </h3>
-            </div>
-            <div class="right">
-                <h2 class="hidden">
-                    Looking at the needs of the users
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
-                </p>
-                <br>
-                <div class="persona-card">
-                    <div class="bio hidden">
-                        <div class="basic-info">
-                            <img class="persona-pic" src="images/woman-light.png">
-                            <div class="name-age">
-                                <h4 class="title">Zhao</h4>
-                                <p class="age">42 / Female</p>
+            
+            <div class="text-box hidden">
+                <div class="left hidden">
+                    <h3 class="cinema">
+                        understanding users
+                    </h3>
+                </div>
+                <div class="right">
+                    <h2 class="hidden">
+                        Looking at the needs of the users
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        Moving forward, I created user personas that represented different users in order to help with identifying different user pain points. The persona below is Zhao, a 42 year old female:
+                    </p>
+                    <br>
+                    <div class="persona-card">
+                        <div class="bio hidden">
+                            <div class="basic-info">
+                                <img class="persona-pic" src="images/woman-light.png">
+                                <div class="name-age">
+                                    <h4 class="title">Zhao</h4>
+                                    <p class="age">42 / Female</p>
+                                </div>
+                            </div>
+                            <p class="hidden about description">
+                                Zhao is from China, and she recently moved to the US with her husband and two children. Zhao and her family speak very limited English, but they enjoy going to the movie theaters for family day.
+                            </p>
+                            <br>
+                        </div>
+                        <div class="information">
+                            <div class="hidden goals">
+                                <h4 class="title">Zhao's Goals</h4>
+                                <ol class="description">
+                                    <li class="item">
+                                        <p>Buy multiple tickets for her family easily</p>
+                                    </li>
+                                    <li class="item">
+                                        <p>Purchase tickets without needing to speak English</p>
+                                    </li>
+                                    <li class="item">
+                                        <p>Browse all movies in different languages</p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="hidden pain-points">
+                                <h4 class="title">Zhao's Pain Points</h4>
+                                <ol class="description bottom">
+                                    <li class="item">
+                                        <p>Zhao cannot communicate to workers at the theater due to limited English</p>
+                                    </li>
+                                    <li class="item">
+                                        <p>Movie options are not available in Chinese when purchasing in person</p>
+                                    </li>
+                                </ol>
                             </div>
                         </div>
-                        <p class="hidden about description">
-                            Zhao is from China, and she recently moved to the US with her husband and two children. Zhao and her family speak very limited English, but they enjoy going to the movie theaters for family day.
-                        </p>
-                        <br>
-                    </div>
-                    <div class="information">
-                        <div class="hidden goals">
-                            <h4 class="title">Zhao's Goals</h4>
-                            <ol class="description">
-                                <li class="item">
-                                    <p>Buy multiple tickets for her family easily</p>
-                                </li>
-                                <li class="item">
-                                    <p>Purchase tickets without needing to speak English</p>
-                                </li>
-                                <li class="item">
-                                    <p>Browse all movies in different languages</p>
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="hidden pain-points">
-                            <h4 class="title">Zhao's Pain Points</h4>
-                            <ol class="description bottom">
-                                <li class="item">
-                                    <p>Zhao cannot communicate to workers at the theater due to limited English</p>
-                                </li>
-                                <li class="item">
-                                    <p>Movie options are not available in Chinese when purchasing in person</p>
-                                </li>
-                            </ol>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">Ideation</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    From paper to prototype
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms. 
-                </p>
-                <div class="photo hidden">
-                    <img class="chart" src="images/cinema-paper.jpg" title="Paper wireframes">
-                    <p class="caption hidden">
-                        Paper wireframes showing multiple iterations of the home screen
-                    </p>
-                </div>
-                <br>
-                <p class="hidden">
-                    After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
-                </p>
-                <div class="photo hidden">
-                    <img class="chart" src="images/cinema-lofi.png" title="Lofi wireframes">
-                    <p class="caption hidden">
-                        Low-fidelity screens of the main user flow
-                    </p>
-                </div>
-                <br>
-                <a class="button hidden" href="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank">
-                    <p>View mid-fi prototype</p>
-                </a>
-            </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden">
-                <h3 class="cinema">
-                    User Testing
-                </h3>
-            </div>
-            <div class="right">
-                <h2 class="hidden">
-                    The problems with my current design
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
-                </p>
-                <ul>
-                    <li class="first-item hidden">
-                        Lacked language options
-                    </li>
-                    <li class="hidden">
-                        Users need to be able to review their ticket order
-                    </li>
-                    <li class="hidden">
-                        There should be the option of bundle scanning
-                    </li>
-                </ul>
-                <p class="hidden">
-                    Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
-                </p>
-                <ul>
-                    <li class="first-item hidden">
-                        The user flow was missing a seat selection feature
-                    </li>
-                    <li class="hidden">
-                        Some gesture and touch options were not working
-                    </li>
-                    <li class="hidden">
-                        Movie titles should be includes in the tickets
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">Making changes</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    Making improvements based on study results
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    After conducting the usability study, I made some changes to my high-fidelity prototype!
-                </p>
-                <!-- <p class="hidden">
-                    New features:
-                </p> -->
-                <ul class="changes">
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">Ideation</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        From paper to prototype
+                    </h2>
+                    <hr width="100%" class="hidden">
                     <p class="hidden">
-                        <strong>Seat Selection: </strong>  Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
+                        To start the design, I began by sketching paper wireframes to get a basic idea of the app before converting them onto digital platforms. 
+                    </p>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/cinema-paper.jpg" title="Paper wireframes">
+                        <p class="caption hidden">
+                            Paper wireframes showing multiple iterations of the home screen
+                        </p>
+                    </div>
+                    <br>
+                    <p class="hidden">
+                        After creating these wireframes, I brought them over to Figma and made low fidelity wireframes, which I then turned into a working lo-fi prototype.
+                    </p>
+                    <div class="photo hidden">
+                        <img class="chart" src="images/cinema-lofi.png" title="Lofi wireframes">
+                        <p class="caption hidden">
+                            Low-fidelity screens of the main user flow
+                        </p>
+                    </div>
+                    <br>
+                    <a class="button hidden" href="https://www.figma.com/proto/dyd5eSwXP8Vu4GEAnpKS3G/Ticket-App-Wireframe?node-id=63%3A2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=63%3A2" target="_blank">
+                        <p>View mid-fi prototype</p>
+                    </a>
+                </div>
+            </div>
+            <div class="text-box hidden">
+                <div class="left hidden">
+                    <h3 class="cinema">
+                        User Testing
+                    </h3>
+                </div>
+                <div class="right">
+                    <h2 class="hidden">
+                        The problems with my current design
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        After building the low-fidelity prototype, I moved on and conducted my first usability study, from which I gathered new insights:
+                    </p>
+                    <ul>
+                        <li class="first-item hidden">
+                            Lacked language options
+                        </li>
+                        <li class="hidden">
+                            Users need to be able to review their ticket order
+                        </li>
+                        <li class="hidden">
+                            There should be the option of bundle scanning
+                        </li>
+                    </ul>
+                    <p class="hidden">
+                        Upon iterating on my low-fidelity prototype after the study, I created high-fidelity prototypes for my second usability study, where I gained more findings:
+                    </p>
+                    <ul>
+                        <li class="first-item hidden">
+                            The user flow was missing a seat selection feature
+                        </li>
+                        <li class="hidden">
+                            Some gesture and touch options were not working
+                        </li>
+                        <li class="hidden">
+                            Movie titles should be includes in the tickets
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">Making changes</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        Making improvements based on study results
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        After conducting the usability study, I made some changes to my high-fidelity prototype!
+                    </p>
+                    <!-- <p class="hidden">
+                        New features:
+                    </p> -->
+                    <ul class="changes">
+                        <p class="hidden">
+                            <strong>Seat Selection: </strong>  Adding seat selection is a crucial feature for users to order movie tickets, offering a convenient way to choose seats.
 
-                    </p>
-                    <div class="two-photos hidden">
-                        <div class="photo hidden">
-                            <img class="chart" src="images/Movie Info.png" title="Before screen">
-                            <p class="caption">
-                                Before
-                            </p>
+                        </p>
+                        <div class="two-photos hidden">
+                            <div class="photo hidden">
+                                <img class="chart" src="images/Movie Info.png" title="Before screen">
+                                <p class="caption">
+                                    Before
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <img class="chart" src="images/cinema-seats.png" title="Prototype">
+                                <p class="caption">
+                                    After
+                                </p>
+                            </div>
                         </div>
-                        <div class="photo hidden">
-                            <img class="chart" src="images/cinema-seats.png" title="Prototype">
-                            <p class="caption">
-                                After
-                            </p>
+                    </ul>
+                    <br>
+                    <ul class="changes reverse">
+                        <p class="hidden">
+                            <strong>Language Options: </strong>Adding language options is a must to improve accessibility for many users whose preferred language is not English.
+                        </p>
+                        <div class="two-photos hidden">
+                            <div class="photo hidden">
+                                <img class="chart" src="images/homelow.png" title="Before screen">
+                                <p class="caption">
+                                    Before
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <img class="chart" src="images/Select English (1).png" title="Prototype">
+                                <p class="caption">
+                                    After
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </ul>
-                <br>
-                <ul class="changes reverse">
+                    </ul>
+                </div>
+            </div>
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">Final product</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        The final high fidelity design
+                    </h2>
+                    <hr width="100%" class="hidden">
                     <p class="hidden">
-                        <strong>Language Options: </strong>Adding language options is a must to improve accessibility for many users whose preferred language is not English.
+                        Here are the high fidelity screens we designed on Figma.
                     </p>
-                    <div class="two-photos hidden">
+                    <br>
+                    <div class="four-photos hidden">
                         <div class="photo hidden">
-                            <img class="chart" src="images/homelow.png" title="Before screen">
+                            <img class="chart" src="images/Select English (1).png" title="Final Mockup">
                             <p class="caption">
-                                Before
+                                Language selection
                             </p>
                         </div>
                         <div class="photo hidden">
-                            <img class="chart" src="images/Select English (1).png" title="Prototype">
+                            <img class="chart" src="images/Home Page (6).png" title="Final Mockup">
                             <p class="caption">
-                                After
+                                Home
+                            </p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/heyyy.png" title="Final Mockup">
+                            <p class="caption">
+                                Scheduling
+                            </p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/cinema-seats.png" title="Final Mockup">
+                            <p class="caption">
+                                Seat selection
                             </p>
                         </div>
                     </div>
-                </ul>
+                    <br>
+                    <a class="button hidden" href="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank">
+                    <p>View hi-fi prototype</p>
+                </a>
+                </div>
             </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">Final product</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    The final high fidelity design
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    Here are the high fidelity screens we designed on Figma.
-                </p>
-                <br>
-                <div class="four-photos hidden">
-                    <div class="photo hidden">
-                        <img class="chart" src="images/Select English (1).png" title="Final Mockup">
-                        <p class="caption">
-                            Language selection
-                        </p>
-                    </div>
-                    <div class="photo hidden">
-                        <img class="chart" src="images/Home Page (6).png" title="Final Mockup">
-                        <p class="caption">
-                            Home
-                        </p>
-                    </div>
-                    <div class="photo hidden">
-                        <img class="chart" src="images/heyyy.png" title="Final Mockup">
-                        <p class="caption">
-                            Scheduling
-                        </p>
-                    </div>
-                    <div class="photo hidden">
-                        <img class="chart" src="images/cinema-seats.png" title="Final Mockup">
-                        <p class="caption">
-                            Seat selection
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">Final Product</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        CineMa's Style Guide
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
+                    </p>
+                    <div id="style-guide" class="photo hidden">
+                        <img class="chart" src="images/cinema-design-system.png" title="Style Guide">
+                        <p class="caption hidden">
+                            Style guide sheet
                         </p>
                     </div>
                 </div>
-                <br>
-                <a class="button hidden" href="https://www.figma.com/proto/yxU8Cq981ji7kcearnGMyi/Mobile-High-Fidelity-Design?node-id=98%3A5184&page-id=2%3A3&scaling=scale-down&starting-point-node-id=98%3A5184" target="_blank">
-                   <p>View hi-fi prototype</p>
-               </a>
             </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">Final Product</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    CineMa's Style Guide
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    While I was creating my high fidelity prototype, I compiled the components that I used (buttons, typefaces, color schemes, etc) into a single sticker sheet.
-                </p>
-                <div id="style-guide" class="photo hidden">
-                    <img class="chart" src="images/cinema-design-system.png" title="Style Guide">
-                    <p class="caption hidden">
-                        Style guide sheet
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">Accessibility</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        Taking accessibility into consideration
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.
+                        <br><br>
+                        With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.
+                        <br><br>
+                        I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">Accessibility</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    Taking accessibility into consideration
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    The first step that users take in my app is to choose their preferred language. Because this is the first step, users do not have to spend extra time trying to figure out how to change languages within the app's settings.
-                    <br><br>
-                    With contrasting colors, the app is more helpful to those with visual impairments, as the high contrast will ease their ability to read the contents of the app.
-                    <br><br>
-                    I have put labels on the movie posters after the user purchases tickets. This allows the screen reader to detect what movie ticket the user is browsing through.
-                </p>
+            <div class="text-box hidden">
+                <div class="left hidden"><h3 class="cinema">Takeaways</h3></div>
+                <div class="right">
+                    <h2 class="hidden">
+                        What I learned from this
+                    </h2>
+                    <hr width="100%" class="hidden">
+                    <p class="hidden">
+                        I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="text-box hidden">
-            <div class="left hidden"><h3 class="cinema">Takeaways</h3></div>
-            <div class="right">
-                <h2 class="hidden">
-                    What I learned from this
-                </h2>
-                <hr width="100%" class="hidden">
-                <p class="hidden">
-                    I learned that user opinion often differs from my expectations, which made me realize the important of user feedback and research because the end product would definitely not be user centered without the research.
-                </p>
-            </div>
-        </div>
+        </section>
     </section>
     <footer>
         <hr class="hidden">
