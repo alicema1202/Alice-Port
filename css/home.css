@@ -679,6 +679,61 @@ h2 z{
     border: none;
     background-color: white;
     width: 100%;
+    margin: 16px;
+}
+.more-work {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    max-width: 1092px;
+    align-items: start;
+} 
+.more-work .project {
+    width: 100%;
+    margin-top: 15px;
+    row-gap: 24px;
+}
+.more-work .text {
+    gap: 24px
+}
+.more-work .project img, .more-work video{
+    max-width: calc(100% - 64px);
+        border-radius: 4px;
+    /* height: auto; */
+    max-height: 150px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+/* .pega img {
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.356), 
+    0px 0px 6px rgba(0, 0, 0, 0.502);
+} */
+ .pega img {
+    mix-blend-mode: lighten;
+    width: 60%;
+ }
+.more-work video, .more-work img {
+    /* border-radius: 8px; */
+    /* filter: blur(0.5px); */
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.356), 
+    0px 0px 6px rgba(0, 0, 0, 0.502);
+    object-fit: fill;
+    height: auto;
+}
+
+.more-work .v3 {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    overflow: hidden;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.more-work .headline {
+    font-size: 32px;
+    line-height: 36px;
 }
 .project {
     width: 100%;
@@ -687,9 +742,9 @@ h2 z{
     align-items: center;
     justify-content: center;
     /* background-color: blue; */
-    column-gap: 64px;
-    margin: 40px 0px;
-    margin-bottom: 64px;
+    column-gap: 48px;
+    margin: 32px 0px;
+    margin-bottom: 48px;
     transition: 0.5s;
     opacity: 0.8;
 }
@@ -697,7 +752,7 @@ h2 z{
     transition: 0.5s;
 }
 .project:hover .text{
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: 0.3s;
 }
 .project:hover {
@@ -706,15 +761,19 @@ h2 z{
 .project:hover .v3 {
     transform: scale(1.02);
 }
-.project:hover .phone{
+.project:hover .phone, .project:hover img, .project:hover video {
     transform: scale(1.1);
 }
 .reverse {
     flex-direction: row-reverse;
     /* background-color: purple; */
 }
+.vertical {
+    flex-direction: column;
+    row-gap: 32px;
+}
 .v3 {
-    width: 50%;
+    width: 45%;
     height: 410px;
     background: linear-gradient(307deg, #1F6B7C 6.14%, #38ABC6 98.68%);
 
@@ -739,13 +798,17 @@ h2 z{
     mix-blend-mode: lighten;
 }
 .headline {
-    font-size: 50px;
-    line-height: 55px;
+    font-size: 45px;
+    line-height: 50px;
     font-family: "Instrument Serif", serif;
     margin: 0;
     color: rgb(180, 180, 180);
     font-style: italic;
     transition: 0.3s;
+}
+.headline.small {
+    font-size: 32px;
+    line-height: 36px;
 }
 .headline i {
     display: block;
@@ -786,6 +849,7 @@ h2 z{
     gap: 16.348px;
     margin: 0;
 }
+
 .cooklab {
     background: linear-gradient(307deg, #194b24 6.14%, #3b8b4b 98.68%);
 }
@@ -805,7 +869,13 @@ h2 z{
     background: linear-gradient(307deg, #53357B 6.14%, #9761DE 98.68%);
 }
 .pega {
-    background: linear-gradient(307deg, #1F2656 6.14%, #333B77 98.68%);
+    background: linear-gradient(307deg, #181f4f 6.14%, #434c97 98.68%);
+}
+.bytebrew {
+    background: linear-gradient(307deg, #065589 6.14%, #2ca6ac 98.68%);
+}
+.portfolio {
+    background: linear-gradient(307deg, rgb(19, 27, 52) 6.14%, #3a4e88 98.68%);
 }
 .hidden {
     opacity: 0;
@@ -829,8 +899,15 @@ h2 z{
     .project {
         flex-direction: column;
         gap: 24px;
+        align-items: flex-start;
         opacity: 1;
-    }    
+    }  
+    .more-work {
+        grid-template-columns: 1fr;
+        gap: 0px;
+        width: 100%;
+        max-width: 1092px;
+    }   
     .v3 {
         width: 100%;
         height: 400px;
@@ -923,4 +1000,147 @@ footer .active {
     font-size: 24px;
     line-height: normal;
     font-family: "SF Pro", sans-serif;
+}
+
+/* Modal overlay */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(50, 50, 50, 0.445);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+/* Modal inner content */
+.modal-content {
+  position: relative;
+  width: 90vw;
+  max-width: 900px;
+  height: auto;
+  background: #000;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Close button */
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Video styling */
+.modal-content video {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* force widescreen */
+  object-fit: contain;   /* no cropping */
+  border-radius: 8px;
+  display: block;
+}
+
+/* PDF styling */
+.modal-content iframe {
+  width: 100%;
+  height: 90vh;  /* fill most of the viewport */
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* custom cursor */
+/* Hide the default cursor */
+/* Hide native cursor */
+/* Keep system cursor by default */
+body {
+  cursor: default;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(0, -50%);
+  pointer-events: none;
+  z-index: 9999;
+
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.81);
+  box-shadow: -3px 3px 15px rgba(0, 0, 0, 0.511);
+  /* border: 1px solid black; */
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center; /* center vertically */
+  justify-content: flex-start; /* left to right expansion */
+  overflow: hidden;
+
+  font-size: 12px;
+  color: black;
+  font-family: 'SF Pro', sans-serif;
+  /* font-weight: 100; */
+  font-weight: 500!important;
+  white-space: nowrap;
+
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    padding 0.25s ease,
+    border-radius 0.25s ease,
+    opacity 0.2s ease;
+
+  transform-origin: left center;
+  opacity: 0; /* hidden initially */
+}
+
+/* Active hover cursor */
+.custom-cursor.active {
+  opacity: 1;
+  height: auto;
+  padding: 6px 12px;
+  border-radius: 20px;
+  width: auto;
+  min-width: 15px;
+}
+
+/* Text animation */
+.cursor-text {
+  display: inline-flex;
+  align-items: center; /* center vertically */
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-cursor.active .cursor-text {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.cursor-text .arrow {
+  font-size: 18px;
+  padding-left: 4px;
+  display: inline-block;
+  vertical-align: middle; /* ensure arrow aligns with text */
+}
+
+/* Hide system cursor when hovering hoverable elements */
+[data-cursor]:hover {
+  cursor: none;
 }
