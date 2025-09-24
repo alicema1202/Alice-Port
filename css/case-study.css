@@ -44,7 +44,7 @@ strong {
     min-width: 250px;
 }
 .kiosk .logo {
-    max-height: 80px;
+    max-height: 60px;
     object-fit: contain;
 }
 .kiosk img {
@@ -562,7 +562,7 @@ th {
         max-width: 700px;
     }
     #read-more {
-        bottom: 32px;
+        bottom: 24px;
     }
     .hero .fa-chevron-down {
         display: inline!important;
@@ -619,5 +619,8 @@ th {
         width: 90%!important;
         max-width: 400px;
         margin: auto;
+    }
+    .kiosk img {
+        width: 60vw;
     }
 }
