@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk on Tour — Alice Ma</title>
+
+    <!-- Style files -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/case-study.css" rel="stylesheet">
+    <link href="css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
+
+</head>
+<body>
+    <a onclick="scrollWin()" class="back-to-top hide" >
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <header class="header-bar" style="position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="https://alicemadesign.com" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="https://alicemadesign.com/sevenseas">Seven Seas</a>
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
+                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
+                                <!-- <hr> -->
+                                <!-- <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>  -->
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <!-- <script>
+        var prevScrollpos = window.pageYOffset;
+        
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector(".header-bar");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;               
+            /* if we're scrolling up, or we haven't passed the header,
+                show the header at the top */
+        if (prevScrollpos > currentScrollPos  || currentScrollPos < (headerBottom + 100)){  
+                headerDiv.style.top = "0";
+            }
+            else if (document.querySelector(".nav-content").classList.contains('active') == false){
+                /* otherwise we're scrolling down & have passed the header so hide it */
+                headerDiv.style.top = "-200px";
+            } 
+
+            prevScrollpos = currentScrollPos;
+        }
+        var st = $(this).scrollTop();
+    
+    
+    </script> -->
+    <section class="kiosk hero">
+        <img class="logo hidden" src="../images/kiosk-logo.png" style="width: auto"></svg>
+        <!-- <img class="hidden" src="../images/kiosk-on-tour.png"> -->
+        <img class="hidden" src="../images/kiosk-thumb.png">
+        <div class="description hidden">
+            <div class="section">
+                <strong>purpose</strong>
+                <p>Speeding up the purchasing process for concert merchandise</p>
+            </div>
+            <div class="section">
+                <strong>my role</strong>
+                <p>UX Design, UX Research, Visual Design</p>
+            </div>
+            <div class="section" style="width: min-content;">
+                <strong>Duration</strong>
+                <p style="width: 294px;">September - December 2024</p>
+            </div>
+        </div>
+        <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
+    </section>
+    <section class="body">
+        <aside>
+            <a class="previous hidden" href="/"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>BACK </a>
+            <nav>
+                <ul class="hidden">
+                    <a href="#overview"><p>Overview</p></a>
+                    <a href="#problem-statement"><p>Problem Statement</p></a>
+                    <a href="#online-research"><p>Online Research</p></a>
+                    <a href="#competitive-audit"><p>Competitive Audit</p></a>
+                    <a href="#field-observations"><p>Field Observations</p></a>
+                    <a href="#visualization"><p>Visualizing Insights</p></a>
+                    <a href="#ideation"><p>Ideation</p></a>
+                    <a href="#branding"><p>Branding</p></a>
+                    <a href="#kiosk-prototype"><p>Kiosk Prototyping</p></a>
+                    <a href="#usability-test"><p>Usability Test</p></a>
+                    <a href="#solution"><p>Final Product</p></a>
+                    <a href="#what-i-learned"><p>What I Learned</p></a>
+                </ul>
+            </nav>
+        </aside>
+        <section id="content" class="content">
+                <div id="overview" class="text-box hidden">
+                    <div class="left hidden"><h3 class="kiosk">overview</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            The popularization of concerts have led to long merchandise lines
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            In the recent years, concerts have become very popular and people are attending multiple events a year. Many people wish to buy merchandise as a souvenir for a concert. From personal experience and observations, lines for merchandise are extremely long and have become stressful to obtain.
+                        </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class="kiosk"> Solution</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            A self-service kiosk to streamline the merchandise purchasing process
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Hover over the images to see our final designs in action!
+                        </p>
+                        <br>
+                        <div class="two-photos hidden" style="display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap;">
+                            <div class="photo hidden" style="max-width: 100%">
+                                <video muted loop class="video chart" src="images/kiosk-prototype.mp4" poster="images/kiosk-prototype.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <p class="caption">
+                                    Digital prototype
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <video muted loop class="video chart" src="images/kiosk-demo.mp4" poster="images/kiosk-demo.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <p class="caption">
+                                    Kiosk demo
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <br>
+                        <a class="button hidden" href="https://www.figma.com/design/rRPSES03n33MdcsN8CSTnl/A4-Merchandise-Kiosk?node-id=74-2608&t=Lj4w8AZjdEKF3XzM-1" target="_blank">
+                        <p>View prototype</p>
+                    </a>
+                    </div>
+                </div>
+                
+                <div class="text-box hidden" id="problem-statement">
+                    <div class="left hidden"><h3 class="kiosk">problem statement</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            How might we improve the wait times and long lines for concert merchandise?
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            This project aims to create a physical interactive kiosks to combat the current limitations and frustrations customers encounter so we wanted to make a concert kiosk to address this problem.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="online-research">
+                    <div class="left hidden"><h3 class="kiosk">online research</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            The current process for buying concert merch...
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            To get a sense of the current experience in buying concert merchandise, we explored 10 different articles and reddit posts and found 4 common problems fans face.
+                        </p>
+                        <ul>
+                            <li class="first-item hidden">
+                                <strong>⏰ Arrival time:</strong>
+                                        Online users expressed concern about how early they need to arrive at the venue if they want to buy merch.
+                            </li>
+                            <li class="hidden">
+                                <strong>👚 Holding onto merch:</strong>
+                                        Not all concerts give out bags for merch and it's a hassle to hold it if they purchase before the concert.
+
+                            </li>
+                            <li class="hidden">
+                                <strong>⛺️ Lack of merch tents:</strong>
+                                        Online users were frustrated with the lack of merchandise tents which caused the line to be exceptionally long and some fans were unable to purchase merch. The lack of merch tents could be due to available staff, space, or time.
+                            </li>
+                            <li class="hidden">
+                                <strong>❓ Sizing:</strong>
+                                        Some online users were not sure about which sizes to get, while others were given the wrong size at the merchandise booths, leading to people asking online for possible trades in shirt designs and sizes.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="competitive-audit">
+                    <div class="left hidden"><h3 class="kiosk">competitive audit</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Exploring pros and cons of existing product vending kiosks
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            After researching problems with the existing method of buying concert merchandise. We looked into existing interactive kiosks to understand how they addressed the product vending experience.
+
+                        </p>
+                        <br>
+                        
+                        <ul class="changes competitor">
+                            <div style="width: 80%; margin: auto;">
+                                <h4 class="hidden">Uniqlo Vending Machine</h4>
+                                <p class="hidden">
+                                    👍 Allows users to  select color and size before adding to cart
+                                </p>
+                                <p class="hidden">
+                                    👎 Uniqlo's vending machine dispenses a limited selection of their best-selling items ONLY
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <img class="chart" src="images/uniqlo.png" title="Prototype">
+                                <p class="caption">
+                                    Uniqlo vending machine
+                                </p>
+                            </div>
+                        </ul>
+                        <br>
+                        <ul class="changes competitor reverse">
+                            <div style="width: 80%; margin: auto;">
+                                <h4 class="hidden">Pop Mart Vending Machine</h4>
+                                <p class="hidden">
+                                    👍 Provides in-depth information for products
+                                </p>
+                                <p class="hidden">
+                                    👍 Figurines displayed as samples
+                                </p>
+                                <p class="hidden">
+                                    👎 Doesn't allow people to pick which box they want, unlike they can in store
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <img class="chart" src="images/popmart.png" title="Prototype">
+                                <p class="caption">
+                                    Pop Mart vending machine
+                                </p>
+                            </div>
+                        </ul>
+                        <br>
+                        <ul class="changes competitor">
+                            <div style="width: 80%; margin: auto;">
+                                <h4 class="hidden">Benefit Vending Machine</h4>
+                                <p class="hidden">
+                                    👍 Includes list of all products with ratings
+                                </p>
+                                <p class="hidden">
+                                    👍 Detailed product descriptions
+                                </p>
+                                <p class="hidden">
+                                    👎 No out-of-stock indication
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <img class="chart" src="images/benefit.png" title="Prototype">
+                                <p class="caption">
+                                    Benefit vending machine
+                                </p>
+                            </div>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="field-observations">
+                    <div class="left hidden"><h3 class="kiosk">field observations</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            It may take over an hour to line up and buy merchandise!
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            For our fieldwork, we observed 1 concert merchandise line (Sabrina Carpenter's Short n' Sweet Concert @ Chase Center San Francisco), and 3 interactive kiosks (Popmart & Benefit Vending Machine and Uniqlo self-checkout). Observing the concert merch line was helpful to understand the built enviroment and the target audience for our kiosk. While observing kiosks gave us a better sense of how people interacted with product-dispensing kiosks.
+                        </p>
+                        <br>
+                        <table class="hidden" border="1" cellpadding="16" cellspacing="2">
+                            <!-- <tr>
+                                <th colspan="3" scope="colgroup">
+                                    <h4 class="hidden">Features and Functionality Table</h4>
+                                </th>
+                            </tr> -->
+                            <tr>
+                                <th>Concert Line</th>
+                                <th>Vending Kiosks</th>
+                            </tr>
+                            <tr>
+                                <TD scope="row">
+                                    Average transaction time: 5-8 minutes; longer transactions due to indecisiveness and wanting to try on items
+                                </TD>
+                                <TD>
+                                    Average transacton time: 3 minutes; people browsing were typically in groups of 2-5
+                                </TD>
+                            </tr>
+                            <tr>
+                                <TD scope="row">
+                                    2 hours before the cooncert, the line was roughly 45 minutes to 1 hour
+                                </TD>
+                                <TD>
+                                    Having multiple iosks helped long lines move quickly and reduced wait times (Uniqlo)
+                                </TD>
+                            </tr>
+                            <tr>
+                                <TD scope="row">Were able to decide which item to purchase because all sale items are displayed</TD>
+                                <TD>
+                                People were able to quickly view whether items were in stock (Pop Mart, Benefit)
+                                </TD>
+                            </tr>
+                    
+                        </table>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="visualization">
+                    <div class="left hidden"><h3 class="kiosk">Visualizing insights</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Turning our online research and fieldwork into conceptualized personas and storyboards
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        
+                        <p class="hidden">
+                            From the insights we gathered through our field work and online research, we created two personas to represent our target audience and their needs:
+                        </p>
+                        <br>
+                        <div class="slideshow-container hidden">
+                            <div class="mySlides1 fade">
+                                <img src="images/pam-kiosk.png" style="width:100%">
+                            </div>
+                            
+                            <div class="mySlides1 fade">
+                                <img src="images/jasmine.png" style="width:100%">
+                            </div>
+                            
+                            <a class="prev" onclick="plusSlides(-1,1)">❮</a>
+                            <a class="next" onclick="plusSlides(1,1)">❯</a>
+                        </div>
+                        <div class="hidden" style="text-align:center">
+                            <span class="dot dot1" onclick="currentSlide(1,1)"></span> 
+                            <span class="dot dot1" onclick="currentSlide(2,1)"></span>                             
+                        </div>
+                        
+
+                        <h4 class="hidden">
+                            <br>Conceptualizing potential use cases and scenarios
+                        </h4>
+                        <p class="hidden">
+                            Using these personas, we created storyboards to conceptualize actual usage scenarios and brainstorm how we could utilize a kiosk to address the pain points our personas face
+                        </p>
+                        <br>
+                        <div class="slideshow-container hidden">
+                            <div class="mySlides2 fade">
+                                <img src="images/story1.png" style="width:100%">
+                            </div>
+                            
+                            <div class="mySlides2 fade">
+                                <img src="images/story2.png" style="width:100%">
+                            </div>
+                            
+                            <div class="mySlides2 fade">
+                                <img src="images/story3.png" style="width:100%">
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1,2)">❮</a>
+                            <a class="next" onclick="plusSlides(1,2)">❯</a>
+                        </div>
+                        <!-- <br> -->
+                        
+                        <div class="hidden" style="text-align:center">
+                            <span class="dot dot2" onclick="currentSlide(1,2)"></span> 
+                            <span class="dot dot2" onclick="currentSlide(2,2)"></span> 
+                            <span class="dot dot2" onclick="currentSlide(3,2)"></span> 
+                        </div>
+                         <h4 class="hidden">
+                            <br>We learned that users have some concerns with the idea of concert merch kiosks
+                        </h4>
+                        <p class="hidden">
+                            We interviewed 5 concert-goers to understand their experience with purchasing concert merch and to test the concept of a merch kiosk though getting their opinions on our storyboards.
+                        </p>
+                        <ul>
+                            <li class="first-item hidden">
+                                Users want kiosks to <strong>mimic in-person interactions</strong> from feeling the clothing to seeing different sizes
+                            </li>
+                            <li class="hidden">
+                               Users are worried that<strong> kiosks won't give them the flexibility</strong> to express their concerns when purchasing merchandise, such as returning or exchanging items
+
+                            </li>
+                            <li class="hidden">
+                                Users are generally <strong>dissuaded from buying</strong> merchandise when there are long lines
+                            </li> 
+                        </ul>
+                    </div>
+                </div>    
+                <div class="text-box hidden" id="ideation">
+                    <div class="left hidden"><h3 class="kiosk">Ideation</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Working our way up from rough sketches
+                        </h2>
+                        
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            With our personas and storyboards in mind, we began sketching out ideas for the kiosk's digital and physical. We focused on creating a simple and intuitive interface that would allow users to quickly browse and purchase merchandise.
+                        </p>
+                        <h4 class="hidden">
+                            <br>Digital display conceptual sketches
+                        </h4>
+                        <p class="hidden">
+                           To begin, we sketched a paper prototype to the show digital interaction elements of our kiosk.
+                        </p>
+                        <br>
+                        <video class="hidden chart" controls autoplay muted loop playsinline>
+                            <source src="../images/paper-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption hidden">
+                            Paper prototype demo
+                        </p>
+                        <br>
+                        <p class="hidden">
+                            Creating our paper prototype gave us a better sense of the user flow and how we wanted our design to look like. Then we created a lo-fi prototype for our primary screens.
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/kiosk-lofi.png" title="Prototype">
+                            <p class="caption">
+                                Low-fidelity screens of the primary navigation pages
+                            </p>
+                        </div>
+                        <br>
+                        <h4 class="hidden">
+                            <br>Physical kiosk conceptual sketches
+                        </h4>
+                        <p class="hidden">
+                            Then, we sketched detailed ideas for our physical kiosks along with how users can interact with the kiosk. We made sure to incorporate physical features users valued such as product samples and displays.
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/physical-sketches.png" title="Prototype">
+                            <p class="caption">
+                                Kiosk sketches
+                            </p>
+                        </div>
+                        <br>
+                        <p class="hidden">
+                            We plan for the kiosks to be next to the people-run merchandise booths to allow for users to pick between which interaction they want. Additionally, this will allow workers to easily be informed of any problems that arise.
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/environment.png" title="Prototype">
+                            <p class="caption">
+                                Visualizing the kiosk location
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="branding">
+                    <div class="left hidden"><h3 class="kiosk">branding</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Capturing the emotional experience of concerts
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Before moving on to high-fidelity screens, we created moodboards and style directions to explore different visual styles for our kiosk.
+                        </p>
+                        <p class="hidden">
+                            First, we wrote down a list of adjectives and found pictures that captured the emotional experience of concerts: entertaining, unforgettable, electric, dedicated, fun, and vibrant. 
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/kiosk-moodboard.png" title="Moodboard">
+                            <p class="caption">
+                                Moodboard w/ adjectives
+                            </p>
+                        </div>
+                        
+                        <br>
+                        <h4 class="hidden">
+                            A style guide based on the moodboard
+                        </h4>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/kiosk-style-guide.png" title="Style Guide">
+                            <p class="caption">
+                                Style guide
+                            </p>
+                        </div>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/kiosk-stickersheet.png" title="Stickersheet">
+                            <p class="caption">
+                                Stickersheet of custom components designed to match our style direction
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="kiosk-prototype">
+                    <div class="left hidden"><h3 class="kiosk">Kiosk Prototyping</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Deciding the physical features of the kiosk
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Our testing revealed that users wanted the kiosk: mimic in-person interactions, allow for examination of clothing, provide bags to hold . To address this, we created a physical prototype of our kiosk to test out different features.
+                        </p>
+                        <br>
+                        <p class="hidden">
+                            Our physical kiosk includes: clear signage, product samples, display case, and shopping bags
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/physical-kiosk-setup.png" title="Kiosk Setup">
+                            <p class="caption">
+                                Sketch of all the features we want our kiosk to include
+                            </p>
+                        </div>
+                        <h4 class="hidden">
+                            <br>Moving on the next step of prototyping
+                        </h4>
+                        <p class="hidden">
+                            After finalizing the physical features of our kiosk, we moved to Inkscape, an SVG editor, to create a detailed design of our kiosk. This design will be used to create the physical kiosk using a laser cutter.
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/kiosk-inkscape.jpg" title="Inkscape Design">
+                            <p class="caption">
+                                Inkscape design of the physical kiosk
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="usability-test">
+                    <div class="left hidden"><h3 class="kiosk">usability test</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Flow comparison between digital and in-person merchandise purchasing
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            We tested our digital prototype with 3 users that were frequent concert goers to discuss the user flow and how it compares to purchasing concert merch normally.
+                        </p>
+                        <p class="hidden">
+                            Overall, users found the general flow to be straightforward and a quick process. However, here's what we need to improve:
+                        </p>
+                        <ul>
+                            <li class="first-item hidden">
+                                Users found it hard to navigate to popular items. Since popular items are usually the ones people wish to buy, there should be an option for users to quickly navigate to them.
+                            </li>
+                            <li class="hidden">
+                                Difficult to navigate back to the homepage after viewing an item. Although there was a button to go back to the homepage, it was not obvious to find.
+                            </li>
+                            <li class="hidden">
+                                Users had issues with our miniature cart display at the bottom. The cart was blocking the view of the products on the page, making it difficult to complete the tasks. We discovered that our scrolling was buggy on some pages.
+                            </li>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="solution">
+                    <div class="left hidden"><h3 class="kiosk"> Final Design</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            A self-service kiosk to streamline the merchandise purchasing process
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Using the Eras Tour by Taylor Swift as our hypothetical client, we created a digital and physical prototype of our kiosk. Our kiosk includes a touchscreen display for browsing and purchasing merchandise, as well as physical features such as product samples and a display case to mimic the in-person experience.
+                        </p>
+                        <p class="hidden">
+                            Hover over the images to see our final designs in action!
+                        </p>
+                        <br>
+                        <div class="two-photos hidden" style="display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap;">
+                            <div class="photo hidden" style="max-width: 100%">
+                                <video muted loop class="video chart" src="images/kiosk-prototype.mp4" poster="images/kiosk-prototype.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <p class="caption">
+                                    Digital prototype
+                                </p>
+                            </div>
+                            <div class="photo hidden">
+                                <video muted loop class="video chart" src="images/kiosk-demo.mp4" poster="images/kiosk-demo.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <p class="caption">
+                                    Kiosk demo
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="hidden">
+                            The user flow on the digital prototype is simple and intuitive: Browse → Select → Add to cart → Checkout. This works in tandem with the physical kiosk, which dispenses the items purchased on the digital display.
+                        </p>
+                        <br>
+                        <div class="photo hidden">
+                            <img class="chart" src="images/kiosk-user-flow.png" title="Key user interactions">
+                            <p class="caption">
+                                Key features and user interactions of our digital display
+                            </p> 
+                        </div>
+                        <br>
+                        <a class="button hidden" href="https://www.figma.com/design/rRPSES03n33MdcsN8CSTnl/A4-Merchandise-Kiosk?node-id=74-2608&t=Lj4w8AZjdEKF3XzM-1" target="_blank">
+                        <p>View prototype</p>
+                    </a>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="next-steps">
+                    <div class="left hidden"><h3 class="kiosk">Next steps</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Addressing any remaining issues and limitations
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Although we created a functional digital and physical prototype, there are still some limitations and issues that need to be addressed before this product can be implemented in real life.
+                        </p>
+                        <ul class="hidden">
+                            <li class="first-item hidden">
+                                <strong>Inventory:</strong> Due to the size of vending machines, inventory will be significantly smaller than that of a merch booth causing products to be sold out faster. A solution could be alerts for restocks to venue staff when a vending machine is out of stock..
+                            </li>
+                            <li class="hidden">
+                                <strong>Cost:</strong> Allowing more access points through self-service vending machines will require venues to spend money to build these machines that will not be used daily.
+                            </li>
+                    </div>
+                </div>
+                <div class="text-box hidden" id="what-i-learned">
+                    <div class="left hidden"><h3 class="kiosk">Takeaways</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            What I learned from this project
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            This was one of the most unique projects I worked on, since it included building user interactions that extended beyond a digital display. Here are some key takeaways from this project:
+                        </p>
+                        <ul>
+                            <li class="first-item hidden">
+                                Evaluate product market fit; conducting storyboard interviews is a great of way to see how a product fits into a situation and whether it is genuinely useful.
+                            </li>
+                            <li class="hidden">
+                                Ideate, ideate, and ideate; developing a paper prototype is an effective, low-fidelity method for rapidly iterating on user flows and validating design concepts early in the process.
+                            </li>
+                            <li class="hidden">
+                                UX is not only digital; I gained practical insight into how design decisions, materials, and tools interact during real-world product creation.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    </section>
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div>
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                    <img class="memoji" src = "images/memoji matcha.png">
+                </div>
+            </div>
+            <nav>
+                <a href="https://alicemadesign.com/" class="hidden">work</a>
+                <a class="hidden" href="https://alicemadesign.com/about">about</a>
+                <a class="hidden" href="https://alicemadesign.com/contact">contact</a>
+                <a class="hidden" href="https://alicemadesign.com/resume">resume</a>
+            </nav>
+        </div>
+        <!-- <hr> -->
+        <p id="copyright">© 2025 Alice Ma</p>
+    </footer>
+</body>
+<style>
+    ::-moz-selection { /* Code for Firefox */
+        background: #6f4e359a;
+    }
+    ::selection {
+        background: #6f4e359a;
+    }
+</style>
+<script>
+
+let slideIndices = [1, 1, 1];
+let slideClassNames = ["mySlides1", "mySlides2", "mySlides3"];
+let dotClassNames = ["dot1", "dot2", "dot3"];
+
+function plusSlides(n, no) {
+  showSlides(slideIndices[no - 1] += n, no);
+}
+
+function currentSlide(n, no) {
+  showSlides(slideIndices[no - 1] = n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let slides = document.getElementsByClassName(slideClassNames[no - 1]);
+  let dots = document.getElementsByClassName(dotClassNames[no - 1]);
+
+  if (n > slides.length) slideIndices[no - 1] = 1;
+  if (n < 1) slideIndices[no - 1] = slides.length;
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndices[no - 1] - 1].style.display = "block";
+  if (dots.length) {
+    dots[slideIndices[no - 1] - 1].className += " active";
+  }
+}
+
+// Initialize both carousels
+showSlides(1, 1);
+showSlides(1, 2);
+// showSlides(1, 3);
+    function goToWorks() {
+        document.getElementById("works").scrollIntoView();
+    }
+    hamburger = document.querySelector(".menu-icon");
+    dropbtn = document.querySelector(".dropdown");
+    dropdown = document.querySelector(".dropdown-content");
+    
+    hamburger.onclick = function() {
+        document.querySelector(".name").classList.remove("name-gone");
+        dropdown.classList.remove("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".mobile-nav").classList.toggle("fa-chevron-right");
+        navBar = document.querySelector(".nav-content");
+        navBar.classList.toggle("active");
+        navBar.classList.toggle("black");
+        hamburger.classList.toggle("active");
+        works = document.querySelector(".dropdown");
+        works.classList.toggle("left");
+        droplist = document.querySelector(".nav-content ul .dropdown");
+        if (dropdown.classList.contains("visibility")) {
+            document.querySelector(".back").classList.toggle("active");
+        }
+        droplist.classList.toggle("margins");
+        button = document.querySelector(".drop-button");
+        
+        contents = document.querySelector(".dropdown-content");
+    };
+    
+    dropbtn.onclick = function() {
+        dropdown.classList.add("visibility");
+        document.querySelector(".back").classList.add("active");
+        document.querySelector(".name").classList.add("name-gone");
+    };
+    document.querySelector(".back").onclick = function() {
+        dropdown.classList.toggle("visibility");
+        document.querySelector(".back").classList.remove("active");
+        document.querySelector(".name").classList.remove("name-gone");
+    };
+    window.addEventListener('load', () => {
+            document.querySelector('.menu-icon__cheeckbox').checked = false;
+    });
+
+</script>
+<script>
+    const videos = document.querySelectorAll('.video');  // Select all video elements
+    document.addEventListener("DOMContentLoaded", () => {
+
+        videos.forEach(video => {
+            // Play the video when mouse enters
+            video.addEventListener('mouseenter', () => {
+                video.play();  // Start playing the video
+            });
+
+            // Pause the video when mouse leaves
+            video.addEventListener('mouseleave', () => {
+                video.pause();  // Pause the video
+            });
+        });
+    });
+</script>
+
+<script src="js/slide.js"></script>
+<script src="js/header-bar.js"></script>
+<script src="js/case-study.js"></script>
+</html>
