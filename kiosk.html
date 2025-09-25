@@ -166,6 +166,10 @@
                         <p class="hidden">
                             In the recent years, concerts have become very popular and people are attending multiple events a year. Many people wish to buy merchandise as a souvenir for a concert. From personal experience and observations, lines for merchandise are extremely long and have become stressful to obtain.
                         </p>
+                        <br>
+                        <blockquote class="hidden">
+                            How might we improve the wait times and long lines for concert merchandise?
+                        </blockquote>
                         </div>
                     </div>
                 </div>
@@ -182,13 +186,13 @@
                         <br>
                         <div class="two-photos hidden" style="display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap;">
                             <div class="photo hidden" style="max-width: 100%">
-                                <video muted loop class="video chart" src="images/kiosk-prototype.mp4" poster="images/kiosk-prototype.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <video muted loop class="video chart" src="images/kiosk-prototype.mp4" poster="images/kiosk-prototype.png" style="max-height: 50vh; width: auto; border-radius: 24px;"></video>
                                 <p class="caption">
                                     Digital prototype
                                 </p>
                             </div>
                             <div class="photo hidden">
-                                <video muted loop class="video chart" src="images/kiosk-demo.mp4" poster="images/kiosk-demo.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <video muted loop class="video chart" src="images/kiosk-demo.mp4" poster="images/kiosk-demo.png" style="max-height: 50vh; width: auto; border-radius: 24px;"></video>
                                 <p class="caption">
                                     Kiosk demo
                                 </p>
@@ -202,18 +206,6 @@
                     </div>
                 </div>
                 
-                <div class="text-box hidden" id="problem-statement">
-                    <div class="left hidden"><h3 class="kiosk">problem statement</h3></div>
-                    <div class="right">
-                        <h2 class="hidden">
-                            How might we improve the wait times and long lines for concert merchandise?
-                        </h2>
-                        <hr width="100%" class="hidden">
-                        <p class="hidden">
-                            This project aims to create a physical interactive kiosks to combat the current limitations and frustrations customers encounter so we wanted to make a concert kiosk to address this problem.
-                        </p>
-                    </div>
-                </div>
                 <div class="text-box hidden" id="online-research">
                     <div class="left hidden"><h3 class="kiosk">online research</h3></div>
                     <div class="right">
@@ -224,23 +216,24 @@
                         <p class="hidden">
                             To get a sense of the current experience in buying concert merchandise, we explored 10 different articles and reddit posts and found 4 common problems fans face.
                         </p>
-                        <ul>
-                            <li class="first-item hidden">
-                                <strong>⏰ Arrival time:</strong>
+                        <br>
+                        <ul class="problem-cards hidden">
+                            <li class="problem-card first-item hidden">
+                                <strong>⏰ &nbsp;Arrival time</strong>
                                         Online users expressed concern about how early they need to arrive at the venue if they want to buy merch.
                             </li>
-                            <li class="hidden">
-                                <strong>👚 Holding onto merch:</strong>
+                            <li class="problem-card hidden">
+                                <strong>👚 &nbsp;Holding onto merch</strong>
                                         Not all concerts give out bags for merch and it's a hassle to hold it if they purchase before the concert.
 
                             </li>
-                            <li class="hidden">
-                                <strong>⛺️ Lack of merch tents:</strong>
-                                        Online users were frustrated with the lack of merchandise tents which caused the line to be exceptionally long and some fans were unable to purchase merch. The lack of merch tents could be due to available staff, space, or time.
+                            <li class="problem-card hidden">
+                                <strong>⛺️ &nbsp;Lack of merch tents</strong>
+                                        The lack of merch tents which caused the line to be exceptionally long and some fans were unable to purchase merch.
                             </li>
-                            <li class="hidden">
-                                <strong>❓ Sizing:</strong>
-                                        Some online users were not sure about which sizes to get, while others were given the wrong size at the merchandise booths, leading to people asking online for possible trades in shirt designs and sizes.
+                            <li class="problem-card hidden">
+                                <strong>❓ &nbsp;Sizing Uncertainty</strong>
+                                        Some online users were not sure about which sizes to get, while others were given the wrong size at the merchandise booths.
                             </li>
                         </ul>
                     </div>
@@ -597,19 +590,20 @@
                         <p class="hidden">
                             We tested our digital prototype with 3 users that were frequent concert goers to discuss the user flow and how it compares to purchasing concert merch normally.
                         </p>
-                        <p class="hidden">
-                            Overall, users found the general flow to be straightforward and a quick process. However, here's what we need to improve:
-                        </p>
-                        <ul>
-                            <li class="first-item hidden">
-                                Users found it hard to navigate to popular items. Since popular items are usually the ones people wish to buy, there should be an option for users to quickly navigate to them.
-                            </li>
-                            <li class="hidden">
-                                Difficult to navigate back to the homepage after viewing an item. Although there was a button to go back to the homepage, it was not obvious to find.
-                            </li>
-                            <li class="hidden">
-                                Users had issues with our miniature cart display at the bottom. The cart was blocking the view of the products on the page, making it difficult to complete the tasks. We discovered that our scrolling was buggy on some pages.
-                            </li>
+                        <br>
+                        <div class="comparison-container hidden" style="display: flex; align-items: stretch; gap: 24px; justify-content: center; flex-wrap: wrap;">
+                            <div class="problem-card" style="flex: 1; min-width: 300px; display: flex; flex-direction: column;">
+                                <strong style="font-size: 30px; font-family: 'Instrument Serif', serif; font-weight: 600; margin-bottom: 12px; color: rgba(255, 255, 255, 0.9); line-height: 1.4; text-align: left;">Digital Kiosk</strong>
+                                <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin: 0;">Users found the general flow to be straightforward and a quick process. The digital interface allows for easy browsing, size selection, and checkout without waiting in long lines.</p>
+                            </div>
+                            <div class="vs-divider" style="flex-shrink: 0; display: flex; align-items: center;">
+                                <span style="font-family: 'Instrument Serif', serif; font-size: 24px; font-weight: 600; color: rgba(255, 255, 255, 0.7); background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px; display: inline-block;">VS</span>
+                            </div>
+                            <div class="problem-card" style="flex: 1; min-width: 300px; display: flex; flex-direction: column;">
+                                <strong style="font-size: 30px; font-family: 'Instrument Serif', serif; font-weight: 600; margin-bottom: 12px; color: rgba(255, 255, 255, 0.9); line-height: 1.4; text-align: left;">Traditional In-Person</strong>
+                                <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin: 0;">Users highlighted the tactile experience of touching merchandise, trying on items, and the social aspect of shopping with friends. However, they noted the long wait times and limited availability of popular items.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="text-box hidden" id="solution">
@@ -628,13 +622,13 @@
                         <br>
                         <div class="two-photos hidden" style="display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap;">
                             <div class="photo hidden" style="max-width: 100%">
-                                <video muted loop class="video chart" src="images/kiosk-prototype.mp4" poster="images/kiosk-prototype.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <video muted loop class="video chart" src="images/kiosk-prototype.mp4" poster="images/kiosk-prototype.png" style="max-height: 50vh; width: auto; border-radius: 24px;"></video>
                                 <p class="caption">
                                     Digital prototype
                                 </p>
                             </div>
                             <div class="photo hidden">
-                                <video muted loop class="video chart" src="images/kiosk-demo.mp4" poster="images/kiosk-demo.png" style="max-height: 65vh; width: auto; border-radius: 24px;"></video>
+                                <video muted loop class="video chart" src="images/kiosk-demo.mp4" poster="images/kiosk-demo.png" style="max-height: 50vh; width: auto; border-radius: 24px;"></video>
                                 <p class="caption">
                                     Kiosk demo
                                 </p>
@@ -688,13 +682,13 @@
                         </p>
                         <ul>
                             <li class="first-item hidden">
-                                Evaluate product market fit; conducting storyboard interviews is a great of way to see how a product fits into a situation and whether it is genuinely useful.
+                                <strong>Evaluate product market fit:</strong> conducting storyboard interviews is a great of way to see how a product fits into a situation and whether it is genuinely useful.
                             </li>
                             <li class="hidden">
-                                Ideate, ideate, and ideate; developing a paper prototype is an effective, low-fidelity method for rapidly iterating on user flows and validating design concepts early in the process.
+                                <strong>Ideate, ideate, and ideate:</strong> developing a paper prototype is an effective, low-fidelity method for rapidly iterating on user flows and validating design concepts early in the process.
                             </li>
                             <li class="hidden">
-                                UX is not only digital; I gained practical insight into how design decisions, materials, and tools interact during real-world product creation.
+                                <strong>UX is not only digital:</strong> I gained practical insight into how design decisions, materials, and tools interact during real-world product creation.
                             </li>
                         </ul>
                     </div>

@@ -903,6 +903,9 @@ h2 z{
 .kiosk {
     background: linear-gradient(307deg, #202F66 6.14%, #6F6295 98.68%);
 }
+.visionfusion {
+    background: linear-gradient(307deg, #2a9762 6.14%, #481e9c 98.68%);
+}
 .hidden {
     opacity: 0;
     transform: scale(0.9); /* slightly smaller */
