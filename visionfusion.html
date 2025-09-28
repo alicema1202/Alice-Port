@@ -60,13 +60,12 @@
                             <b class="dropdown-content">
                                 <a class="list-item list-top">Explore my work</a>
                                 <hr class="top-hr">
-                                <a class="list-item" href="https://alicemadesign.com/sevenseas">Seven Seas</a>
-                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <a class="list-item" href="https://alicemadesign.com/visionfusion">VisionFusion</a>
                                 <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <a class="list-item" href="https://alicemadesign.com/sevenseas">Seven Seas</a>
+                                <a class="list-item" href="https://alicemadesign.com/kiosk">Kiosk on Tour</a>
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
                                 <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                <!-- <hr> -->
-                                <!-- <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>  -->
                             </b>
                         </div>
                         <i class="fa-solid mobile-nav scroll"></i>
@@ -76,6 +75,11 @@
                         <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
                         <i class="fa-solid mobile-nav scroll"></i>
                     </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>
                     <hr>
                     <li class="nav-item right-btn">
                         <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
@@ -145,7 +149,7 @@
                     <a href="#ideation"><p>Ideation</p></a>
                     <a href="#wireframing"><p>Wireframing</p></a>
                     <a href="#usability-testing"><p>Feedback</p></a>
-                    <a href="#prototyping"><p>Prototyping</p></a>
+                    <!-- <a href="#prototyping"><p>Prototyping</p></a> -->
                     <a href="#final-design"><p>Final Design</p></a>
                     <a href="#impact"><p>Impact & Results</p></a>
                     <a href="#takeaways"><p>Takeaways</p></a>
@@ -162,11 +166,9 @@
                         <hr width="100%" class="hidden">
                         <p class="hidden">
                             As AI image generation tools become increasingly popular and accessible, users are facing a growing problem: these tools often produce results that don't match what they want, leading to frustration. Current tools lack flexibility and give users little control over the creative process. This forces users into a tedious cycle of regenerating images until they get something closer to what they actually need.
-
-
                         </p>
                         <br>
-                        <blockquote class="hidden">
+                        <blockquote class="hidden how-might-we">
                             How might we enable iterative design workflows in AI image generation?
                         </blockquote>
                         
@@ -180,7 +182,7 @@
                         </h2>
                         <hr width="100%" class="hidden">
                         <p class="hidden">
-                            VisionFusion combines AI image generation with powerful manipulation tools, allowing users to generate images and then iterate on them by combining elements, rearranging objects, and refining compositions to achieve their creative vision.
+                            VisionFusion combines AI image generation with two novel manipulation approaches, allowing users to generate images and then iterate on them by combining elements, rearranging objects, and refining compositions to achieve their creative vision.
                         </p>
                         <br>
                         
@@ -299,7 +301,31 @@
                                 </p>
                             </div>
                         </ul>
+                        
                         <br>
+                        <h4 class="hidden">
+                            Current selective editing capabilities
+                        </h4>
+                        <br>
+                        <div class="photo hidden">
+                            <video class="hidden chart" autoplay muted loop playsinline>
+                                <source src="../images/selective-editing-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="caption">
+                                Using a brush to select objects to change/keep; works well but could be tedious
+                            </p>
+                        </div>
+                        <br
+                        <div class="photo hidden">
+                            <video class="hidden chart" autoplay muted loop playsinline>
+                                <source src="../images/selective-editing-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="caption">
+                                Using a prompt to tell AI what to edit (didn't work very well)
+                            </p>
+                        </div>
                     </div>
                 </div>
             
@@ -307,7 +333,7 @@
                     <div class="left hidden"><h3 class="visionfusion">ideation</h3></div>
                     <div class="right">
                         <h2 class="hidden">
-                            Imagining a Workflow Where AI Can Assist
+                            Imagining a workflow for better selective editing
                         </h2>
                         <hr width="100%" class="hidden">
                         <p class="hidden">
@@ -436,7 +462,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="text-box hidden" id="prototyping">
+                <!-- <div class="text-box hidden" id="prototyping">
                     <div class="left hidden"><h3 class="visionfusion">prototyping</h3></div>
                     <div class="right">
                         <h2 class="hidden">
@@ -468,7 +494,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="text-box hidden" id="final-design">
                     <div class="left hidden"><h3 class="visionfusion">Final Design</h3></div>
                     <div class="right">
@@ -479,9 +505,27 @@
                         <p class="hidden">
                             VisionFusion combines AI image generation with powerful manipulation tools, enabling users to generate images and then iterate on them by combining elements, rearranging objects, and refining compositions.
                         </p>
-                        <p class="hidden">
-                            Hover over the images to see our final designs in action!
-                        </p>
+                        <br>
+                        <ul class="ideation-cards hidden">
+                            <li class="ideation-card first-item hidden">
+                                <div class="ideation-content">
+                                    <strong data-number="1">Combine Elements</strong>
+                                    <p>Users can select their favorite objects from multiple generated images and combine them into a single image.</p>
+                                </div>
+                                <div class="ideation-image">
+                                    <img src="images/combine-elements.png" alt="Combine Elements feature">
+                                </div>
+                            </li>
+                            <li class="ideation-card hidden">
+                                <div class="ideation-content">
+                                    <strong data-number="2">Rearrange Objects</strong>
+                                    <p>Users can select an object and move and adjust the size of an image while the AI will use generative fill to adjust the image to the changes.</p>
+                                </div>
+                                <div class="ideation-image">
+                                    <img src="images/rearrange-objects.png" alt="Rearrange Objects feature">
+                                </div>
+                            </li>
+                        </ul>
                         <br>
                         <div class="photo hidden">
                             <video class="hidden chart" controls autoplay muted loop playsinline>
@@ -489,9 +533,10 @@
                                 Your browser does not support the video tag.
                             </video>
                             <p class="caption">
-                                VisionFusion platform demo
+                                Full demo of VisionFusion features
                             </p>
                         </div>
+                        
 <!--                         
                         <a class="button hidden" href="https://www.figma.com/design/visionfusion-prototype" target="_blank">
                         <p>View prototype</p> -->
@@ -531,6 +576,29 @@
                         </ul>
                     </div>
                 </div>
+                <div class="text-box hidden" id="next-steps">
+                    <div class="left hidden"><h3 class="visionfusion">Next Steps</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Future development and improvements
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            While VisionFusion successfully addresses current AI image generation challenges, there are several areas for future development and enhancement:
+                        </p>
+                        
+                        <!-- <br> -->
+                        <ul class="hidden">
+                            <li class="hidden">
+                                <strong>Complete Image Generator:</strong> Expand beyond the proof of concept prototype to develop a full-featured image generator with additional capabilities like style transfer, background removal, and advanced editing tools.
+                            </li>
+                            <li class="hidden">
+                                <strong>User Testing & Iteration:</strong> Conduct extensive user testing with creative professionals to refine the interface and add other new interactions for iterative image generation.
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
                 <div class="text-box hidden" id="takeaways">
                     <div class="left hidden"><h3 class="visionfusion">Takeaways</h3></div>
                     <div class="right">
@@ -559,7 +627,8 @@
     <footer>
         <hr class="hidden">
         <div class="content">
-            <div>
+            <div style="transform: scale(0.9);
+    transform-origin: left top;">
                 <div style="margin-bottom: 4px!important;" class="text-message hidden">
                     <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
                         <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
@@ -567,6 +636,22 @@
                     <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
                     <img class="memoji" src = "images/memoji matcha.png">
                 </div>
+                
+                <a href="https://linkedin.com/in/alicema1215" target="_blank" rel="noopener noreferrer" style="margin-bottom: 4px!important;" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">LinkedIn</p>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                </a>
+                <a href="mailto:alicema1202@gmail.com" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                            <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                        </svg>
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">Email</p>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </a>
             </div>
             <nav>
                 <a href="https://alicemadesign.com/" class="hidden">work</a>
@@ -576,7 +661,7 @@
             </nav>
         </div>
         <!-- <hr> -->
-        <p id="copyright">© 2025 Alice Ma</p>
+        <p id="copyright">© 2025 Design + Code by Alice Ma</p>
     </footer>
 </body>
 <style>
@@ -624,8 +709,8 @@ function showSlides(n, no) {
 }
 
 // Initialize both carousels
-showSlides(1, 1);
-showSlides(1, 2);
+// showSlides(1, 1);
+// showSlides(1, 2);
 // showSlides(1, 3);
     function goToWorks() {
         document.getElementById("works").scrollIntoView();
@@ -691,4 +776,9 @@ showSlides(1, 2);
 <script src="js/slide.js"></script>
 <script src="js/header-bar.js"></script>
 <script src="js/case-study.js"></script>
+<script src="js/grain-overlay.js"></script>
+<script src="js/cursor.js"></script>
+
+<!-- Custom Cursor -->
+<div class="custom-cursor"></div>
 </html>

@@ -50,13 +50,13 @@ strong {
 .kiosk img {
     max-height: calc(48% - 25px);
 }
-.pega img {
+.pega .logo {
     /* max-height: 400px; */
     object-fit: contain;
-    height: 50%;
+    /* height: 50%;
     width: 55%;
     max-width: auto;
-    height: 50%; 
+    height: 50%;  */
     mix-blend-mode: lighten;
 }
 .hero strong, .text-box h3 {
@@ -125,7 +125,7 @@ aside ul {
     width: max-content;
 } 
 aside a {
-    color: rgba(255, 255, 255, 0.284);
+    color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
     font-size: 18px;
     font-weight: 250;
@@ -563,6 +563,10 @@ img.chart {
     width: 100%!important;
     text-align: center;
 }
+.caption a {
+    color: inherit;
+    text-decoration: underline;
+}
 .button {
     text-decoration: none;
     border: 2px solid rgba(255, 255, 255, 0.7);
@@ -932,3 +936,29 @@ th {
         width: 60vw;
     }
 }
+
+/* Blockquote styling to match paragraph font */
+blockquote {
+    font-family: "SF Pro", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: white;
+    margin: 8px 0;
+    padding: 16px 20px 16px 20px;
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+}
+
+/* "How might we" quotes - Instrument Serif style */
+blockquote.how-might-we {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.3;
+    position: relative;
+    text-align: center;
+    padding: 16px 20px;
+}
+

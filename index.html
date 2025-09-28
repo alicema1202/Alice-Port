@@ -21,6 +21,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
+    
+    <!-- Preload texture for grain overlay -->
+    <link rel="preload" as="image" href="images/texture.png">
 
 </head>
 <body>
@@ -43,12 +46,6 @@
             <div class="back">
                 <i class="arrow-left"></i>
             </div>
-            <!-- <div class="hamburger">
-                <div class="line one"></div>
-                <div class="line two"></div>
-                <div class="line three"></div>
-            </div> -->
-            
             <nav class="nav-content">
                 <ul>
                     <li class="dropdown nav-item">
@@ -59,13 +56,12 @@
                             <b class="dropdown-content">
                                 <a class="list-item list-top">Explore my work</a>
                                 <hr class="top-hr">
-                                <a class="list-item" href="https://alicemadesign.com/sevenseas">Seven Seas</a>
-                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
+                                <a class="list-item" href="https://alicemadesign.com/visionfusion">VisionFusion</a>
                                 <a class="list-item" href="https://alicemadesign.com/pega">Pegasystems</a>
+                                <a class="list-item" href="https://alicemadesign.com/sevenseas">Seven Seas</a>
+                                <a class="list-item" href="https://alicemadesign.com/kiosk">Kiosk on Tour</a>
+                                <a class="list-item" href="https://alicemadesign.com/cooklaborate">CookLaborate</a>
                                 <a class="list-item" href="https://alicemadesign.com/medtime">MedTime</a>
-                                <a class="list-item" href="https://alicemadesign.com/cinema">CineMa</a>
-                                <!-- <hr> -->
-                                <!-- <a class="list-item" href="https://alicemadesign.com/unio">UniO</a>  -->
                             </b>
                         </div>
                         <i class="fa-solid mobile-nav scroll"></i>
@@ -75,6 +71,11 @@
                         <a class="hover-underline-animation" href="https://alicemadesign.com/about">ABOUT</a>
                         <i class="fa-solid mobile-nav scroll"></i>
                     </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>
                     <hr>
                     <li class="nav-item right-btn">
                         <a class="hover-underline-animation" href="https://alicemadesign.com/contact">CONTACT</a>
@@ -117,8 +118,8 @@
 
     <div class="hero-container">
         <!-- <div id="splash"></div> -->
-        <img id="glow" src="images/glow.svg">
-        <img class="texture" src="images/texture.png">
+        <!-- <img id="glow" src="images/glow.svg"> -->
+        <!-- <img class="texture" src="images/texture.png"> -->
         <div class="pop-up hero-text">
             <span id="loadingDots">
                 <span class="dot1"></span>
@@ -133,21 +134,46 @@
                 <img class="memoji" src = "images/memoji.png">
             </div>
 
-            <h1>
+            <h1 id="full-title">
+                User Experience Designer
+            </h1>
+            <h1 id="short-title">
                 UX Designer
             </h1>
             <h2>
-                <!-- <i>crafting</i> &nbsp; -->
-                <!-- <z> intuitive designs & </z> -->
-                <!-- <i>enhancing</i> &nbsp; -->
-                <!-- <z> digital experiences.</z> -->
-                <z>crafting effortless digital experiences with empathy</z>
+                <z>crafting</z>
+                <i> intuitive designs</i>
+                <z> and enhancing</z>
+                <i> digital workflows,</i>
+                <z> with a passion for</z>
+                <i> design systems </i>
+                <z> and</z>
+                <i> beautiful interfaces.</i>
+
+                <!-- <i>crafting intuitive and effortless digital experiences with empathy</i> -->
+                <!-- <br> -->
+                <!-- <z>crafting intuitive and effortless digital experiences with empathy</z> -->
+                 <!-- <br> -->
+
             </h2>
+            <hr width="100%" class="hidden" style="opacity: 0">
+            <div class="experience-text">
+                <p>Previously: Interaction Design @ <a href="https://ucsd.edu" target="_blank" rel="noopener noreferrer">UC San Diego</a> • UX Design Intern @ <a href="https://pega.com" target="_blank" rel="noopener noreferrer">Pegasystems</a> • Web Developer @ <a href="https://mpacollaborative.org" target="_blank" rel="noopener noreferrer">MPACN</a></p>
+            </div>
+            
+<!--             
+            <hr width="100%" class="hidden" style="opacity: 0">
+            <div class="tags">
+                <p class="chip work-history">UC San Diego Interaction Design '25</p>
+                <p class="chip work-history">Prev. UX Design Intern @ Pegasystems</p>
+                <p class="chip work-history">Prev. Web Developer @ MPACN</p>
+            </div> -->
+
             <!-- <p>
                 UX designer based in California. Currently studying interaction design @ <a title="UCSD website" style="display: inline; text-decoration: underline;" href="https://www.ucsd.edu" target="_blank">UC San Diego</a>.
             </p> -->
         </div>
-        <a href="#projects" id="read-more"><strong>VIEW WORK <i class="fa-solid fa-chevron-down"></i></strong></a>
+        <!-- <a href="#projects" id="read-more"><strong>VIEW WORK <i class="fa-solid fa-chevron-down"></i></strong></a> -->
     </div>
     <script>
         const button = document.querySelector("body");
@@ -231,13 +257,16 @@
     
     </div>
      -->
-    <section class="" id="projects">
+    <section class="primary-projects" id="projects">
         <!-- <div id="my-projects">
             <h2>💫 Selected Work (2022-2025)</h2>
             <a class="hover-underline-animation" href="https://alicemadesign.com/work">View all projects</a>
         </div> -->
-        <p class="headline small hidden"><i>Selected Work ✨</i> (2022-2025) </p>
-        <hr width="100%" class="hidden">
+        <div class="work-header">
+            <p class="headline small hidden"><i>Selected Work ✨</i> </p>
+            <hr class="hidden">
+        </div>
+        
         <!-- <a href="">
             <div class="project">
                 <div class="v3 mpa hidden" href="">
@@ -257,9 +286,12 @@
         </a> -->
         <section class="work">
             <a href="https://alicemadesign.com/visionfusion">
-                <div class="project vertical hidden" data-cursor="READ CASE STUDY">
-                    <div class="v3 visionfusion hidden">
-                        <img class="phone" src="../images/visionfusion-thumb.png">
+                <div class="project vertical hidden" data-cursor="CASE STUDY">
+                    
+                    <div class="thumbnail">
+                        <video autoplay muted loop playsinline>
+                            <source src="../images/visionfusion-thumb.mp4" type="video/mp4">
+                        </video>
                         <img class="year" src="../images/2024.png">
                     </div>
                     <div class="text hidden">
@@ -277,9 +309,12 @@
                 </div>
             </a>
             <a href="https://alicemadesign.com/pega">
-                <div class="project vertical hidden" data-cursor="READ CASE STUDY">
-                    <div class="v3 pega hidden" href="https://alicemadesign.com/pega">
-                        <img class="phone" src="../images/pega-logo.png">
+                <div class="project vertical hidden" data-cursor="CASE STUDY">
+                    
+                    <div class="thumbnail">
+                        <video autoplay muted loop playsinline>
+                            <source src="../images/pega-thumb.mov" type="video/mp4">
+                        </video>
                         <img class="year" src="../images/2023.png">
                     </div>
                     <div class="text hidden">
@@ -298,9 +333,16 @@
                 </div>
             </a>
             <a href="https://alicemadesign.com/sevenseas">
-                <div class="project vertical hidden" data-cursor="READ CASE STUDY">
-                    <div class="v3 sevenseas">
+                <div class="project vertical hidden" data-cursor="CASE STUDY">
+                    <!-- <div class="v3 sevenseas">
                         <img class="phone" src="../images/sevenseas.png">
+                        <img class="year" src="../images/2025.png">
+                    </div> -->
+                    <div class="thumbnail">
+                        <video autoplay muted loop playsinline>
+                            <source src="../images/sevenseas-thumb.mp4" type="video/mp4">
+                        </video>
+                        <img src="../images/sevenseas-thumb.png">
                         <img class="year" src="../images/2025.png">
                     </div>
                     <div class="text hidden">
@@ -325,10 +367,17 @@
                 </div>
             </a>
             <a href="https://alicemadesign.com/kiosk">
-                <div class="project vertical hidden" data-cursor="READ CASE STUDY">
-                    <div class="v3 kiosk hidden">
-                        <!-- <img class="phone" src="../images/kiosk-on-tour.png"> -->
+                <div class="project vertical hidden" data-cursor="CASE STUDY">
+                    <!-- <div class="v3 kiosk hidden">
+                        <img class="phone" src="../images/kiosk-on-tour.png">
                         <img class="phone" src="../images/kiosk-thumb.png">
+                        <img class="year" src="../images/2024.png">
+                    </div> -->
+                    <div class="thumbnail">
+                        <video autoplay muted loop playsinline>
+                            <source src="../images/kiosk-thumb.mp4" type="video/mp4">
+                        </video>
+                        <img src="../images/kiosk-thumb.png">
                         <img class="year" src="../images/2024.png">
                     </div>
                     <div class="text hidden">
@@ -356,9 +405,16 @@
                 </div>
             </a>
             <a href="https://alicemadesign.com/cooklaborate">
-                <div class="project reverse vertical hidden" data-cursor="READ CASE STUDY">
-                    <div class="v3 cooklab hidden" href="https://alicemadesign.com/cooklaborate">
+                <div class="project reverse vertical hidden" data-cursor="CASE STUDY">
+                    <!-- <div class="v3 cooklab hidden" href="https://alicemadesign.com/cooklaborate">
                         <img class="phone" src="../images/cooklab-frames.png">
+                        <img class="year" src="../images/2024.png">
+                    </div> -->
+                    <div class="thumbnail">
+                        <video autoplay muted loop playsinline>
+                            <source src="../images/cooklab-thumb.mp4" type="video/mp4">
+                        </video>
+                        <img src="../images/cooklab-thumb.png">
                         <img class="year" src="../images/2024.png">
                     </div>
                     <div class="text hidden">
@@ -380,9 +436,16 @@
             
             
             <a href="https://alicemadesign.com/medtime">
-                <div class="project reverse vertical hidden" data-cursor="READ CASE STUDY">
-                    <div class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
+                <div class="project reverse vertical hidden" data-cursor="CASE STUDY">
+                    <!-- <div class="v3 medtime hidden" href="https://alicemadesign.com/medtime">
                         <img class="phone" src="../images/medtime-phones.png">
+                        <img class="year" src="../images/2022.png">
+                    </div> -->
+                    <div class="thumbnail">
+                        <video autoplay muted loop playsinline>
+                            <source src="../images/medtime-thumb.mp4" type="video/mp4">
+                        </video>
+                        <img src="../images/medtime-thumb.png">
                         <img class="year" src="../images/2022.png">
                     </div>
                     <div class="text hidden">
@@ -401,7 +464,7 @@
                 </div>
             </a>
             <!-- <a href="https://alicemadesign.com/cinema">
-                <div class="project vertical hidden" data-cursor="READ CASE STUDY">
+                <div class="project vertical hidden" data-cursor="CASE STUDY">
                     <div class="v3 cinema hidden" href="https://alicemadesign.com/cinema">
                         <img class="phone" src="../images/cinema-phones.png">
                     </div>
@@ -420,18 +483,23 @@
         </section>
         
     </section>
+    <br>
+    <br>
+    <br>
     <section id="projects">
         <!-- <div id="my-projects">
             <h2>💫 Selected Work (2022-2025)</h2>
             <a class="hover-underline-animation" href="https://alicemadesign.com/work">View all projects</a>
         </div> -->
-        <p class="headline small hidden"><i>Other Work ✨</i></p>
-        <hr width="100%" class="hidden">
+        <div class="work-header">
+            <p class="headline small hidden"><i>More Work</i> </p>
+            <hr class="hidden">
+        </div>
         <section class="more-work">
-            <a href="../images/bytebrew-full.mov" class="project vertical hidden media-link" data-cursor="WATCH VIDEO" data-type="video" data-src="images/bytebrew-full.mov">
-                <div class="v3 bytebrew hidden">
-                    <video autoplay loop muted playsinline>
-                    <source src="../images/bytebrew-thumb.mov" type="video/mp4">
+            <a href="../images/bytebrew-full.mov" class="project vertical hidden media-link" data-cursor="VIDEO" data-type="video" data-src="images/bytebrew-full.mov">
+                <div class="thumbnail">
+                    <video autoplay muted loop playsinline>
+                        <source src="../images/bytebrew-thumb.mov" type="video/mp4">
                     </video>
                     <img class="year" src="../images/2025.png">
                 </div>
@@ -461,10 +529,12 @@
                     </div>
                 </div> 
             </a> -->
-            <a href="../images/MPACN Final Presentation.pdf" target="_blank" class="project vertical hidden media-link" data-type="pdf" data-cursor="SEE PRESENTATION">
-                <div class="v3 mpa hidden" href="">
-                    <!-- <img class="" src="../images/cinema-phones.png"> -->
-                    <img class="thumb" src="../images/mpa-screen.png">
+            <a href="../images/MPACN Final Presentation.pdf" target="_blank" rel="noopener noreferrer" class="project vertical hidden media-link" data-type="pdf" data-cursor="PRESENTATION">
+                <div class="mpa thumbnail">
+                    <!-- <video autoplay muted loop playsinline>
+                        <source src="../images/mpa-thumb.mov" type="video/mp4">
+                    </video> -->
+                    <img src="../images/mpa-thumb.png">
                     <img class="year" src="../images/2024.png">
                 </div>
                 <div class="text hidden">
@@ -488,7 +558,7 @@
                     </div>
                 </div> 
             </a>  
-            <!-- <a href="https://www.alicemadesign.com/kiosk" class="project vertical hidden" data-cursor="READ CASE STUDY">
+            <!-- <a href="https://www.alicemadesign.com/kiosk" class="project vertical hidden" data-cursor="CASE STUDY">
                 <div class="v3 kiosk hidden" href="">
                     <img style="box-shadow: none" src="../images/kiosk-on-tour.png">
 
@@ -504,8 +574,11 @@
                 </div> 
             </a>   -->
             <a class="project vertical hidden" data-cursor="COMING SOON...">
-                <div class="v3 portfolio hidden" href="">
-                    <img class="thumb" src="../images/portfolio-thumb.png">
+                <div class="pega thumbnail">
+                    <!-- <video autoplay muted loop playsinline>
+                        <source src="../images/pega-thumb.mov" type="video/mp4">
+                    </video> -->
+                    <img src="../images/portfolio-thumb.png">
                     <img class="year" src="../images/2022-NOW.png">
                 </div>
                 <div class="text hidden">
@@ -534,19 +607,38 @@
                 <iframe id="popupPDF" src="" style="display:none;"></iframe>
             </div>
         </div>
-
+        <br>
+        <br>
+        <br>
     </section>
     <footer>
         <hr class="hidden">
         <div class="content">
-            <div>
+            <div style="transform: scale(0.9);
+    transform-origin: left top;">
                 <div style="margin-bottom: 4px!important;" class="text-message hidden">
-                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                    <!-- <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
                         <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
-                    </svg>
+                    </svg> -->
                     <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
                     <img class="memoji" src = "images/memoji matcha.png">
                 </div>
+                
+                <a href="https://linkedin.com/in/alicema1215" target="_blank" rel="noopener noreferrer" style="margin-bottom: 4px!important;" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">LinkedIn</p>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                </a>
+                <a href="mailto:alicema1202@gmail.com" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                            <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                        </svg>
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">Email</p>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </a>
             </div>
             <nav>
                 <a href="https://alicemadesign.com/" class="active hidden">work</a>
@@ -556,7 +648,8 @@
             </nav>
         </div>
         <!-- <hr> -->
-        <p id="copyright">© 2025 Alice Ma</p>
+        
+        <p id="copyright">© 2025 Design + Code by Alice Ma</p>
     </footer>
     <div class="custom-cursor">
         <span class="cursor-text"></span>
@@ -637,9 +730,14 @@
     const glow = document.querySelector('#glow');
     const hero = document.querySelector('.hero-text');
     const text = document.querySelector('#hi-im-alice');
-    const uxdesigner = document.querySelector('.hero-container h1');
-    const description = document.querySelector('.hero-container h2');
+    const userexdesigner = document.querySelector('#full-title');
+    const uxdesigner = document.querySelector('#short-title');
+    const description = document.querySelector('.hero-text h2');
+    const experience = document.querySelector('.experience-text p');
+    const hr = document.querySelector('.hero-container hr');
+    // const tags = document.querySelector('.hero-text .tags');
     const readmore = document.querySelector("#read-more");
+    const projects = document.querySelector("#projects");
 
     if (!isVisited) {
       // First time in this session: Add animation class
@@ -649,18 +747,30 @@
       sessionStorage.setItem('page_visited', 'true');
     } else {
         hero.classList.add('hidden');
-        glow.style = "animation:none;opacity:1";
-        text.style = "animation:none;opacity:1;top:0;left:0;transform:scale(1)";
+        // glow.style = "animation:none;opacity:1";
         header.style = "animation:slide-down 0.8s ease-in-out 0s 1 both";
-        readmore.style = "animation:slide-up 0.8s ease-in-out 0s 1 both";
-        uxdesigner.style = "animation:none;opacity:1;";
-        description.style = "animation:none;opacity:1;";
-        loadingDots.style = "display:none!important";
-
+        // readmore.style = "animation:slide-up 0.8s ease-in-out 0s 1 both";
+        //first
+        text.style = "transform: scale(0.9); transition: transform 0.1s; animation: opacityOn 0.8s ease-in-out 0s 1;opacity:1;top:0;left:0;";
+        hero.style = "animation:slide-up 0.8s ease-in-out 0s forwards 1;opacity:1;";
+        //second
+        userexdesigner.style = "animation:slide-up 0.8s ease-in-out 0s forwards 1;opacity:1;";
+        //second
+        uxdesigner.style = "animation:slide-up 0.8s ease-in-out 0s forwards 1;opacity:1;";
+        //third
+        description.style = "animation:slide-up 0.8s ease-in-out 0s forwards 1;opacity:1;";
+        //fourth
+        experience.style = "animation:slide-up 0.8s ease-in-out 0s forwards 1;opacity:1;";
+        hr.style = "animation:slide-up 0.8s ease-in-out 0s 1;opacity:1;";
+        // tags.style = "animation:slide-up 0.8s ease-in-out 0s 1;opacity:1;";
+        loadingDots.style = "animation: none; display:none";
+        projects.style = "animation:slide-up 0.8s ease-in-out 0s 1";
     }
 </script>
 <script src="js/header-bar.js"></script>
 <script src="js/cursor.js"></script>
 <script src="js/slide.js"></script>
 <script src="js/video-modal.js"></script>
+<script src="js/grain-overlay.js"></script>
+
 </html>

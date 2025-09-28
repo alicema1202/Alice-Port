@@ -32,7 +32,7 @@ document.querySelectorAll('.media-link').forEach(link => {
     } else if (type === 'pdf') {
       if (isMobile) {
         // On mobile, open PDF in new tab
-        window.open(src, '_blank');
+        window.open(src, '_blank', 'noopener,noreferrer');
         return;
       } else {
         pdf.src = src;
