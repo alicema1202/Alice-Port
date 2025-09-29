@@ -1,8 +1,8 @@
 # GitHub Pages configuration
 # This enables pretty URLs (removes .html extension)
 
-# Enable pretty URLs
-permalink: pretty
+# Enable pretty URLs without trailing slash
+permalink: /:title
 
 # Exclude files from processing
 exclude:

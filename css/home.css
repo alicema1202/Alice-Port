@@ -778,7 +778,7 @@ h2 z{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 12px;
+    /* height: 12px; */
 }
 #my-projects a {
     color: rgba(255, 255, 255, 0.7);

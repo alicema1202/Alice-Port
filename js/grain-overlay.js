@@ -8,16 +8,26 @@ function setGrainOverlayHeight() {
         // Reset height first to force recalculation
         grainOverlay.style.height = 'auto';
         
-        // Get the actual document height
+        // Get the actual document height with more comprehensive calculation
         const documentHeight = Math.max(
             document.body.scrollHeight,
             document.body.offsetHeight,
             document.documentElement.scrollHeight,
-            document.documentElement.offsetHeight
+            document.documentElement.offsetHeight,
+            document.documentElement.clientHeight,
+            window.innerHeight
         );
         
-        // Set the height to match the document
-        grainOverlay.style.height = documentHeight + 'px';
+        // For case study pages (like resume), also check the main content area
+        const mainContent = document.querySelector('main#content');
+        if (mainContent) {
+            const mainHeight = mainContent.offsetHeight + mainContent.offsetTop;
+            const finalHeight = Math.max(documentHeight, mainHeight);
+            grainOverlay.style.height = finalHeight + 'px';
+        } else {
+            // Set the height to match the document
+            grainOverlay.style.height = documentHeight + 'px';
+        }
     }
 }
 
@@ -58,3 +68,13 @@ function debouncedResize() {
 // Set height on page load and resize
 window.addEventListener('load', setGrainOverlayHeight);
 window.addEventListener('resize', debouncedResize);
+
+// Additional initialization with delay for case study pages
+setTimeout(() => {
+    setGrainOverlayHeight();
+}, 500);
+
+// Also try again after a longer delay to catch any late-loading content
+setTimeout(() => {
+    setGrainOverlayHeight();
+}, 1000);

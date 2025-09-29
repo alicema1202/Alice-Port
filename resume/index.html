@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Alice Ma</title>
+
+    <!-- Style files -->
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/case-study.css" rel="stylesheet">
+    <link href="../css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="../images/memoji.png">
+
+</head>
+<body>
+    <a onclick="scrollWin()" class="back-to-top hide" style="display:none;" >
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <header class="header-bar" style="position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="/" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            <!-- <div class="hamburger">
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div> -->
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="/visionfusion">VisionFusion</a>
+                                <a class="list-item" href="/pega">Pegasystems</a>
+                                <a class="list-item" href="/sevenseas">Seven Seas</a>
+                                <a class="list-item" href="/kiosk">Kiosk on Tour</a>
+                                <a class="list-item" href="/cooklaborate">CookLaborate</a>
+                                <a class="list-item" href="/medtime">MedTime</a>
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item active">
+                        <a class="hover-underline-animation active" href="https://alicemadesign.com/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <!-- <hr> -->
+                    <!-- <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>  -->
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    <section class="body">
+        <aside>
+            <a class="previous hidden" href="/"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>BACK </a>
+            <nav>
+                <ul class="hidden">
+                    <a href="#education"><p style="margin-top: 0!important;">Education</p></a>
+                    <a href="#experience"><p>Experience</p></a>
+                    <a href="#awards"><p>Awards</p></a>
+                    <a href="#skills"><p>Skills</p></a>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main id="projects">
+            <!-- Education Section -->
+            <section class="hidden" id="education">
+                <div  class="">
+                    <h2 style="margin-top: 0!important;">📖 Education</h2>
+                </div>
+                <hr width="100%" class="">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            UC San Diego
+                        </p>
+                        <p class="location">
+                            (Bachelors of Science)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Sept 2021 - Present · La Jolla, CA          
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Major: Cognitive Science: Interaction Design
+                        </li>
+                        <li>
+                            Minors: Computer Science, Design
+                        </li>
+                        <li>
+                            GPA: 3.96/4.00
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Experience Section -->
+            <section class="hidden" id="experience">
+                <div  class="">
+                    <h2>💫 My Experience</h2>
+                </div>
+                <hr width="100%" class="">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            UX Designer
+                        </p>
+                        <p class="location">
+                            (Design Co UP-Grade)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Jun 2025 - Sept 2025 · La Jolla, CA          
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Collaborated with industry mentor and cross-functional team to develop a web-based AI tool that recommends structured academic pathways
+                        </li>
+                        <li>
+                            Conducted 25+ user interviews and surveys with UCSD students to uncover pain points in college course planning and navigation 
+                        </li>
+                        <li>
+                            Researching capabilities and limitations of Generative AI to evaluate the product-market fit and find the most suitable model
+                        </li>
+                        <li>
+                            Created low-fidelity wireframes for user testing and designing UCSD-branded high-fidelity screens for developer handoff
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Instructional Assistant
+                        </p>
+                        <p class="location">
+                            (COGS 120: Interaction Design)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Jan 2025 - Mar 2025 · La Jolla, CA          
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Worked as an instructional assistant for upper-division interaction design course
+                        </li>
+                        <li>
+                            Held office hours to help students understand user-centered design fundamentals
+                        </li>
+                        <li>
+                            Provided input on course structure to help improve current iteration of the course
+                        </li>
+                        <li>
+                            Graded student assignments on topics relating to design heuristics and user interfaces
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Web Developer
+                        </p>
+                        <p class="location">
+                            (MPA Collaborative Network)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Jun 2024 - Sept 2024 · La Jolla, CA
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Worked closely with stakeholders from MPA Collaborative Network to redesign website
+                        </li>
+                        <li>
+                            Gathered 30 survey responses and interviewed 8 MPACN affiliated members to identify potential design/accessibility improvements
+                        </li>
+                        <li>
+                            Conducted website audit, competitive analysis, and SWOT analysis to identify potential solutions                
+                        </li>
+                        <li>
+                            Designed brand new UI elements and restructured site map and prototyped 20+ high-fidelity screens
+                        </li>
+                        <li>
+                            Implemented approved design onto MPACN's site using HTML, CSS, and JavaScript to create and update UI elements
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Instructional Assistant
+                        </p>
+                        <p class="location">
+                            (DSGN 1: Design of Everyday Things)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Jan 2024 - Mar 2024 · La Jolla, CA   
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Acted as an instructional assistant for an introductory design course aimed to teach students fundamentals of design thinking
+                        </li>
+                        <li>
+                            Led weekly studio sessions in assistance to TAs, providing students with suggestions to iterate and improve on their projects
+                        </li>
+                        <li>
+                            Graded and provided detailed feedback on design journals and assignments for 200+ students
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            UX Designer
+                        </p>
+                        <p class="location">
+                            (ACM at UC San Diego)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Oct 2023 - Apr 2024 · La Jolla, CA        
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Collaborated with team of 4 to create a high-fidelity meal kit delivery service prototype
+                        </li>
+                        <li>
+                            Performed user research through running 30+ surveys, 10+ interviews, and 2 rounds of usability testing
+                        </li>
+                        <li>
+                            Compiled a style guide to organize color schemes, logos, spacing, typography, and components
+                        </li>
+                        <li>
+                            Presented and demoed final prototype at end-of-quarter showcase to ACM members
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            UX Design Intern
+                        </p>
+                        <p class="location">
+                            (Pegasystems)
+                        </p>
+                    </div>
+                    <p class="date">
+                        May 2023 - Aug 2023 · Waltham, MA
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Moderated and observed 10+ internal usability studies on Pegasystems' live software environment
+                        </li>
+                        <li>
+                            Conducted regular meetings with product owners and stakeholders to establish measurable project goals
+                        </li>
+                        <li>
+                            Designed new components (e.g. authoring additional information in fields, file attachment widget, etc) for Pega's design system
+                        </li>
+                        <li>
+                            Collaborated with 7 other designers to align overall UX patterns for Constellation
+                        </li>
+                        <li>
+                            Prepared high-fidelity prototypes on Figma for developer hand-off
+                        </li>
+                    </ul>
+                </div>
+            </section>
+    
+            <!-- Awards Section -->
+            <section class="hidden" id="awards">
+                <div  class="">
+                    <h2>🏆 Awards & Recognition</h2>
+                </div>
+                <hr width="100%" class="">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            1st Place Team
+                        </p>
+                        <p class="location">
+                            (Pegasystems Intern Hackathon)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Aug 2023          
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Led team to victory in company-wide hackathon competition
+                        </li>
+                        <li>
+                            Developed innovative solution addressing real business challenges
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Best Figma Design
+                        </p>
+                        <p class="location">
+                            (Berkeley ANova Hacks)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Mar 2021          
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Recognized for exceptional UI/UX design work in hackathon competition
+                        </li>
+                        <li>
+                            Demonstrated advanced Figma skills and design thinking
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Best Use of Figma
+                        </p>
+                        <p class="location">
+                            (Superposition Hackathon)
+                        </p>
+                    </div>
+                    <p class="date">
+                        Feb 2020          
+                    </p>
+                    <ul class="description">
+                        <li>
+                            Awarded for innovative and creative use of Figma in hackathon project
+                        </li>
+                        <li>
+                            Showcased early expertise in design tools and prototyping
+                        </li>
+                    </ul>
+                </div>
+            </section>
+    
+            <!-- Skills Section -->
+            <section class="hidden" id="skills">
+                <div  class="">
+                    <h2>🛠️ Skills</h2>
+                </div>
+                <hr width="100%" class="">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Design
+                        </p>
+                    </div>
+                    <ul class="description">
+                        <li>
+                            UX/UI Design, Interaction Design, Prototyping, Branding, Wireframing, Design Systems, Visual Design, Information Architecture, Graphic Design, Motion Design, Storyboarding
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Tools
+                        </p>
+                    </div>
+                    <ul class="description">
+                        <li>
+                            Figma, Adobe XD, Photoshop, Illustrator, After Effects, Notion, VS Code, GitHub, Google Suite, Microsoft Suite
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Coding
+                        </p>
+                    </div>
+                    <ul class="description">
+                        <li>
+                            HTML5, CSS6, JavaScript, Java, Python, Git, C++, C, Assembly, MatLab, Bootstrap, Pandas, NumPy
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Research
+                        </p>
+                    </div>
+                    <ul class="description">
+                        <li>
+                            Usability Testing, User Interviews, Journey Maps, A/B Testing, Surveys, Competitive Analysis, Personas, Heuristic Evaluation, Data Analysis
+                        </li>
+                    </ul>
+                </div>
+                <hr width="100%" class="hidden">
+                <div class="experience hidden">
+                    <div class="title">
+                        <p class="position">
+                            Language
+                        </p>
+                    </div>
+                    <ul class="description">
+                        <li>
+                            English (Native), Cantonese (Native), Mandarin (Native)
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </section>
+    
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div style="transform: scale(0.9);
+    transform-origin: left top;">
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                        <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                    </svg>
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                    <img class="memoji" src = "../images/memoji matcha.png">
+                </div>
+                
+                <a href="https://linkedin.com/in/alicema1215" target="_blank" rel="noopener noreferrer" style="margin-bottom: 4px!important;" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">LinkedIn</p>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                </a>
+                <a href="mailto:alicema1202@gmail.com" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                            <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                        </svg>
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">Email</p>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <a href="/" class="hidden">work</a>
+                <a class="hidden" href="/about">about</a>
+                <a class="hidden" href="/contact">contact</a>
+                <a class="active hidden" href="/resume">resume</a>
+            </nav>
+        </div>
+
+        
+        <!-- <hr> -->
+        <p id="copyright">© 2025 Design + Code by Alice Ma</p>
+    </footer>
+    
+
+    <script>
+        function scrollWin() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+    <script src="../js/slide.js"></script>
+    <script src="../js/header-bar.js"></script>
+    <script src="../js/grain-overlay.js"></script>
+    <script src="../js/cursor.js"></script>
+    <script src="../js/case-study.js"></script>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <style>
+        /* Resume specific styling */
+        
+        /* Make content section text white */
+        #content {
+            padding-top: 40px;
+        }
+        main p, main li, main h2, main h3, main h4, main h5, main h6 {
+            color: white !important;
+        }
+        .body aside a p{
+            line-height: normal!important;
+        }
+        .experience .title p {
+            color: white !important;
+        }
+        
+        .experience .title .position {
+            font-family: "Instrument Serif", serif !important;
+            font-size: 40px !important;
+            line-height: normal !important;
+            font-weight: normal !important;
+            margin: 0 !important;
+        }
+        
+        .experience .title .location {
+            font-family: "Instrument Serif", serif !important;
+            font-size: 24px !important;
+            line-height: 40px !important;
+            font-weight: 100 !important;
+            font-style: italic !important;
+            opacity: 0.7 !important;
+            margin: 0 !important;
+        }
+        
+        /* Make title and location inline on larger screens */
+        .experience .title {
+            display: flex !important;
+            gap: 6px !important;
+            align-items: flex-end !important;
+        }
+        
+        /* Stack on small screens */
+        @media only screen and (max-width: 750px) {
+            .experience .title {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0 !important;
+            }
+        }
+        
+        .experience .date {
+            color: rgba(255, 255, 255, 0.7) !important;
+            margin: 0 !important;
+        }
+        
+        .experience .description li {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        /* Set paragraph font size to 18px and line height to 28px */
+        .body p {
+            font-size: 18px !important;
+            line-height: 28px !important;
+            font-weight: 200 !important;
+        }
+        
+        .experience .description {
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+        }
+        
+        .experience .description li {
+            font-size: 18px !important;
+            line-height: 28px !important;
+            font-weight: 200 !important;
+            margin: 0 !important;
+        }
+        
+        /* Make section titles use #projects h2 style */
+        #projects h2 {
+            font-size: 18px !important;
+            line-height: 28px !important;
+            font-weight: normal !important;
+            font-family: "SF Pro", sans-serif !important;
+            text-transform: uppercase !important;
+            margin-top: 80px;
+        }
+        
+        /* Add spacing between sections */
+        section {
+            /* margin-bottom: 80px; */
+        }
+        
+        /* Add flexbox layout to #projects sections */
+        #projects {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+        }
+        
+        /* Add spacing between experiences */
+        .experience {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+        }
+        
+        /* Style section headers */
+        #my-projects h2 {
+            margin-bottom: 20px;
+        }
+        
+        /* Style HR elements - make them visible */
+        hr {
+            margin: 8px 0;
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            height: 0;
+            display: block;
+        }
+        
+        /* Ensure HR elements are visible */
+        .hidden hr {
+            display: block !important;
+        }
+        
+        /* Footer styling for resume page */
+        footer {
+            width: 100vw;
+            height: fit-content;
+            margin-top: 64px;
+        }
+        
+        footer .content {
+            max-width: 1092px;
+            margin: auto;
+            margin-top: 48px;
+            margin-bottom: 48px;
+            width: 90vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        footer nav a {
+            display: block;
+            width: fit-content;
+            text-align: end;
+            font-size: 32px;
+            line-height: 34px;
+            font-family: "Instrument Serif", serif;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+        
+        footer nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+        
+        footer .active {
+            color: white;
+            border-bottom: 1px white solid;
+            margin-bottom: 2px;
+        }
+        
+        #copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            font-family: "SF Pro", sans-serif;
+            font-weight: 200;
+            margin: 0;
+            text-align: center;
+            margin-top: 24px;
+        }
+    </style>
+</body>
+</html>

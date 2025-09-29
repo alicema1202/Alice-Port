@@ -589,6 +589,9 @@ img.chart {
     align-items: flex-start;
 }
 /* PERSONA */
+.persona-card ol {
+    padding-left: 20px;
+}
 .basic-info {
     display: flex;
     /* justify-content: center; */
@@ -851,8 +854,8 @@ th {
         font-size: 10px;
     }
     .hero img {
-        width: 70vw;
-        max-width: 500px;
+        max-width: 70vw;
+        /* max-width: 500px; */
         height: auto;
     }
     .pega img {
