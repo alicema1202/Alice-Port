@@ -1320,8 +1320,8 @@ body {
 
 .custom-cursor {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -9999px;
+  left: -9999px;
   transform: translate(0, -50%);
   pointer-events: none;
   z-index: 9999;

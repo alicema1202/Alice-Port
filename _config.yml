@@ -1,0 +1,28 @@
+# GitHub Pages configuration
+# This enables pretty URLs (removes .html extension)
+
+# Enable pretty URLs
+permalink: pretty
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - testfiles/
+
+# Include files
+include:
+  - .htaccess
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+safe: true
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# GitHub Pages specific settings
+github: [metadata]
