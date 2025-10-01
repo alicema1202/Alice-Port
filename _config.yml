@@ -10,7 +10,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - testfiles/
 
 # Include files
 include:
