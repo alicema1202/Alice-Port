@@ -837,12 +837,12 @@ document.addEventListener('DOMContentLoaded', function() {
             background: #000;
             z-index: 10000;
             opacity: 1;
-            transition: opacity 1.5s ease-out;
+            transition: opacity 0.6s ease-out;
             pointer-events: none;
         `;
         document.body.appendChild(fadeOverlay);
         
-        // Start fade out after a brief delay
+        // Start fade out immediately
         setTimeout(() => {
             fadeOverlay.style.opacity = '0';
             
@@ -851,12 +851,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (fadeOverlay.parentNode) {
                     fadeOverlay.parentNode.removeChild(fadeOverlay);
                 }
-            }, 1500);
-        }, 100);
+            }, 600);
+        }, 50);
         
         // Mark as visited in this session
         sessionStorage.setItem('hasVisited', 'true');
     }
+    
+    // Dynamic padding adjustment for <i> elements
+    function adjustItalicPadding() {
+        const h2 = document.querySelector('h2');
+        if (!h2) return;
+        
+        const italicElements = h2.querySelectorAll('i');
+        
+        italicElements.forEach(i => {
+            // Reset any existing classes
+            i.classList.remove('first-in-line');
+            
+            // Get the text content and check if it starts with a space
+            const textContent = i.textContent;
+            const startsWithSpace = textContent.startsWith(' ');
+            
+            // Only check if the text starts with a space (indicating it's not the first word)
+            if (startsWithSpace) {
+                // Create a range to check the position of just the first character
+                const range = document.createRange();
+                range.setStart(i.firstChild, 0);
+                range.setEnd(i.firstChild, 1);
+                
+                const rangeRect = range.getBoundingClientRect();
+                const h2Rect = h2.getBoundingClientRect();
+                
+                // Check if the first character is at the start of a line
+                const isAtStartOfLine = Math.abs(rangeRect.left - h2Rect.left) < 15;
+                
+                if (isAtStartOfLine) {
+                    i.classList.add('first-in-line');
+                }
+            }
+        });
+    }
+    
+    // Run with a small delay to ensure layout is stable
+    setTimeout(adjustItalicPadding, 100);
+    window.addEventListener('resize', () => {
+        setTimeout(adjustItalicPadding, 100);
+    });
 });
 </script>
 

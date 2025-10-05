@@ -430,6 +430,10 @@ h2 i{
     padding: 4px;
     animation: glow 2s ease-in-out infinite alternate;
 }
+
+h2 i.first-in-line {
+    padding-left: 0;
+}
 h2 z{
     color: rgba(255, 255, 255, 0.70);
     font-family: "SF Pro";
