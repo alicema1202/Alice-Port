@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munch — Alice Ma</title>
+
+    <!-- Style files -->
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/case-study.css" rel="stylesheet">
+    <link href="../css/header-bar.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    <!-- Imports -->
+    <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="../images/memoji.png">
+</head>
+<body>
+    <a onclick="scrollWin()" class="back-to-top hide" >
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <header class="header-bar" style="position: sticky!important; top: 0!important;">
+        <div class="header-content-container">
+            <a href="/" class="name">
+                Alice Ma
+            </a>
+            
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" />
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="back">
+                <i class="arrow-left"></i>
+            </div>
+            
+            <nav class="nav-content">
+                <ul>
+                    <li class="dropdown nav-item">
+                        <div class="hover-underline-animation drop-button">
+                            <a class="WORKS-container" onclick="goToWorks()">
+                                WORK <i class="fa-solid fa-chevron-down scroll"></i>
+                            </a>
+                            <b class="dropdown-content">
+                                <a class="list-item list-top">Explore my work</a>
+                                <hr class="top-hr">
+                                <a class="list-item" href="/visionfusion">VisionFusion</a>
+                                <a class="list-item" href="/pega">Pegasystems</a>
+                                <a class="list-item" href="/sevenseas">Seven Seas</a>
+                                <a class="list-item" href="/kiosk">Kiosk on Tour</a>
+                                <a class="list-item" href="/cooklaborate">CookLaborate</a>
+                                <a class="list-item" href="/medtime">MedTime</a>
+                                <a class="list-item" href="/munch">Munch</a>
+                            </b>
+                        </div>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="/about">ABOUT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                    <hr>
+                    <li class="nav-item">
+                        <a class="hover-underline-animation" href="/resume">RESUME</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li>
+                    <hr>
+                    <li class="nav-item right-btn">
+                        <a class="hover-underline-animation" href="/contact">CONTACT</a>
+                        <i class="fa-solid mobile-nav scroll"></i>
+                    </li> 
+                </ul>  
+            </nav>
+        </div>
+    </header>
+    
+    <section class="munch hero">
+        <img class="logo hidden" src="../images/munch-logo.png">
+        <img class="hidden" src="../images/munch-hero.png">
+        <div class="description hidden">
+            <div class="section">
+                <strong>purpose</strong>
+                <p>Help busy individuals with health goals maintain balanced diets through customizable meal kit delivery</p>
+            </div>
+            <div class="section">
+                <strong>my role</strong>
+                <p>Design Lead, UX Research, Visual Design</p>
+            </div>
+            <div class="section" style="width: min-content;">
+                <strong>Duration</strong>
+                <p style="width: 98px;">13 weeks</p>
+            </div>
+        </div>
+        <a href="#content" id="read-more"><strong>Read more <i class="fa-solid fa-chevron-down"></i></strong></a>
+    </section>
+    
+    <section class="body">
+        <aside>
+            <a class="previous hidden" href="/"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>BACK </a>
+            <nav>
+                <ul class="hidden">
+                    <a href="#overview"><p>Overview</p></a>
+                    <a href="#problem"><p>The Problem</p></a>
+                    <a href="#research"><p>User Research</p></a>
+                    <a href="#competitive"><p>Competitive Analysis</p></a>
+                    <a href="#ideation"><p>Ideation</p></a>
+                    <a href="#prototyping"><p>Prototyping</p></a>
+                    <a href="#testing"><p>Testing & Iteration</p></a>
+                    <a href="#final"><p>Final Design</p></a>
+                    <a href="#style"><p>Style Guide</p></a>
+                    <a href="#takeaways"><p>Takeaways</p></a>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main id="content">
+            <!-- Overview Section -->
+            <section class="hidden" id="overview">
+                <hr width="100%" class="">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>project overview</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Designing a meal-kit delivery app for busy health-conscious users
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Munch is a meal kit delivery application that focuses on aiding busy individuals with health and fitness goals. This was a project I worked on from October 2023 to January 2024 for ACM at UC San Diego's Winter Project.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>When:</strong> October 2023 - January 2024 (13 weeks)</p>
+                            <p><strong>Where:</strong> ACM at UC San Diego</p>
+                            <p><strong>Role:</strong> Design Lead + Researcher in team of 3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Problem Section -->
+            <section class="hidden" id="problem">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>problem statement</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            The challenge of maintaining healthy eating habits in a busy world
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            I noticed that many people around me, including myself, struggle with eating balanced meals regularly. This became the foundation for our research into understanding the barriers to healthy eating.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Research Section -->
+            <section class="hidden" id="research">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>research methods</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Discovering what really matters to users through research
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            To examine the problem further, my team and I conducted a series of interviews and surveys, asking questions such as "What is your current method of trying to eat healthy?" and "Are there any challenges you encounter when it comes to meal prepping?"
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Research Methods:</strong> 6 interviews, 34 surveys</p>
+                            <p><strong>Target Age:</strong> 20-32 years old</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>key findings</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Key insights that shaped our design direction
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <div class="bullet hidden">
+                            <p><strong>Pain Point 1:</strong> Many people don't have time to cook everyday</p>
+                            <p><strong>Pain Point 2:</strong> Health and fitness-focused individuals struggle maintaining balanced diets</p>
+                            <p><strong>Pain Point 3:</strong> Meal prepping leads to repetitive meals and lack of variety</p>
+                        </div>
+                        <p class="hidden">
+                            These findings revealed that busy individuals, especially college students and young professionals, face significant barriers to maintaining healthy eating habits due to time constraints and lack of variety in meal planning.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>user persona</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Bringing our users to life through persona development
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            With the insights gained from research and interviews, I created a persona to help represent our target users. Creating a persona solidified the pain points and helped identify the goals I wanted to accomplish through our design.
+                        </p>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-persona.png" title="User Persona">
+                            <p class="caption">
+                                User persona representing our target audience
+                            </p>
+                        </div>
+                        <p class="hidden">
+                            By analyzing the research we conducted, we came up with the idea of a meal kit delivery application that targets health-focused individuals because it can address all of the pain points that we discovered.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competitive Analysis Section -->
+            <section class="hidden" id="competitive">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>current solutions</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Learning from the competition to find our opportunity
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            I conducted a competitive analysis to compare current solutions for meal delivery services and identify opportunities for improvement.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Standard Services:</strong> HelloFresh, Blue Apron, Home Chef</p>
+                            <p><strong>Health-Focused:</strong> Territory (diet meal kits)</p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-competitors.png" title="Competitive Analysis">
+                            <p class="caption">
+                                Analysis of existing meal delivery services
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>design gaps</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Identifying gaps in the current market
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            After examining the competition, my team and I identified key design gaps in existing solutions:
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Limited Customization:</strong> Users can input general dietary preferences but can't fully customize each meal to their liking</p>
+                            <p><strong>Lack of User Control:</strong> Missing back buttons and difficult navigation flows</p>
+                            <p><strong>Poor User Experience:</strong> Limited freedom when creating meal kits</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ideation Section -->
+            <section class="hidden" id="ideation">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>user flow design</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            From ideas to user flows through collaborative ideation
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Now that the design gaps were identified, I worked with my team to brainstorm possible user flows. We used FigJam to brainstorm a logical user flow for ordering a new meal kit, doing this multiple times for each flow in our app.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Process:</strong> Brainstormed possible user flows</p>
+                            <p><strong>Iterations:</strong> Multiple iterations of each screen</p>
+                            <p><strong>Final Selection:</strong> Combined favorite ideas into organized low-fidelity user flow sketch</p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-ideation.png" title="Ideation Process">
+                            <p class="caption">
+                                User flow brainstorming and sketching process
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prototyping Section -->
+            <section class="hidden" id="prototyping">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>mid-fidelity prototype</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Bringing our ideas to life with interactive prototypes
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            With the rough sketches, I transferred them into Figma wireframes and connected the frames together to create a functional prototype ready for usability testing.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Transfer:</strong> Moved lo-fi sketches into Figma</p>
+                            <p><strong>Functionality:</strong> Turned static wireframes into functional prototype</p>
+                            <p><strong>Focus:</strong> "Build a meal kit" flow (primary focus)</p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-midfi.png" title="Mid-fidelity Prototype">
+                            <p class="caption">
+                                Mid-fidelity wireframes ready for testing
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testing & Iteration Section -->
+            <section class="hidden" id="testing">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>usability testing</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Putting our designs to the test with real users
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            Within the time constraints of this project, we conducted two rounds of usability testing with 12 participants aged 20-32.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Round 1:</strong> Mid-fidelity prototype with basic tasks</p>
+                            <p><strong>Round 2:</strong> High-fidelity prototype with complex tasks</p>
+                            <p><strong>Tasks:</strong> "Start a new meal kit order" and "Add this recipe to your favorites"</p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-testing.png" title="Usability Testing">
+                            <p class="caption">
+                                Usability testing sessions with participants
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>improvement 1: review order page</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Making meal selection clearer and more intuitive
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            <strong>Problem:</strong> 4/6 users expressed confusion regarding the number of meals per week selection. Users selected this at the beginning but the number didn't appear later in the flow.
+                        </p>
+                        <p class="hidden">
+                            <strong>Solution:</strong> I used Figma's variables feature to capture the user's selection and display it throughout the flow, showing how many servings are in the cart and how many more are needed.
+                        </p>
+                        <p class="hidden">
+                            <strong>Impact:</strong> This change offers more support for users when adjusting servings because they don't have to remember their initial selection.
+                        </p>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-improvement1.png" title="Review Order Page">
+                            <p class="caption">
+                                Updated review order page with meal count display
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>improvement 2: nutrition summary</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Giving users complete nutritional transparency
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            <strong>Problem:</strong> 3/6 participants mentioned that remembering nutrition facts for every recipe was tedious. Previously, users had to click into each recipe card to see nutrition information.
+                        </p>
+                        <p class="hidden">
+                            <strong>Solution:</strong> I added a "Nutrition Summary" tab in the review page that shows the average macronutrient and calorie breakdown across all selected meals.
+                        </p>
+                        <p class="hidden">
+                            <strong>Impact:</strong> Users can now see the overall nutritional balance of their entire meal kit at a glance.
+                        </p>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-improvement2.png" title="Nutrition Summary">
+                            <p class="caption">
+                                Nutrition summary tab showing macro breakdown
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>improvement 3: macro toggle</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Putting nutrition information front and center
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            <strong>Problem:</strong> Users had to take an extra step to view nutritional information, and some might not open cards at all.
+                        </p>
+                        <p class="hidden">
+                            <strong>Solution:</strong> I created a new card design that displays macros in the card preview, with a toggle option for users who don't want to see calorie information.
+                        </p>
+                        <p class="hidden">
+                            <strong>Impact:</strong> Users can choose meals based on health needs at a glance, with control over their experience.
+                        </p>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-improvement3.png" title="Macro Toggle">
+                            <p class="caption">
+                                Recipe cards with macro preview and toggle option
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Design Section -->
+            <section class="hidden" id="final">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>complete user flow</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            A seamless meal kit creation journey
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            After implementing all improvements, the final design includes a complete meal kit building flow with enhanced user experience and nutritional transparency.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Meal Selection:</strong> Pick meals with macro previews displayed</p>
+                            <p><strong>Customization:</strong> Swap out ingredients users don't want</p>
+                            <p><strong>Nutrition Summary:</strong> Holistic breakdown of entire meal kit</p>
+                            <p><strong>Checkout:</strong> Streamlined final review and purchase</p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-final-flow.png" title="Final User Flow">
+                            <p class="caption">
+                                Complete "Build a Meal Kit" user flow
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Style Guide Section -->
+            <section class="hidden" id="style">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>visual design system</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Creating a cohesive visual language for health and wellness
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <p class="hidden">
+                            I compiled a comprehensive style guide containing typography, color palette, and interactive components. The design system was adapted from my personal design library, customized for the health-focused nature of the app.
+                        </p>
+                        <div class="bullet hidden">
+                            <p><strong>Color Research:</strong> Green represents nature and health</p>
+                            <p><strong>Design Library:</strong> Adapted from personal work-in-progress design system</p>
+                            <p><strong>Customization:</strong> Modified color styles, border radius, shadows for app-specific needs</p>
+                        </div>
+                        <div class="photo hidden">
+                            <img class="chart" src="../images/munch-style-guide.png" title="Style Guide">
+                            <p class="caption">
+                                Visual design system and component library
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Takeaways Section -->
+            <section class="hidden" id="takeaways">
+                <hr width="100%" class="hidden">
+                <div class="text-box hidden">
+                    <div class="left hidden"><h3 class=munch>learning outcomes</h3></div>
+                    <div class="right">
+                        <h2 class="hidden">
+                            Key learnings from building a product from scratch
+                        </h2>
+                        <hr width="100%" class="hidden">
+                        <div class="bullet hidden">
+                            <p><strong>Collaborative Design:</strong> Working through end-to-end design process collaboratively requires significant goal alignment</p>
+                            <p><strong>Time Management:</strong> Should be heavily prioritized when there's a time constraint for group projects</p>
+                            <p><strong>Figma Variables:</strong> Learning to use Figma's variables feature made prototypes much more functional and realistic</p>
+                        </div>
+                        <p class="hidden">
+                            This project was my first time working with a group from the very first step all the way through the design process. Starting a design from scratch required spending considerable time aligning our goals, but ultimately helped me learn that time management should be super high on the priority list for group projects, especially with strict time constraints.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+    
+    <footer>
+        <hr class="hidden">
+        <div class="content">
+            <div style="transform: scale(0.9); transform-origin: left top;">
+                <div style="margin-bottom: 4px!important;" class="text-message hidden">
+                    <p style="padding: 2.5px 0px; ">Thanks for stopping by~</p>
+                    <img class="memoji" src = "../images/memoji matcha.png">
+                </div>
+                
+                <a href="https://linkedin.com/in/alicema1215" target="_blank" rel="noopener noreferrer" style="margin-bottom: 4px!important;" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">LinkedIn</p>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                </a>
+                <a href="mailto:alicema1202@gmail.com" class="hidden text-message social-link">
+                    <div class="footer-social-links">
+                                                <svg class="text-tick" xmlns="http://www.w3.org/2000/svg" width="24" height="33" viewBox="0 0 24 33" fill="none">
+                            <path d="M10.8817 18.1141C11.228 10.3128 11.0002 0.978607 11.0002 0.978607L23.3309 22.7538C17.8521 29.932 12.908 32.1775 0.210938 32.9612C7.37937 28.7654 10.5354 25.9154 10.8817 18.1141Z"/>
+                        </svg>
+                        <p style="padding: 2.5px 0px; margin: 0; display: inline;">Email</p>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <a href="/" class="hidden">work</a>
+                <a class="hidden" href="/about">about</a>
+                <a class="hidden" href="/contact">contact</a>
+                <a class="hidden" href="/resume">resume</a>
+            </nav>
+        </div>
+
+        <p id="copyright">© 2025 Design + Code by Alice Ma</p>
+    </footer>
+    <div id="copied">
+        <p>Copied to clipboard!</p>
+    </div>
+
+    <script>
+        function scrollWin() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+    <script src="../js/slide.js"></script>
+    <script src="../js/header-bar.js"></script>
+    <script src="../js/grain-overlay.js"></script>
+    <script src="../js/cursor.js"></script>
+    <script src="../js/case-study.js"></script>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+</body>
+<script src="../js/page-transitions.js"></script>
+</html>

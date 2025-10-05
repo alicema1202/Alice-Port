@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const lowerText = text.toLowerCase();
 
       if (!lowerText.includes("coming soon...")) {
-        arrow = lowerText.includes("read case study") ? "→" : "↗";
+        arrow = lowerText.includes("case study") ? "→" : "↗";
         cursor.classList.remove("coming-soon");
         cursor.style.background = "rgba(255, 255, 255, 0.5)";
       } else {

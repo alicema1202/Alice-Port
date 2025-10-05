@@ -101,7 +101,7 @@ body {
     letter-spacing: 1px;
     opacity: 0;
     z-index: 100;
-    animation: slide-up 0.8s ease-in-out 3.3s 1 forwards;
+    animation: slide-up 0.8s ease-in-out 2.3s 1 forwards;
 }
 #read-more strong {
     font-weight: 500;
@@ -385,7 +385,7 @@ h1 {
     width: fit-content;
     color: white;
     z-index: 2;
-    animation: slide-up 1s ease-in-out 3.3s 1 forwards;
+    animation: slide-up 1s ease-in-out 2.3s 1 forwards;
     text-shadow: none;
     transition: text-shadow 1s;
     padding-top: 76px;
@@ -415,7 +415,7 @@ h2 {
     /* width: 600px; */
     /* width: 550px; */
     opacity: 0;
-    animation: slide-up 1s ease-in-out 3.5s 1 forwards;
+    animation: slide-up 1s ease-in-out 2.5s 1 forwards;
     font-weight: 200;
     margin: 0;
     line-height: 40px;
@@ -452,7 +452,7 @@ h2 z{
     line-height: 1.4;
     margin: 0;
     opacity: 0;
-    animation: slide-up 1s ease-in-out 4s 1 forwards;
+    animation: slide-up 1s ease-in-out 3s 1 forwards;
 }
 .experience-text p a {
     color: rgba(255, 255, 255, 0.5);
@@ -461,7 +461,7 @@ h2 z{
 }
 .hero-text .tags, .hero-container hr {
     opacity: 0;
-    animation: slide-up 1s ease-in-out 3.8s 1 forwards;
+    animation: slide-up 1s ease-in-out 2.8s 1 forwards;
     
 }
 .text-message {
@@ -518,7 +518,7 @@ h2 z{
     left: 40%;
     transform-origin: bottom left!important;
     opacity: 0;
-    animation: opacityOn 0.5s ease-in 2.1s 1 forwards, shift 1s ease-in-out 3.3s 1 forwards;
+    animation: opacityOn 0.5s ease-in 1.5s 1 forwards, shift 1s ease-in-out 2.3s 1 forwards;
 }
 #loadingDots{
     position: absolute;
@@ -534,7 +534,7 @@ h2 z{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    animation: size-up 0.5s ease-in-out 0s 1 forwards, opacityOff 0.5s linear 2.2s 1 forwards;
+    animation: size-up 0.5s ease-in-out 0s 1 forwards, opacityOff 0.5s linear 1.5s 1 forwards;
     box-shadow: 0.5px -0.5px 1px rgb(109, 109, 109)
 }
 #loadingDots:after, #loadingDots:before{
@@ -780,6 +780,7 @@ h2 z{
     align-items: center;
     /* height: 12px; */
 }
+
 #my-projects a {
     color: rgba(255, 255, 255, 0.7);
     line-height: 30px;
@@ -795,7 +796,7 @@ h2 z{
     /* background-color: purple; */
 }
 .primary-projects {
-    animation:slide-up 0.8s ease-in-out 3.9s 1 both
+    animation:slide-up 0.8s ease-in-out 2.9s 1 both
 }
 #projects h2 {
     /* background-color: green; */

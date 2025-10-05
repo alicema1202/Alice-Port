@@ -1,0 +1,132 @@
+Alice Ma
+Project Presentation
+Hi, my name is Alice and I’m a third year undergrad student at UC San Diego, where I’m studying Interaction Design and Computer Science. Before I get started, I just wanted to thank you both so much for taking your time today to review one of my projects.
+
+So the project I will be presenting today is Munch, a meal kit delivery app design.
+
+P R O J E C T   B A C K G R O U N D
+Project Overview: Meal-kit delivery application that focuses on aiding busy individuals with health goals. 
+When: October 2023 - January 2024 (13 weeks)
+Where: ACM at UC San Diego 
+Role: Design Lead + Researcher in team of 3
+ 
+To provide some context, Munch was designed as a meal kit delivery application that focuses on aiding busy individuals with health and fitness goals. This was a project that I worked on last semester from October to January for ACM at UC San Diego’s Winter Project. I worked on this project in a team of 3 people, where I was the design lead and researcher..
+
+I noticed that many people around me, including myself, struggle with eating balanced meals regularly.
+T H E   P R O B L E M
+First, our group explored potential problems we would like the explore for our project. One of the problems that came up was that I notice that a lot of the people around me, even including myself, struggle to eat balanced meals regularly.
+
+U N D E R S T A N D I N G   U S E R S
+User Interviews + Findings
+6 interviews, 34 surveys, ages 20-32
+Pain point 1: Many people don’t have time to cook everyday.
+Pain point 2: Health and fitness-focused individuals struggle maintaining balanced diets
+Pain point 3: Meal prepping → repetitive meals + lack of variety
+ 
+To examine the problem further, my team and I conducted a series of interviews and surveys, asking questions such as “What is your current method of trying to eat healthy?” and “Are there any challenges you encounter when it comes to meal prepping?”
+
+Through this, we were able to identify three of the most salient pain points when it came to eating a balanced diet. First, many people don’t have time to cook everyday. This is especially true for college students or young workers who have just entered the workforce because they are likely living alone for the first time. Second, health and fitness focused individuals find themselves struggling to maintain their balanced diets when they are so busy. Lastly, when it comes to meal prepping, people tend to get sick of eating the same meals over and over again.
+
+
+
+What are the most important factors in a meal plan delivery app?
+Tell me about your current meal planning routine.
+Are there any challenges when it comes to meal prepping?
+
+
+
+U N D E R S T A N D I N G   U S E R S
+User Persona
+ 
+With the insight gained from research and interviews:
+Create persona to represent target users
+Help identify goals I want to accomplish with my design
+With the insight that I gained from doing research and interviews, I created a persona to help me represent our target users. Creating a persona solidified the pain points and helped identify the goals I wanted to accomplish through our design. By analyzing the research we conducted so far, we came up with the idea of a meal kit delivery application that targets health focused individuals because it can address all of the pain points that we discovered.
+
+C O M P E T I T I V E   A N A L Y S I S
+Exploring current solutions
+ 
+HelloFresh
+Blue Apron
+Home Chef
+Territory
+The next step I took was exploring the current solutions. I did this by conducting a competitive analysis, which allowed me to compare current solutions for meal delivery services and use it to help me figure out what should be done to improve on the current solutions.
+
+These are four of the competitors I identified: HelloFresh, BlueApron, and HomeChef were all standard meal kit delivery apps that provide some insight into nutrition. And Territory is a more health-focused service with diet meal kits. 
+
+C O M P E T I T I V E   A N A L Y S I S
+There was limited customization for dietary preferences and a lack of user freedom and control when creating meal kits. 
+After examining the competition, my team and I realized that there was a lack of customization for dietary restrictions. What that means is, for all of these services, users can input their general dietary preferences and restrictions, but they weren’t able to fully customize each meal to their liking. Additionally, there is a lack of user freedom and control when creating meal kits, such as missing the back button, which makes going backwards in the flow difficult.
+
+I D E A T I O N
+
+Brainstorming + Sketching
+ 
+Brainstormed possible user flow
+Multiple iterations of each screen
+Decided on favorite ideas and compiled it into one low-fidelity user flow sketch
+One version of our user flow brainstorm
+Final lo-fi sketch after combining multiple iterations
+Now that the design gaps were identified, I worked with my team to brainstorm possible user flows. On the left image, you can see that we used FigJam to brainstorm a logical user flow for ordering a new meal kit. We did this multiple times for each of the flows in our app. After choosing our temporary ideal flow, we each sketched some screens for each frame in our flow. To proceed, we selected our favorite screens and I compiled it into a more organized low fidelity sketch, which is this image on the right here.
+
+P R O T O T Y P I N G
+Mid-fidelity prototype
+ 
+Transferred lo-fi sketches into Figma
+Turned static wireframes into functional prototype
+Ready for usability testing!
+* Our app has multiple flows; I worked mostly on this one
+Then, with this series of rough sketches, I transferred them into Figma wireframes. I wanted to note here that this app design contains multiple flows, but because the “build a meal kit” flow is the one that I worked on the most, I will be focusing on this flow for the rest of the presentation. Anyway, now that we had our static wireframes, I went ahead and connected the frames together and turned it into a functional prototype that was ready for usability testing.
+
+Two rounds of usability testing
+12 total participants, ages 20-32
+Round 1: Using mid-fi prototype → assigned users tasks to complete
+Round 2: Assigned similar tasks using hi-fi prototype
+Major improvements were made after each round, from both feedback and collaborative considerations
+T E S T I N G  +  I T E R A T I N G
+Within the time constraints of this project, we were able to fit two rounds of usability testing, where we ran the test on a total of 12 participants in the age group 20-32. For our first round of usability testing, we used the mid-fidelity prototype from at first and assigned users some basic tasks to complete, such as “start a new meal kit order” and “add this recipe to your favorites.” For the second round, we assigned participants with similar, slightly more complex, tasks using a high fidelity prototype created from feedback after round 1. After each round of usability testing, we made a number of improvements that were derived from feedback and me and my team’s thoughts about the app’s design.
+
+First Improvement
+
+T E S T I N G  +  I T E R A T I N G
+Updating the review order page
+4/6 users expressed confusion regarding the # of meals per week selection
+Used Figma’s variables in hi-fi V1 to display the user’s selection
+Recognition rather than recall
+One of the first improvements we made after round 1 was updating the review order page. Out of the 6 users we tested, 4 of them expressed some sort of confusion regarding the number of meals per week selection. Basically, at the beginning of the flow, users have to select the number of meals they want per week, but the usability test participants were confused because that number doesn’t really come back into play later on in the flow. To account for this, I did a deep dive into Figma’s newish variables feature, so I could capture the number of meals the user selected and incorporate it into improving the user experience. The improvement here is basically displaying the number the user selects at the top of the page, as well as using it to notify how many servings are currently in the user’s cart and how many more they need to add. This change offers more support for users when they are trying to adjust the number of servings for each recipe because they don’t have to remember how many meals they selected.
+
+Second Improvement
+
+T E S T I N G  +  I T E R A T I N G
+Designing a breakdown summary of macronutrients 
+3/6 participants mentioned that it would be tedious to remember nutrition fact of every recipe
+Added tab in review order page that gives an overview of the entire meal kit’s nutrition facts
+Another improvement that I made was designing a holistic breakdown of macronutrients in the review order page. Based on our usability testing round 2, 3 out of 6 participants mentioned something along the lines of nutrition facts being too tedious to remember individually. Previously, the only way you could see nutrition facts was by clicking into a recipe card and opening the overlay, then scrolling down to the recipe information. Not only is looking at the nutrition information an extra step, there also wasn’t a way to view how the balance of macros are across the entire meal kit. So, I added a tab in the review page called Nutrition Summary, which offers a detailed look of the average macronutrient and calorie breakdown across all of the meals you selected in your meal kit. 
+
+Third Improvement
+
+T E S T I N G  +  I T E R A T I N G
+Adding the option to toggle macros in preview
+Displaying basic macros in card preview allows users to choose based on nutrients without clicking into card
+Some users may not want to see information regarding calories, so we added a toggle
+The last example of an improvement I made is adding the option to toggle macros for the recipe card preview. After the previous improvement, we realized that it took users an extra step to view nutritional information before adding the recipe to their meal kit. There was also the possibility that users don’t open the card at all and never see the nutritional facts. Thus, I created a new card design that displays the macros in the card preview, so users can at a glance choose their meals based on their health needs, without that extra step. We also took note that some users of the app may not want to see information regarding calories for personal reasons, so we included the display macros option as a toggle, which gives the users more control over what their experience of the app is like.
+
+F I N A L   D E S I G N
+So, after making these improvements. Here are the final screens for the project. On the left is a video of how the entire build a meal kit flow behaves. The second screen here is the picking meals screen with the macros preview displayed. The next one is the recipe customization screen which allows users to swap out ingredients they don’t want. The fourth screen is the nutrition breakdown, and the last one is just the checkout. Going back to the first screen, something I didn’t mention is that I created constraints for the user so they need to pick the appropriate options in order to go forward in the flow.
+
+S T Y L E   G U I D E
+Adapted from my personal work-in-progress design library!
+To touch upon the visual design components of the app, I have compiled a style guide that contains the typography, color palette, and interactive components. In terms of colors, my team and I conducted some research about the meaning behind colors. We found that green is the color of nature and a great way to use color as a representation of health. In terms of the interactive components, they are adapted from a personal design library that I’ve been working on for the past few months. To adapt it into this app, I changed the color styles, border radius, shadows, and more until the visuals matched what I was looking for.
+
+K E Y   T A K E A W A Y S
+Working through end-to-end design process collaboratively requires a lot of goal alignment
+Time management should be heavily prioritized when there’s a time constraint for a group project
+Learning to use Figma’s variables feature made prototypes so much more functional! Really great learning experience
+
+ 
+To end, I wanted to touch on some of the takeaways I got from completing this project. While I’ve worked collaboratively on design projects before, like during my last internship, this was my first time working with a group from the very first step all the way through the design process. I realized that because we were starting a design from scratch, we had to spend a pretty long time aligning our goals for the project. It definitely took some time before we settled on an app idea, or a specific user flow, but in the end it helped me learn that time management should be super high on the priority list for group projects, especially when there is a strict time constraint. Lastly, Figma variables is just something that really caught my attention during this project. It made prototyping more of a challenge, which I really enjoyed, and the results from using variables gives you a much more functional prototype. Overall, I think this project was a great learning experience, and I look forward to working collaboratively again with other designers through the end-to-end design process.
+
+Alice Ma
+Thank
+you!
+And that’s all I have. Thank you very much!
