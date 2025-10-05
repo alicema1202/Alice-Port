@@ -580,7 +580,6 @@
         margin: 16px 0;
         display: flex;
         justify-content: flex-start;
-        filter: invert(0.8) hue-rotate(120deg);
     }
 </style>
 <script>
@@ -592,6 +591,29 @@
         }, 1500);
         
     }
+    
+    // reCAPTCHA validation
+    function validateRecaptcha() {
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaResponse.length === 0) {
+            alert('Please complete the reCAPTCHA verification.');
+            return false;
+        }
+        return true;
+    }
+    
+    // Add form validation on submit
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                if (!validateRecaptcha()) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        }
+    });
     function goToWorks() {
         document.getElementById("works").scrollIntoView();
     }
