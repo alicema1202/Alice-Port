@@ -1,47 +1,56 @@
 // document.querySelector(".header-bar").classList.add('animate');
-var prevScrollpos = window.pageYOffset;
+// Robust header initialization for cases where header is injected later
+let prevScrollpos = 0;
+let headerDiv = null;
 
-/* Get the header element and it's position */
-var headerDiv = document.querySelector(".header-bar");
-var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+function initHeaderBar() {
+    prevScrollpos = window.pageYOffset;
+    headerDiv = document.querySelector('.header-bar');
+    if (!headerDiv) return false; // caller may retry later
 
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;               
-    /* if we're scrolling up, or we haven't passed the header,
-        show the header at the top */
-// if (currentScrollPos < window.innerHeight + 90) {
-//     document.querySelector("aside").classList.remove('extra-top-padding');
-// }
-if (currentScrollPos < 200) {
-    headerDiv.style.top = "0";
-    headerDiv.classList.remove("midpage");
-    document.querySelector(".back-to-top").classList.add('hide');}
-else if (prevScrollpos > currentScrollPos) {  
-        headerDiv.style.top = "0";
-        headerDiv.classList.add("midpage");
-        // if (currentScrollPos > window.innerHeight) {
-        //     document.querySelector("aside").classList.add('extra-top-padding');
-        // }
-        // else {
-        //     document.querySelector("aside").classList.remove('extra-top-padding');
-        // }
-}
-else if (currentScrollPos <  200) {
-    headerDiv.style.top = "0";
-    // headerDiv.style.opacity = "0";
-    headerDiv.classList.add("midpage");
-    document.querySelector(".back-to-top").classList.add('hide');
-}
-else if (document.querySelector(".nav-content").classList.contains('active') == false){
-    /* otherwise we're scrolling down & have passed the header so hide it */
-    headerDiv.style.top = "-200px";
-    document.querySelector(".back-to-top").classList.remove('hide');
-    // document.querySelector("aside").classList.remove('extra-top-padding');
-} 
+    // compute header bottom lazily
+    let headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
-    prevScrollpos = currentScrollPos;
+    window.onscroll = function() {
+        const currentScrollPos = window.pageYOffset;
+        if (currentScrollPos < 200) {
+            headerDiv.style.top = '0';
+            headerDiv.classList.remove('midpage');
+            const backToTop = document.querySelector('.back-to-top');
+            if (backToTop) backToTop.classList.add('hide');
+        } else if (prevScrollpos > currentScrollPos) {
+            headerDiv.style.top = '0';
+            headerDiv.classList.add('midpage');
+        } else if (currentScrollPos < 200) {
+            headerDiv.style.top = '0';
+            headerDiv.classList.add('midpage');
+            const backToTop = document.querySelector('.back-to-top');
+            if (backToTop) backToTop.classList.add('hide');
+        } else if (document.querySelector('.nav-content') && document.querySelector('.nav-content').classList.contains('active') == false) {
+            headerDiv.style.top = '-200px';
+            const backToTop = document.querySelector('.back-to-top');
+            if (backToTop) backToTop.classList.remove('hide');
+        }
+
+        prevScrollpos = currentScrollPos;
+    };
+
+    return true;
 }
-var st = $(this).scrollTop();
+
+// expose for other scripts to call after injecting header
+window.initHeaderBar = initHeaderBar;
+
+// If header exists now, initialize. Otherwise observe for it and init once inserted.
+if (!initHeaderBar()) {
+    const mo = new MutationObserver((records, obs) => {
+        if (document.querySelector('.header-bar')) {
+            initHeaderBar();
+            obs.disconnect();
+        }
+    });
+    mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+}
 
 function scrollWin() {
     window.scrollTo(0, 0);

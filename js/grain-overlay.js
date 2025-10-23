@@ -4,31 +4,51 @@
 // Set grain overlay height to match page height
 function setGrainOverlayHeight() {
     const grainOverlay = document.getElementById('grain-overlay');
-    if (grainOverlay) {
-        // Reset height first to force recalculation
-        grainOverlay.style.height = 'auto';
-        
-        // Get the actual document height with more comprehensive calculation
-        const documentHeight = Math.max(
-            document.body.scrollHeight,
-            document.body.offsetHeight,
-            document.documentElement.scrollHeight,
-            document.documentElement.offsetHeight,
-            document.documentElement.clientHeight,
-            window.innerHeight
-        );
-        
-        // For case study pages (like resume), also check the main content area
-        const mainContent = document.querySelector('main#content');
-        if (mainContent) {
-            const mainHeight = mainContent.offsetHeight + mainContent.offsetTop;
-            const finalHeight = Math.max(documentHeight, mainHeight);
-            grainOverlay.style.height = finalHeight + 'px';
-        } else {
-            // Set the height to match the document
-            grainOverlay.style.height = documentHeight + 'px';
-        }
+    if (!grainOverlay) return;
+    // Prevent overlapping measurements during rapid resize
+    if (setGrainOverlayHeight.isMeasuring) return;
+    setGrainOverlayHeight.isMeasuring = true;
+
+    // Temporarily hide the overlay so it doesn't affect document measurements
+    const prevDisplay = grainOverlay.style.display;
+    grainOverlay.style.display = 'none';
+    // Reset inline styles so measurements are accurate
+    grainOverlay.style.height = 'auto';
+    grainOverlay.style.width = '100%';
+
+    // Compute several candidate heights and pick the largest.
+    // Using getBoundingClientRect on body/html helps with some browser quirks.
+    const docEl = document.documentElement;
+
+    const candidates = [
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        docEl.scrollHeight,
+        docEl.offsetHeight,
+        docEl.clientHeight,
+        window.innerHeight
+    ];
+
+    // If there's a large main content area, include its bottom coordinate.
+    const mainContent = document.querySelector('main#content');
+    if (mainContent) {
+        // Use offsetTop + offsetHeight which are document-space values and
+        // less likely to double-count scrollY than getBoundingClientRect()+scrollY.
+        candidates.push(mainContent.offsetTop + mainContent.offsetHeight);
     }
+
+    // Final height should at least fill the viewport
+    let finalHeight = Math.max(...candidates, window.innerHeight);
+
+    // Clamp to documentElement.scrollHeight to avoid overshoot from mixed calculations
+    finalHeight = Math.min(finalHeight, docEl.scrollHeight || finalHeight);
+    grainOverlay.style.height = finalHeight + 'px';
+    // ensure overlay covers full width and won't cause horizontal scroll
+    grainOverlay.style.left = '0';
+    grainOverlay.style.top = '0';
+    // restore visibility
+    grainOverlay.style.display = prevDisplay || '';
+    setGrainOverlayHeight.isMeasuring = false;
 }
 
 // Initialize grain overlay
