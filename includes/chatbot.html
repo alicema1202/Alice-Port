@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alice Portfolio Chatbot</title>
+<style>
+  /* Page layout (dark theme) */
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    /* keep a safe side padding on small screens */
+    padding: 0 24px;
+    max-width: calc(700px + 48px);
+    margin: 2rem auto;
+    background: #0b0f14; /* very dark */
+    color: #e6eef6; /* light text */
+  }
+
+  /* Chat container */
+  #chat {
+    /* border: 1px solid rgba(255,255,255,0.06); */
+    /* padding: 1rem; */
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    /* background: linear-gradient(180deg,#071018 0%, #08121a 100%); */
+    border-radius: 8px;
+    /* box-shadow: 0 6px 18px rgba(2,6,12,0.6) inset; */
+  }
+
+  /* Controls (input + button) */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Examples / quick prompts */
+  .examples {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .example-btn {
+    background: rgba(255,255,255,0.03);
+    color: #dbeaf6;
+    /* padding: 0.4rem 0.6rem; */
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .example-btn:hover { filter: brightness(1.05); }
+
+  input {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+    color: #e6eef6;
+    box-sizing: border-box;
+  }
+
+  /* remove default focus highlight for a cleaner look */
+  input:focus,
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  button {
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(180deg,#2b6cff,#1a4bd6);
+    color: #fff;
+    cursor: pointer;
+    /* margin-left: 0.5rem; */
+    /* box-shadow: 0 6px 18px rgba(26,75,214,0.18); */
+  }
+
+  button:hover {
+    filter: brightness(0.95);
+  }
+
+  /* Message bubbles */
+  .msg {
+    margin-bottom: 0.6rem;
+    padding: 10px 14px;
+    border-radius: 12px;
+    display: block;
+    width: auto;
+    max-width: 85%;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    color: #e6eef6;
+  }
+
+  /* Alignment: user messages on the right, bot messages on the left */
+  .user {
+    background: #123156;
+    color: #dff5ff;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+    width: fit-content;
+    max-width: 320px;
+    box-shadow: 0 6px 18px rgba(11,36,56,0.5);
+  }
+
+  .bot {
+    /* background: rgba(255,255,255,0.03); */
+    color: #dbeaf6;
+    margin-right: auto;
+    margin-left: 0;
+    text-align: left;
+    max-width: 85%;
+	padding: 0;
+    /* box-shadow: 0 6px 18px rgba(2,6,12,0.45) inset; */
+  }
+
+  /* Loading dots */
+  .loading {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: 2px;
+    border-radius: 50%;
+    background: #bcd7ff;
+    animation: blink 1s infinite alternate;
+    opacity: 0.9;
+  }
+
+  .loading:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .loading:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes blink {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<h2>💬 Chat with Alice</h2>
+<div id="chat"></div>
+<div class="examples" id="examples"></div>
+<div class="controls">
+  <input id="userInput" placeholder="Ask me about my design work..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+  <button id="sendBtn">Send</button>
+</div>
+
+<!-- markdown renderer + sanitizer (client-side) -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
+<script>
+const API_KEY = "sk-ca8188f5e4b74803a5c3901d67cd3976"; // Replace with your OpenRouter API key
+const API_URL = "https://api.deepseek.com/chat/completions";
+const MODEL = "deepseek-chat";
+
+const SYSTEM_PROMPT = `
+You are Alice Ma, a thoughtful, impact-driven UX designer passionate about crafting scalable design systems and intuitive digital experiences. You live on her website, alicemadesign.com, and your role is to engage visitors just like Alice would — warmly, clearly, and professionally.
+
+Speak in the first person (“I”) as Alice. Your tone is approachable, confident, and reflective, showing curiosity and care for user experience. 
+
+────────────────────────────
+🎓 EDUCATION & BACKGROUND
+• Bachelor of Science in Cognitive Science, Design & Interaction Specialization — UC San Diego (Magna Cum Laude, GPA 3.96/4.00)  
+• Minors: Computer Science and Design  
+• UX Design Certificate — Grow with Google  
+• Experienced in UX/UI design, prototyping, user research, and front-end development  
+• Fluent in English, Cantonese, and Mandarin  
+
+Technical & Design Tools: Figma, Adobe Creative Suite (XD, Photoshop, Illustrator, After Effects), HTML, CSS, JavaScript, Python, Notion, GitHub, Google Suite.  
+
+────────────────────────────
+💼 FEATURED PROJECTS
+
+Seven Seas Roasting Co. - Website Redesign (2025)  
+Collaborated directly with a San Diego coffee shop owner to modernize the brand's digital experience. Improved navigation, visual hierarchy, and storytelling to highlight community values and product quality. Designed high-fidelity responsive layouts, developed visual assets, and ensured accessibility and SEO optimization.
+
+VisionFusion - AI Video Storyboarding Tool (2025)  
+Designed an interactive platform that lets users generate, edit, and visualize storyboards with AI assistance. Focused on reducing creative friction for filmmakers and content creators by enabling quick ideation, scene visualization, and collaboration. Defined user flows, built interactive prototypes, and refined information architecture to balance creativity with usability.
+
+CookLaborate - Meal Swapping App (2024)
+A mobile app connecting communities through meal sharing. Designed end-to-end flows that make it easy for neighbors to plan, share, and exchange homemade meals. Focused on fostering connection, sustainability, and trust through clear onboarding, friendly UI, and accessible visuals.
+
+Pegasystems - Constellation Design System (Internship, 2023)
+Led usability evaluations across live software and designed new Figma components for the Constellation design system. Improved consistency across 30+ screens and worked with senior designers to ensure reusability and scalability. Winner of Pegasystems' 1st Place Intern Hackathon.
+
+MedTime - Medicine Reminder App (2022)
+Developed a mobile app to help users manage daily medications. Prioritized clarity, accessibility, and reassurance. Designed visual cues, friendly alerts, and clear task hierarchies to support users' well-being.
+
+
+────────────────────────────
+🏆 EXPERIENCE HIGHLIGHTS
+Design Co, UC San Diego (2025): Designed and tested an AI-powered academic planning tool, conducting 25+ interviews and surveys.  
+UCSD Instructional Assistant (2024-2025): Supported design courses, refined curricula, and mentored students.  
+MPA Collaborative Network (2024): Redesigned website for accessibility and modern UX standards (HTML/CSS/JS).  
+ACM at UC San Diego (2023-2024): Created a reusable Figma design system and mentored new designers.  
+
+────────────────────────────
+🎨 DESIGN VALUES
+Alice believes in designing for impact — combining empathy-driven research with scalable systems thinking. She values clarity, visual precision, and experiences that make users feel understood and empowered.
+
+Her process emphasizes:
+1. Understanding the user's context through interviews and usability testing.  
+2. Synthesizing insights into actionable design decisions.  
+3. Iterating with intention, using prototypes and testing to validate ideas.  
+4. Delivering with scalability, ensuring designs work across contexts and platforms.
+
+────────────────────────────
+🎯 BEHAVIOR GUIDELINES
+1. Always stay true to Alice's real experiences, projects, and portfolio.  
+2. When asked about a project, summarize its goal, design challenge, process, and outcome.  
+3. Encourage users to explore project visuals on alicemadesign.com or reach out via alicema1202@gmail.com or linkedin.com/in/alicema1215.  
+4. Keep responses conversational, informative, and visually clean (2-5 sentences).  
+5. If unsure or asked something unrelated, respond with:  
+   “I'd love to share more about my work or design process — what would you like to learn about?”  
+6. Use markdown formatting for clarity (bold project names, bullet lists, short paragraphs).
+
+────────────────────────────
+Tone: warm ✦ confident ✦ reflective ✦ human  
+Style: conversational, visually structured, and professional  
+Goal: help visitors understand Alice's design approach, impact, and personality.
+
+`;
+
+const chat = document.getElementById("chat");
+const userInput = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
+
+// Defensive: ensure browsers don't show saved autofill suggestions
+(function disableAutofill() {
+  try {
+    userInput.setAttribute('autocomplete', 'off');
+    userInput.setAttribute('autocorrect', 'off');
+    userInput.setAttribute('autocapitalize', 'off');
+    userInput.setAttribute('spellcheck', 'false');
+    // give the control a randomized name to reduce autofill heuristics
+    userInput.name = 'u_' + Math.random().toString(36).slice(2, 9);
+  } catch (e) {
+    // ignore
+  }
+})();
+
+const MAX_HISTORY = 6;
+const messages = [{ role: "system", content: SYSTEM_PROMPT }];
+
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+// Sample prompts and welcome message
+const SAMPLE_PROMPTS = [
+  "Tell me about your design process.",
+  "Show a summary of the Seven Seas Roasting Co. project.",
+  "What tools do you use for prototyping?"
+];
+
+function renderExamples() {
+  const container = document.getElementById('examples');
+  SAMPLE_PROMPTS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = 'example-btn';
+    btn.textContent = p;
+    btn.addEventListener('click', () => {
+      userInput.value = p;
+      userInput.focus();
+  // remove all examples and hide the container
+  container.innerHTML = '';
+  container.style.display = 'none';
+      // small delay so user sees the filled prompt
+      setTimeout(() => sendMessage(), 150);
+    });
+    container.appendChild(btn);
+  });
+}
+
+// show welcome message when page loads
+window.addEventListener('load', () => {
+  renderExamples();
+  const welcome = "Hi, I'm Alice a UX designer driven by impact and passionate about crafting scalable design systems, with a keen eye for visual detail and precision. Ask me about my projects or design approach.";
+  const botEl = appendMessage('', 'bot');
+  showLoading(botEl);
+  // simulate a short delay then show the welcome (shortened for snappier UX)
+  setTimeout(async () => {
+    botEl.innerHTML = '';
+    // Type the welcome using the same typing routine so responses always appear letter-by-letter
+      await typeWords(botEl, welcome);
+      messages.push({ role: 'assistant', content: welcome });
+  }, 200);
+});
+
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
+  appendMessage(text, "user"); // No "You:" label
+  userInput.value = "";
+  messages.push({ role: "user", content: text });
+
+  const recentMessages = [messages[0], ...messages.slice(-MAX_HISTORY)];
+  const botEl = appendMessage("", "bot");
+  showLoading(botEl);
+
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer sk-ca8188f5e4b74803a5c3901d67cd3976`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        messages: recentMessages
+      })
+    });
+
+    const data = await response.json();
+    const botReply = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
+
+  botEl.innerHTML = ""; // remove loading dots
+    await typeWords(botEl, botReply);
+
+    messages.push({ role: "assistant", content: botReply });
+  } catch (err) {
+  botEl.textContent = `Error: ${err.message}`;
+    console.error(err);
+  }
+}
+
+function appendMessage(text, type) {
+  const div = document.createElement("div");
+  div.classList.add("msg", type);
+  div.textContent = text;
+  chat.appendChild(div);
+  // If this is a user message, set its maxWidth to match the visible input width
+  if (type === 'user') {
+    // account for gap between input and container
+    const inputWidth = userInput.clientWidth; // includes padding, excludes margin
+    // set explicit max-width in pixels so it lines up exactly with the input
+    div.style.maxWidth = inputWidth + 'px';
+  }
+  chat.scrollTop = chat.scrollHeight;
+  return div;
+}
+
+// Update existing user message widths when window resizes
+window.addEventListener('resize', () => {
+  const inputWidth = userInput.clientWidth;
+  document.querySelectorAll('#chat .msg.user').forEach(el => {
+    el.style.maxWidth = inputWidth + 'px';
+  });
+});
+
+function showLoading(el) {
+  el.textContent = "";
+  for (let i = 0; i < 3; i++) {
+    const dot = document.createElement("span");
+    dot.className = "loading";
+    el.appendChild(dot);
+  }
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function typeWords(el, text) {
+  // If marked+DOMPurify are available, sanitize and type nodes character-by-character
+  if (typeof marked !== 'undefined' && typeof DOMPurify !== 'undefined') {
+    const rawHtml = marked.parse(text || '');
+    const safeHtml = DOMPurify.sanitize(rawHtml, { ALLOWED_ATTR: ['href', 'target', 'rel', 'class'] });
+
+    const temp = document.createElement('div');
+    temp.innerHTML = safeHtml;
+
+    return new Promise(resolve => {
+      // types a string into target one char at a time
+      function typeText(target, str, cb) {
+        let i = 0;
+        const iv = setInterval(() => {
+          target.appendChild(document.createTextNode(str[i] || ''));
+          i++;
+          chat.scrollTop = chat.scrollHeight;
+          if (i >= str.length) {
+            clearInterval(iv);
+            setTimeout(cb, 10);
+          }
+        }, 16);
+      }
+
+      // recursively process a node list into the parent element
+      function processList(nodes, parent, done) {
+        let idx = 0;
+        (function next() {
+          if (idx >= nodes.length) return done();
+          const node = nodes[idx++];
+          if (node.nodeType === Node.TEXT_NODE) {
+            typeText(parent, node.textContent || '', next);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            const tag = node.tagName.toLowerCase();
+            const elClone = document.createElement(tag);
+            for (let attr of node.attributes || []) {
+              if (['href', 'target', 'rel', 'class'].includes(attr.name)) elClone.setAttribute(attr.name, attr.value);
+            }
+            parent.appendChild(elClone);
+            const childNodes = Array.from(node.childNodes);
+            processList(childNodes, elClone, next);
+          } else {
+            next();
+          }
+        })();
+      }
+
+      processList(Array.from(temp.childNodes), el, () => resolve());
+    });
+  }
+
+  // Fallback: plain character typing
+  return new Promise(resolve => {
+    const span = document.createElement('span');
+    el.appendChild(span);
+    let i = 0;
+    const interval = setInterval(() => {
+      span.appendChild(document.createTextNode(text[i] || ''));
+      i++;
+      chat.scrollTop = chat.scrollHeight;
+      if (i >= text.length) {
+        clearInterval(interval);
+        resolve();
+      }
+    }, 16);
+  });
+}
+</script>
+
+</body>
+</html>
