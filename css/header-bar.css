@@ -318,6 +318,7 @@ body {
     padding: 1em 2em;
     color: rgba(255, 255, 255, 0.692)!important;
     font-weight: 300;
+    white-space: nowrap;
 }
 @media only screen and (min-width: 900px){
     .list-item {
