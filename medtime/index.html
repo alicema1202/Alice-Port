@@ -22,12 +22,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="../images/memoji.png">
+    <link href="../css/chatbot-overlay.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
 </head>
 <body>
-    <a onclick="scrollWin()" class="back-to-top hide" >
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <div class="buttons">
+        <a onclick="scrollWin()" class="back-to-top hide">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <a onclick="toggleChatOverlay()" class="chatbtn back-to-top">
+            <span class="material-icons-round">assistant</span>
+            <!-- <img src="../images/Sparkle.svg" style="width:24px; height:24px;"> -->
+        </a>
+        
+        <!-- Chat Overlay -->
+        <div id="chatOverlay" class="chatbot-overlay">
+            <div class="chatbot-container">
+                <button class="chatbot-close" onclick="toggleChatOverlay()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <iframe class="chatbot-frame" src="../includes/chatbot.html"></iframe>
+            </div>
+        </div>
+    </div>
     <header class="header-bar" style="position: sticky!important; top: 0!important;">
         <div class="header-content-container">
             <a href="/" class="name">
@@ -527,6 +545,20 @@
     function goToWorks() {
         document.getElementById("works").scrollIntoView();
     }
+    
+    const toggleChatOverlay = () => {
+        const overlay = document.getElementById('chatOverlay');
+        const isHidden = !overlay.classList.contains('visible');
+        overlay.classList.toggle('visible');
+
+        if (isHidden) {
+            // Add dynamic path resolution relative to current page depth
+            const iframe = overlay.querySelector('.chatbot-frame');
+            const pathToRoot = window.location.pathname.split('/').slice(1, -1).map(() => '..').join('/') || '.';
+            iframe.src = `${pathToRoot}/includes/chatbot.html`;
+        }
+    };
+
     hamburger = document.querySelector(".menu-icon");
     dropbtn = document.querySelector(".dropdown");
     dropdown = document.querySelector(".dropdown-content");
@@ -575,4 +607,5 @@
 <!-- Custom Cursor -->
 <div class="custom-cursor"></div>
 <script src="../js/page-transitions.js"></script>
+<script src="../js/chatbot-functions.js"></script>
 </html>

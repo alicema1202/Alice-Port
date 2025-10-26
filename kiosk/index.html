@@ -22,12 +22,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="../images/memoji.png">
+    <link href="../css/chatbot-overlay.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
 </head>
 <body>
-    <a onclick="scrollWin()" class="back-to-top hide" >
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <div class="buttons">
+        <a onclick="scrollWin()" class="back-to-top hide" >
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <a onclick="toggleChatOverlay()" class="chatbtn back-to-top">
+            <span class="material-icons-round">assistant</span>
+        </a>
+        
+        <!-- Chat Overlay -->
+        <div id="chatOverlay" class="chatbot-overlay">
+            <div class="chatbot-container">
+                <button class="chatbot-close" onclick="toggleChatOverlay()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <iframe class="chatbot-frame" src="../includes/chatbot.html"></iframe>
+            </div>
+        </div>
+    </div>
     <header class="header-bar" style="position: sticky!important; top: 0!important;">
         <div class="header-content-container">
             <a href="/" class="name">
@@ -187,7 +204,7 @@
                         <br>
                         <div class="two-photos hidden" style="display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap;">
                             <div class="photo hidden" style="max-width: 100%">
-                                <video muted loop class="video chart" src="../../images/kiosk-prototype.mp4" poster="../images/kiosk-prototype.png" style="max-height: 50vh; width: auto;;"></video>
+                                <video muted loop class="video chart" src="../images/kiosk-prototype.mp4" poster="../images/kiosk-prototype.png" style="max-height: 50vh; width: auto;;"></video>
                                 <p class="caption">
                                     Digital prototype
                                 </p>
@@ -825,24 +842,6 @@ showSlides(1, 2);
     });
 
 </script>
-<script>
-    const videos = document.querySelectorAll('.video');  // Select all video elements
-    document.addEventListener("DOMContentLoaded", () => {
-
-        videos.forEach(video => {
-            // Play the video when mouse enters
-            video.addEventListener('mouseenter', () => {
-                video.play();  // Start playing the video
-            });
-
-            // Pause the video when mouse leaves
-            video.addEventListener('mouseleave', () => {
-                video.pause();  // Pause the video
-            });
-        });
-    });
-</script>
-
 <script src="../js/slide.js"></script>
 <script src="../js/header-bar.js"></script>
 <script src="../js/case-study.js"></script>
@@ -851,5 +850,9 @@ showSlides(1, 2);
 
 <!-- Custom Cursor -->
 <div class="custom-cursor"></div>
+<script src="../js/chatbot-overlay.js"></script>
 <script src="../js/page-transitions.js"></script>
+<script src="../js/chatbot-functions.js"></script>
+
+</body>
 </html>

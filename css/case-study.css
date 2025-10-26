@@ -9,6 +9,7 @@ strong {
     width: calc(100vw - 32px);
     max-width: calc(100vw);
     height: calc(100svh - 90px - 53px);
+    height: calc(100svh - 90px - 53px);
     margin: auto;
     margin: 0 16px 0 16px;
     /* background-color: #356f39; */

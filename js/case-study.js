@@ -48,27 +48,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // update active links based on scroll position
   function updateActiveOnScroll() {
-    const maxScroll = computeMaxScroll();
-    const scrollPos = window.scrollY + HEADER_OFFSET;
+    const scrollPos = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const OFFSET = 100; // Offset from top of viewport to trigger section change
+    
+    // Find the current section based on scroll position
+    let activeIndex = 0;
+    let lastVisibleIndex = 0;
+    
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      
+      // Check if this section is currently visible in the viewport
+      const isVisible = (
+        rect.top < viewportHeight && // Section top is above viewport bottom
+        rect.bottom > 0 // Section bottom is below viewport top
+      );
+      
+      if (isVisible) {
+        lastVisibleIndex = index;
+        
+        // If section top reaches trigger point, make it active
+        if (rect.top <= OFFSET) {
+          activeIndex = index;
+        }
+      }
+    });
 
-    // if we're at/near the maxScroll, force last section active
-    const nearBottomThreshold = 5; // small cushion
-    if (window.scrollY >= maxScroll - nearBottomThreshold) {
-      // mark last nav active
-      navLinks.forEach(l => l.classList.remove("active"));
-      const lastIdx = navLinks.length - 1;
-      if (navLinks[lastIdx]) navLinks[lastIdx].classList.add("active");
-      return;
+    // Special handling for last section:
+    // If we're seeing the last section at all, and we're past the halfway point of the previous section,
+    // activate the last section
+    if (lastVisibleIndex === sections.length - 1) {
+      const previousSection = sections[sections.length - 2];
+      if (previousSection) {
+        const prevRect = previousSection.getBoundingClientRect();
+        if (prevRect.bottom < viewportHeight * 0.75) { // When we're 75% through previous section
+          activeIndex = sections.length - 1;
+        }
+      }
     }
 
-    // otherwise normal progressive "last section above scrollPos"
-    let currentIndex = 0;
-    for (let i = 0; i < sections.length; i++) {
-      if (scrollPos >= sections[i].offsetTop) currentIndex = i;
+    // Always make last section active if we're near bottom of page
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+      activeIndex = sections.length - 1;
     }
 
+    // Update active state
     navLinks.forEach(l => l.classList.remove("active"));
-    if (navLinks[currentIndex]) navLinks[currentIndex].classList.add("active");
+    if (navLinks[activeIndex]) {
+      navLinks[activeIndex].classList.add("active");
+    }
   }
 
   // resize should recalc max scroll in future calls; also update active once

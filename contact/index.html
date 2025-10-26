@@ -21,15 +21,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="../images/memoji.png">
+    <link href="../css/chatbot-overlay.css" rel="stylesheet">
     
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
 </head>
 <body>
-    <a onclick="scrollWin()" class="back-to-top hide" style="display:none;" >
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <div class="buttons">
+        <a onclick="scrollWin()" class="back-to-top hide" style="display:none;" >
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <a onclick="toggleChatOverlay()" class="chatbtn back-to-top">
+            <span class="material-icons-round">assistant</span>
+        </a>
+        
+        <!-- Chat Overlay -->
+        <div id="chatOverlay" class="chatbot-overlay">
+            <div class="chatbot-container">
+                <button class="chatbot-close" onclick="toggleChatOverlay()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <iframe class="chatbot-frame" src="../includes/chatbot.html"></iframe>
+            </div>
+        </div>
+    </div>
     <header class="header-bar" style="position: sticky!important; top: 0!important;">
         <div class="header-content-container">
             <a href="/" class="name">
@@ -282,7 +299,7 @@
     .button {
         text-decoration: none;
         background-color: rgba(255, 255, 255, 0);
-        background-color: #3272ea;
+        background-color: #1467cc;
         border: 2px solid rgba(255, 255, 255, 0.7);
         border: 0;
         width: fit-content;
@@ -438,21 +455,24 @@
         gap: 8px;
         width: fit-content;
         padding: 0px 16px 0px 16px;
-        position: fixed;
-        bottom: 12px;
+        position: absolute;
+        top: 12px;
+        margin-left: auto;
+        margin-right: auto;
         right: 12px;
         border-radius: 8px;
         opacity: 0;
         transition: ease-in-out 0.3s;
-        bottom: -20px;
+        top: -20px;
         border: 1px rgba(255, 255, 255, 0.356) solid;
+        z-index: 100000;
     }
     a {
         cursor: pointer;
     }
     #copied.active {
         opacity: 1;
-        bottom: 12px;
+        top: 12px;
     }
     .fa-copy, .fa-arrow-up-right-from-square {
         color: #7AB8FD;
@@ -666,5 +686,11 @@
 
 <!-- Custom Cursor -->
 <div class="custom-cursor"></div>
+<script src="../js/chatbot-overlay.js"></script>
 <script src="../js/page-transitions.js"></script>
+
+<script src="../js/chatbot-overlay.js"></script>
+
+</script>
+<script src="../js/chatbot-functions.js"></script>
 </html>

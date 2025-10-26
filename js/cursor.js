@@ -1,10 +1,37 @@
 let cursor;
 let hoverTimeout;
+let isChatbotMode = false;
 
 // Initialize cursor when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   cursor = document.querySelector(".custom-cursor");
   if (!cursor) return;
+  
+  // Check if we're in the chatbot iframe
+  isChatbotMode = window.self !== window.top;
+  
+  // If we're in the chatbot, notify parent when ready
+  if (isChatbotMode) {
+    document.addEventListener("mouseenter", () => {
+      window.parent.postMessage('chatbot-focused', '*');
+    });
+    document.addEventListener("mouseleave", () => {
+      window.parent.postMessage('chatbot-blurred', '*');
+    });
+  } else {
+    // Main page cursor coordination
+    window.addEventListener('message', (event) => {
+      if (event.data === 'chatbot-focused') {
+        cursor.style.opacity = '0';
+        cursor.style.visibility = 'hidden';
+        cursor.style.pointerEvents = 'none';
+      } else if (event.data === 'chatbot-blurred') {
+        cursor.style.opacity = '1';
+        cursor.style.visibility = 'visible';
+        cursor.style.pointerEvents = '';
+      }
+    });
+  }
   
   // Position cursor off-screen on touch devices (phones/tablets)
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {

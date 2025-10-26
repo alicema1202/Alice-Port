@@ -21,15 +21,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="images/memoji.png">
+    <link href="css/chatbot-overlay.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     
     <!-- Preload texture for grain overlay -->
-    <link rel="preload" as="image" href="images/texture.png">
+    <!-- <link rel="preload" as="image" href="images/texture.png"> -->
 
 </head>
 <body>
-    <a onclick="scrollWin()" class="back-to-top hide" style="display:none;" >
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <div class="buttons home">
+        <a onclick="scrollWin()" class="back-to-top hide" style="display:none" >
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <a onclick="toggleChatOverlay()" class="chatbtn back-to-top">
+            <span class="material-icons-round">assistant</span>
+            <!-- <img src="../images/chat.svg" style="width:24px; height:24px;"> -->
+        </a>
+        
+        <!-- Chat Overlay -->
+        <div id="chatOverlay" class="chatbot-overlay">
+            <div class="chatbot-container">
+                <button class="chatbot-close" onclick="toggleChatOverlay()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <iframe class="chatbot-frame" id="chatbot-iframe" src="includes/chatbot.html"></iframe>
+            </div>
+        </div>
+    </div>
     <header class="header-bar delay">
         <div class="header-content-container">
             <a href="/" class="name">
@@ -785,6 +803,7 @@
     // const tags = document.querySelector('.hero-text .tags');
     const readmore = document.querySelector("#read-more");
     const projects = document.querySelector("#projects");
+    const chat = document.querySelector('.buttons');
 
     if (!isVisited) {
       // First time in this session: Add animation class
@@ -812,6 +831,7 @@
         // tags.style = "animation:slide-up 0.8s ease-in-out 0s 1;opacity:1;";
         loadingDots.style = "animation: none; display:none";
         projects.style = "animation:slide-up 0.8s ease-in-out 0s 1";
+        chat.style = "animation: slide-up 0.8s ease-in-out 0s 1; opacity: 1;"; 
     }
 </script>
 <script src="js/header-bar.js"></script>
@@ -820,6 +840,37 @@
 <script src="js/video-modal.js"></script>
 <script src="js/grain-overlay.js"></script>
 <script src="js/page-transitions.js"></script>
+<script src="js/chatbot-cursor.js"></script>
+<script src="js/chatbot-bridge.js"></script>
+
+<script>
+function toggleChatOverlay() {
+    const overlay = document.getElementById('chatOverlay');
+    const chatFrame = document.querySelector('.chatbot-frame');
+    const icon = document.querySelector('.chatbtn i');
+    
+    if (overlay) {
+        overlay.classList.toggle('visible');
+        icon.classList.toggle("fa-solid");
+        // Load content if not already loaded
+        if (overlay.classList.contains('visible') && !chatFrame.src) {
+            // Check if we're in a subdirectory or root
+            const path = window.location.pathname;
+            const chatbotPath = path.includes('/') && !path.endsWith('/') 
+                ? '../includes/chatbot.html'  // In subdirectory
+                : 'includes/chatbot.html';    // In root
+            chatFrame.src = chatbotPath;
+        }
+    }
+}
+
+// Listen for messages from the chatbot iframe
+window.addEventListener('message', function(event) {
+    if (event.data.type === 'openLink') {
+        window.open(event.data.url, '_blank', 'noopener,noreferrer');
+    }
+});
+</script>
 
 <script>
 // First visit fade-in animation
@@ -902,4 +953,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script src="js/chatbot-functions.js"></script>
 </html>

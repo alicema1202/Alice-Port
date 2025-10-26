@@ -22,8 +22,24 @@ body {
     background-color: #17171c;
     /* cursor: none; */
     font-family: "SF Pro", sans-serif;
-}
 
+}
+.buttons {
+    display: flex;
+    /* flex-direction: column; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 32px;
+    gap: 24px;
+    transform: translateY(0);
+    opacity: 0;
+    animation: slide-up 0.8s ease-in-out 1 forwards;
+}
+.buttons.home {
+    animation: slide-up 0.8s ease-in-out 2.3s 1 forwards;
+}
 /* Grain texture overlay */
 .grain-overlay {
     position: absolute;
@@ -44,29 +60,53 @@ body {
 .header-bar {
     background: linear-gradient(180deg, #0e0e1100 0%, #0e0e1100 96%)!important;
 }
+
 .back-to-top {
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
     z-index: 1000;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 32px;
+    /* margin: 32px; */
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
     transition: 0.3s;
     background-color: rgba(169, 169, 169, 0.564);
+    background-color: #717171c1;
+    box-shadow: -3px 3px 20px rgba(38, 44, 75, 0.428);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    display: none;
+
+}
+.material-icons-round {
+    user-select: none!important;
+    -moz-user-select: none!important;
+}
+.chatbtn {
+    display: flex!important;
+    background-color: #1467cc;
+    color: #ffffff;
+    font-size: 22px;
+}
+.chatbtn.active {
+    background-color: rgb(164, 164, 164);
+    color: black
+}
+.fa-xmark {
+    font-size: 28px;
 }
 .back-to-top:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
+    box-shadow: -1px 1px 20px #24409e62;
+
 }
 .hide {
     opacity: 0;

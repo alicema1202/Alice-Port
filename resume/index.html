@@ -22,12 +22,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="../images/memoji.png">
+    <link href="../css/chatbot-overlay.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
 </head>
 <body>
-    <a onclick="scrollWin()" class="back-to-top hide" style="display:none;" >
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <div class="buttons">
+        <a onclick="scrollWin()" class="back-to-top hide" style="display:none;" >
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <a onclick="toggleChatOverlay()" class="chatbtn back-to-top">
+            <span class="material-icons-round">assistant</span>
+        </a>
+        
+        <!-- Chat Overlay -->
+        <div id="chatOverlay" class="chatbot-overlay">
+            <div class="chatbot-container">
+                <button class="chatbot-close" onclick="toggleChatOverlay()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <iframe class="chatbot-frame" src="../includes/chatbot.html"></iframe>
+            </div>
+        </div>
+    </div>
     <header class="header-bar" style="position: sticky!important; top: 0!important;">
         <div class="header-content-container">
             <a href="/" class="name">
@@ -516,6 +533,8 @@
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     
+    <script src="../js/chatbot-overlay.js"></script>
+    
     <style>
         /* Resume specific styling */
         
@@ -698,5 +717,7 @@
     </style>
 <script src="../js/include-header.js"></script>
 </body>
+<script src="../js/chatbot-overlay.js"></script>
 <script src="../js/page-transitions.js"></script>
+<script src="../js/chatbot-functions.js"></script>
 </html>
