@@ -37,6 +37,12 @@ body {
     opacity: 0;
     animation: slide-up 0.8s ease-in-out 1 forwards;
 }
+@media only screen and (max-width: 600px) {
+    .buttons {
+        display: none;
+    }
+    
+}
 .buttons.home {
     animation: slide-up 0.8s ease-in-out 2.3s 1 forwards;
 }
