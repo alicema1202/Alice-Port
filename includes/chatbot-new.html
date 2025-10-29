@@ -718,24 +718,25 @@ async function sendMessage() {
   const text = userInput.value.trim();
   if (!text) return;
 
-  // Hide example buttons when user sends their first message
+  // Hide example buttons on first user message
   const container = document.getElementById('examples');
   if (container && !messages.some(msg => msg.role === 'user')) {
     container.style.display = 'none';
   }
 
-  appendMessage(text, "user"); // No "You:" label
+  // Show user message in chat
+  appendMessage(text, "user");
   userInput.value = "";
 
-  // Add context internally without showing it in the chat
+  // Add context internally (not visible)
   const userMessage = {
     role: "user",
-    content: text, // Show only user's message in chat
-    context: `User is viewing ${currentPage || 'the homepage'}. Context: ${pageContext}` // Internal context
+    content: text,
+    context: `User is viewing ${currentPage || 'the homepage'}. Context: ${pageContext}`
   };
   messages.push(userMessage);
 
-  // Process messages to include context in API calls but not in display
+  // Prepare recent messages with context
   const recentMessages = [
     messages[0],
     ...messages.slice(-MAX_HISTORY).map(msg => ({
@@ -743,30 +744,41 @@ async function sendMessage() {
       content: msg.role === 'user' ? `${msg.context}\n\nUser message: ${msg.content}` : msg.content
     }))
   ];
+
+  // Show loading state for bot
   const botEl = appendMessage("", "bot");
   showLoading(botEl);
 
   try {
+    // Call your serverless function instead of the API directly
     const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: JSON.stringify(recentMessages) // send messages as string
+      })
     });
 
     const data = await response.json();
+    // DeepSeek response format may vary; adjust if needed
     const botReply = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
 
-    botEl.innerHTML = ""; // remove loading dots
+    // Remove loading state and type the reply
+    botEl.innerHTML = "";
     botEl.classList.remove('loading-state');
     await typeWords(botEl, botReply);
 
+    // Save bot response to messages
     messages.push({ role: "assistant", content: botReply });
-    saveMessages(); // Save chat history to localStorage
+    saveMessages();
   } catch (err) {
-  botEl.textContent = `Error: ${err.message}`;
+    botEl.textContent = `Error: ${err.message}`;
     console.error(err);
   }
 }
+
 
 function appendMessage(text, type, shouldScroll = true) {
   const div = document.createElement("div");

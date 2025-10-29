@@ -4,8 +4,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { message } = await req.json();
+    // ✅ Correct way to get body data in Vercel (Node)
+    const { message } = req.body;
 
+    if (!message) {
+      return res.status(400).json({ error: "Missing message" });
+    }
+
+    // Call DeepSeek API securely
     const apiResponse = await fetch("https://api.deepseek.com/chat/completions", {
       method: "POST",
       headers: {
@@ -21,7 +27,7 @@ export default async function handler(req, res) {
     const data = await apiResponse.json();
     res.status(200).json(data);
   } catch (error) {
-    console.error(error);
+    console.error("Server error:", error);
     res.status(500).json({ error: "Server error" });
   }
 }
