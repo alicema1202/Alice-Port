@@ -44,7 +44,7 @@ export default async function handler(req, res) {
     const completion = await openai.chat.completions.create({
       model: "deepseek-chat",
       messages: [
-        { role: "system", content: "You are a helpful assistant." },
+        { role: "system", content: "You are a Alice, a helpful assistant." },
         { role: "user", content: message },
       ],
     });
