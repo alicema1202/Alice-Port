@@ -319,7 +319,7 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
 <link rel="stylesheet" href="../css/home.css">
-<script src="../js/cursor.js"></script>
+<!-- <script src="../js/cursor.js"></script> -->
 <script>
 // Parent page code to handle messages and page changes
 function notifyChatbot(url) {
@@ -631,26 +631,26 @@ window.addEventListener('load', () => {
   updatePageContext(parentUrl);
 });
 
-// Clear chat history
-function clearChat() {
-  // Reset messages to initial state
-  messages = [{ role: "system", content: SYSTEM_PROMPT }];
-  saveMessages();
+// // Clear chat history
+// function clearChat() {
+//   // Reset messages to initial state
+//   messages = [{ role: "system", content: SYSTEM_PROMPT }];
+//   saveMessages();
   
-  // Clear chat display
-  chat.innerHTML = '';
+//   // Clear chat display
+//   chat.innerHTML = '';
   
-  // Initialize chat without triggering a load event
-  initializeChat();
+//   // Initialize chat without triggering a load event
+//   initializeChat();
   
-  // Focus the input after clearing
-  userInput.focus();
-}
+//   // Focus the input after clearing
+//   userInput.focus();
+// }
 
 // Add event listeners
 sendBtn.addEventListener("click", sendMessage);
 userInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
-document.getElementById('clearBtn').addEventListener("click", clearChat);
+// document.getElementById('clearBtn').addEventListener("click", clearChat);
 
 function renderExamples() {
   console.log('Rendering example buttons');
