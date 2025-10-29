@@ -2,904 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
-<title>Alice Portfolio Chatbot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepSeek Chatbot</title>
 <style>
-  /* Page layout (dark theme) */
   body {
-    /* font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; */
-    padding: 0;
-    margin: 0;
-    height: 100vh;
+    font-family: sans-serif;
+    background: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #chat-container {
+    width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
-    background: #0b0f14; /* very dark */
-    color: #e6eef6; /* light text */
-    cursor: none !important; /* Hide default cursor */
+    height: 500px;
+    overflow: hidden;
   }
 
-  /* Custom cursor styles */
-  .custom-cursor {
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: all 0.2s ease;
-    transform-origin: center;
-  }
-
-  button:hover ~ .custom-cursor,
-  input:hover ~ .custom-cursor,
-  .example-btn:hover ~ .custom-cursor {
-    transform: scale(1.5);
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .header p {
-    margin: 0;
-  }
-  h2 {
-    margin: 0;
-  }
-  ul {
-    padding-left: 20px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-  .name-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .name-container p {
-    font-size: 13px;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.404);
-  }
-  h3 {
-    margin: 0;
-  }
-  #clearBtn {
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.5);
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-  }
-
-  #clearBtn:hover {
-    color: rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.1);
-  }
-
-  /* Chat container */
   #chat {
     flex: 1;
+    padding: 10px;
     overflow-y: auto;
-    margin-bottom: 0;
-    padding: 0 16px;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.1) transparent;
   }
 
-  /* Controls (input + button) */
-  .controls {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 16px 16px;
-    background: #0b0f14;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    z-index: 10;
-  }
-
-  /* Examples / quick prompts */
-  .examples {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    gap: 2px;
-    /* padding: 0 24px; */
-    margin-bottom: 16px;
-    width: 100%;
-  }
-
-  .example-btn {
-    background: rgba(255,255,255,0.03);
-    color: #dbeaf6;
-    padding: 8px 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.04);
-    cursor: none !important;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-    text-align: left;
-    width: 100%;
-    max-width: 85%;
-    /* margin-bottom: 8px; */
-    font-family: "SF Pro", sans-serif;
-    text-align: center;
-    font-weight: 300;
-  }
-
-  .example-btn:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(255,255,255,0.08);
-    transform: translateY(-1px);
-  }
-
-  input {
-    width: 100%;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.02);
-    color: #e6eef6;
-    box-sizing: border-box;
-    font-family: "SF Pro", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  /* remove default focus highlight for a cleaner look */
-  input:focus,
-  button:focus {
-    outline: none;
-    box-shadow: none;
-  }
-
-  button {
-    padding: 0.6rem 0.9rem;
-    border-radius: 20px;
-    border: none;
-    background: linear-gradient(180deg,#2b6cff,#1a4bd6);
-    background: #1467cc;
-    color: #fff;
-    cursor: pointer;
-    /* margin-left: 0.5rem; */
-    /* box-shadow: 0 6px 18px rgba(26,75,214,0.18); */
-  }
-
-  button:hover {
-    filter: brightness(0.95);
-  }
-
-  /* Message bubbles */
-  .msg {
-    margin-bottom: 0.6rem;
-    padding: 8px 16px;
-    border-radius: 20px;
-    display: block;
-    width: auto;
-    max-width: 85%;
+  .message {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 80%;
     word-wrap: break-word;
-    box-sizing: border-box;
-    color: #e6eef6;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 25px;
   }
 
-  /* Alignment: user messages on the right, bot messages on the left */
   .user {
-    background: #1467cc;
-    color: #dff5ff;
-    margin-left: auto;
-    margin-right: 0;
-    text-align: left;
-    width: fit-content;
-    max-width: 320px;
-    box-shadow: 0 6px 18px rgba(11,36,56,0.5);
-    margin-top: 24px;
-    margin-bottom: 24px;
+    background: #DCF8C6;
+    align-self: flex-end;
   }
 
   .bot {
-    background: #28272E;
-    color: #dbeaf6;
-    margin-right: auto;
-    margin-left: 0;
-    text-align: left;
-    max-width: 85%;
-    width: auto;
-    padding: 10px 16px;
-    /* border: 1px solid rgba(255,255,255,0.06); */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    box-shadow: 0.5px -0.5px 1px rgb(95, 95, 95);
-  }
-  .bot p {
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-  .bot:first-child {
-    margin-top: 16px;
-  }
-  /* Loading state for bot messages */
-  .bot.loading-state {
-    width: fit-content;
-    min-width: 60px; /* Enough for 3 dots */
-    padding: 8px 16px;
-  }
-  .bot p:first-child{
-    margin: 0;
-  }
-  .bot p:last-child {
-    margin-bottom: 0;
-  }
-  .bot strong {
-    font-weight: 600;
-  }
-  .bot a:-webkit-any-link {
-    color: #4ea1ff;
-    text-decoration: underline;
-    font-weight: 400;
-  }
-  /* Loading dots */
-  .loading {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin-left: 2px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 50%;
-    background: #ffffff;
-    animation: blink 1s infinite alternate;
-    opacity: 0.9;
-    vertical-align: middle;
+    background: #E8E8E8;
+    align-self: flex-start;
+    color: #000;
   }
 
-  /* Center dots container */
-  .loading-state {
+  #input-container {
     display: flex;
-    align-items: center;
-    gap: 2px;
-    min-height: 25px; /* Match the line-height of text */
+    border-top: 1px solid #ccc;
   }
 
-  .loading:nth-child(2) {
-    animation-delay: 0.2s;
+  #message {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
   }
 
-  .loading:nth-child(3) {
-    animation-delay: 0.4s;
+  #send {
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
   }
 
-  @keyframes blink {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  #send:hover {
+    background: #0056b3;
   }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="name-container">
-    <img src="../images/profile-pic.png" style="width: 36px; height: 36px;"> 
-    <div>
-        <h3> Ma Bot ✨</h3>
-        <p> Always active</p>
-    </div>
-        
-</div>
-  <!-- <button id="clearBtn" title="Clear chat history" data-cursor="Clear chat">
-    <i class="fas fa-trash"></i>
-  </button> -->
-</div>
-<div id="chat"></div>
-<div class="examples" id="examples"></div>
-<div class="controls">
-  <input id="userInput" placeholder="Ask me about my design work..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-  <button id="sendBtn"><i class="fa-solid fa-arrow-up"></i></button>
+<div id="chat-container">
+  <div id="chat"></div>
+  <div id="input-container">
+    <input id="message" type="text" placeholder="Type a message">
+    <button id="send">Send</button>
+  </div>
 </div>
 
-<!-- Custom cursor -->
-<div class="custom-cursor"></div>
-
-<!-- markdown renderer + sanitizer (client-side) -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
-<link rel="stylesheet" href="../css/home.css">
-<!-- <script src="../js/cursor.js"></script> -->
 <script>
-// Parent page code to handle messages and page changes
-function notifyChatbot(url) {
-    console.log('Page URL changed to:', url);
-    const message = {
-        type: 'pageChange',
-        url: url
-    };
-    console.log('Sending message to chatbot:', message);
-    window.postMessage(message, '*');
-}
-
-// Listen for page changes in the parent window
-window.parent.addEventListener('popstate', () => {
-    notifyChatbot(window.parent.location.href);
-});
-
-// Handle hash changes for hash-based routing
-window.parent.addEventListener('hashchange', () => {
-    notifyChatbot(window.parent.location.href);
-});
-</script>
-<script>
-// Notify parent window when mouse enters/leaves the iframe
-document.addEventListener('mouseenter', () => {
-  window.parent.postMessage('chatbot-focused', '*');
-});
-
-document.addEventListener('mouseleave', () => {
-  window.parent.postMessage('chatbot-blurred', '*');
-});
-
-// Handle scrolling in the chat container
-document.addEventListener('wheel', (e) => {
-  const chat = document.getElementById('chat');
-  const scrollTop = chat.scrollTop;
-  const scrollHeight = chat.scrollHeight;
-  const height = chat.clientHeight;
-  const delta = e.deltaY;
-  
-  // Check if we're at the top or bottom of the chat
-  const isAtTop = scrollTop === 0 && delta < 0;
-  const isAtBottom = scrollTop + height >= scrollHeight && delta > 0;
-  
-  // If we're not at the boundaries, prevent parent scroll
-  if (!isAtTop && !isAtBottom) {
-    e.stopPropagation();
-    // Manually scroll the chat
-    chat.scrollTop += delta;
-    e.preventDefault();
-  }
-}, { passive: false });
-
-const API_URL = "https://api.deepseek.com/chat/completions";
-const MODEL = "deepseek-chat";
-
-const SYSTEM_PROMPT = `
-You are Alice, a thoughtful, impact-driven UX designer passionate about crafting scalable design systems and intuitive digital experiences. You live on her website, alicemadesign.com, and your role is to engage visitors just like Alice would — warmly, clearly, and professionally. You respond with short paragraphs that are around 3 sentences and under 50 words, no need to say too much (unless they ask you to elaborate on the project details).
-
-Speak in the first person (“I”) as Alice. Your tone is approachable, confident, and reflective, showing curiosity and care for user experience. Do not use "—" (em dashes).
-
-────────────────────────────
-🎓 EDUCATION & BACKGROUND
-• Bachelor of Science in Cognitive Science, Design & Interaction Specialization — UC San Diego (Magna Cum Laude, GPA 3.96/4.00)  
-• Minors: Computer Science and Design  
-• UX Design Certificate — Grow with Google  
-• Experienced in UX/UI design, prototyping, user research, and front-end development  
-
-Technical & Design Tools: Figma, Adobe Creative Suite (XD, Photoshop, Illustrator, After Effects), HTML, CSS, JavaScript, Python, Notion, GitHub, Google Suite.  
-
-────────────────────────────
-If you are asked to summarize one of Alice's pages or projects, DO NOT talk about her design process; refer to the following (please do not hallucinate new information; keep it as follows):
-
-💼 FEATURED PROJECTS
-
-• Seven Seas Roasting Co. - Website Redesign (2025)  
-Collaborated directly with a San Diego coffee shop owner to modernize the brand's digital experience. Improved navigation, visual hierarchy, and storytelling to highlight community values and product quality. Designed high-fidelity responsive layouts, developed visual assets, and ensured accessibility and SEO optimization.
-
-• Kiosk on Tour - Self Service Concert Merchandise Kiosk (2024)  
-Designed a self-service kiosk for concert merchandise sales, enhancing the fan experience with an intuitive interface and seamless payment integration. Conducted user testing to refine interactions and ensure accessibility for all users.
-
-• VisionFusion - AI Image Generator with Object Detection (2024)  
-Designed an interactive platform that combines AI image generation with two novel manipulation approaches, allowing users to generate images and then iterate on them by combining elements, rearranging objects, and refining compositions to achieve their creative vision.
-
-• CookLaborate - Matchmaking app to facilitate meal and recipe exchanges(2024)
-A mobile app connecting communities through meal sharing. Designed end-to-end flows that make it easy for neighbors to plan, share, and exchange homemade meals. Focused on fostering connection, sustainability, and trust through clear onboarding, friendly UI, and accessible visuals.
-
-• Pegasystems - Constellation Design System (Internship, 2023)
-Led usability evaluations across live software and designed new Figma components for the Constellation design system. Improved consistency across 30+ screens and worked with senior designers to ensure reusability and scalability.
-
-
-💼 OTHER PROJECTS
-
-• MedTime - Medicine Reminder App (2022)
-Developed a mobile app to help users manage daily medications. Prioritized clarity, accessibility, and reassurance. Designed visual cues, friendly alerts, and clear task hierarchies to support users' well-being.
-
-• Motion Design Product Announcement Video for game analytics software (2025)
-Utilized Adobe After Effects to create an engaging motion design video announcing new features for a game analytics software. Focused on clear visual storytelling and dynamic animations to capture viewer attention and effectively communicate key updates.
-
-• Design Co, UC San Diego (2025)
-Designed and tested an AI-powered assistant than acts academic planning tool, conducting 25+ interviews and surveys. Trained relevant course data using various LLMs to provide personalized recommendations and streamline the academic planning process for students. 
-
-
-
-────────────────────────────
-🏆 EXPERIENCE HIGHLIGHTS
-Design Co, UC San Diego (2025): Designed and tested an AI-powered assistant than acts academic planning tool, conducting 25+ interviews and surveys.  
-UCSD Instructional Assistant (2024-2025): Supported design courses, refined curricula, and mentored students.  
-MPA Collaborative Network (2024): Redesigned website for accessibility and modern UX standards (HTML/CSS/JS).  
-ACM at UC San Diego (2023-2024): Pitched a proof of concept for a social meal kit service platform and mentored new designers.  
-
-Portfolio website coded from scratch (2022-2025): Built alicemadesign.com using HTML, CSS, and JavaScript and connected with API to create an interactive chatbot experience. 
-
-My resume is designed for web, which you can find in the resume page; it is not a pdf, but I have the pdf linked within the page.
-
-────────────────────────────
-🎨 DESIGN VALUES
-Alice believes in designing for impact — combining empathy-driven research with scalable systems thinking. She values clarity, visual precision, and experiences that make users feel understood and empowered.
-
-Her process emphasizes:
-1. Understanding the user's context through interviews and usability testing.  
-2. Synthesizing insights into actionable design decisions.  
-3. Iterating with intention, using prototypes and testing to validate ideas.  
-4. Delivering with scalability, ensuring designs work across contexts and platforms.
-
-────────────────────────────
-❤️ FAVORITE PARTS OF DESIGN
-1. Creating interactive prototypes: it's exciting to see ideas come together into something users can engage with
-2. Making components for design libraries: Not only is it fun to polish designs down to pixel-perfection, but it also ensures consistency and efficiency across projects.
-3. Developer handoff: it's rewarding to collaborate with developers to bring designs to life while ensuring fidelity to the original vision.
-────────────────────────────
-🎯 BEHAVIOR GUIDELINES
-1. Always stay true to Alice's real experiences, projects, and portfolio.  
-2. When asked about a project, summarize its goal, design challenge, process, and outcome. If asked to tell them about some of the projects Alice has worked on, briefly mention 3-4 of the most notable ones listed above.  
-3. Encourage users to explore project visuals on www.alicemadesign.com or reach out via alicema1202@gmail.com or www.linkedin.com/in/alicema1215. When asked for contact information, provide the FULL links. DONT just say "Linkedin" or "email".
-4. Keep responses conversational, informative, and visually clean (2-5 sentences).  
-5. If unsure or asked something unrelated, respond with:  
-   “I keep my responses focused on my design work and experiences. I'd love to share more about my work or design process. What would you like to learn about?”  
-6. Use markdown formatting for clarity (bold project names, bullet lists, short paragraphs).
-
-────────────────────────────
-Tone: warm ✦ confident ✦ reflective ✦ human  
-Style: conversational, visually structured, and professional (don't use em dashes though)  
-Goal: help visitors understand Alice's design approach, impact, and personality.
-
-`;
-
-// Sample prompts and welcome message
-const SAMPLE_PROMPTS = [
-  "Can you summarize this page for me?",
-  "Tell me about one of your projects.",
-  "What is your favorite part about design?"
-];
-
-const chat = document.getElementById("chat");
-const userInput = document.getElementById("userInput");
-const sendBtn = document.getElementById("sendBtn");
-
-// Defensive: ensure browsers don't show saved autofill suggestions
-(function disableAutofill() {
-  try {
-    userInput.setAttribute('autocomplete', 'off');
-    userInput.setAttribute('autocorrect', 'off');
-    userInput.setAttribute('autocapitalize', 'off');
-    userInput.setAttribute('spellcheck', 'false');
-    // give the control a randomized name to reduce autofill heuristics
-    userInput.name = 'u_' + Math.random().toString(36).slice(2, 9);
-  } catch (e) {
-    // ignore
-  }
-})();
-
-const MAX_HISTORY = 6;
-
-// Track current page
-let currentPage = '';
-let pageContext = '';
-
-// Function to get page description based on URL
-function getPageDescription(url) {
-  const path = new URL(url).pathname;
-  
-  const pages = {
-    '/': 'This is my portfolio homepage, showcasing my featured projects and design work.',
-    '/about': 'This is my about page, detailing my background and fun facts.',
-    '/resume': 'This is my resume page, detailing my experience and skills.',
-    '/contact': 'This is my contact page where visitors can reach out to me.',
-    '/cinema': 'This is the case study for CineMa, a mobile app for discovering movies and planning cinema outings.',
-    '/cooklaborate': 'This is the case study for CookLaborate, a meal-swapping app that connects communities.',
-    '/medtime': 'This is the case study for MedTime, a medication reminder app focused on user well-being.',
-    '/sevenseas': 'This is the case study for Seven Seas Roasting Co., a website redesign project.',
-    '/visionfusion': 'This is the case study for VisionFusion, an AI image generator meant for iterating and selective editing.',
-    '/pega': 'This is the case study for my UX design internship at Pegasystems, where I worked on design systems.',
-    '/kiosk': 'This is the case study for Kiosk on Tour, a self service concert merchandise purchasing kiosk.',
-    '/work': 'This is my work page showing my complete project portfolio.'
-  };
-
-  return pages[path] || 'You are viewing my portfolio website.';
-}
-
-// Initialize messages from sessionStorage or create new
-let messages = JSON.parse(sessionStorage.getItem('chatHistory')) || [{ role: "system", content: SYSTEM_PROMPT }];
-
-// Save messages to sessionStorage to persist during page navigation
-function saveMessages() {
-  sessionStorage.setItem('chatHistory', JSON.stringify(messages));
-}
-
-// Function to update page context
-function updatePageContext(url) {
-  console.log('Updating page context for:', url);
-  const newPage = new URL(url).pathname;
-  if (newPage !== currentPage) {
-    currentPage = newPage;
-    pageContext = getPageDescription(url);
-    
-    // Update system message with new context without resetting the entire history
-    messages[0] = { role: "system", content: SYSTEM_PROMPT };
-    
-    // Add a context update message
-    messages.push({ 
-      role: "system", 
-      content: `[Page changed to: ${pageContext}]`
-    });
-    
-    saveMessages();
-    
-    // Re-render the chat with existing history
-    chat.innerHTML = '';
-    initializeChat();
-  }
-}
-
-// Function to initialize chat
-async function initializeChat() {
-  console.log('Initializing chat');
-  
-  // Check if this is a new chat or if user hasn't sent any messages yet
-  const hasUserMessages = messages.some(msg => msg.role === 'user');
-  const hasWelcomeMessage = messages.some(msg => msg.role === 'assistant');
-  
-  if (!hasWelcomeMessage) {
-    // New chat session - show welcome message
-    const welcome = "Hi, I'm Alice Ma, a UX designer driven by impact and passionate about crafting scalable design systems, with a keen eye for visual detail and precision. What would you like to know about my design work?";
-    const botEl = appendMessage('', 'bot');
-    showLoading(botEl);
-    
-    await new Promise(resolve => setTimeout(resolve, 200));
-    botEl.innerHTML = '';
-    await typeWords(botEl, welcome);
-
-    messages.push({ role: 'assistant', content: welcome });
-    saveMessages();
-    
-    // Show example buttons after welcome message
-    renderExamples();
-  } else {
-    // Restore previous chat messages instantly
-    messages.forEach(msg => {
-      if (msg.role !== 'system') {
-        const el = appendMessage('', msg.role === 'user' ? 'user' : 'bot', false);
-        if (msg.role === 'user') {
-          el.textContent = msg.content;
-        } else {
-          if (typeof marked !== 'undefined' && typeof DOMPurify !== 'undefined') {
-            const rawHtml = marked.parse(msg.content || '');
-            const safeHtml = DOMPurify.sanitize(rawHtml, { 
-              ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
-              ADD_ATTR: ['target'] // Explicitly allow target attribute
-            });
-            el.innerHTML = safeHtml;
-          } else {
-            el.textContent = msg.content;
-          }
-        }
-      }
-    });
-    
-    // Handle example buttons visibility for existing chat
-    if (hasUserMessages) {
-      const container = document.getElementById('examples');
-      if (container) {
-        container.style.display = 'none';
-      }
-    } else {
-      renderExamples();
-    }
-    
-    requestAnimationFrame(() => {
-      chat.scrollTop = chat.scrollHeight;
-    });
-  }
-}
-
-// Listen for page change messages
-window.addEventListener('message', (event) => {
-  console.log('Chatbot received message:', event.data);
-  if (event.data.type === 'pageChange' && event.data.url) {
-    console.log('Updating page context with URL:', event.data.url);
-    updatePageContext(event.data.url);
-  }
-});
-
-// Request initial URL on load
-window.addEventListener('load', () => {
-  console.log('Chatbot loaded, getting initial URL');
-  const parentUrl = window.parent.location.href;
-  console.log('Parent URL:', parentUrl);
-  updatePageContext(parentUrl);
-});
-
-// // Clear chat history
-// function clearChat() {
-//   // Reset messages to initial state
-//   messages = [{ role: "system", content: SYSTEM_PROMPT }];
-//   saveMessages();
-  
-//   // Clear chat display
-//   chat.innerHTML = '';
-  
-//   // Initialize chat without triggering a load event
-//   initializeChat();
-  
-//   // Focus the input after clearing
-//   userInput.focus();
-// }
-
-// Add event listeners
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
-// document.getElementById('clearBtn').addEventListener("click", clearChat);
-
-function renderExamples() {
-  console.log('Rendering example buttons');
-  const container = document.getElementById('examples');
-  if (!container) {
-    console.error('Examples container not found');
-    return;
-  }
-  
-  // Clear any existing content and ensure container is visible
-  container.innerHTML = '';
-  container.style.display = 'flex';
-  container.style.flexDirection = 'column';
-  container.style.gap = '0.5rem';
-
-  // Add the heading
-  const heading = document.createElement('p');
-  heading.style.color = '#dbeaf6';
-  heading.style.marginBottom = '4px';
-  heading.style.opacity = '0.7';
-  heading.style.fontSize = '14px';
-  heading.style.fontWeight = '300';
-  heading.textContent = 'Try these out:';
-  container.appendChild(heading);
-  
-  SAMPLE_PROMPTS.forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'example-btn';
-    btn.textContent = p;
-    btn.setAttribute('data-cursor', 'Try this example');
-    btn.addEventListener('click', () => {
-      userInput.value = p;
-      userInput.focus();
-      setTimeout(() => sendMessage(), 150);
-    });
-    container.appendChild(btn);
-  });
-}
-
-// Initialize chatbot when page loads
-document.addEventListener('DOMContentLoaded', async () => {
-  console.log('Chatbot frame loaded, initializing');
-  
-  try {
-    // Clear existing content
-    chat.innerHTML = '';
-    const container = document.getElementById('examples');
-    if (container) {
-      container.innerHTML = '';
-      container.style.display = 'none';
-    }
-    
-    // Get initial page URL and initialize chat
-    const parentUrl = window.parent.location.href;
-    await updatePageContext(parentUrl);
-    console.log('Initial page context set');
-  } catch (error) {
-    console.error('Error initializing chatbot:', error);
-  }
-});
-  
-
+const chat = document.getElementById('chat');
+const input = document.getElementById('message');
+const sendBtn = document.getElementById('send');
 
 async function sendMessage() {
-  const text = userInput.value.trim();
-  if (!text) return;
+  const message = input.value.trim();
+  if (!message) return;
 
-  // Hide example buttons on first user message
-  const container = document.getElementById('examples');
-  if (container && !messages.some(msg => msg.role === 'user')) {
-    container.style.display = 'none';
-  }
+  // Add user message to chat
+  const userDiv = document.createElement('div');
+  userDiv.className = 'message user';
+  userDiv.textContent = message;
+  chat.appendChild(userDiv);
 
-  // Show user message in chat
-  appendMessage(text, "user");
-  userInput.value = "";
-
-  // Add context internally (not visible)
-  const userMessage = {
-    role: "user",
-    content: text,
-    context: `User is viewing ${currentPage || 'the homepage'}. Context: ${pageContext}`
-  };
-  messages.push(userMessage);
-
-  // Prepare recent messages with context
-  const recentMessages = [
-    messages[0],
-    ...messages.slice(-MAX_HISTORY).map(msg => ({
-      role: msg.role,
-      content: msg.role === 'user' ? `${msg.context}\n\nUser message: ${msg.content}` : msg.content
-    }))
-  ];
-
-  // Show loading state for bot
-  const botEl = appendMessage("", "bot");
-  showLoading(botEl);
+  input.value = '';
+  chat.scrollTop = chat.scrollHeight;
 
   try {
-    // Call your serverless function instead of the API directly
-    const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message: JSON.stringify(recentMessages) // send messages as string
-      })
+    // Call your Vercel serverless function
+    const res = await fetch('http://localhost:3000/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
     });
 
-    const data = await response.json();
-    // DeepSeek response format may vary; adjust if needed
-    const botReply = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
-
-    // Remove loading state and type the reply
-    botEl.innerHTML = "";
-    botEl.classList.remove('loading-state');
-    await typeWords(botEl, botReply);
-
-    // Save bot response to messages
-    messages.push({ role: "assistant", content: botReply });
-    saveMessages();
+    const data = await res.json();
+    const botDiv = document.createElement('div');
+    botDiv.className = 'message bot';
+    botDiv.textContent = data.reply || "Sorry, something went wrong.";
+    chat.appendChild(botDiv);
+    chat.scrollTop = chat.scrollHeight;
   } catch (err) {
-    botEl.textContent = `Error: ${err.message}`;
     console.error(err);
-  }
-}
-
-
-function appendMessage(text, type, shouldScroll = true) {
-  const div = document.createElement("div");
-  div.classList.add("msg", type);
-  div.textContent = text;
-  chat.appendChild(div);
-  // If this is a user message, set its maxWidth to match the visible input width
-  if (type === 'user') {
-    // account for gap between input and container
-    const inputWidth = userInput.clientWidth; // includes padding, excludes margin
-    // set explicit max-width in pixels so it lines up exactly with the input
-    div.style.maxWidth = inputWidth + 'px';
-  }
-  if (shouldScroll) {
+    const botDiv = document.createElement('div');
+    botDiv.className = 'message bot';
+    botDiv.textContent = "Error connecting to server.";
+    chat.appendChild(botDiv);
     chat.scrollTop = chat.scrollHeight;
   }
-  return div;
 }
 
-// Update existing user message widths when window resizes
-window.addEventListener('resize', () => {
-  const inputWidth = userInput.clientWidth;
-  document.querySelectorAll('#chat .msg.user').forEach(el => {
-    el.style.maxWidth = inputWidth + 'px';
-  });
-});
-
-function showLoading(el) {
-  el.textContent = "";
-  el.classList.add('loading-state');
-  for (let i = 0; i < 3; i++) {
-    const dot = document.createElement("span");
-    dot.className = "loading";
-    el.appendChild(dot);
-  }
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function typeWords(el, text) {
-  // Skip typing animation for text cursor to prevent flashing
-  if (typeof marked !== 'undefined' && typeof DOMPurify !== 'undefined') {
-    const rawHtml = marked.parse(text || '');
-    const safeHtml = DOMPurify.sanitize(rawHtml, { 
-      ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
-      ADD_ATTR: ['target'] // Explicitly allow target attribute
-    });
-
-    const temp = document.createElement('div');
-    temp.innerHTML = safeHtml;
-
-    return new Promise(resolve => {
-      // types a string into target one char at a time
-      function typeText(target, str, cb) {
-        let i = 0;
-        const iv = setInterval(() => {
-          target.appendChild(document.createTextNode(str[i] || ''));
-          i++;
-          chat.scrollTop = chat.scrollHeight;
-          if (i >= str.length) {
-            clearInterval(iv);
-            setTimeout(cb, 10);
-          }
-        }, 8); // Faster typing speed (8ms instead of 16ms)
-      }
-
-      // recursively process a node list into the parent element
-      function processList(nodes, parent, done) {
-        let idx = 0;
-        (function next() {
-          if (idx >= nodes.length) return done();
-          const node = nodes[idx++];
-          if (node.nodeType === Node.TEXT_NODE) {
-            typeText(parent, node.textContent || '', next);
-          } else if (node.nodeType === Node.ELEMENT_NODE) {
-            const tag = node.tagName.toLowerCase();
-            const elClone = document.createElement(tag);
-            // Handle links specially
-            if (tag === 'a') {
-              const href = node.getAttribute('href');
-              if (href) {
-                elClone.setAttribute('href', href);
-                elClone.setAttribute('target', '_blank');
-                elClone.setAttribute('rel', 'noopener noreferrer');
-              }
-            } else {
-              // For non-link elements, copy allowed attributes
-              for (let attr of node.attributes || []) {
-                if (['href', 'target', 'rel', 'class'].includes(attr.name)) {
-                  elClone.setAttribute(attr.name, attr.value);
-                }
-              }
-            }
-            parent.appendChild(elClone);
-            const childNodes = Array.from(node.childNodes);
-            processList(childNodes, elClone, next);
-          } else {
-            next();
-          }
-        })();
-      }
-
-      processList(Array.from(temp.childNodes), el, () => resolve());
-    });
-  }
-
-  // Fallback: plain character typing
-  return new Promise(resolve => {
-    const span = document.createElement('span');
-    el.appendChild(span);
-    let i = 0;
-    const interval = setInterval(() => {
-      span.appendChild(document.createTextNode(text[i] || ''));
-      i++;
-      chat.scrollTop = chat.scrollHeight;
-      if (i >= text.length) {
-        clearInterval(interval);
-        resolve();
-      }
-    }, 8); // Faster typing speed (8ms instead of 16ms)
-  });
-}
+// Event listeners
+sendBtn.addEventListener('click', sendMessage);
+input.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
 </script>
 
 </body>

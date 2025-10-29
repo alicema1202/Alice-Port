@@ -1,0 +1,24 @@
+{
+  "name": "alice-port",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alicema1202/Alice-Port.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alicema1202/Alice-Port/issues"
+  },
+  "homepage": "https://github.com/alicema1202/Alice-Port#readme",
+  "dependencies": {
+    "openai": "^6.7.0"
+  }
+}
