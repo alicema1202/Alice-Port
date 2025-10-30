@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://kit.fontawesome.com/9dddffe1a8.js" crossorigin="anonymous"></script>
-<title>DeepSeek Chatbot</title>
+<title>Alice Chatbot</title>
 <style>
   /*
    * SF Pro font (using bundled TTF; map to common weights)
@@ -68,6 +68,7 @@
   text-rendering: optimizeLegibility;
     background: var(--bg-0);
     color: var(--text);
+    letter-spacing: -0.1px;
   }
 
   #chat-container {
@@ -102,7 +103,7 @@
   .chat-title { font-weight: 700; font-size: 18px; }
 
   .chat-status {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 20px;
     color: var(--muted);
     display: flex;
@@ -187,7 +188,7 @@
   .loader {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
   }
 
   .loader .dot {
@@ -206,8 +207,8 @@
     40% { transform: scale(1) translateY(0); opacity: 1; }
   }
   @keyframes bounce {
-    0%, 80%,100% { transform: scale(1) translateY(0); opacity: 1; }
-    50% { transform: scale(1.1) translateY(-8px); opacity: 0.7; }
+    0%, 70%,100% { transform: scale(1) translateY(0); opacity: 1; }
+    35% { transform: scale(1.1) translateY(-6px); opacity: 0.7; }
   }
 
   /* Shrink-wrap bot bubble while loading */
@@ -253,7 +254,7 @@
 
   #message {
     flex: 1;
-    padding: 10px 14px;
+    padding: 10px 16px;
     border: none;
     outline: none;
     font-size: 15px;
@@ -280,7 +281,7 @@
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 6px 18px rgba(11, 36, 56, 0.35);
-    font-size: 16px;
+    font-size: 15px;
   }
 
   #send:hover { background: #0f5bb7; transform: translateY(-1px); }
@@ -320,8 +321,8 @@
     gap: 6px;
     padding: 8px 16px;
     border-radius: 999px;
-    background: #2b2f3a; /* slightly lighter gray to pop */
-    border: 1px solid #3a4154; /* stronger contrast border */
+    background: var(--panel); /* slightly lighter gray to pop */
+    border: 0px solid #2e2f2f; /* stronger contrast border */
     color: #eef2f8;
     font-size: 15px;
     /* line-height: 25px; */
@@ -481,7 +482,7 @@
   <div id="chat"></div>
   <div id="prompt-bar" class="prompt-bar" aria-label="Suggested prompts" role="list"></div>
   <div id="input-container">
-  <input id="message" type="text" placeholder="Ask about my design work..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="send">
+  <input id="message" type="text" placeholder="Ask about my design work..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="send" autofocus>
   <button id="send" aria-label="Send"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
   </div>
 </div>
@@ -676,7 +677,7 @@ function renderWelcome() {
   // Add a friendly bot message in the chat
   const welcomeMsg = document.createElement('div');
   welcomeMsg.className = 'message bot';
-  welcomeMsg.innerHTML = `Hi, I'm Alice Ma, a UX designer driven by impact and passionate about crafting scalable design systems, with a keen eye for visual detail and precision. What would you like to know about my design work?`;
+  welcomeMsg.innerHTML = `I'm Alice, a UX designer driven by impact and passionate about crafting scalable design systems, with a keen eye for visual detail. What would you like to know?`;
   chat.appendChild(welcomeMsg);
 
   // Populate prompt bar with chips
@@ -784,6 +785,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Ensure we end up exactly at bottom after any late layout shifts
   scheduleScrollToBottom();
+
+  // Focus the message input when chatbot opens
+  const focusInput = () => { try { input && input.focus({ preventScroll: true }); } catch(_) {} };
+  focusInput();
+  if (typeof requestAnimationFrame === 'function') requestAnimationFrame(focusInput);
+  setTimeout(focusInput, 0);
+  setTimeout(focusInput, 80);
+  if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
+    document.fonts.ready.then(focusInput).catch(() => {});
+  }
 });
 
 // --- Page context collection ---
