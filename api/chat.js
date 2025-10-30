@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   const origin = req.headers.origin || "";
   const allowedOrigins = [
     "http://localhost:3000",
-    "http://localhost:3001",
+    "http://localhost:3002",
     "https://alice-port-git-main-alice-mas-projects-97d189e8.vercel.app",
     "https://alicemadesign.com",
     "https://www.alicemadesign.com"
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  const { message } = req.body;
+  const { message, context } = req.body;
   if (!message) return res.status(400).json({ error: "Message is required" });
 
   console.log("📩 Incoming message:", message);
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
     Technical & Design Tools: Figma, Adobe Creative Suite (XD, Photoshop, Illustrator, After Effects), HTML, CSS, JavaScript, Python, Notion, GitHub, Google Suite.  
 
     ────────────────────────────
-    If you are asked to summarize one of Alice's pages or projects, DO NOT talk about her design process; refer to the following (please do not hallucinate new information; keep it as follows):
+  If page context about the current URL is provided, use it to ground your answers. When the user asks about "this page" or similar, rely primarily on the provided page context. If you are asked to summarize one of Alice's pages or projects, DO NOT talk about her design process; refer to the following (please do not hallucinate new information; keep it as follows):
 
     💼 FEATURED PROJECTS
 
@@ -129,12 +129,14 @@ export default async function handler(req, res) {
     Goal: help visitors understand Alice's design approach, impact, and personality.
   `;
   try {
-    const completion = await openai.chat.completions.create({
+  const completion = await openai.chat.completions.create({
       model: "deepseek-chat",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: message },
-      ],
+    // Provide page context as a user message so the model prioritizes it
+    context ? { role: "user", content: `Current page context\nURL: ${context.url || ''}\nTitle: ${context.title || ''}\nDescription: ${context.description || ''}\nHeadings: ${(context.headings || []).join(' • ')}\nSnippet: ${context.snippet || ''}` } : undefined,
+    { role: "user", content: message },
+      ].filter(Boolean),
     });
 
     const reply = completion.choices?.[0]?.message?.content || "(no reply)";
