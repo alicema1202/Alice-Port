@@ -1,6 +1,7 @@
 let cursor;
 let hoverTimeout;
 let isChatbotMode = false;
+let cursorDisabled = false;
 
 // Initialize cursor when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,23 +35,64 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   // Position cursor off-screen on touch devices (phones/tablets)
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  const isTouchCapable = () => ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+  const hasFinePointer = () => {
+    try {
+      return (window.matchMedia && window.matchMedia('(any-pointer: fine)').matches) || false;
+    } catch (_) { return false; }
+  };
+  const getEffectiveWidth = () => {
+    // Prefer parent window width when running inside the chatbot iframe
+    try {
+      if (isChatbotMode && window.parent && window.parent !== window) {
+        // Only use parent if same-origin; otherwise fall back to screen width
+        if (window.parent.location && window.parent.location.origin === window.location.origin) {
+          return (window.parent.innerWidth || window.parent.document.documentElement.clientWidth || window.screen.width || 0);
+        }
+      }
+    } catch (_) { /* cross-origin, ignore */ }
+    return (window.innerWidth || document.documentElement.clientWidth || window.screen.width || 0);
+  };
+  const isSmallScreen = () => {
+    const w = getEffectiveWidth();
+    if (w <= 0) return (window.matchMedia && window.matchMedia('(max-width: 900px)').matches) || false;
+    return w <= 900;
+  };
+  // Treat as phone/tablet only when it's touch AND small AND no fine pointer available
+  const isSmallTouchDevice = () => isTouchCapable() && isSmallScreen() && !hasFinePointer();
+  const hideCursor = () => {
+    cursor.classList.add("outside");
     cursor.style.left = "-9999px";
     cursor.style.top = "-9999px";
-    return;
-  }
+    cursor.style.opacity = "0";
+    cursor.style.visibility = "hidden";
+  };
+  const showCursor = () => {
+    cursor.classList.remove("outside");
+    cursor.style.visibility = "visible";
+    cursor.style.opacity = "1";
+  };
+
+  const applyTouchMode = () => {
+    // Disable custom cursor only on truly small touch devices. Preserve on touch laptops and desktops.
+    cursorDisabled = isSmallTouchDevice();
+    if (cursorDisabled) {
+      hideCursor();
+    } else {
+      // Visible on larger screens; position will update on mousemove
+      showCursor();
+    }
+  };
+
+  applyTouchMode();
   
   // Handle window resize
-  window.addEventListener('resize', () => {
-    // Re-check on resize
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      cursor.style.left = "-9999px";
-      cursor.style.top = "-9999px";
-    }
-  });
+  window.addEventListener('resize', applyTouchMode);
+  window.addEventListener('orientationchange', applyTouchMode);
 
   // Track mouse movement
   document.addEventListener("mousemove", e => {
+    if (cursorDisabled) return;
     cursor.style.top = `${e.clientY}px`;
     cursor.style.left = `${e.clientX}px`;
     cursor.style.display = "block";
@@ -59,11 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Hide cursor when mouse leaves the page
   document.addEventListener("mouseleave", () => {
+    if (cursorDisabled) return;
     cursor.classList.add("outside");
   });
 
   // Show cursor when mouse enters the page
   document.addEventListener("mouseenter", () => {
+    if (cursorDisabled) return;
     cursor.classList.remove("outside");
   });
 
@@ -73,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle other hoverable elements (links, buttons, etc.) - but not data-cursor elements
   document.addEventListener("mouseover", (e) => {
+    if (cursorDisabled) return;
     const target = e.target;
     const isDataCursor = target.hasAttribute("data-cursor") || target.closest("[data-cursor]");
     const isHoverable = target.matches("a, button, input, select, textarea, [onclick], [role='button'], .clickable, .nav-item, .previous") || (target.closest("aside nav") && target.matches("a, p"));
@@ -91,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("mouseout", (e) => {
+    if (cursorDisabled) return;
     const target = e.target;
     const isDataCursor = target.hasAttribute("data-cursor") || target.closest("[data-cursor]");
     const isHoverable = target.matches("a, button, input, select, textarea, [onclick], [role='button'], .clickable, .nav-item, .previous") || (target.closest("aside nav") && target.matches("a, p"));
@@ -106,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show custom cursor only on hoverable elements
   document.querySelectorAll("[data-cursor]").forEach(el => {
     el.addEventListener("mouseenter", () => {
+      if (cursorDisabled) return;
       clearTimeout(hoverTimeout);
       const text = el.getAttribute("data-cursor");
       cursor.classList.remove("default", "hoverable");
@@ -129,6 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     el.addEventListener("mouseleave", () => {
+      if (cursorDisabled) return;
       hoverTimeout = setTimeout(() => {
       cursor.classList.remove("active", "hoverable", "coming-soon");
       cursor.classList.add("default");
@@ -138,4 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100); // 100ms delay before returning to default
     });
   });
+
+  // Ensure taps on touch devices don't flash the cursor
+  document.addEventListener("touchstart", () => {
+    applyTouchMode();
+    if (cursorDisabled) hideCursor();
+  }, { passive: true });
+  document.addEventListener("touchmove", () => {
+    if (cursorDisabled) hideCursor();
+  }, { passive: true });
 });
