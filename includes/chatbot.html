@@ -70,16 +70,29 @@
     color: var(--text);
     letter-spacing: -0.1px;
   }
-  ::-webkit-scrollbar {
+  /* Auto-hide custom scrollbar for the chat area */
+  #chat::-webkit-scrollbar {
     width: 6px;
     z-index: 0;
-    background-color: rgba(24, 24, 24, 0);
+    background-color: transparent;
   }
-  ::-webkit-scrollbar-thumb {
-      background-color: rgb(90, 90, 90);
-      border-radius: 10px;
-      width: 4px;
+  #chat::-webkit-scrollbar-track { background: transparent; }
+  #chat::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    width: 4px;
+    opacity: 0;
+    transition: background-color .2s ease, opacity .2s ease;
   }
+  /* Show thumb on hover or while scrolling */
+  #chat:hover::-webkit-scrollbar-thumb,
+  #chat.scrolling::-webkit-scrollbar-thumb {
+    background-color: rgb(90, 90, 90);
+    opacity: 1;
+  }
+  /* Firefox: hide by default, show when scrolling */
+  #chat { scrollbar-width: none; }
+  #chat.scrolling, #chat:hover { scrollbar-width: thin; }
 
   #chat-container {
     width: 100%;
@@ -95,12 +108,15 @@
    * Header
    */
   #chat-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 16px;
-    background: var(--bg-1);
-    border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 2;
   }
 
   .chat-avatar {
@@ -130,6 +146,69 @@
     box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
     animation: pulse 2s infinite;
   }
+
+  /* Right-side icon button */
+  #chat-header .icon-btn {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 22px;
+    border: 1px solid var(--line);
+    background: var(--bg-1);
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .05s ease;
+  }
+  #chat-header .icon-btn:hover { background: var(--bg-2); color: #cfd6e3; border-color: #2c3140; }
+  #chat-header .icon-btn:active { transform: translateY(1px); }
+  #chat-header .icon-btn i { font-size: 16px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
+  }
+
+  /* Tooltip */
+  .has-tooltip { position: relative; }
+  .tooltip {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--bg-2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 10px 16px;
+    font-size: 13px;
+    line-height: 18px;
+    width: 70vw;
+    /* max-width: min(320px, 70vw); */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    opacity: 0;
+    transform: translateY(-4px);
+  pointer-events: none; /* never intercept clicks */
+    transition: opacity .12s ease, transform .12s ease;
+    white-space: normal;
+    z-index: 3;
+    text-align: left;
+  }
+  /* Show via hover/focus or explicit expanded state */
+  .has-tooltip[aria-expanded="true"] .tooltip,
+  /* .has-tooltip:hover .tooltip, */
+  .has-tooltip:focus .tooltip,
+  .has-tooltip:focus-visible .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  /* When user explicitly toggles closed, suppress hover display until leave/blur */
+  /* .has-tooltip.suppressed .tooltip {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(-4px) !important;
+  } */
 
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
@@ -488,7 +567,15 @@
       <div class="chat-title">Ma Bot ✨</div>
       <div class="chat-status"><span class="status-dot" aria-hidden="true"></span>Always active</div>
     </div>
+  <button id="chat-info" class="icon-btn has-tooltip" aria-describedby="chat-tooltip" aria-label="More info">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      <span class="sr-only">More info</span>
+      <span id="chat-tooltip" role="tooltip" class="tooltip">
+        This chatbot is trained on my portfolio to help you learn about my work. It’s a new feature and may occasionally make mistakes when responding, but feel free to explore and ask about my projects! Responses not recorded.
+      </span>
+    </button>
   </div>
+  
   <div id="chat"></div>
   <div id="prompt-bar" class="prompt-bar" aria-label="Suggested prompts" role="list"></div>
   <div id="input-container">
@@ -501,6 +588,7 @@
 const chat = document.getElementById('chat');
 const input = document.getElementById('message');
 const sendBtn = document.getElementById('send');
+const infoBtn = document.getElementById('chat-info');
 
 // --- Scrolling helpers to consistently reach the very bottom ---
 function scrollToBottom() {
@@ -738,6 +826,7 @@ async function sendMessage() {
 
   // Remove welcome, if present
   hideWelcome();
+  // Tooltip is CSS-only; nothing to close
 
   // Add user message to chat
   const userDiv = document.createElement('div');
@@ -825,6 +914,49 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(focusInput, 80);
   if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
     document.fonts.ready.then(focusInput).catch(() => {});
+  }
+
+  // Show scrollbar only while actively scrolling
+  let scrollHideT;
+  const onChatScroll = () => {
+    chat.classList.add('scrolling');
+    clearTimeout(scrollHideT);
+    scrollHideT = setTimeout(() => chat.classList.remove('scrolling'), 600);
+  };
+  chat.addEventListener('scroll', onChatScroll, { passive: true });
+
+  // Tooltip toggle: click to pin/unpin and allow clicking again to hide
+  if (infoBtn) {
+    infoBtn.setAttribute('aria-expanded', 'false');
+    infoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const expanded = infoBtn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        // Hide and suppress hover until pointer leaves or loses focus
+        infoBtn.setAttribute('aria-expanded', 'false');
+        infoBtn.classList.add('suppressed');
+  // Remove focus so :focus rules don't re-show tooltip
+  try { infoBtn.blur(); } catch(_) {}
+      } else {
+        infoBtn.classList.remove('suppressed');
+        infoBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+    // Click anywhere else to hide and clear suppression
+    document.addEventListener('click', (e) => {
+      const t = e.target;
+      if (t === infoBtn || (t instanceof Node && infoBtn.contains(t))) return;
+      infoBtn.setAttribute('aria-expanded', 'false');
+      infoBtn.classList.remove('suppressed');
+    });
+    // Press Escape to hide
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        infoBtn.setAttribute('aria-expanded', 'false');
+        infoBtn.classList.remove('suppressed');
+        try { infoBtn.blur(); } catch(_) {}
+      }
+    });
   }
 });
 

@@ -1374,7 +1374,7 @@ body {
   left: -9999px;
   transform: translate(0, -50%);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10000000;
 
   width: 18px;
   height: 18px;

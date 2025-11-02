@@ -286,6 +286,7 @@ body {
     padding-bottom: 0.6ch;
     transform: translateY(0);
     transition: opacity 0.3s, transform 0.5s;
+    backdrop-filter: blur(10px);
 }
 .drop-button:hover {
     cursor: pointer;
